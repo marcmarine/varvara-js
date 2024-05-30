@@ -1,0 +1,34 @@
+---
+import Layout from '../../layouts/Page.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+	const components = await getCollection('components');
+	return components.map((component) => ({
+		params: { slug: component.slug },
+		props: component,
+	}));
+}
+
+type Props = CollectionEntry<'components'>;
+
+const component = Astro.props;
+const { Content, headings } = await component.render();
+
+const links = [
+	{
+		text: 'Back',
+		action: true,
+		url: '/components'
+	},
+	...headings.filter(heading => heading.depth === 2).map((heading) => ({
+		text: heading.text,
+		url: `/components/${component.slug}#${heading.slug}`
+	}))
+
+]
+---
+
+<Layout items={links}>
+  <Content />
+</Layout>

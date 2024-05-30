@@ -1,0 +1,33 @@
+<button
+  id='theme-toggle'
+  type='button'
+  class="button border-2"
+>
+  <span class='black'>🌞</span>
+  <span class='blue'>🌑</span>
+</button>
+
+<script is:inline>
+  const root = document.documentElement
+
+  function handleClick() {
+    const isDark = root.dataset.theme === 'black'
+    
+    root.dataset.theme = (isDark ? "blue" : "black")
+    localStorage.setItem('theme', isDark ? 'blue' : 'black')
+  }
+
+  function setButtonHandler() {
+    const button = document.getElementById('theme-toggle')
+    button?.addEventListener('click', handleClick)
+  }
+
+  setButtonHandler()
+</script>
+
+<style is:global>
+  [data-theme="blue"] .black,
+  [data-theme="black"] .blue {
+    display: none;
+  }
+</style>

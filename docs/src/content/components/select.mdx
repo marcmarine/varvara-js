@@ -1,0 +1,65 @@
+---
+title: Select
+---
+
+import Example from '../../components/Example.astro'
+
+# Select
+
+## Default
+
+<Example
+  component={() => (
+    <select class="select border-2">
+      <option disabled selected>
+        Choose an option
+      </option>
+      <option value="one">Option one</option>
+      <option value="two">Option two</option>
+      <option value="three">Option three</option>
+    </select>
+  )}
+>
+  ```js
+  <select class="select border-2">
+    <option disabled selected>
+      Choose an option
+    </option>
+    <option value="one">Option one</option>
+    <option value="two">Option two</option>
+    <option value="three">Option three</option>
+  </select>
+  ```
+</Example>
+
+## With label
+
+<Example
+  component={() => (
+    <div class="select-group border-2">
+      <label>Select</label>
+      <select class="select">
+        <option disabled selected>
+          Pick an option
+        </option>
+        <option value="one">Option one</option>
+        <option value="two">Option two</option>
+        <option value="three">Option three</option>
+      </select>
+    </div>
+  )}
+>
+  ```js
+  <div class="select-group border-2">
+    <label>Select</label>
+    <select class="select">
+      <option disabled selected>
+        Pick an option
+      </option>
+      <option value="one">Option one</option>
+      <option value="two">Option two</option>
+      <option value="three">Option three</option>
+    </select>
+  </div>
+  ```
+</Example>

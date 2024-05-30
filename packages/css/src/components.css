@@ -1,0 +1,43 @@
+.button {
+  @apply p-3 flex gap-3 text-lg leading-none items-center justify-start font-medium backdrop-blur;
+  background-color: var(--surface-primary);
+
+  &:hover {
+    background-color: color-mix(in srgb, var(--text-normal) 8%, transparent);
+  }
+
+  &:active {
+    color: var(--surface-primary);
+    background-color: var(--text-normal);
+  }
+
+  &--action {
+    @apply uppercase;
+  }
+}
+
+.select {
+  @apply py-3 pl-3 pr-8 leading-none relative bg-transparent outline-none appearance-none hover:bg-white/5 active:bg-white active:text-black cursor-pointer;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
+    linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: calc(100% - 0.8rem) calc(1px + 50%),
+    calc(100% - 0.515rem) calc(1px + 50%);
+  background-size: 0.3rem 0.3rem, 0.3rem 0.3rem;
+  background-repeat: no-repeat;
+
+  option:disabled {
+    color: red;
+  }
+
+  .select-group:has(> &) {
+    position: relative;
+
+    label {
+      @apply absolute left-3 top-0.5 text-xs pointer-events-none;
+    }
+
+    .select {
+      @apply pt-5 pb-1;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+---
+title: Button
+---
+
+import Example from '../../components/Example.astro'
+
+# Button
+
+## Default
+
+<Example
+  component={() => <button class="button border-2">Example button</button>}
+>
+  ```js
+  <button class="button border-2">Example button</button>
+  ```
+</Example>
+
+## Action
+
+<Example
+  component={() => (
+    <button class="button button--action border-2">Example button</button>
+  )}
+>
+  ```js
+  <button class="button button--action border-2">Example button</button>
+  ```
+</Example>

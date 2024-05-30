@@ -1,0 +1,35 @@
+{
+  "name": "varvara-css",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./src/index.cjs",
+  "exports": {
+    ".": "./src/index.cjs",
+    "./base": "./dist/base.css",
+    "./components": "./dist/components.css"
+  },
+  "scripts": {
+    "build:css": "postcss src/*.css --dir dist",
+    "build:js": "prejss-cli dist/*.css --out-dir dist",
+    "build": "bun run build:css && bun run build:js",
+    "dev": "chokidar src -c 'bun run build'"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "autoprefixer": "^10.4.19",
+    "postcss-nested": "^6.0.1",
+    "prejss-cli": "^0.3.3",
+    "tailwindcss": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "chokidar-cli": "^3.0.0",
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

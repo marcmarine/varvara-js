@@ -1,0 +1,85 @@
+:root {
+  --color-blue: blue;
+  --color-yellow: #fee200;
+  --color-fuchsia: #e83f6f;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --color-primary: var(--color-blue);
+  --background-primary: var(--color-primary);
+  --text-normal: #ffffff;
+
+  --surface-primary: color-mix(
+    in srgb,
+    var(--background-primary) 80%,
+    transparent
+  );
+
+  --surface-primary-alt: color-mix(
+    in srgb,
+    var(--background-primary) 80%,
+    var(--color-black)
+  );
+}
+
+[data-theme='yellow'] {
+  --color-primary: var(--color-yellow);
+  --background-primary: var(--color-primary);
+  --text-normal: #000000;
+}
+
+[data-theme='fuchsia'] {
+  --color-primary: var(--color-fuchsia);
+  --background-primary: var(--color-primary);
+  --text-normal: #000000;
+}
+
+[data-theme='white'] {
+  --color-primary: var(--color-white);
+  --background-primary: var(--color-primary);
+  --text-normal: #000000;
+}
+
+[data-theme='black'] {
+  --color-primary: var(--color-black);
+  --background-primary: var(--color-primary);
+  --text-normal: #ffffff;
+}
+
+body {
+  color: var(--text-normal);
+  background-color: var(--background-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply py-4 block font-bold;
+
+  &:first-child {
+    @apply pt-0;
+  }
+}
+
+h1 {
+  @apply text-4xl;
+}
+
+h2 {
+  @apply text-3xl;
+}
+
+h3 {
+  @apply text-2xl;
+}
+
+p {
+  @apply py-2;
+
+  &:first-of-type {
+    @apply pt-0;
+  }
+}

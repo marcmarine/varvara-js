@@ -1,0 +1,26 @@
+---
+
+import { getEntry } from 'astro:content';
+import Layout from '../layouts/Page.astro'
+
+
+const variables = await getEntry('docs', 'variables');
+const { Content, headings } = await variables.render()
+
+const links = [
+	{
+		text: 'Back',
+		action: true,
+		url: '/'
+	},
+	...headings.filter(heading => heading.depth === 2).map((heading) => ({
+		text: heading.text,
+		url: `/variables#${heading.slug}`
+	}))
+
+]
+---
+
+<Layout items={links}>
+  <Content />
+</Layout>

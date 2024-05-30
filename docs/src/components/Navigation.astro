@@ -1,0 +1,39 @@
+---
+const defaultItems: { text: string; action?: boolean; url: string}[] = [
+	{
+		text: 'Documentation',
+		url: '/docs'
+	},
+	{
+		text: 'CSS Variables',
+		url: '/variables'
+	},
+	{
+		text: 'Components',
+		url: '/components'
+	},
+	{
+		text: 'GitHub',
+		url: 'https://www.github.com/marcmarine'
+	},
+]
+
+interface Props {
+	items?: [];
+}
+
+const { items = defaultItems} = Astro.props
+---
+
+<nav>
+  <ul class="border-2 divide-y-2">
+		{items.map(item => 
+			<li class="w-full">
+				<a href={ item.url } class={`button ${item.action ? 'button--action' : ''}`}>
+					{item.text}
+				</a>
+			</li>
+
+		)}
+
+</ul>

@@ -1,0 +1,25 @@
+---
+import Navigation from '../components/Navigation.astro';
+import Layout from '../layouts/Base.astro'
+//@ts-ignore
+const { items, frontmatter } = Astro.props;
+---
+
+<Layout>
+  <div class="flex max-w-6xl mx-auto">
+    <div class="flex-1 max-w-[280px]">
+      <div class="p-4 flex flex-col gap-4 sticky top-0">
+        <header class="text-center">
+          <a href="/" class="grid grid-cols-[max-content_min-content] gap-1">
+            <span class="p-1 bg-[lime] font-semibold font-mono text-[--background-primary] leading-none">varvara-css</span>
+            <span class="px-1 flex items-center bg-[deepPink] font-mono font-light text-[10px]">0.0.0</span>
+          </a>
+        </header>
+        <Navigation items={frontmatter?.links || items} />
+      </div>
+    </div>
+    <main class="p-4 flex-1" role="main">
+      <slot />
+    </main>
+  </div>
+</Layout>

@@ -1,0 +1,9 @@
+---
+const { component: Component } = Astro.props;
+---
+<div class="mb-8 border-2 divide-y-2">
+  <div class="p-8 flex justify-center">
+    {<Component />}
+  </div>
+<slot />
+</div>

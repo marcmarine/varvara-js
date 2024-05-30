@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "lib": ["ESNext"],
+    "target": "ESNext",
+    "module": "CommonJS",
+    "allowJs": true,
+    "outDir": "dist",
+
+    "esModuleInterop": true,
+    "moduleResolution": "Node",
+
+    /* Linting */
+    "strict": true,
+    "skipLibCheck": true,
+    "noFallthroughCasesInSwitch": true
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "varvara-js",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint"
+  },
+  "packageManager": "bun@1.0.27",
+  "workspaces": [
+    "docs",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "turbo": "latest"
+  }
+}
