@@ -4,21 +4,13 @@ import Layout from '../../layouts/Page.astro';
 
 const allComponents = await getCollection('components');
 
-const links = [
-	{
-		text: 'Back',
-		action: true,
-		url: '/'
-	},
-	...allComponents.map(({data, slug}) => ({
+const links = allComponents.map(({data, slug}) => ({
 		text: data.title,
-		url: `/components/${slug}`
+		href: `/components/${slug}`
 	}))
-
-]
 ---
 
-<Layout items={links}>
+<Layout items={links} backHref="/">
 	<h1 class="text-4xl font-bold">Components</h1>
 </Layout>
 

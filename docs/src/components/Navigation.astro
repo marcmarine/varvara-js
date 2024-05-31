@@ -1,26 +1,31 @@
 ---
-const defaultItems: { text: string; action?: boolean; url: string}[] = [
+interface Props {
+	items?: Item[];
+}
+
+interface Item {
+ text: string
+ href: string
+}
+
+const defaultItems: Item[] = [
 	{
 		text: 'Documentation',
-		url: '/docs'
+		href: '/docs'
 	},
 	{
 		text: 'CSS Variables',
-		url: '/variables'
+		href: '/variables'
 	},
 	{
 		text: 'Components',
-		url: '/components'
+		href: '/components'
 	},
 	{
 		text: 'GitHub',
-		url: 'https://www.github.com/marcmarine'
+		href: 'https://www.github.com/marcmarine'
 	},
 ]
-
-interface Props {
-	items?: [];
-}
 
 const { items = defaultItems} = Astro.props
 ---
@@ -29,11 +34,9 @@ const { items = defaultItems} = Astro.props
   <ul class="border-2 divide-y-2">
 		{items.map(item => 
 			<li class="w-full">
-				<a href={ item.url } class={`button ${item.action ? 'button--action' : ''}`}>
+				<a href={ item.href } class="button">
 					{item.text}
 				</a>
 			</li>
-
 		)}
-
 </ul>

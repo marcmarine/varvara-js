@@ -1,13 +1,5 @@
 ---
-layout: '../layouts/Page.astro'
-links:
-  - text: Back
-    action: true
-    url: /
-  - text: Get started
-    url: /docs#get-started
-  - text: Motivation
-    url: /docs#motivation
+title: Documentation
 ---
 
 # Documentation

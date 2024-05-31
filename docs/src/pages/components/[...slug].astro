@@ -15,20 +15,12 @@ type Props = CollectionEntry<'components'>;
 const component = Astro.props;
 const { Content, headings } = await component.render();
 
-const links = [
-	{
-		text: 'Back',
-		action: true,
-		url: '/components'
-	},
-	...headings.filter(heading => heading.depth === 2).map((heading) => ({
+const links = headings.filter(heading => heading.depth === 2).map((heading) => ({
 		text: heading.text,
-		url: `/components/${component.slug}#${heading.slug}`
+		href: `/components/${component.slug}#${heading.slug}`
 	}))
-
-]
 ---
 
-<Layout items={links}>
+<Layout items={links} backHref="/components">
   <Content />
 </Layout>

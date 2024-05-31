@@ -1,15 +1,14 @@
 ---
-
 import { getEntry } from 'astro:content';
 import Layout from '../layouts/Page.astro'
 
 
-const variables = await getEntry('docs', 'variables');
+const variables = await getEntry('docs', 'index');
 const { Content, headings } = await variables.render()
 
 const links = headings.filter(heading => heading.depth === 2).map((heading) => ({
 		text: heading.text,
-		href: `/variables#${heading.slug}`
+		href: `/docs#${heading.slug}`
 	}))
 ---
 

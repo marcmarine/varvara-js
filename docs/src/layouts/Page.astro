@@ -2,7 +2,10 @@
 import Navigation from '../components/Navigation.astro';
 import Layout from '../layouts/Base.astro'
 //@ts-ignore
-const { items, frontmatter } = Astro.props;
+const { items, frontmatter, backHref } = Astro.props;
+let customLinks = frontmatter?.links || items
+let customBackHref = backHref || frontmatter?.backHref
+if (customBackHref && customLinks) customLinks = [{ text: '← Back', href: customBackHref }, ...customLinks]
 ---
 
 <Layout>
@@ -15,7 +18,7 @@ const { items, frontmatter } = Astro.props;
             <span class="px-1 flex items-center bg-[deepPink] font-mono font-light text-[10px]">0.0.0</span>
           </a>
         </header>
-        <Navigation items={frontmatter?.links || items} />
+        <Navigation items={customLinks} />
       </div>
     </div>
     <main class="p-4 flex-1" role="main">
