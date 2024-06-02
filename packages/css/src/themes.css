@@ -1,0 +1,23 @@
+[data-theme='yellow'] {
+  --color-primary: var(--color-yellow);
+  --background-primary: var(--color-primary);
+  --text-normal: #000000;
+}
+
+[data-theme='fuchsia'] {
+  --color-primary: var(--color-fuchsia);
+  --background-primary: var(--color-primary);
+  --text-normal: #000000;
+}
+
+[data-theme='white'] {
+  --color-primary: var(--color-white);
+  --background-primary: var(--color-primary);
+  --text-normal: #000000;
+}
+
+[data-theme='black'] {
+  --color-primary: var(--color-black);
+  --background-primary: var(--color-primary);
+  --text-normal: #ffffff;
+}

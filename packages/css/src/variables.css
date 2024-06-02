@@ -1,0 +1,29 @@
+:root {
+  /* Global variables*/
+  --color-blue: #0000ff;
+  --color-yellow: #fee200;
+  --color-fuchsia: #e83f6f;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Semantic variables*/
+  --color-primary: var(--color-blue);
+
+  --background-primary: var(--color-primary);
+
+  --text-normal: #ffffff;
+
+  --surface-primary: color-mix(
+    in srgb,
+    var(--background-primary) 80%,
+    transparent
+  );
+  --surface-primary-alt: color-mix(
+    in srgb,
+    var(--background-primary) 80%,
+    var(--color-black)
+  );
+
+  --border-width: 2px;
+  --border-color: var(--text-normal);
+}

@@ -31,7 +31,7 @@ const { items = defaultItems} = Astro.props
 ---
 
 <nav>
-  <ul class="border-2 divide-y-2">
+  <ul class="button-group">
 		{items.map(item => 
 			<li class="w-full">
 				<a href={ item.href } class="button">

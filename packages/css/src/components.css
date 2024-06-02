@@ -1,6 +1,14 @@
+:root {
+  --button-border-width: var(--border-width);
+  --button-border-color: var(--border-color);
+}
+
 .button {
   @apply p-3 flex gap-3 text-lg leading-none items-center justify-start font-medium backdrop-blur;
   background-color: var(--surface-primary);
+  border-style: solid;
+  border-width: var(--button-border-width);
+  border-color: var(--button-border-color);
 
   &:hover {
     background-color: color-mix(in srgb, var(--text-normal) 8%, transparent);
@@ -40,4 +48,8 @@
       @apply pt-5 pb-1;
     }
   }
+}
+
+.button-group {
+  @apply -space-y-[--button-border-width];
 }
