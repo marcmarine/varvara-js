@@ -4,7 +4,9 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
-    "lint": "turbo lint"
+    "lint": "turbo lint",
+    "version-packages": "changeset version",
+    "release": "yarn build && changeset publish"
   },
   "packageManager": "bun@1.0.27",
   "workspaces": [
@@ -13,5 +15,8 @@
   ],
   "devDependencies": {
     "turbo": "latest"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.27.5"
   }
 }
