@@ -16,6 +16,9 @@
     "build": "bun run build:css && bun run build:js",
     "dev": "chokidar src -c 'bun run build'"
   },
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@types/bun": "latest",
     "autoprefixer": "^10.4.19",

@@ -6,7 +6,7 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "version-packages": "changeset version",
-    "release": "yarn build && changeset publish"
+    "release": "turbo build && changeset publish"
   },
   "packageManager": "bun@1.0.27",
   "workspaces": [
