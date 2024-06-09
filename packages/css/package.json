@@ -17,7 +17,8 @@
     "dev": "chokidar src -c 'bun run build'"
   },
   "files": [
-    "dist"
+    "dist",
+    "src/index.cjs"
   ],
   "devDependencies": {
     "@types/bun": "latest",
