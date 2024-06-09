@@ -26,6 +26,45 @@ const { title = 'varvara-css' } = Astro.props;
 	@import 'varvara-css/variables';
 	@import 'varvara-css/components';
 
+	body {
+		color: var(--text-normal);
+		background-color: var(--background-primary);
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply py-4 block font-bold;
+
+		&:first-child {
+			@apply pt-0;
+		}
+	}
+
+	h1 {
+		@apply text-4xl;
+	}
+
+	h2 {
+		@apply text-3xl;
+	}
+
+	h3 {
+		@apply text-2xl;
+	}
+
+	p {
+		@apply py-2;
+
+  &:first-of-type {
+    @apply pt-0;
+  }
+}
+
+
 	pre {
 		background-color: var(--surface-primary-alt);
 		padding: 1rem;
