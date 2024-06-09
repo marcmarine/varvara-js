@@ -3,7 +3,7 @@
   "tag": "alpha",
   "initialVersions": {
     "varvara-docs": "0.0.0",
-    "varvara-css": "0.0.0"
+    "varvara-css": "0.1.0"
   },
   "changesets": []
 }
