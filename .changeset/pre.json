@@ -2,7 +2,10 @@
   "mode": "pre",
   "tag": "alpha",
   "initialVersions": {
-    "varvara-css": "0.1.0"
+    "varvara-css": "0.1.0",
+    "varvara-docs": "0.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "eight-eels-talk"
+  ]
 }
