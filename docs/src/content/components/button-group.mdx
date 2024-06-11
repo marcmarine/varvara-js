@@ -1,0 +1,109 @@
+---
+title: Button Group
+---
+
+import Example from '../../components/Example.astro'
+
+# Button Group
+
+## Default
+
+<Example
+  component={() => (
+    <div class="button-group">
+      <button class="button">add</button>
+      <button class="button">random</button>
+      <button class="button">notes</button>
+    </div>
+  )}
+>
+  ```html
+  <div class="button-group">
+    <button class="button">add</button>
+    <button class="button">random</button>
+    <button class="button">notes</button>
+  </div>
+  ```
+</Example>
+
+## Full width
+
+<Example
+  component={() => (
+    <div class="button-group w-full">
+      <button class="button w-full">add</button>
+      <button class="button w-full">random</button>
+      <button class="button w-full">notes</button>
+    </div>
+  )}
+>
+  ```html
+  <div class="button-group w-full">
+    <button class="button w-full">add</button>
+    <button class="button w-full">random</button>
+    <button class="button w-full">notes</button>
+  </div>
+  ```
+</Example>
+
+## Centered
+
+<Example
+  component={() => (
+    <div class="button-group w-full text-center">
+      <button class="button w-full">add</button>
+      <button class="button w-full">random</button>
+      <button class="button w-full">notes</button>
+    </div>
+  )}
+>
+  ```html
+  <div class="button-group w-full text-center">
+    <button class="button w-full">add</button>
+    <button class="button w-full">random</button>
+    <button class="button w-full">notes</button>
+  </div>
+  ```
+</Example>
+
+## Horizontal
+
+<Example
+  component={() => (
+    <div class="button-group button-group--horizontal">
+      <button class="button">back</button>
+      <button class="button">add</button>
+    </div>
+  )}
+>
+  ```html
+  <div class="button-group button-group--horizontal">
+    <button class="button">back</button>
+    <button class="button">add</button>
+  </div>
+  ```
+</Example>
+
+## Compound
+
+<Example
+  component={() => (
+    <div class="button-group text-center">
+      <button class="button w-full">translation</button>
+      <div class="button-group button-group--horizontal">
+        <button class="button">back</button>
+        <button class="button">add</button>
+      </div>
+    </div>
+  )}
+>
+  ```html
+  <div class="button-group text-center">
+    <button class="button w-full">translation</button>
+    <div class="button-group button-group--horizontal">
+      <button class="button">back</button>
+      <button class="button">add</button>
+    </div>
+  </div>
+  ```
+</Example>
