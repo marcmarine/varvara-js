@@ -1,5 +1,11 @@
 # varvara-css
 
+## 0.2.0-alpha.2
+
+### Minor Changes
+
+- ad20ca3: Improve button group and button components
+
 ## 0.1.1-alpha.1
 
 ### Patch Changes
