@@ -4,7 +4,8 @@
 }
 
 .button {
-  @apply p-3 flex gap-3 text-lg leading-none items-center justify-start font-medium backdrop-blur;
+  @apply p-3 block text-lg leading-none font-medium;
+  text-align: inherit;
   background-color: var(--surface-primary);
   border-style: solid;
   border-width: var(--button-border-width);
@@ -51,5 +52,11 @@
 }
 
 .button-group {
-  @apply -space-y-[--button-border-width];
+  &:not(.button-group--horizontal) {
+    @apply -space-y-[--border-width];
+  }
+
+  &--horizontal {
+    @apply flex -space-x-[--border-width];
+  }
 }
