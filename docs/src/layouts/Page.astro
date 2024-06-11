@@ -6,6 +6,9 @@ const { items, frontmatter, backHref } = Astro.props;
 let customLinks = frontmatter?.links || items
 let customBackHref = backHref || frontmatter?.backHref
 if (customBackHref && customLinks) customLinks = [{ text: '← Back', href: customBackHref }, ...customLinks]
+
+const response = await fetch('https://unpkg.com/varvara-css@alpha/package.json')
+const data = await response.json();
 ---
 
 <Layout>
@@ -15,7 +18,7 @@ if (customBackHref && customLinks) customLinks = [{ text: '← Back', href: cust
         <header class="text-center">
           <a href="/" class="grid grid-cols-[max-content_min-content] gap-1">
             <span class="p-1 bg-[lime] font-semibold font-mono text-[--background-primary] leading-none">varvara-css</span>
-            <span class="px-1 flex items-center bg-[deepPink] font-mono font-light text-[10px]">0.0.0</span>
+            <span class="px-1 flex items-center bg-[deepPink] font-mono font-light text-[10px] whitespace-nowrap">{data.version}</span>
           </a>
         </header>
         <Navigation items={customLinks} />
