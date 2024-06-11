@@ -6,6 +6,7 @@
     "varvara-docs": "0.0.0"
   },
   "changesets": [
-    "eight-eels-talk"
+    "eight-eels-talk",
+    "four-tigers-travel"
   ]
 }
