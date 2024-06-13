@@ -1,6 +1,6 @@
 {
   "name": "varvara-css",
-  "version": "0.2.0-alpha.3",
+  "version": "0.2.0-alpha.4",
   "main": "./src/index.cjs",
   "devDependencies": {
     "@types/bun": "latest",

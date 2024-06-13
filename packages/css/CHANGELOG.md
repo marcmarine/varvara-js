@@ -1,5 +1,11 @@
 # varvara-css
 
+## 0.2.0-alpha.4
+
+### Patch Changes
+
+- cfd0134: Fix border color CSS variable
+
 ## 0.2.0-alpha.3
 
 ### Minor Changes
