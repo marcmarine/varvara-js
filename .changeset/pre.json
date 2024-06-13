@@ -6,6 +6,7 @@
     "varvara-docs": "0.0.0"
   },
   "changesets": [
+    "early-years-smash",
     "eight-eels-talk",
     "four-tigers-travel",
     "healthy-snails-dream",
