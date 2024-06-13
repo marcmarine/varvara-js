@@ -1,5 +1,11 @@
 # varvara-css
 
+## 0.2.0-alpha.3
+
+### Minor Changes
+
+- fee7fae: Add new CSS variables with prefix
+
 ## 0.2.0-alpha.2
 
 ### Minor Changes
