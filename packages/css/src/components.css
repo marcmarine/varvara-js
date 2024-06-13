@@ -1,23 +1,28 @@
 :root {
-  --button-border-width: var(--border-width);
-  --button-border-color: var(--border-color);
+  --va-button-font-size: var(--va-font-size-2);
+  --va-button-padding: var(--va-space-3);
+  --va-button-border-width: var(--va-border-width);
+  --va-button-border-color: var(--va-border-color);
+  --va-button-background-color: var(--va-surface-primary);
 }
 
 .button {
-  @apply p-3 block text-lg leading-none font-medium;
+  @apply block leading-none font-medium;
+  padding: var(--va-button-padding);
+  font-size: var(--va-button-font-size);
   text-align: inherit;
-  background-color: var(--surface-primary);
+  background-color: var(--va-button-background-color);
   border-style: solid;
-  border-width: var(--button-border-width);
-  border-color: var(--button-border-color);
+  border-width: var(--va-button-border-width);
+  border-color: var(--va-button-border-color);
 
   &:hover {
-    background-color: color-mix(in srgb, var(--text-normal) 8%, transparent);
+    background-color: color-mix(in srgb, var(--va-text-normal) 8%, transparent);
   }
 
   &:active {
-    color: var(--surface-primary);
-    background-color: var(--text-normal);
+    color: var(--va-surface-primary);
+    background-color: var(--va-text-normal);
   }
 
   &--action {
@@ -53,10 +58,10 @@
 
 .button-group {
   &:not(.button-group--horizontal) {
-    @apply -space-y-[--border-width];
+    @apply -space-y-[--va-border-width];
   }
 
   &--horizontal {
-    @apply flex -space-x-[--border-width];
+    @apply flex -space-x-[--va-border-width];
   }
 }
