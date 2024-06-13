@@ -24,11 +24,12 @@ const { title = 'varvara-css' } = Astro.props;
 <style is:global>
 	@import 'varvara-css/base';
 	@import 'varvara-css/variables';
+	@import 'varvara-css/themes';
 	@import 'varvara-css/components';
 
 	body {
-		color: var(--text-normal);
-		background-color: var(--background-primary);
+		color: var(--va-text-normal);
+		background-color: var(--va-background-primary);
 	}
 
 	h1,
@@ -66,7 +67,7 @@ const { title = 'varvara-css' } = Astro.props;
 
 
 	pre {
-		background-color: var(--surface-primary-alt);
+		background-color: var(--va-surface-primary-alt);
 		padding: 1rem;
 	}
 </style>
