@@ -1,5 +1,11 @@
 # varvara-css
 
+## 0.2.0-alpha.5
+
+### Minor Changes
+
+- ebb69c0: Add button active and disabled classes
+
 ## 0.2.0-alpha.4
 
 ### Patch Changes
