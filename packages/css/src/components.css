@@ -16,7 +16,7 @@
   border-width: var(--va-button-border-width);
   border-color: var(--va-button-border-color);
 
-  &:hover {
+  &:hover:not(&:active):not(&--active) {
     background-color: color-mix(in srgb, var(--va-text-normal) 8%, transparent);
   }
 
@@ -26,7 +26,8 @@
     background-color: var(--va-text-normal);
   }
 
-  &--disabled {
+  &--disabled,
+  &[disabled] {
     @apply pointer-events-none;
     color: var(--va-text-weak);
   }
