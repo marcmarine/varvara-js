@@ -1,5 +1,11 @@
 # varvara-css
 
+## 0.2.0-alpha.6
+
+### Patch Changes
+
+- 2760447: Fix button variant styles
+
 ## 0.2.0-alpha.5
 
 ### Minor Changes
