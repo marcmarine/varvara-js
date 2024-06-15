@@ -15,7 +15,9 @@ title: Css variables
 
 --va-color-primary: var(--color-blue);
 --va-background-primary: var(--color-primary);
+
 --va-text-normal: #ffffff;
+--va-text-weak: color-mix(in srgb, var(--va-text-normal) 20%, transparent);
 
 --va-surface-primary: color-mix(
   in srgb,
