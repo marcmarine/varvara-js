@@ -3,6 +3,8 @@ title: Button
 ---
 
 import Example from '../../components/Example.astro'
+import Button from '../../components/lib/button'
+export const Component = () => <Button />
 
 # Button
 
@@ -18,9 +20,7 @@ import Example from '../../components/Example.astro'
 
 ## Default
 
-<Example
-  component={() => <button class="button border-2">Example button</button>}
->
+<Example component={Component}>
   ```js
   <button class="button border-2">Example button</button>
   ```

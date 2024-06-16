@@ -3,23 +3,14 @@ title: Select
 ---
 
 import Example from '../../components/Example.astro'
+import Select from '../../components/lib/select'
+export const Component = () => <Select />
 
 # Select
 
 ## Default
 
-<Example
-  component={() => (
-    <select class="select border-2">
-      <option disabled selected>
-        Choose an option
-      </option>
-      <option value="one">Option one</option>
-      <option value="two">Option two</option>
-      <option value="three">Option three</option>
-    </select>
-  )}
->
+<Example component={Component}>
   ```js
   <select class="select border-2">
     <option disabled selected>

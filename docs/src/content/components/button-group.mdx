@@ -3,27 +3,23 @@ title: Button Group
 ---
 
 import Example from '../../components/Example.astro'
+import ButtonGroup from '../../components/lib/button-group'
+export const Component = () => <ButtonGroup />
 
 # Button Group
 
 ## Default
 
-<Example
-  component={() => (
-    <div class="button-group">
-      <button class="button">add</button>
-      <button class="button">random</button>
-      <button class="button">notes</button>
-    </div>
-  )}
->
-  ```html
-  <div class="button-group">
-    <button class="button">add</button>
-    <button class="button">random</button>
-    <button class="button">notes</button>
-  </div>
-  ```
+<Example component={Component}>
+
+```html
+<div class="button-group">
+  <button class="button">add</button>
+  <button class="button">random</button>
+  <button class="button">notes</button>
+</div>
+```
+
 </Example>
 
 ## Full width

@@ -1,0 +1,47 @@
+---
+title: Card
+---
+
+import Example from '../../components/Example.astro'
+import Card from '../../components/lib/card'
+export const Component = () => <Card />
+
+# Card
+
+## Variables
+
+```css
+--va-card-color: var(--va-text-normal);
+--va-card-font-size: var(--va-font-size-1);
+--va-card-padding: var(--va-space-3);
+--va-card-border-width: var(--va-border-width);
+--va-card-border-color: var(--va-border-color);
+--va-card-background-color: var(--va-surface-primary);
+```
+
+## Default
+
+<Example
+  component={Component}
+
+>
+
+```js
+<div class="card w-full">
+  <div class="card__body">
+    <h2 class="card__title">Your Gateway to Timeless Literature</h2>
+    <p>
+      Welcome to OMUSO API, a digital service for literature enthusiasts and
+      developrs. Our platform leverages a powerful API to bring you an extensive
+      collection of classical texts and detailed information about their
+      authors, making it easier than ever to delve into the world’s most
+      treasured literary works.
+    </p>
+  </div>
+  <div class="card__actions text-right">
+    <button class="button">Start →</button>
+  </div>
+</div>
+```
+
+</Example>
