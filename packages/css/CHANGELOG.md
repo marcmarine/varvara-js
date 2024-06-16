@@ -1,5 +1,12 @@
 # varvara-css
 
+## 0.2.0-alpha.7
+
+### Minor Changes
+
+- 17219f7: Create new card component
+- aaba9e4: Create table component
+
 ## 0.2.0-alpha.6
 
 ### Patch Changes
