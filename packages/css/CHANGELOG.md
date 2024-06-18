@@ -1,5 +1,11 @@
 # varvara-css
 
+## 0.2.0-alpha.8
+
+### Minor Changes
+
+- c83f3a0: Remove themes and export global bundle styles
+
 ## 0.2.0-alpha.7
 
 ### Minor Changes
