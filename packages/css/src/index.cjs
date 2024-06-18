@@ -1,9 +1,9 @@
 const plugin = require('tailwindcss/plugin')
-const base = require('../dist/base')
+const variables = require('../dist/variables')
 const components = require('../dist/components')
 
 const tailwindPlugin = plugin(function ({ addBase, addComponents }) {
-  addBase(base)
+  addBase(variables)
   addComponents(components)
 })
 

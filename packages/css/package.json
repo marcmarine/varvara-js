@@ -1,7 +1,8 @@
 {
   "name": "varvara-css",
   "version": "0.2.0-alpha.7",
-  "main": "./src/index.cjs",
+  "main": "src/index.cjs",
+  "unpkg": "dist/varvara.css",
   "devDependencies": {
     "@types/bun": "latest",
     "autoprefixer": "^10.4.19",
