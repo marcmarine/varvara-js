@@ -19,9 +19,7 @@
   },
   "exports": {
     ".": "./src/index.cjs",
-    "./base": "./dist/base.css",
     "./variables": "./dist/variables.css",
-    "./themes": "./dist/themes.css",
     "./components": "./dist/components.css"
   },
   "files": [
