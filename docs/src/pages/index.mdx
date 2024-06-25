@@ -1,17 +1,22 @@
 import ThemeSelector from '../components/ThemeSelector.astro'
 import Layout from '../layouts/Page.astro'
 
-<Layout>
-
-# Build consistently for seamless experiences
+<Layout className="grid grid-cols-subgrid grid-rows-subgrid col-start-1 col-end-3 row-start-1 row-end-4 gap-y-0">
+  <div class="col-start-2 bg-grid-left bg-grid-right"></div>
+  <div class="px-4 row-start-2 col-start-1 col-end-3 bg-grid-bottom">
+    <h1 class="py-10 text-7xl xl:text-8xl">Build consistently <br/> for seamless experiences</h1>
+  </div>
+  <div class="col-start-2 row-start-3 bg-grid-left">
 
 ```bash
 npm i varvara-css@alpha
 ```
 
-```cdn
-https://unpkg.com/varvara-css@alpha/dist/variables.css
+```css
+@import url('https://unpkg.com/varvara-css@alpha');
 ```
 
-<ThemeSelector />
+  <ThemeSelector />
+  </div>
+
 </Layout>

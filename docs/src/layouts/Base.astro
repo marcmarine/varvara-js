@@ -16,7 +16,7 @@ const { title = 'varvara-css' } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="overflow-x-hidden">
 		<slot />
 	</body>
 </html>
@@ -25,48 +25,178 @@ const { title = 'varvara-css' } = Astro.props;
 	@import 'varvara-css/variables';
 	@import 'varvara-css/components';
 
+	/* ibm-plex-sans-latin-400-normal */
+	@font-face {
+		font-family: 'IBM Plex Sans';
+		font-style: normal;
+		font-display: swap;
+		font-weight: 400;
+		src: url(https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-sans@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-sans@latest/latin-400-normal.woff) format('woff');
+		unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+	}
+
+	/* ibm-plex-sans-latin-700-normal */
+	@font-face {
+		font-family: 'IBM Plex Sans';
+		font-style: normal;
+		font-display: swap;
+		font-weight: 700;
+		src: url(https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-sans@latest/latin-700-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-sans@latest/latin-700-normal.woff) format('woff');
+		unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+	/* rubik-latin-wght-normal */
+	@font-face {
+		font-family: 'Rubik Variable';
+		font-style: normal;
+		font-display: swap;
+		font-weight: 300 900;
+		src: url(https://cdn.jsdelivr.net/fontsource/fonts/rubik:vf@latest/latin-wght-normal.woff2) format('woff2-variations');
+		unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+	}
+
+	@font-face {
+		font-family: 'Noto Sans Variable';
+		font-style: normal;
+		font-display: swap;
+		font-weight: 100 900;
+		src: url(https://cdn.jsdelivr.net/fontsource/fonts/noto-sans:vf@latest/latin-wght-normal.woff2) format('woff2-variations');
+		unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+	}
+
+	[data-theme='blue'] {
+		--va-background-primary: orange;
+		--va-text-normal: black
+	}
+
+	/* [data-theme='black'] {
+		--va-background-primary: black;
+		--va-text-normal: white
+	} */
+
+	[data-theme='black'] {
+		--va-color-primary: #9fe88d;
+		--va-background-primary: #2a303c;
+		--va-text-normal: #b3ccd6;
+	}
+
+	.button {
+  	font-family: 'Rubik Variable', sans-serif;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
 	body {
+		@apply text-lg;
+		font-family: 'Noto Sans Variable', sans-serif;
 		color: var(--va-text-normal);
 		background-color: var(--va-background-primary);
 	}
 
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		@apply py-4 block font-bold;
+	h1, h2, h3, h4, h5, h6 {
+		@apply font-bold;
+		font-family: 'IBM Plex Sans', sans-serif;
+	}
+	h1 {
+		@apply mb-6 text-6xl font-bold;
+	}
 
-		&:first-child {
+	h2 {
+		@apply mt-6 mb-4 text-5xl font-bold;
+	}
+
+	h3 {
+		@apply mt-6 mb-4 text-2xl;
+	}
+
+	p {
+		@apply mt-2 mb-4;
+
+		&:first-of-type {
 			@apply pt-0;
 		}
 	}
 
-	h1 {
-		@apply text-4xl;
+	:target {
+		@apply text-[--va-color-primary] scroll-mt-20;
 	}
 
-	h2 {
-		@apply text-3xl;
+	.article {
+		@apply z-10;
+		background-color: var(--va-surface-primary);
+
+		p {
+			@apply px-2
+		}
+
+		h1 {
+			@apply flex items-center sticky top-0 border-b border-[--va-text-weak] h-[calc(4rem+1px)] border-dashed backdrop-blur-lg;
+			background-color: var(--va-surface-primary);
+		}
 	}
 
-	h3 {
-		@apply text-2xl;
+	p a {
+		@apply hover:underline;
+		color: var(--va-color-primary)
 	}
-
-	p {
-		@apply py-2;
-
-  &:first-of-type {
-    @apply pt-0;
-  }
-}
-
 
 	pre {
+		@apply p-4;
+
+		&:not(:last-child) {
+			@apply mb-4;
+		}
 		background-color: var(--va-surface-primary-alt);
-		padding: 1rem;
+
+		&:first-of-type {
+			@apply mt-0;
+		}
+	}
+
+	[class*="bg-grid"] {
+		--line-color: var(--va-text-weak);
+		--line-gap: 4px;
+		--line-width: 1px;
+		position: relative;
+	}
+
+	.bg-grid-left:before {
+		left: 0;
+	}
+
+	.bg-grid-right:after {
+		right: 0;
+	}
+
+	.bg-grid-left:before,
+	.bg-grid-right::after {
+		content: '';
+		position: absolute;
+		top: -100%;
+		width: var(--line-width);
+		height: 200%;
+		background: linear-gradient(180deg, var(--line-color), var(--line-color) 50%, transparent 0, transparent);
+		background-size: var(--line-width) var(--line-gap);
+		z-index: 1;
+	}
+
+	.bg-grid-top::before {
+		top: 0
+	}
+	.bg-grid-bottom::after {
+		bottom: 0
+	}
+
+	.bg-grid-top::before,
+	.bg-grid-bottom::after {
+		content: '';
+		position: absolute;
+		left: -100vw;
+		width: 200vw;
+		height: var(--line-width);
+		background: linear-gradient(to right, var(--line-color), var(--line-color) 50%, transparent 0, transparent);
+		background-size: var(--line-gap)  var(--line-width);
 	}
 </style>
 

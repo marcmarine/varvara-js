@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Page.astro';
-import type { MDXInstance } from 'astro';
 
 const allComponents = await getCollection('components');
 
@@ -13,15 +12,16 @@ const links = allComponents.map(({data, slug}) => ({
 const components = await Astro.glob('../../content/components/*.mdx');
 ---
 
-<Layout items={links} backHref="/">
-	<h1 class="text-4xl font-bold">Components</h1>
+<Layout items={links} backHref="/" className="article">
+	<h1>Components</h1>
 	<p>{allComponents.length} components</p>
+
 	<div class="grid grid-cols-2 gap-8">
 		{allComponents.map(({data, slug}) => {
 			const { Component }: any = components.find((item) => item.frontmatter.title === data.title)
 			return (
 			<div class="card">
-				<div class="card__body aspect-video grid place-content-center">
+				<div class="card__body aspect-video grid place-content-center bg-black/20">
 					{Component ? <Component /> : <h2>{data.title}</h2>}
 				</div>
 				<div class="card__actions">
@@ -30,6 +30,14 @@ const components = await Astro.glob('../../content/components/*.mdx');
 			</div>
 		)
 		})}
+	</div>
+	<div class="py-8 flex justify-between">
+		<a href="/variables" class="font-semibold text-lg hover:underline">
+			← CSS Variables
+		</a>
+		<a href="https://github.com/marcmarine" class="font-semibold text-lg hover:underline">
+			GitHub →
+		</a>
 	</div>
 </Layout>
 

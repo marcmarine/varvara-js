@@ -1,27 +1,77 @@
 ---
-title: Documentation
+title: Get started
 ---
 
-# Documentation
+# Get started
 
-Maecenas vitae pretium purus. Nunc porta gravida leo ac gravida. Aliquam quis feugiat nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquet sodales vehicula. Fusce varius diam finibus, vestibulum erat ut, bibendum ex. Sed nibh dolor, malesuada sit amet justo a, viverra laoreet quam. Nam lacinia tristique placerat.
+**Varvara CSS** is a framework that adds customizable components to your project using class names. You can use it alongside Tailwind CSS and with any JavaScript framework.
 
-## Get started
+## Install
 
-Nullam eget magna vel urna elementum aliquet. Quisque diam mi, porttitor ut ullamcorper vitae, placerat non lorem. Nulla a urna porta, laoreet eros tristique, congue nisl.
+### CDN
 
-```bash
-npm i varvara-css
+The easiest way to use Varvara CSS is through a CDN:
+
+```css
+@import url('https://unpkg.com/varvara-css@alpha');
 ```
 
-Curabitur porta malesuada augue quis finibus. Etiam imperdiet massa id lectus sagittis, in commodo turpis imperdiet. Nam pharetra augue vitae diam consectetur tincidunt.
+Alternatively, add this line to the `head` tag of your HTML:
 
-## Motivation
+```html
+<link
+  href="https://unpkg.com/varvara-css@alpha"
+  rel="stylesheet"
+  type="text/css"
+/>
+```
 
-Vivamus magna ligula, condimentum elementum venenatis sit amet, tincidunt eget neque. Donec varius velit ligula, vitae facilisis sapien porttitor id.
+You'll have access to both [variables](/variables) and [components](/components) from the same import.
 
-Ut quis est sit amet mi dignissim mattis. Nullam nec tempus turpis. Nunc in tempor ipsum. Phasellus euismod et mi vel pretium. Vestibulum venenatis lacus quis metus egestas, et euismod mi posuere. Fusce blandit hendrerit nibh, id egestas arcu accumsan nec. Ut interdum, mauris non tempor dapibus, leo felis scelerisque nisl, vel laoreet metus ipsum vestibulum est. Mauris vel ipsum nec justo mollis consectetur id vitae erat. Vestibulum efficitur nisl sit amet enim imperdiet, at cursus tellus suscipit. Phasellus et ultricies massa.
+### NPM
 
-Maecenas vitae pretium purus. Nunc porta gravida leo ac gravida. Aliquam quis feugiat nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquet sodales vehicula. Fusce varius diam finibus, vestibulum erat ut, bibendum ex. Sed nibh dolor, malesuada sit amet justo a, viverra laoreet quam. Nam lacinia tristique placerat.
+Another option is to add Varvara CSS to your own build process:
 
-Curabitur interdum est et tortor rutrum, at auctor tellus tristique. Aliquam erat volutpat. Nulla sit amet mollis tellus, sodales aliquet eros. Fusce vitae urna lorem. Nunc convallis felis vitae diam condimentum, in rhoncus diam sodales. Etiam id dolor eget sapien faucibus auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere eget augue ultricies ultrices. Donec faucibus augue leo, at fermentum nibh malesuada ut. Nulla vel lorem a lorem bibendum ullamcorper sed et sem. Nam orci justo, scelerisque posuere quam quis, fringilla lobortis turpis. Nam convallis faucibus nunc, eu pellen.
+```bash
+npm i varvara-css@alpha
+```
+
+After, you have to import the package into your stylesheet:
+
+```css
+@import 'varvara-css/variables';
+@import 'varvara-css/components';
+```
+
+> An @import rule must be defined at the top of the stylesheet
+
+With both options, you have the ability to customize the components using [CSS variables](/variables).
+
+## Use
+
+Once installed Varvara CSS, copy and paste [components](/components) classes to get started.
+
+Simply add a component class like this:
+
+```html
+<button class="va-button">Example button</button>
+```
+
+## Customize
+
+Each component already has its own CSS variables, with basic properties such as padding, background color, border, etc... You can modify to customize it.
+
+```css
+--va-button-font-size: var(--va-font-size-2);
+--va-button-padding: var(--va-space-3);
+--va-button-border-width: var(--va-border-width);
+...
+```
+
+Also you can override the styles if you prefer:
+
+```css
+.va-button {
+  font-family: 'Rubik Variable', sans-serif;
+}
+```

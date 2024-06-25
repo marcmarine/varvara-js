@@ -2,16 +2,23 @@
 import { getEntry } from 'astro:content';
 import Layout from '../layouts/Page.astro'
 
-
 const variables = await getEntry('docs', 'index');
 const { Content, headings } = await variables.render()
 
 const links = headings.filter(heading => heading.depth === 2).map((heading) => ({
 		text: heading.text,
-		href: `/docs#${heading.slug}`
+		href: `/get-started#${heading.slug}`
 	}))
 ---
 
-<Layout items={links} backHref="/">
+<Layout items={links} backHref="/" className="article">
   <Content />
+	<div class="py-8 flex justify-between">
+		<a href="/" class="font-semibold text-lg hover:underline">
+			← Home
+		</a>
+		<a href="/variables" class="font-semibold text-lg hover:underline">
+			CSS Variables →
+		</a>
+	</div>
 </Layout>

@@ -1,8 +1,6 @@
 ---
-
 import { getEntry } from 'astro:content';
 import Layout from '../layouts/Page.astro'
-
 
 const variables = await getEntry('docs', 'variables');
 const { Content, headings } = await variables.render()
@@ -13,6 +11,14 @@ const links = headings.filter(heading => heading.depth === 2).map((heading) => (
 	}))
 ---
 
-<Layout items={links} backHref="/">
+<Layout items={links} backHref="/" className="article">
   <Content />
+	<div class="py-8 flex justify-between">
+		<a href="/get-started" class="font-semibold text-lg hover:underline">
+			← Get started
+		</a>
+		<a href="/components" class="font-semibold text-lg hover:underline">
+			Components →
+		</a>
+	</div>
 </Layout>

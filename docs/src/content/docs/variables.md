@@ -7,28 +7,18 @@ title: Css variables
 ## Colors
 
 ```css
---va-color-blue: blue;
---va-color-yellow: #fee200;
---va-color-fuchsia: #e83f6f;
---va-color-white: #ffffff;
---va-color-black: #000000;
-
---va-color-primary: var(--color-blue);
---va-background-primary: var(--color-primary);
+--va-color-primary: var(--va-color-blue);
+--va-background-primary: var(--va-color-primary);
 
 --va-text-normal: #ffffff;
 --va-text-weak: color-mix(in srgb, var(--va-text-normal) 20%, transparent);
+```
 
---va-surface-primary: color-mix(
-  in srgb,
-  var(--background-primary) 80%,
-  transparent
-);
---va-surface-primary-alt: color-mix(
-  in srgb,
-  var(--background-primary) 80%,
-  var(--color-black)
-);
+## Border
+
+```css
+--va-border-width: 2px;
+--va-border-color: var(--va-text-normal);
 ```
 
 ## Font Size

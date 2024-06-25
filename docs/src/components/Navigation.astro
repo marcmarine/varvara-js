@@ -10,8 +10,8 @@ interface Item {
 
 const defaultItems: Item[] = [
 	{
-		text: 'Documentation',
-		href: '/docs'
+		text: 'Get started',
+		href: '/get-started'
 	},
 	{
 		text: 'CSS Variables',
@@ -30,13 +30,13 @@ const defaultItems: Item[] = [
 const { items = defaultItems} = Astro.props
 ---
 
-<nav>
+<nav class="bg-grid-top bg-grid-bottom">
   <ul class="button-group">
-		{items.map(item => 
+		{items.map(item => (
 			<li class="w-full">
 				<a href={ item.href } class="button">
 					{item.text}
 				</a>
 			</li>
-		)}
+		))}
 </ul>
