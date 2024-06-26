@@ -15,10 +15,16 @@ const data = await response.json();
   <div class="px-4 grid grid-cols-[280px_1fr] grid-rows-[auto_auto_1fr] min-h-screen gap-8 max-w-7xl mx-auto">
     <div class="col-start-1 row-start-1 relative z-10 bg-grid-left bg-grid-right">
       <div class="flex flex-col !sticky top-0">
-        <header class="h-16 flex items-center text-center">
-          <a href="/" class="grid grid-cols-[max-content_min-content] gap-1">
-            <span class="p-1 bg-[--va-color-primary] font-semibold font-mono text-[--va-background-primary] leading-none">varvara-css</span>
-            <span class="px-1 flex items-center bg-[deepPink] font-mono font-light text-[10px] whitespace-nowrap">{data.version}</span>
+        <header class="h-16 px-1 flex items-center">
+          <a href="/" class="flex items-center gap-4">
+            <div class="v-shape">
+              <span></span>
+              <span></span>
+            </div>
+            <div  class="grid grid-flow-row">
+              <span class="font-bold leading-none">varvara-css</span>
+              <span class="leading-none text-xs">{data.version}</span>
+            </div>
           </a>
         </header>
         <Navigation items={customLinks} />
