@@ -3,6 +3,7 @@ title: Button Group
 ---
 
 import Example from '../../components/Example.astro'
+import Code from '../../components/Code.astro'
 import ButtonGroup from '../../components/lib/button-group'
 export const Component = () => <ButtonGroup />
 
@@ -12,13 +13,14 @@ export const Component = () => <ButtonGroup />
 
 <Example component={Component}>
 
-```html
-<div class="button-group">
+<Code
+  code={`<div class="button-group">
   <button class="button">add</button>
   <button class="button">random</button>
   <button class="button">notes</button>
-</div>
-```
+</div>`}
+  lang="html"
+/>
 
 </Example>
 
@@ -33,13 +35,16 @@ export const Component = () => <ButtonGroup />
     </div>
   )}
 >
-  ```html
-  <div class="button-group w-full">
-    <button class="button w-full">add</button>
-    <button class="button w-full">random</button>
-    <button class="button w-full">notes</button>
-  </div>
-  ```
+
+<Code
+  code={`<div class="button-group w-full">
+  <button class="button w-full">add</button>
+  <button class="button w-full">random</button>
+  <button class="button w-full">notes</button>
+</div>`}
+  lang="html"
+/>
+
 </Example>
 
 ## Centered
@@ -53,13 +58,16 @@ export const Component = () => <ButtonGroup />
     </div>
   )}
 >
-  ```html
-  <div class="button-group w-full text-center">
-    <button class="button w-full">add</button>
-    <button class="button w-full">random</button>
-    <button class="button w-full">notes</button>
-  </div>
-  ```
+
+<Code
+  code={`<div class="button-group w-full text-center">
+  <button class="button w-full">add</button>
+  <button class="button w-full">random</button>
+  <button class="button w-full">notes</button>
+</div>`}
+  lang="html"
+/>
+
 </Example>
 
 ## Horizontal
@@ -72,12 +80,15 @@ export const Component = () => <ButtonGroup />
     </div>
   )}
 >
-  ```html
-  <div class="button-group button-group--horizontal">
-    <button class="button">back</button>
-    <button class="button">add</button>
-  </div>
-  ```
+
+<Code
+  code={`<div class="button-group button-group--horizontal">
+  <button class="button">back</button>
+  <button class="button">add</button>
+</div>`}
+  lang="html"
+/>
+
 </Example>
 
 ## Compound
@@ -93,13 +104,15 @@ export const Component = () => <ButtonGroup />
     </div>
   )}
 >
-  ```html
-  <div class="button-group text-center">
-    <button class="button w-full">translation</button>
-    <div class="button-group button-group--horizontal">
-      <button class="button">back</button>
-      <button class="button">add</button>
-    </div>
+<Code
+  code={`<div class="button-group text-center">
+  <button class="button w-full">translation</button>
+  <div class="button-group button-group--horizontal">
+    <button class="button">back</button>
+    <button class="button">add</button>
   </div>
-  ```
+</div>`}
+  lang="html"
+/>
+
 </Example>

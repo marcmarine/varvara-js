@@ -3,6 +3,7 @@ title: Button
 ---
 
 import Example from '../../components/Example.astro'
+import Code from '../../components/Code.astro'
 import Button from '../../components/lib/button'
 export const Component = () => <Button />
 
@@ -10,20 +11,20 @@ export const Component = () => <Button />
 
 ## Variables
 
-```css
---va-button-font-size: var(--va-font-size-2);
+<Code
+  code={`--va-button-font-size: var(--va-font-size-2);
 --va-button-padding: var(--va-space-3);
 --va-button-border-width: var(--va-border-width);
 --va-button-border-color: var(--va-border-color);
---va-button-background-color: var(--va-surface-primary);
-```
+--va-button-background-color: var(--va-surface-primary);`}
+  lang="css"
+  className="mb-4"
+/>
 
 ## Default
 
 <Example component={Component}>
-  ```js
-  <button class="button">Example button</button>
-  ```
+  <Code code={`<button class="button">Example button</button>`} lang="html" />
 </Example>
 
 ## Action
@@ -33,9 +34,12 @@ export const Component = () => <Button />
     <button class="button button--action">Example button</button>
   )}
 >
-  ```js
-  <button class="button button--action">Example button</button>
-  ```
+
+<Code
+  code={`<button class="button button--action">Example button</button>`}
+  lang="html"
+/>
+
 </Example>
 
 ## Active
@@ -45,19 +49,25 @@ export const Component = () => <Button />
     <button class="button button--active">Example button</button>
   )}
 >
-  ```js
-  <button class="button button--active">Example button</button>
-  ```
+
+<Code
+  code={`<button class="button button--active">Example button</button>`}
+  lang="html"
+/>
+
 </Example>
 
 ## Disabled
 
 <Example
-  component={() => (
-    <button class="button button--disabled">Example button</button>
-  )}
->
-  ```js
+component={() => (
   <button class="button button--disabled">Example button</button>
-  ```
+)}
+>
+
+<Code
+  code={`<button class="button button--disabled">Example button</button>`}
+  lang="html"
+/>
+
 </Example>

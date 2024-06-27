@@ -3,6 +3,7 @@ title: Table
 ---
 
 import Example from '../../components/Example.astro'
+import Code from '../../components/Code.astro'
 import Table from '../../components/lib/table'
 export const Component = () => <Table />
 
@@ -10,13 +11,14 @@ export const Component = () => <Table />
 
 ## Variables
 
-```css
---va-table-font-size: var(--va-font-size-1);
+<Code
+  code={`--va-table-font-size: var(--va-font-size-1);
 --va-table-padding: var(--va-space-3);
 --va-table-border-width: var(--va-border-width);
 --va-table-border-color: var(--va-border-color);
---va-table-background-color: var(--va-surface-primary);
-```
+--va-table-background-color: var(--va-surface-primary);`}
+  lang="css"
+/>
 
 ## Default
 
@@ -25,8 +27,8 @@ export const Component = () => <Table />
 
 >
 
-```js
-<table class="table">
+<Code
+  code={`<table class="table">
   <thead>
     <tr>
       <th>Date</th>
@@ -47,7 +49,8 @@ export const Component = () => <Table />
       <td>£4,282.20</td>
     </tr>
   </tbody>
-</table>
-```
+</table>`}
+  lang="html"
+/>
 
 </Example>

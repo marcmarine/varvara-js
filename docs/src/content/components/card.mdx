@@ -3,6 +3,7 @@ title: Card
 ---
 
 import Example from '../../components/Example.astro'
+import Code from '../../components/Code.astro'
 import Card from '../../components/lib/card'
 export const Component = () => <Card />
 
@@ -10,14 +11,15 @@ export const Component = () => <Card />
 
 ## Variables
 
-```css
---va-card-color: var(--va-text-normal);
+<Code
+  code={`--va-card-color: var(--va-text-normal);
 --va-card-font-size: var(--va-font-size-1);
 --va-card-padding: var(--va-space-3);
 --va-card-border-width: var(--va-border-width);
 --va-card-border-color: var(--va-border-color);
---va-card-background-color: var(--va-surface-primary);
-```
+--va-card-background-color: var(--va-surface-primary);`}
+  lang="css"
+/>
 
 ## Default
 
@@ -26,8 +28,8 @@ export const Component = () => <Card />
 
 >
 
-```js
-<div class="card w-full">
+<Code
+  code={`<div class="card w-full">
   <div class="card__body">
     <h2 class="card__title">Your Gateway to Timeless Literature</h2>
     <p>
@@ -41,7 +43,8 @@ export const Component = () => <Card />
   <div class="card__actions text-right">
     <button class="button">Start →</button>
   </div>
-</div>
-```
+</div>`}
+  lang="html"
+/>
 
 </Example>

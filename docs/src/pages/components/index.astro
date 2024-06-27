@@ -12,7 +12,7 @@ const links = allComponents.map(({data, slug}) => ({
 const components = await Astro.glob('../../content/components/*.mdx');
 ---
 
-<Layout items={links} backHref="/" className="article">
+<Layout items={links} backHref="/" className="article row-start-1 row-end-4">
 	<h1>Components</h1>
 	<p>{allComponents.length} components</p>
 

@@ -66,13 +66,8 @@ const { title = 'varvara-css' } = Astro.props;
 
 	[data-theme='blue'] {
 		--va-background-primary: orange;
-		--va-text-normal: black
+		--va-text-normal: black;
 	}
-
-	/* [data-theme='black'] {
-		--va-background-primary: black;
-		--va-text-normal: white
-	} */
 
 	[data-theme='black'] {
 		--va-color-primary: #9fe88d;
@@ -131,7 +126,7 @@ const { title = 'varvara-css' } = Astro.props;
 		}
 
 		h1 {
-			@apply flex items-center sticky top-0 border-b border-[--va-text-weak] h-[calc(4rem+1px)] border-dashed backdrop-blur-lg;
+			@apply leading-[3rem] flex items-end sticky top-0 border-b border-[--va-text-weak] h-[calc(4rem+1px)] border-dashed backdrop-blur-lg;
 			background-color: var(--va-surface-primary);
 		}
 	}
@@ -173,9 +168,9 @@ const { title = 'varvara-css' } = Astro.props;
 	.bg-grid-right::after {
 		content: '';
 		position: absolute;
-		top: -100%;
+		top: -200%;
 		width: var(--line-width);
-		height: 200%;
+		height: 300%;
 		background: linear-gradient(180deg, var(--line-color), var(--line-color) 50%, transparent 0, transparent);
 		background-size: var(--line-width) var(--line-gap);
 		z-index: 1;

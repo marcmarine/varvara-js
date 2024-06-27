@@ -3,6 +3,7 @@ title: Select
 ---
 
 import Example from '../../components/Example.astro'
+import Code from '../../components/Code.astro'
 import Select from '../../components/lib/select'
 export const Component = () => <Select />
 
@@ -11,16 +12,19 @@ export const Component = () => <Select />
 ## Default
 
 <Example component={Component}>
-  ```js
-  <select class="select border-2">
-    <option disabled selected>
-      Choose an option
-    </option>
-    <option value="one">Option one</option>
-    <option value="two">Option two</option>
-    <option value="three">Option three</option>
-  </select>
-  ```
+
+<Code
+  code={`<select class="select border-2">
+  <option disabled selected>
+    Choose an option
+  </option>
+  <option value="one">Option one</option>
+  <option value="two">Option two</option>
+  <option value="three">Option three</option>
+</select>`}
+  lang="html"
+/>
+
 </Example>
 
 ## With label
@@ -40,17 +44,20 @@ export const Component = () => <Select />
     </div>
   )}
 >
-  ```js
-  <div class="select-group border-2">
-    <label>Select</label>
-    <select class="select">
-      <option disabled selected>
-        Pick an option
-      </option>
-      <option value="one">Option one</option>
-      <option value="two">Option two</option>
-      <option value="three">Option three</option>
-    </select>
-  </div>
-  ```
+
+<Code
+  code={` <div class="select-group border-2">
+  <label>Select</label>
+  <select class="select">
+    <option disabled selected>
+      Pick an option
+    </option>
+    <option value="one">Option one</option>
+    <option value="two">Option two</option>
+    <option value="three">Option three</option>
+  </select>
+</div>`}
+  lang="html"
+/>
+
 </Example>

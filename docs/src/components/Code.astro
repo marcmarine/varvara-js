@@ -1,0 +1,55 @@
+---
+import { codeToHtml } from 'shiki'
+
+const {
+  code,
+  lang = 'javascript',
+  className = ''
+} = Astro.props;
+
+
+const html = await codeToHtml(code, {
+  lang,
+  theme: 'one-dark-pro',
+})
+
+---
+<va-code data-code={code}>
+  <div class={`card ${className}`}>
+    <div class="card__body">
+      <Fragment set:html={html} />
+    </div>
+    <div class="card__actions">
+      <button class="button button--action flex-1" data-action>Copy</button>
+      <button class="button button--active flex-0 !text-center">{lang}</button>
+    </div>
+  </div>
+</va-code>
+
+<style>
+  .card {
+    --va-card-padding: 0;
+  }
+</style>
+
+<script>
+  export class VaCode extends HTMLElement {
+  constructor() {
+    super();
+    
+    const code = this.dataset.code;
+    const button = this.querySelector('[data-action]');
+    button?.addEventListener('click', (event: any) => {
+      navigator.clipboard.writeText(code as string)
+
+      event.target.innerText = 'COPIED!'
+      setTimeout(() => {
+        event.target.innerText = 'COPY'
+      }, 2000)
+    });
+
+  }
+}
+
+  customElements.define('va-code', VaCode);
+</script>

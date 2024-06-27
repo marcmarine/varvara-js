@@ -1,0 +1,68 @@
+---
+title: Css variables
+---
+
+import Code from '../../components/Code.astro'
+
+# CSS Variables
+
+## Colors
+
+<Code
+  code={`--va-color-primary: var(--va-color-blue);
+--va-background-primary: var(--va-color-primary);
+--va-text-normal: #ffffff;
+--va-text-weak: color-mix(in srgb, var(--va-text-normal) 20%, transparent);`}
+  lang="css"
+/>
+
+## Border
+
+<Code
+  code={`--va-border-width: 2px;
+--va-border-color: var(--va-text-normal);`}
+  lang="css"
+/>
+
+## Font Size
+
+<Code
+  code={`--va-font-size-ratio: 1;
+
+--va-font-size-00: calc(0.5rem _ var(--va-font-size-ratio));
+--va-font-size-0: calc(0.75rem _ var(--va-font-size-ratio));
+--va-font-size-1: calc(1rem _ var(--va-font-size-ratio));
+--va-font-size-2: calc(1.1rem _ var(--va-font-size-ratio));
+--va-font-size-3: calc(1.25rem _ var(--va-font-size-ratio));
+--va-font-size-4: calc(1.5rem _ var(--va-font-size-ratio));
+--va-font-size-5: calc(2rem _ var(--va-font-size-ratio));
+--va-font-size-6: calc(2.5rem _ var(--va-font-size-ratio));
+--va-font-size-7: calc(3rem _ var(--va-font-size-ratio));
+--va-font-size-8: calc(3.5rem _ var(--va-font-size-ratio));`}
+lang="css"
+/>
+
+## Space
+
+<Code
+  code={`--va-space-ratio: 1;
+
+--va-space-000: calc(-0.5rem _ var(--va-space-ratio));
+--va-space-00: calc(-0.25rem _ var(--va-space-ratio));
+--va-space-1: calc(0.25rem _ var(--va-space-ratio));
+--va-space-2: calc(0.5rem _ var(--va-space-ratio));
+--va-space-3: calc(0.75rem _ var(--va-space-ratio));
+--va-space-4: calc(1rem _ var(--va-space-ratio));
+--va-space-5: calc(1.25rem _ var(--va-space-ratio));
+--va-space-6: calc(1.5rem _ var(--va-space-ratio));
+--va-space-7: calc(1.75rem _ var(--va-space-ratio));
+--va-space-8: calc(2rem _ var(--va-space-ratio));
+--va-space-9: calc(3rem _ var(--va-space-ratio));
+--va-space-10: calc(4rem _ var(--va-space-ratio));
+--va-space-11: calc(5rem _ var(--va-space-ratio));
+--va-space-12: calc(7.5rem _ var(--va-space-ratio));
+--va-space-13: calc(10rem _ var(--va-space-ratio));
+--va-space-14: calc(15rem _ var(--va-space-ratio));
+--va-space-15: calc(20rem \* var(--va-space-ratio));`}
+lang="css"
+/>
