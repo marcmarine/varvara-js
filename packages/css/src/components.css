@@ -45,6 +45,7 @@
     calc(100% - 0.515rem) calc(1px + 50%);
   background-size: 0.3rem 0.3rem, 0.3rem 0.3rem;
   background-repeat: no-repeat;
+  background-color: var(--va-button-background-color);
 
   option:disabled {
     color: red;
