@@ -31,7 +31,7 @@ const { items = defaultItems} = Astro.props
 ---
 
 <nav class="bg-grid-top bg-grid-bottom">
-  <ul class="button-group">
+  <ul class="button-group backdrop-blur">
 		{items.map(item => (
 			<li class="w-full">
 				<a href={ item.href } class="button">
