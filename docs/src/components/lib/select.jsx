@@ -1,6 +1,6 @@
 export default function Select() {
   return (
-    <select class="select border-2">
+    <select class="va-select border-2">
       <option disabled selected>
         Choose an option
       </option>

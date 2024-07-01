@@ -1,8 +1,8 @@
 export default function Card() {
   return (
-    <div class="card w-full">
-      <div class="card__body">
-        <h2 class="card__title">Your Gateway to Timeless Literature</h2>
+    <div class="va-card w-full">
+      <div class="va-card__body">
+        <h2 class="va-card__title">Your Gateway to Timeless Literature</h2>
         <p>
           Welcome to OMUSO API, a digital service for literature enthusiasts and
           developrs. Our platform leverages a powerful API to bring you an
@@ -11,8 +11,8 @@ export default function Card() {
           most treasured literary works.
         </p>
       </div>
-      <div class="card__actions text-right">
-        <button class="button">Start →</button>
+      <div class="va-card__actions text-right">
+        <button class="va-button">Start →</button>
       </div>
     </div>
   )

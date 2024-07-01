@@ -15,13 +15,13 @@ const html = await codeToHtml(code, {
 
 ---
 <va-code data-code={code}>
-  <div class={`card ${className}`}>
-    <div class="card__body">
+  <div class={`va-card ${className}`}>
+    <div class="va-card__body">
       <Fragment set:html={html} />
     </div>
-    <div class="card__actions">
-      <button class="button button--action flex-1" data-action>Copy</button>
-      <button class="button button--active flex-0 !text-center">{lang}</button>
+    <div class="va-card__actions">
+      <button class="va-button va-button--action flex-1" data-action>Copy</button>
+      <button class="va-button va-button--active flex-0 !text-center">{lang}</button>
     </div>
   </div>
 </va-code>

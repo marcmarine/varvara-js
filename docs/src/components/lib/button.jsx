@@ -1,3 +1,3 @@
 export default function Button() {
-  return <button class="button">Example button</button>
+  return <button class="va-button">Example button</button>
 }

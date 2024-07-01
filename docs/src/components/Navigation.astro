@@ -31,10 +31,10 @@ const { items = defaultItems} = Astro.props
 ---
 
 <nav class="bg-grid-top bg-grid-bottom">
-  <ul class="button-group backdrop-blur">
+  <ul class="va-button-group backdrop-blur">
 		{items.map(item => (
 			<li class="w-full">
-				<a href={ item.href } class="button">
+				<a href={ item.href } class="va-button">
 					{item.text}
 				</a>
 			</li>

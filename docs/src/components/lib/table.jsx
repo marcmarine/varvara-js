@@ -1,6 +1,6 @@
 export default function Table() {
   return (
-    <table class="table">
+    <table class="va-table">
       <thead>
         <tr>
           <th>Date</th>

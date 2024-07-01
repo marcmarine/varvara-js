@@ -20,12 +20,12 @@ const components = await Astro.glob('../../content/components/*.mdx');
 		{allComponents.map(({data, slug}) => {
 			const { Component }: any = components.find((item) => item.frontmatter.title === data.title)
 			return (
-			<div class="card">
-				<div class="card__body aspect-video grid place-content-center bg-black/20">
+			<div class="va-card">
+				<div class="va-card__body aspect-video grid place-content-center bg-black/20">
 					{Component ? <Component /> : <h2>{data.title}</h2>}
 				</div>
-				<div class="card__actions">
-					<a href={`/components/${slug}`} class="button">More info →</a>
+				<div class="va-card__actions">
+					<a href={`/components/${slug}`} class="va-button">More info →</a>
 				</div>
 			</div>
 		)
