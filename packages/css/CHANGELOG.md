@@ -1,5 +1,15 @@
 # varvara-css
 
+## 0.2.0-alpha.9
+
+### Minor Changes
+
+- 0f9b4ce: Add the prefix `va-` to class names
+
+### Patch Changes
+
+- 8d741ae: Update CSS variables
+
 ## 0.2.0-alpha.8
 
 ### Minor Changes
