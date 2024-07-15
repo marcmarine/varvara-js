@@ -2,8 +2,6 @@
   "name": "varvara-css",
   "version": "0.2.0-alpha.9",
   "license": "MIT",
-  "main": "src/index.cjs",
-  "unpkg": "dist/varvara.css",
   "description": "CSS library of customizable UI components based on CSS Variables.",
   "author": "Marc Mariné <shenobi@gmail.com>",
   "homepage": "https://github.com/marcmarine/varvara",
@@ -32,14 +30,16 @@
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
+  "type": "module",
+  "main": "dist/varvara.css",
+  "unpkg": "dist/varvara.css",
   "exports": {
-    ".": "./src/index.cjs",
+    ".": "./dist/varvara.css",
     "./variables": "./dist/variables.css",
     "./components": "./dist/components.css"
   },
   "files": [
-    "dist",
-    "src/index.cjs"
+    "dist"
   ],
   "publishConfig": {
     "access": "public"
@@ -49,6 +49,5 @@
     "build:js": "prejss-cli dist/*.css --out-dir dist",
     "build": "bun run build:css && bun run build:js",
     "dev": "chokidar src -c 'bun run build'"
-  },
-  "type": "module"
+  }
 }
