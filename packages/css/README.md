@@ -29,7 +29,7 @@ Alternatively, add this line to the `head` tag of your HTML:
 />
 ```
 
-You'll have access to both [variables](/variables) and [components](/components) from the same import.
+You'll have access to both variables and components from the same import.
 
 ### NPM
 
