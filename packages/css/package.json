@@ -1,8 +1,22 @@
 {
   "name": "varvara-css",
   "version": "0.2.0-alpha.9",
+  "license": "MIT",
   "main": "src/index.cjs",
   "unpkg": "dist/varvara.css",
+  "description": "CSS library of customizable UI components based on CSS Variables.",
+  "author": "Marc Mariné <shenobi@gmail.com>",
+  "homepage": "https://github.com/marcmarine/varvara",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcmarine/varvara.git",
+    "directory": "packages/css"
+  },
+  "keywords": [
+    "css",
+    "css-variables",
+    "varvara-css"
+  ],
   "devDependencies": {
     "@types/bun": "latest",
     "autoprefixer": "^10.4.19",
