@@ -23,7 +23,7 @@ jobs:
         run: bun install
 
       - name: Build Documentation
-        run: bun run build --filter='./docs'
+        run: bun run build
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
