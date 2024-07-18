@@ -3,7 +3,7 @@ interface Props {
 	title?: string;
 	page?: string
 }
-//@ts-ignore
+
 const { title = 'Varvara - JavaScript toolkit for building web browsing experiences.', page } = Astro.props;
 const className = 'page'.concat(page ? ' ' + `page--${page}` : '')
 ---
