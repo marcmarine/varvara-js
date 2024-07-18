@@ -4,7 +4,8 @@ import mdx from '@astrojs/mdx'
 import react from '@astrojs/react'
 
 export default defineConfig({
-  site: 'https://varvara.js.org',
+  site: 'https://marcmarine.github.io',
+  base: 'varvara',
   integrations: [
     tailwind({
       applyBaseStyles: false
