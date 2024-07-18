@@ -31,7 +31,6 @@
     "typescript": "^5.0.0"
   },
   "type": "module",
-  "main": "dist/varvara.css",
   "unpkg": "dist/varvara.css",
   "exports": {
     ".": "./dist/varvara.css",
