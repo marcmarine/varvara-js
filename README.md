@@ -39,7 +39,7 @@ Varvara is probably going to grow 🚀.
 
 ## Release notes
 
-If you want to be aware of all the changes you can explore the [release notes](releases) or the individual `CHANGELOG.md` inside each package.
+If you want to be aware of all the changes you can explore the [release notes](https://github.com/marcmarine/varvara/releases) or the individual `CHANGELOG.md` inside each package.
 
 ## Contributing
 
