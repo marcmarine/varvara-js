@@ -7,17 +7,17 @@ const { Content, headings } = await variables.render()
 
 const links = headings.filter(heading => heading.depth === 2).map((heading) => ({
 		text: heading.text,
-		href: `/varvara/get-started#${heading.slug}`
+		href: `/get-started#${heading.slug}`
 	}))
 ---
 
 <Layout items={links} backHref="/">
   <Content />
 	<div class="py-8 flex justify-between">
-		<a href="/varvara" class="font-semibold text-lg hover:underline">
+		<a href="/" class="font-semibold text-lg hover:underline">
 			← Home
 		</a>
-		<a href="/varvara/variables" class="font-semibold text-lg hover:underline">
+		<a href="/variables" class="font-semibold text-lg hover:underline">
 			CSS Variables →
 		</a>
 	</div>

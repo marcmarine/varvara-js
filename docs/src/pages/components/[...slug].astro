@@ -17,7 +17,7 @@ const { Content, headings } = await component.render();
 
 const links = headings.filter(heading => heading.depth === 2).map((heading) => ({
 		text: heading.text,
-		href: `/varvara/components/${component.slug}#${heading.slug}`
+		href: `/components/${component.slug}#${heading.slug}`
 	}))
 ---
 

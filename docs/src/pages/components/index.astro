@@ -6,7 +6,7 @@ const allComponents = await getCollection('components');
 
 const links = allComponents.map(({data, slug}) => ({
 		text: data.title,
-		href: `/varvara/components/${slug}`
+		href: `/components/${slug}`
 	}))
 
 const components = await Astro.glob('../../content/components/*.mdx');
@@ -32,7 +32,7 @@ const components = await Astro.glob('../../content/components/*.mdx');
 		})}
 	</div>
 	<div class="py-8 flex justify-between">
-		<a href="/varvara/variables" class="font-semibold text-lg hover:underline">
+		<a href="/variables" class="font-semibold text-lg hover:underline">
 			← CSS Variables
 		</a>
 		<a href="https://github.com/marcmarine/varvara" class="font-semibold text-lg hover:underline">
