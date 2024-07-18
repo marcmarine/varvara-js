@@ -1,5 +1,15 @@
 # varvara-css
 
+## 0.2.0-alpha.10
+
+### Minor Changes
+
+- 76a5e62: Introduce `va-base` and `va-components` cascade layer names.
+
+### Patch Changes
+
+- d973927: Allows to import `varvara.css` from the root entry point of the package.
+
 ## 0.2.0-alpha.9
 
 ### Minor Changes
