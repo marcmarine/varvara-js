@@ -15,8 +15,8 @@ const html = await codeToHtml(code, {
 
 ---
 <va-code data-code={code}>
-  <div class={`va-card ${className}`}>
-    <div class="va-card__body">
+  <div class={`va-card ${className} w-full`}>
+    <div class="va-card__body !p-0">
       <Fragment set:html={html} />
     </div>
     <div class="va-card__actions">

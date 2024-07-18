@@ -2,11 +2,20 @@
 title: Get started
 ---
 
+export const components = {
+  blockquote: Blockquote
+}
+
+import Blockquote from '../../components/Blockquote.astro'
 import Code from '../../components/Code.astro'
 
 # Get started
 
-**Varvara CSS** is an open-source library of customizable web components implemented using simple class names, easily tailored with CSS Variables. You can use it alongside Tailwind CSS and with any JavaScript framework.
+**Varvara CSS** is implemented using simple class names and easily customizable with CSS Variables.
+
+You can use it alongside Tailwind CSS and with any JavaScript framework.
+
+> This package is currently in its alpha stage. It is actively being developed and tested. You may encounter bugs and incomplete features.
 
 ## Install
 
@@ -42,14 +51,9 @@ Another option is to add Varvara CSS to your own build process:
 
 After, you have to import the package into your stylesheet:
 
-<Code
-  code={`@import 'varvara-css/variables';
-@import 'varvara-css/components';`}
-  lang="css"
-  className="mb-4"
-/>
+<Code code={`@import 'varvara-css';`} lang="css" className="mb-4" />
 
-> An @import rule must be defined at the top of the stylesheet
+> An `@import` rule must be defined at the top of the stylesheet
 
 With both options, you have the ability to customize the components using [CSS variables](/variables).
 

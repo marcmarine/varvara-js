@@ -12,11 +12,11 @@ const links = allComponents.map(({data, slug}) => ({
 const components = await Astro.glob('../../content/components/*.mdx');
 ---
 
-<Layout items={links} backHref="/" className="article row-start-1 row-end-4">
+<Layout items={links} backHref="/">
 	<h1>Components</h1>
 	<p>{allComponents.length} components</p>
 
-	<div class="grid grid-cols-2 gap-8">
+	<div class="grid md:grid-cols-2 gap-8">
 		{allComponents.map(({data, slug}) => {
 			const { Component }: any = components.find((item) => item.frontmatter.title === data.title)
 			return (
@@ -35,7 +35,7 @@ const components = await Astro.glob('../../content/components/*.mdx');
 		<a href="/variables" class="font-semibold text-lg hover:underline">
 			← CSS Variables
 		</a>
-		<a href="https://github.com/marcmarine" class="font-semibold text-lg hover:underline">
+		<a href="https://github.com/marcmarine/varvara" class="font-semibold text-lg hover:underline">
 			GitHub →
 		</a>
 	</div>

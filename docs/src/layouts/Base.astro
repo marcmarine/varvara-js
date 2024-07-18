@@ -1,13 +1,15 @@
 ---
 interface Props {
 	title?: string;
+	page?: string
 }
 //@ts-ignore
-const { title = 'varvara-css' } = Astro.props;
+const { title = 'Varvara - JavaScript toolkit for building web browsing experiences.', page } = Astro.props;
+const className = 'page'.concat(page ? ' ' + `page--${page}` : '')
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class={className}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -16,223 +18,27 @@ const { title = 'varvara-css' } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="overflow-x-hidden">
+	<body class="page__body overflow-x-hidden">
 		<slot />
 	</body>
 </html>
 
 <style is:global>
-	@import 'varvara-css/variables';
-	@import 'varvara-css/components';
-
-	/* ibm-plex-sans-latin-400-normal */
-	@font-face {
-		font-family: 'IBM Plex Sans';
-		font-style: normal;
-		font-display: swap;
-		font-weight: 400;
-		src: url(https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-sans@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-sans@latest/latin-400-normal.woff) format('woff');
-		unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+	@layer tailwind-base, tailwind-components, va-components;
+	
+	@import 'varvara-css';
+	@import '../styles/global.css';
+	
+	@layer tailwind-base {
+		@tailwind base;
 	}
-
-	/* ibm-plex-sans-latin-700-normal */
-	@font-face {
-		font-family: 'IBM Plex Sans';
-		font-style: normal;
-		font-display: swap;
-		font-weight: 700;
-		src: url(https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-sans@latest/latin-700-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-sans@latest/latin-700-normal.woff) format('woff');
-		unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
-}
-
-	/* rubik-latin-wght-normal */
-	@font-face {
-		font-family: 'Rubik Variable';
-		font-style: normal;
-		font-display: swap;
-		font-weight: 300 900;
-		src: url(https://cdn.jsdelivr.net/fontsource/fonts/rubik:vf@latest/latin-wght-normal.woff2) format('woff2-variations');
-		unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+	
+	@layer tailwind-components {
+		@tailwind components;
 	}
-
-	@font-face {
-		font-family: 'Noto Sans Variable';
-		font-style: normal;
-		font-display: swap;
-		font-weight: 100 900;
-		src: url(https://cdn.jsdelivr.net/fontsource/fonts/noto-sans:vf@latest/latin-wght-normal.woff2) format('woff2-variations');
-		unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
-	}
-
-	[data-theme='blue'] {
-		--va-background-primary: orange;
-		--va-text-normal: black;
-	}
-
-	[data-theme='black'] {
-		--va-color-primary: #9fe88d;
-		--va-background-primary: #2a303c;
-		--va-text-normal: #b3ccd6;
-	}
-
-	.va-button {
-  	font-family: 'Rubik Variable', sans-serif;
-	}
-
-	html {
-		scroll-behavior: smooth;
-	}
-	body {
-		@apply text-lg;
-		font-family: 'Noto Sans Variable', sans-serif;
-		color: var(--va-text-normal);
-		background-color: var(--va-background-primary);
-	}
-
-	h1, h2, h3, h4, h5, h6 {
-		@apply font-bold;
-		font-family: 'IBM Plex Sans', sans-serif;
-	}
-	h1 {
-		@apply mb-6 text-6xl font-bold;
-	}
-
-	h2 {
-		@apply mt-6 mb-4 text-5xl font-bold;
-	}
-
-	h3 {
-		@apply mt-6 mb-4 text-2xl;
-	}
-
-	p {
-		@apply mt-2 mb-4;
-
-		&:first-of-type {
-			@apply pt-0;
-		}
-	}
-
-	:target {
-		@apply text-[--va-color-primary] scroll-mt-20;
-	}
-
-	.article {
-		@apply z-10;
-		background-color: var(--va-surface-primary);
-
-		p {
-			@apply px-2
-		}
-
-		h1 {
-			@apply leading-[3rem] flex items-end sticky top-0 border-b border-[--va-text-weak] h-[calc(4rem+1px)] border-dashed backdrop-blur-lg;
-			background-color: var(--va-surface-primary);
-		}
-	}
-
-	p a {
-		@apply hover:underline;
-		color: var(--va-color-primary)
-	}
-
-	pre {
-		@apply p-4;
-
-		&:not(:last-child) {
-			@apply mb-4;
-		}
-		background-color: var(--va-surface-primary-alt);
-
-		&:first-of-type {
-			@apply mt-0;
-		}
-	}
-
-	[class*="bg-grid"] {
-		--line-color: var(--va-text-weak);
-		--line-gap: 4px;
-		--line-width: 1px;
-		position: relative;
-	}
-
-	.bg-grid-left:before {
-		left: 0;
-	}
-
-	.bg-grid-right:after {
-		right: 0;
-	}
-
-	.bg-grid-left:before,
-	.bg-grid-right::after {
-		content: '';
-		position: absolute;
-		top: -200%;
-		width: var(--line-width);
-		height: 300%;
-		background: linear-gradient(180deg, var(--line-color), var(--line-color) 50%, transparent 0, transparent);
-		background-size: var(--line-width) var(--line-gap);
-		z-index: 1;
-	}
-
-	.bg-grid-top::before {
-		top: 0
-	}
-	.bg-grid-bottom::after {
-		bottom: 0
-	}
-
-	.bg-grid-top::before,
-	.bg-grid-bottom::after {
-		content: '';
-		position: absolute;
-		left: -100vw;
-		width: 200vw;
-		height: var(--line-width);
-		background: linear-gradient(to right, var(--line-color), var(--line-color) 50%, transparent 0, transparent);
-		background-size: var(--line-gap)  var(--line-width);
-	}
-
-	.v-shape {
-		position: relative;
-		width: 30px;
-		height: 18px;
-
-		&:hover {
-			span:last-child {
-				background-color: color-mix(in srgb, var(--va-text-normal) 8%, transparent);
-			}
-		}
-
-		&:active {
-			span:last-child {
-				background-color: var(--va-text-normal);
-			}
-		}
-
-		& span:last-child {
-			display: block;
-			position: absolute;
-			margin-left: 38%;
-			width: 100%;
-			height: 100%;
-			border: 2px solid var(--va-text-normal);
-			transform: skew(-20deg) rotate(90deg);
-			background-color: color-mix(in srgb, var(--va-color-primary) 50%, transparent);
-			backdrop-filter: blur(2px);
-			transition: background 80ms ease-in-out;
-		}
-
-		& span:first-child {
-			display: block;
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			border: 2px solid var(--va-text-normal);
-			transform: skew(20deg) rotate(90deg);
-		}
-	}
+	
+	@tailwind utilities;
+	
 </style>
 
 <script is:inline>

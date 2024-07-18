@@ -2,18 +2,24 @@ import ThemeSelector from '../components/ThemeSelector.astro'
 import Layout from '../layouts/Page.astro'
 import Code from '../components/Code.astro'
 
-<Layout className="grid grid-cols-subgrid grid-rows-subgrid col-start-1 col-end-3 row-start-1 row-end-4 gap-y-0">
+<Layout page="homepage">
   <div class="pb-4 flex items-end justify-end col-start-2">
-    <ThemeSelector />
+    {/* <ThemeSelector /> */}
   </div>
-  <div class="px-4 pt-6 pb-8 flex flex-col justify-center row-start-2 col-start-1 col-end-3 bg-grid-bottom">
-    <h1 class="m-0 text-7xl xl:text-8xl">Build consistently <br/> for seamless experiences</h1>
-    <p class="mb-0">**Varvara CSS** is an open-source library of customizable web components designed for smooth and simple browsing experiences.</p>
+  <div class="px-4 pt-6 pb-8 flex flex-col justify-center row-start-2 col-start-1 col-end-3 bg-grid-bottom max-w-full">
+    <h1 class="m-0 text-5xl md:text-7xl xl:text-8xl">
+      Build consistently <br /> for seamless experiences
+    </h1>
+
+      **Varvara CSS** is an open-source library of customizable components
+      designed for smooth and simple browsing experiences.
+
   </div>
-  <div class="col-start-2 row-start-3 bg-grid-left">
-
-    <Code code={`@import url('https://unpkg.com/varvara-css@alpha');`} lang="css" className="mb-4 bg-grid-bottom" />
-
+  <div class="md:col-start-2 row-start-3 bg-grid-left">
+    <Code
+      code={`@import url('https://unpkg.com/varvara-css@alpha');`}
+      lang="css"
+      className="mb-4 bg-grid-bottom"
+    />
   </div>
-
 </Layout>
