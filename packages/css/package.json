@@ -1,6 +1,6 @@
 {
   "name": "varvara-css",
-  "version": "0.2.0-alpha.10",
+  "version": "0.2.0-alpha.11",
   "license": "MIT",
   "description": "CSS library of customizable UI components based on CSS Variables.",
   "author": "Marc Mariné <shenobi@gmail.com>",
