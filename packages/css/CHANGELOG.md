@@ -1,5 +1,11 @@
 # varvara-css
 
+## 0.2.0-alpha.11
+
+### Patch Changes
+
+- bddbfea: Updated select component styles to use variables
+
 ## 0.2.0-alpha.10
 
 ### Minor Changes
