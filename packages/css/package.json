@@ -1,20 +1,12 @@
 {
   "name": "varvara-css",
   "version": "0.2.0-alpha.11",
-  "license": "MIT",
-  "description": "CSS library of customizable UI components based on CSS Variables.",
   "author": "Marc Mariné <shenobi@gmail.com>",
-  "homepage": "https://github.com/marcmarine/varvara",
   "repository": {
     "type": "git",
     "url": "https://github.com/marcmarine/varvara.git",
     "directory": "packages/css"
   },
-  "keywords": [
-    "css",
-    "css-variables",
-    "varvara-css"
-  ],
   "devDependencies": {
     "@types/bun": "latest",
     "autoprefixer": "^10.4.19",
@@ -25,28 +17,39 @@
     "postcss-nested": "^6.0.1",
     "postcss-prefixer": "^3.0.0",
     "prejss-cli": "^0.3.3",
+    "style-to-js": "^1.1.12",
     "tailwindcss": "latest"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
-  "type": "module",
-  "unpkg": "dist/varvara.css",
   "exports": {
     ".": "./dist/varvara.css",
     "./variables": "./dist/variables.css",
-    "./components": "./dist/components.css"
+    "./components": "./dist/components.css",
+    "./tailwind": "./dist/tailwind.js"
   },
+  "description": "CSS library of customizable UI components based on CSS Variables.",
   "files": [
     "dist"
   ],
+  "homepage": "https://github.com/marcmarine/varvara",
+  "keywords": [
+    "css",
+    "css-variables",
+    "varvara-css"
+  ],
+  "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "build:css": "postcss src/*.css --dir dist",
-    "build:js": "prejss-cli dist/*.css --out-dir dist",
-    "build": "bun run build:css && bun run build:js",
+    "build:js": "prejss-cli dist/components.css --format commonjs && bun run build-vars.ts",
+    "build:tw": "bun build src/tailwind.ts --outdir dist --external '*'",
+    "build": "bun run build:css && bun run build:js && bun run build:tw",
     "dev": "chokidar src -c 'bun run build'"
-  }
+  },
+  "type": "module",
+  "unpkg": "dist/varvara.css"
 }
