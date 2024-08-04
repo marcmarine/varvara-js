@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 interface Props {
 	title?: string;
 	page?: string
@@ -22,24 +24,6 @@ const className = 'page'.concat(page ? ' ' + `page--${page}` : '')
 		<slot />
 	</body>
 </html>
-
-<style is:global>
-	@layer tailwind-base, tailwind-components, va-components;
-	
-	@import 'varvara-css';
-	@import '../styles/global.css';
-	
-	@layer tailwind-base {
-		@tailwind base;
-	}
-	
-	@layer tailwind-components {
-		@tailwind components;
-	}
-	
-	@tailwind utilities;
-	
-</style>
 
 <script is:inline>
   const theme = (() => {

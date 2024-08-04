@@ -5,11 +5,5 @@ import react from '@astrojs/react'
 
 export default defineConfig({
   site: 'https://varvara.js.org',
-  integrations: [
-    tailwind({
-      applyBaseStyles: false
-    }),
-    mdx(),
-    react()
-  ]
+  integrations: [tailwind(), mdx(), react()]
 })
