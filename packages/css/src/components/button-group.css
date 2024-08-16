@@ -1,0 +1,9 @@
+.button-group {
+  &:not(.button-group--horizontal) {
+    @apply -space-y-[--va-border-width];
+  }
+
+  &--horizontal {
+    @apply flex -space-x-[--va-border-width];
+  }
+}

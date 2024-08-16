@@ -1,0 +1,36 @@
+.button {
+  --va-button-font-size: var(--va-font-size-1);
+  --va-button-padding: var(--va-space-3);
+  --va-button-border-width: var(--va-border-width);
+  --va-button-border-color: var(--va-border-color);
+  --va-button-background-color: var(--va-surface-primary);
+
+  @apply block leading-none font-medium;
+  padding: var(--va-button-padding);
+  font-size: var(--va-button-font-size);
+  text-align: inherit;
+  background-color: var(--va-button-background-color);
+  border-style: solid;
+  border-width: var(--va-button-border-width);
+  border-color: var(--va-button-border-color);
+
+  &:hover:not(&:active):not(&--active) {
+    background-color: color-mix(in srgb, var(--va-text-normal) 8%, transparent);
+  }
+
+  &:active,
+  &--active {
+    color: var(--va-surface-primary);
+    background-color: var(--va-text-normal);
+  }
+
+  &--disabled,
+  &[disabled] {
+    @apply pointer-events-none;
+    color: var(--va-text-weak);
+  }
+
+  &--action {
+    @apply uppercase;
+  }
+}
