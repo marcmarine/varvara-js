@@ -1,4 +1,4 @@
-@import 'varvara-css';
+@import 'varvara-css/css';
 
 [data-theme='blue'] {
   --va-background-primary: orange;
