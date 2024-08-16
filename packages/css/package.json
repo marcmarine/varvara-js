@@ -23,11 +23,10 @@
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
+  "main": "./dist/tailwind.js",
   "exports": {
-    ".": "./dist/varvara.css",
-    "./variables": "./dist/variables.css",
-    "./components": "./dist/components.css",
-    "./tailwind": "./dist/tailwind.js"
+    ".": "./dist/tailwind.js",
+    "./css": "./dist/varvara.css"
   },
   "description": "CSS library of customizable UI components based on CSS Variables.",
   "files": [
