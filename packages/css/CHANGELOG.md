@@ -1,5 +1,14 @@
 # varvara-css
 
+## 0.2.0-alpha.13
+
+### Minor Changes
+
+- 087b8d1: Updated export structure to simplify importing:
+
+  - Tailwind plugin is now imported from the root
+  - Styles are imported from the `/css` directory
+
 ## 0.2.0-alpha.12
 
 ### Minor Changes
