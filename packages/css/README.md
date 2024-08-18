@@ -42,7 +42,7 @@ npm i varvara-css@alpha
 After, you have to import the package into your stylesheet:
 
 ```css
-@import 'varvara-css';
+@import 'varvara-css/css';
 ```
 
 > [!TIP]
