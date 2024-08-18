@@ -2,13 +2,13 @@
 
 [data-theme='blue'] {
   --va-background-primary: orange;
-  --va-text-normal: black;
+  --va-color-foreground: black;
 }
 
 [data-theme='black'] {
   --va-color-primary: #9fe88d;
-  --va-background-primary: #2a303c;
-  --va-text-normal: #b3ccd6;
+  --va-color-background: #2a303c;
+  --va-color-foreground: #b3ccd6;
 }
 
 .va-button {
