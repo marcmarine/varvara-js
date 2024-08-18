@@ -1,8 +1,8 @@
 :root {
-  --va-color-primary: #2a303c;
-  --va-background-primary: #b3ccd6;
+  --va-color-primary: fuchsia;
+  --va-background-primary: white;
 
-  --va-text-normal: #2a303c;
+  --va-text-normal: black;
   --va-text-weak: color-mix(in srgb, var(--va-text-normal) 20%, transparent);
 
   --va-surface-primary: color-mix(
