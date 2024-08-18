@@ -1,5 +1,11 @@
 # varvara-css
 
+## 0.2.0-alpha.14
+
+### Minor Changes
+
+- dfe81d9: Introduce CSS variables for foreground and background colors in dark mode, ready to use out-of-the-box.
+
 ## 0.2.0-alpha.13
 
 ### Minor Changes
