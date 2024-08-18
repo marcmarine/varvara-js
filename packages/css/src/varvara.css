@@ -1,2 +1,7 @@
 @import 'variables.css';
 @import 'components.css';
+
+body {
+  background-color: var(--va-background-primary);
+  color: var(--va-text-normal);
+}

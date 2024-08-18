@@ -1,21 +1,4 @@
 :root {
-  --va-color-primary: fuchsia;
-  --va-background-primary: white;
-
-  --va-text-normal: black;
-  --va-text-weak: color-mix(in srgb, var(--va-text-normal) 20%, transparent);
-
-  --va-surface-primary: color-mix(
-    in srgb,
-    var(--va-background-primary) 80%,
-    transparent
-  );
-  --va-surface-primary-alt: color-mix(
-    in srgb,
-    var(--va-background-primary) 80%,
-    var(--va-color-black)
-  );
-
   --va-border-width: 2px;
   --va-border-color: var(--va-text-normal);
 
@@ -51,4 +34,32 @@
   --va-space-13: calc(10rem * var(--va-space-ratio));
   --va-space-14: calc(15rem * var(--va-space-ratio));
   --va-space-15: calc(20rem * var(--va-space-ratio));
+
+  --va-color-primary: fuchsia;
+
+  --va-color-foreground: black;
+  --va-color-background: white;
+
+  --va-background-primary: var(--va-color-background);
+
+  --va-text-normal: var(--va-color-foreground);
+  --va-text-weak: color-mix(in srgb, var(--va-text-normal) 20%, transparent);
+
+  --va-surface-primary: color-mix(
+    in srgb,
+    var(--va-background-primary) 80%,
+    transparent
+  );
+  --va-surface-primary-alt: color-mix(
+    in srgb,
+    var(--va-background-primary) 80%,
+    var(--va-color-foreground)
+  );
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --va-color-foreground: white;
+    --va-color-background: black;
+  }
 }
