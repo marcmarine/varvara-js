@@ -1,5 +1,43 @@
 # varvara-css
 
+## 0.2.0
+
+### Minor Changes
+
+- ebb69c0: Add button active and disabled classes
+- 9b68160: Introduce TailwindCSS Plugin
+
+  - Improved conversion of CSS files to JS.
+  - Created distribution file for the plugin in the `/dist` directory.
+  - Updated build process to generate the new distribution file.
+
+  Enhances the TailwindCSS plugin with better CSS-to-JS conversion and distribution setup.
+
+- 17219f7: Create new card component
+- aaba9e4: Create table component
+- ad20ca3: Improve button group and button components
+- 0f9b4ce: Add the prefix `va-` to class names
+- 087b8d1: Updated export structure to simplify importing:
+
+  - Tailwind plugin is now imported from the root
+  - Styles are imported from the `/css` directory
+
+- 76a5e62: Introduce `va-base` and `va-components` cascade layer names.
+- fee7fae: Add new CSS variables with prefix
+- c83f3a0: Remove themes and export global bundle styles
+- dfe81d9: Introduce CSS variables for foreground and background colors in dark mode, ready to use out-of-the-box.
+
+### Patch Changes
+
+- 876e1e4: Adjust styles for Select component
+- cfd0134: Fix border color CSS variable
+- 8f6e37a: Fix export of tailwind plugin
+- 917d378: Transform `@import` rules by inlining content.
+- d973927: Allows to import `varvara.css` from the root entry point of the package.
+- bddbfea: Updated select component styles to use variables
+- 8d741ae: Update CSS variables
+- 2760447: Fix button variant styles
+
 ## 0.2.0-alpha.15
 
 ### Patch Changes
