@@ -6,15 +6,6 @@
   --va-select-background-color: var(--va-button-background-color);
 
   @apply leading-none relative bg-transparent outline-none appearance-none hover:bg-white/5 active:bg-white active:text-black cursor-pointer;
-  padding-top: var(--va-select-padding);
-  padding-right: 2rem;
-  padding-bottom: var(--va-select-padding);
-  padding-left: var(--va-select-padding);
-  font-size: var(--va-select-font-size);
-  text-align: inherit;
-  border-style: solid;
-  border-width: var(--va-select-border-width);
-  border-color: var(--va-select-border-color);
   background-color: var(--va-select-background-color);
   background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
     linear-gradient(135deg, currentColor 50%, transparent 50%);
@@ -22,6 +13,16 @@
     calc(100% - 0.515rem) calc(1px + 50%);
   background-size: 0.3rem 0.3rem, 0.3rem 0.3rem;
   background-repeat: no-repeat;
+  border-style: solid;
+  border-width: var(--va-select-border-width);
+  border-color: var(--va-select-border-color);
+  color: inherit;
+  font-size: var(--va-select-font-size);
+  padding-top: var(--va-select-padding);
+  padding-right: 2rem;
+  padding-bottom: var(--va-select-padding);
+  padding-left: var(--va-select-padding);
+  text-align: inherit;
 
   option:disabled {
     color: red;
