@@ -1,5 +1,11 @@
 # varvara-css
 
+## 0.2.0-alpha.15
+
+### Patch Changes
+
+- 876e1e4: Adjust styles for Select component
+
 ## 0.2.0-alpha.14
 
 ### Minor Changes
