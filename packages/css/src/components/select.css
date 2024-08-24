@@ -1,17 +1,24 @@
-.select {
+:root {
   --va-select-font-size: var(--va-font-size-1);
   --va-select-padding: var(--va-space-3);
   --va-select-border-width: var(--va-border-width);
   --va-select-border-color: var(--va-border-color);
   --va-select-background-color: var(--va-button-background-color);
+  --va-select-caret-width: calc(var(--va-select-font-size) / 3);
+}
 
+.select {
   @apply leading-none relative bg-transparent outline-none appearance-none hover:bg-white/5 active:bg-white active:text-black cursor-pointer;
   background-color: var(--va-select-background-color);
   background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
     linear-gradient(135deg, currentColor 50%, transparent 50%);
-  background-position: calc(100% - 0.8rem) calc(1px + 50%),
-    calc(100% - 0.515rem) calc(1px + 50%);
-  background-size: 0.3rem 0.3rem, 0.3rem 0.3rem;
+  background-position: calc(
+        100% - var(--va-select-padding) - var(--va-select-caret-width)
+      )
+      calc(1px + 50%),
+    calc(100% - var(--va-select-padding) - 0.28px) calc(1px + 50%);
+  background-size: var(--va-select-caret-width) var(--va-select-caret-width),
+    var(--va-select-caret-width) var(--va-select-caret-width);
   background-repeat: no-repeat;
   border-style: solid;
   border-width: var(--va-select-border-width);
@@ -19,7 +26,9 @@
   color: inherit;
   font-size: var(--va-select-font-size);
   padding-top: var(--va-select-padding);
-  padding-right: 2rem;
+  padding-right: calc(
+    var(--va-select-caret-width) * 2 + var(--va-select-padding) * 2
+  );
   padding-bottom: var(--va-select-padding);
   padding-left: var(--va-select-padding);
   text-align: inherit;
@@ -32,11 +41,19 @@
     position: relative;
 
     label {
-      @apply absolute left-3 top-0.5 text-xs pointer-events-none;
+      @apply absolute top-0 left-0 pointer-events-none;
+      font-size: var(--va-font-size-0);
+      padding-left: calc(
+        var(--va-select-padding) + var(--va-select-border-width)
+      );
+      padding-top: calc(var(--va-select-padding) / 1.5);
     }
 
     .select {
-      @apply pt-5 pb-1;
+      padding-top: calc(
+        var(--va-select-padding) + var(--va-font-size-0) * 1.15
+      );
+      padding-bottom: calc(var(--va-select-padding) / 1.5);
     }
   }
 }
