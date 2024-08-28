@@ -1,5 +1,16 @@
 # varvara-css
 
+## 0.2.1
+
+### Patch Changes
+
+- 2238132: Refine styles for Select component:
+
+  - Adjust spacing for more proportional layout.
+  - Introduce `--va-select-caret-width` CSS variable.
+
+- 3178fbc: Correct Select border radius issue in Safari
+
 ## 0.2.0
 
 ### Minor Changes
