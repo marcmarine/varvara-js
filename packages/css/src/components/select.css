@@ -8,7 +8,7 @@
 }
 
 .select {
-  @apply leading-none relative bg-transparent outline-none appearance-none hover:bg-white/5 active:bg-white active:text-black cursor-pointer;
+  @apply leading-none relative bg-transparent outline-none appearance-none rounded-none hover:bg-white/5 active:bg-white active:text-black cursor-pointer;
   background-color: var(--va-select-background-color);
   background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
     linear-gradient(135deg, currentColor 50%, transparent 50%);
