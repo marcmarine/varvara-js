@@ -1,0 +1,60 @@
+:root {
+  --va-input-font-size: var(--va-font-size-1);
+  --va-input-padding: var(--va-space-3);
+  --va-input-border-width: var(--va-border-width);
+  --va-input-border-color: var(--va-border-color);
+  --va-input-background-color: var(--va-surface-primary);
+}
+
+.input {
+  @apply leading-none appearance-none;
+
+  background-color: transparent;
+  border-style: solid;
+  border-width: var(--va-select-border-width);
+  border-color: var(--va-select-border-color);
+  color: inherit;
+  padding: var(--va-input-padding);
+  outline: none;
+
+  &[disabled] {
+    color: var(--va-text-weak);
+  }
+
+  &:not([readonly]) {
+    &:focus,
+    &:focus-within {
+      box-shadow: inset 0 0 0 var(--va-input-border-width);
+    }
+  }
+
+  label:has(&) {
+    @apply leading-none flex flex-col;
+
+    border-style: solid;
+    border-width: var(--va-select-border-width);
+    border-color: var(--va-select-border-color);
+
+    font-size: var(--va-font-size-0);
+    gap: var(--va-space-1);
+    padding-left: var(--va-input-padding);
+    padding-right: var(--va-input-padding);
+    padding-top: calc(var(--va-input-padding) / 1.5);
+    padding-bottom: calc(var(--va-input-padding) / 1.5);
+    cursor: text;
+
+    &:not(:has(.input[readonly])) {
+      &:focus,
+      &:focus-within {
+        box-shadow: inset 0 0 0 var(--va-input-border-width);
+      }
+    }
+
+    .input {
+      box-shadow: none !important;
+      font-size: initial;
+      border: none;
+      padding: 0;
+    }
+  }
+}
