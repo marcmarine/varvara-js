@@ -1,5 +1,15 @@
 # varvara-css
 
+## 0.3.0
+
+### Minor Changes
+
+- 312a8d6: Introduce new Input component
+
+### Patch Changes
+
+- 2700ffc: Added focus styles to button elements
+
 ## 0.2.1
 
 ### Patch Changes
