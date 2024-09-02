@@ -1,0 +1,91 @@
+---
+title: Input
+---
+
+import Example from '../../components/Example.astro'
+import Code from '../../components/Code.astro'
+import Input from '../../components/lib/input'
+export const Component = () => <Input />
+
+# Input
+
+## Variables
+
+<Code
+  code={`--va-input-font-size: var(--va-font-size-1);
+--va-input-padding: var(--va-space-3);
+--va-input-border-width: var(--va-border-width);
+--va-input-border-color: var(--va-border-color);
+--va-input-background-color: var(--va-surface-primary);`}
+  lang="css"
+  className="mb-4"
+/>
+
+## Default
+
+<Example component={Component}>
+  <Code code={`<input class="va-input" type="text" />`} lang="html" />
+</Example>
+
+## With Label
+
+<Example
+  component={() => (
+    <label>
+      Name
+      <input class="va-input" type="text" />
+    </label>
+)}
+
+>
+
+  <Code
+    code={`<label>
+  Input
+  <input class="va-input" type="text" />
+</label>`}
+    lang="html"
+  />
+</Example>
+
+## Read Only
+
+<Example
+  component={() => (
+    <label>
+      Name
+      <input class="va-input" value="Apollodorus" type="text" readOnly />
+    </label>
+)}
+
+>
+
+  <Code
+    code={`<label>
+  Name
+  <input class="va-input" value="Apollodorus" type="text" readonly />
+</label>`}
+    lang="html"
+  />
+</Example>
+
+## Disabled
+
+<Example
+  component={() => (
+    <label>
+      Name
+      <input class="va-input" value="Apollodorus" type="text" disabled />
+    </label>
+)}
+
+>
+
+  <Code
+    code={`<label>
+  Name
+  <input class="va-input" value="Apollodorus" type="text" disabled />
+</label>`}
+    lang="html"
+  />
+</Example>
