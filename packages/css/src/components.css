@@ -3,5 +3,6 @@
 @import 'components/card';
 @import 'components/collapse';
 @import 'components/input';
+@import 'components/loading';
 @import 'components/select';
 @import 'components/table';
