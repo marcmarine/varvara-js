@@ -6,17 +6,14 @@ This repository contains a library of customizable and comprehensive UI componen
 
 ## Motivation
 
-Varvara decides to be consistent. I guess this means something that remains uniform, stable and coheren in its behavior, quality or characteristics over time. In other words, something consistent does not show significant variations and follows an established pattern or norm, which guarantees the reliability and predictability of its results or performance. And so, meet Varvara... 🤦‍♀️
+Varvara decides to be consistent. I guess this means something that remains uniform, stable and coheren in its behavior, quality or characteristics over time. In other words, something consistent does not show significant variations and follows an established pattern or norm, which guarantees the reliability and predictability of its results or performance.
 
 ## Get started with Varvara CSS
-
-> [!NOTE]
-> This package is currently in its alpha stage.
 
 The easiest way to use Varvara CSS is through a CDN:
 
 ```css
-@import url('https://unpkg.com/varvara-css@alpha');
+@import url('https://unpkg.com/varvara-css');
 ```
 
 After, simply add a component class like this:
