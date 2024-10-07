@@ -15,8 +15,6 @@ import Code from '../../components/Code.astro'
 
 You can use it alongside Tailwind CSS and with any JavaScript framework.
 
-> This package is currently in its alpha stage. It is actively being developed and tested. You may encounter bugs and incomplete features.
-
 ## Install
 
 ### CDN
@@ -24,7 +22,7 @@ You can use it alongside Tailwind CSS and with any JavaScript framework.
 The easiest way to use Varvara CSS is through a CDN:
 
 <Code
-  code={`@import url('https://unpkg.com/varvara-css@alpha');`}
+  code={`@import url('https://unpkg.com/varvara-css');`}
   lang="css"
   className="mb-4"
 />
@@ -33,7 +31,7 @@ Alternatively, add this line to the `head` tag of your HTML:
 
 <Code
   code={`<link
-  href="https://unpkg.com/varvara-css@alpha"
+  href="https://unpkg.com/varvara-css"
   rel="stylesheet"
   type="text/css"
 />`}
@@ -47,7 +45,7 @@ You'll have access to both [variables](/variables) and [components](/components)
 
 Another option is to add Varvara CSS to your own build process:
 
-<Code code={`npm i varvara-css@alpha`} lang="bash" className="mb-4" />
+<Code code={`npm i varvara-css`} lang="bash" className="mb-4" />
 
 After, you have to import the package into your stylesheet:
 
@@ -56,6 +54,28 @@ After, you have to import the package into your stylesheet:
 > An `@import` rule must be defined at the top of the stylesheet
 
 With both options, you have the ability to customize the components using [CSS variables](/variables).
+
+### Tailwind Plugin
+
+Finally, you can extend Tailwind CSS with Varvara CSS.
+
+Install Varvara CSS via NPM:
+
+<Code code={`npm i varvara-css`} lang="bash" className="mb-4" />
+
+Make sure [Tailwind CSS](https://tailwindcss.com/docs/installation) is also installed.
+
+Next, modify your tailwind.config.js file to include the Varvara CSS plugin:
+
+<Code code={`import varvara from 'varvara-css'
+
+module.exports = {
+plugins: [varvara],
+// ...
+}
+`} lang="ts" className="mb-4" />
+
+Your Tailwind setup is now extended with Varvara CSS, ready to use its variables and components in your project.
 
 ## Use
 
