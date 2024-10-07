@@ -1,9 +1,6 @@
 # Varvara CSS
 
-![NPM Version (with dist tag)](https://img.shields.io/npm/v/varvara-css/alpha?style=for-the-badge&labelColor=cyan&color=fuchsia)
-
-> [!NOTE]
-> This package is currently in its alpha stage. It is actively being developed and tested. You may encounter bugs and incomplete features. Use it cautiously in production environments 🙏.
+![NPM Version (with dist tag)](https://img.shields.io/npm/v/varvara-css?style=for-the-badge&labelColor=cyan&color=fuchsia)
 
 **Varvara CSS** is a library of prebuilt UI components designed for smooth and simple browsing experiences, implemented using simple class names and easily customizable with CSS Variables.
 
@@ -16,17 +13,13 @@ It can be used alongside Tailwind CSS and with any JavaScript framework.
 The easiest way to use Varvara CSS is through a CDN:
 
 ```css
-@import url('https://unpkg.com/varvara-css@alpha');
+@import url('https://unpkg.com/varvara-css');
 ```
 
 Alternatively, add this line to the `head` tag of your HTML:
 
 ```html
-<link
-  href="https://unpkg.com/varvara-css@alpha"
-  rel="stylesheet"
-  type="text/css"
-/>
+<link href="https://unpkg.com/varvara-css" rel="stylesheet" type="text/css" />
 ```
 
 You'll have access to both variables and components from the same import.
@@ -36,7 +29,7 @@ You'll have access to both variables and components from the same import.
 Another option is to add Varvara CSS to your own build process:
 
 ```bash
-npm i varvara-css@alpha
+npm i varvara-css
 ```
 
 After, you have to import the package into your stylesheet:
@@ -48,7 +41,30 @@ After, you have to import the package into your stylesheet:
 > [!TIP]
 > An @import rule must be defined at the top of the stylesheet
 
-With both options, you have the ability to customize the components using CSS variables.
+### Tailwind Plugin
+
+Finally, you can extend Tailwind CSS with Varvara CSS.
+
+Install Varvara CSS via NPM:
+
+```bash
+npm i varvara-css
+```
+
+Make sure [Tailwind CSS](https://tailwindcss.com/docs/installation) is also installed.
+
+Next, modify your tailwind.config.js file to include the Varvara CSS plugin:
+
+```js
+import varvara from 'varvara-css'
+
+module.exports = {
+  plugins: [varvara]
+  // ...
+}
+```
+
+Your Tailwind setup is now extended with Varvara CSS, ready to use its variables and components in your project.
 
 ## Usage
 
