@@ -1,0 +1,122 @@
+:root {
+  --va-collapse-font-size: var(--va-font-size-1);
+  --va-collapse-padding: var(--va-space-3);
+  --va-collapse-border-width: var(--va-border-width);
+  --va-collapse-border-color: var(--va-border-color);
+  --va-collapse-background-color: var(--va-surface-primary);
+  --va-collapse-caret-width: calc(var(--va-collapse-font-size) / 3);
+  --va-collapse-tree-indentation: var(--va-space-8);
+}
+
+.collapse {
+  --depth: 0;
+  --space: calc(var(--depth) * var(--va-collapse-tree-indentation));
+  --offset: calc(var(--va-collapse-caret-width) + var(--va-space-4));
+
+  font-size: var(--va-collapse-font-size);
+  border-style: solid;
+  border-width: var(--va-collapse-border-width);
+  border-color: var(--va-collapse-border-color);
+
+  &[open] > summary::before {
+    transform: rotate(0)
+      translateY(calc(var(--va-collapse-caret-width) / 2 * -1));
+  }
+
+  & > *:not(summary):not(details):not(.button) {
+    padding-left: calc(
+      var(--va-collapse-caret-width) * 2 + var(--va-collapse-padding) * 2 +
+        var(--space) - var(--offset)
+    );
+  }
+
+  summary {
+    @apply relative block leading-none font-medium cursor-pointer;
+
+    padding: var(--va-collapse-padding);
+    padding-left: calc(
+      var(--va-collapse-caret-width) * 2 + var(--va-collapse-padding) * 2 +
+        var(--space)
+    );
+    text-align: inherit;
+    background-color: var(--va-collapse-background-color);
+    outline: none;
+
+    &:hover:not(&:active):not(&--active) {
+      background-color: color-mix(
+        in srgb,
+        var(--va-text-normal) 8%,
+        transparent
+      );
+    }
+
+    &:focus-visible {
+      box-shadow: inset 0 0 0 var(--va-collapse-border-width);
+    }
+
+    &:active,
+    &--active {
+      color: var(--va-surface-primary);
+      background-color: var(--va-text-normal);
+    }
+
+    &::before {
+      @apply absolute top-1/2 -translate-y-1/2;
+
+      left: calc(
+        var(--va-collapse-caret-width) * 2 + var(--va-collapse-padding) * 2 +
+          var(--space) - var(--offset)
+      );
+      width: calc(var(--va-collapse-caret-width) * 2);
+      height: var(--va-collapse-caret-width);
+
+      transform: rotate(-90deg);
+      transform-origin: center top;
+
+      content: '';
+      background-image: linear-gradient(
+          45deg,
+          transparent 50%,
+          currentColor 50%
+        ),
+        linear-gradient(135deg, currentColor 50%, transparent 50%);
+      background-position: 0 0, calc(var(--va-collapse-caret-width) - 0.1px) 0;
+      background-size: var(--va-collapse-caret-width)
+          var(--va-collapse-caret-width),
+        var(--va-collapse-caret-width) var(--va-collapse-caret-width);
+      background-repeat: no-repeat;
+    }
+  }
+
+  & .button {
+    padding-left: calc(
+      var(--va-collapse-caret-width) * 2 + var(--va-collapse-padding) * 2 +
+        var(--space) + var(--offset) + 10px
+    );
+  }
+
+  /* Nested */
+  & .collapse,
+  & .button {
+    --depth: 1;
+
+    @apply w-full border-x-0 border-b-0;
+
+    & .collapse,
+    & .button {
+      --depth: 2;
+      & .collapse,
+      & .button {
+        --depth: 3;
+        & .collapse,
+        & .button {
+          --depth: 4;
+          & .collapse,
+          & .button {
+            --depth: 5;
+          }
+        }
+      }
+    }
+  }
+}
