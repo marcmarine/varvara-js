@@ -1,5 +1,12 @@
 # varvara-css
 
+## 0.4.0
+
+### Minor Changes
+
+- 41b886e: Introduce `va-loading-dots` class name for loading animation
+- 6c03d41: Introduce new Collapse component
+
 ## 0.3.0
 
 ### Minor Changes
