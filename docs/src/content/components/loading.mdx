@@ -1,0 +1,24 @@
+---
+title: Loading
+---
+
+import Example from '../../components/Example.astro'
+import Code from '../../components/Code.astro'
+import Loading from '../../components/lib/loading'
+export const Component = () => <Loading />
+
+# Loading
+
+## Variables
+
+<Code
+  code={`--va-loading-dots-animation-duration: 1s;`}
+  lang="css"
+  className="mb-4"
+/>
+
+## Default
+
+<Example component={Component}>
+  <Code code={`<h2 class="va-loading-dots">Loading</h2>`} lang="html" />
+</Example>
