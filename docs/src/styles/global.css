@@ -1,3 +1,4 @@
+@import 'fonts.css';
 @import 'varvara-css/css';
 
 [data-theme='blue'] {
@@ -12,7 +13,8 @@
 }
 
 .va-button {
-  font-family: 'Rubik Variable', sans-serif;
+  --va-button-font-size: var(--va-font-size-2);
+  font-family: 'Rubik', sans-serif;
 }
 
 html {
@@ -20,7 +22,7 @@ html {
 }
 
 body {
-  font-family: 'Noto Sans Variable', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   color: var(--va-text-normal);
   background-color: var(--va-background-primary);
 }
@@ -34,8 +36,9 @@ h6 {
   @apply font-bold;
   font-family: 'IBM Plex Sans', sans-serif;
 }
+
 h1 {
-  @apply mb-6 text-3xl font-bold;
+  @apply mb-6 text-4xl font-bold;
 }
 
 h2 {
@@ -72,7 +75,7 @@ p {
       }
 
       h1 {
-        @apply flex items-center sticky top-0 border-b border-[--va-text-weak] min-h-[calc(4rem+1px)] border-dashed backdrop-blur-lg z-10;
+        @apply flex items-end pb-2 sticky top-0 border-b border-[--va-text-weak] min-h-[calc(4rem+1px)] border-dashed backdrop-blur-lg z-10;
         background-color: var(--va-surface-primary);
       }
     }
