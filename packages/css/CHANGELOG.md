@@ -1,5 +1,12 @@
 # varvara-css
 
+## 0.4.1
+
+### Patch Changes
+
+- 45c0c0a: Change build output format from CommonJS to ES6
+- 4add942: Fix padding and border issues in input fields
+
 ## 0.4.0
 
 ### Minor Changes
