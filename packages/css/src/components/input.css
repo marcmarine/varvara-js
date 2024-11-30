@@ -11,10 +11,10 @@
 
   background-color: transparent;
   border-style: solid;
-  border-width: var(--va-select-border-width);
-  border-color: var(--va-select-border-color);
+  border-width: var(--va-input-border-width);
+  border-color: var(--va-input-border-color);
   color: inherit;
-  padding: var(--va-input-padding);
+  padding: calc(var(--va-input-padding) - var(--va-input-border-width) * 2);
   outline: none;
 
   &[disabled] {
