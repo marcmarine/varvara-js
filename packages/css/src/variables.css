@@ -35,7 +35,7 @@
   --va-space-14: calc(15rem * var(--va-space-ratio));
   --va-space-15: calc(20rem * var(--va-space-ratio));
 
-  --va-color-primary: fuchsia;
+  --va-color-primary: mediumvioletred;
 
   --va-color-foreground: black;
   --va-color-background: white;
