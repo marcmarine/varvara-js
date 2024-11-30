@@ -44,7 +44,7 @@
   },
   "scripts": {
     "build:css": "postcss src/*.css --dir dist",
-    "build:js": "prejss-cli dist/components.css --format commonjs && bun run build-vars.ts",
+    "build:js": "prejss-cli dist/components.css --format es6 && bun run build-vars.ts",
     "build:tw": "bun build src/tailwind.ts --outdir dist --external '*'",
     "build": "bun run build:css && bun run build:js && bun run build:tw",
     "dev": "chokidar src -c 'bun run build'"
