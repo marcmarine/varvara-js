@@ -1,11 +1,19 @@
 {
   "name": "varvara-typedoc-theme",
   "version": "0.1.0",
+  "author": "Marc Mariné <shenobi@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcmarine/varvara-js.git",
+    "directory": "packages/typedoc-theme"
+  },
   "type": "module",
+  "description": "Seamless documentation experience for TypeScript projects.",
   "keywords": [
     "typedoc-theme",
     "varvara-css"
   ],
+  "license": "MIT",
   "dependencies": {
     "varvara-css": "^0.4.1"
   },
