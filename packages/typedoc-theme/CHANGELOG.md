@@ -1,5 +1,11 @@
 # varvara-typedoc-theme
 
+## 0.1.2
+
+### Patch Changes
+
+- 5fd4176: Add assets directory to prevent plugin failures
+
 ## 0.1.1
 
 ### Patch Changes
