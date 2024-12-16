@@ -28,7 +28,7 @@ export class VarvaraTheme extends DefaultTheme {
       fs.cpSync(
         path.resolve(
           path.dirname(fileURLToPath(import.meta.url)),
-          '../src/assets/'
+          '../assets/'
         ),
         path.resolve(this.application.options.getValue('out'), 'assets/'),
         { recursive: true }
