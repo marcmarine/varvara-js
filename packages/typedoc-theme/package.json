@@ -1,0 +1,29 @@
+{
+  "name": "varvara-typedoc-theme",
+  "version": "0.0.0",
+  "type": "module",
+  "keywords": [
+    "typedoc-theme",
+    "varvara-css"
+  ],
+  "dependencies": {
+    "varvara-css": "^0.4.1"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typedoc": "^0.27.5",
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "build": "bun build.ts",
+    "build:docs": "bun run build && bunx typedoc"
+  },
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ]
+}
