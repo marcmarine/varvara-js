@@ -1,14 +1,15 @@
 # Varvara TypeDoc Theme
 
-Varvara TypeDoc Theme is a [custom theme](https://typedoc.org/documents/Development.Custom_Themes.html) for TypeDoc, designed to provide an seamless documentation experience for TypeScript projects.
+_View a_ [_live example here_](https://marcmarine.github.io/western-signs).
 
-[![license](https://img.shields.io/github/license/marcmarine/varvara-js)](https://github.com/marcmarine/varvara-js/blob/main/LICENSE)
+Varvara TypeDoc Theme is a custom theme for TypeDoc, designed to provide a seamless documentation experience for TypeScript projects.
 
-## Prerequisites
-
-Ensure TypeDoc is [installed](https://typedoc.org/index.html#quick-start) in your project.
+![NPM Version](https://img.shields.io/npm/v/varvara-typedoc-theme)
+[![GitHub License](https://img.shields.io/github/license/marcmarine/varvara-js)](https://github.com/marcmarine/varvara-js/blob/main/LICENSE)
 
 ## Installation
+
+Ensure TypeDoc is [installed](https://typedoc.org/index.html#quick-start) in your project.
 
 Install the Varvara TypeDoc theme as a development dependency:
 
