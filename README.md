@@ -6,7 +6,9 @@ This repository contains a library of customizable and comprehensive UI componen
 
 ## Motivation
 
-Varvara decides to be consistent. I guess this means something that remains uniform, stable and coheren in its behavior, quality or characteristics over time. In other words, something consistent does not show significant variations and follows an established pattern or norm, which guarantees the reliability and predictability of its results or performance.
+Varvara decides to be consistent, but what does being consistent really mean? It's more than just an abstract concept: it involves maintaining a uniform line of conduct that conveys security and confidence. Being consistent is like being a person who always keeps their promises, a friend you can trust without hesitation, or a professional who predictably delivers quality results.
+
+It's not about being rigid or inflexible, but about building a legacy for reliability. It's like a river that, although it can adapt to changes in the terrain, maintains its essence and direction. Consistency speaks of integrity, of aligning your actions with your values, and of generating a sense of stability that inspires confidence in others.
 
 ## Get started with Varvara CSS
 
@@ -28,9 +30,10 @@ Visit [docs](packages/css) to view the full documentation.
 
 Check out the list of packages inside this repository:
 
-| Package             | Description                                                         |
-| ------------------- | ------------------------------------------------------------------- |
-| [css](packages/css) | Customizable components with CSS Variables using plain class names. |
+| Package                                 | Description                                                         |
+| --------------------------------------- | ------------------------------------------------------------------- |
+| [css](packages/css)                     | Customizable components with CSS Variables using plain class names. |
+| [typedoc-theme](packages/typedoc-theme) | Varvara theme for TypeDoc.                                          |
 
 Varvara is probably going to grow 🚀.
 
