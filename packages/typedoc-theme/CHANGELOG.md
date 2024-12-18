@@ -1,5 +1,12 @@
 # varvara-typedoc-theme
 
+## 0.1.3
+
+### Patch Changes
+
+- 39d86c8: Fixed a display issue with the settings panel, which was not appearing correctly on certain pages.
+- 34a0c8d: Added a live example to the README file.
+
 ## 0.1.2
 
 ### Patch Changes
