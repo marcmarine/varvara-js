@@ -1,5 +1,11 @@
 # varvara-typedoc-theme
 
+## 0.2.0
+
+### Minor Changes
+
+- 69b9b6e: Allow users to customize the theme appearance.
+
 ## 0.1.3
 
 ### Patch Changes
