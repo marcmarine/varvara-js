@@ -37,8 +37,8 @@
 
   --va-color-primary: mediumvioletred;
 
-  --va-color-foreground: black;
-  --va-color-background: white;
+  --va-color-foreground: #29353d;
+  --va-color-background: #f3f5f7;
 
   --va-background-primary: var(--va-color-background);
 
@@ -47,19 +47,19 @@
 
   --va-surface-primary: color-mix(
     in srgb,
-    var(--va-background-primary) 80%,
+    var(--va-color-background) 80%,
     transparent
   );
   --va-surface-primary-alt: color-mix(
     in srgb,
-    var(--va-background-primary) 80%,
+    var(--va-color-background) 80%,
     var(--va-color-foreground)
   );
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --va-color-foreground: white;
-    --va-color-background: black;
+    --va-color-foreground: #b3ccd6;
+    --va-color-background: #2a303c;
   }
 }
