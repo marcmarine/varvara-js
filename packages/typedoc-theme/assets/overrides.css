@@ -1,22 +1,9 @@
-:root {
-  --va-collapse-tree-indentation: var(--va-space-4);
-}
-
-html[data-theme='light'] {
-  --va-color-foreground: #29353d;
-  --va-color-background: #f3f5f7;
-  --va-border-color: lightgray;
-}
-html[data-theme='dark'] {
-  --va-color-foreground: #b3ccd6;
-  --va-color-background: #2a303c;
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     --va-color-foreground: #29353d;
     --va-color-background: #f3f5f7;
-    --va-border-color: lightgray;
+    --va-border-color: LightGray;
+    --va-color-primary: RoyalBlue;
   }
 }
 
@@ -24,12 +11,32 @@ html[data-theme='dark'] {
   :root {
     --va-color-foreground: #b3ccd6;
     --va-color-background: #2a303c;
+    --va-border-color: LightSlateGray;
+    --va-color-primary: LightSkyBlue;
   }
+}
+
+[data-theme='light'] {
+  --va-color-foreground: #29353d;
+  --va-color-background: #f3f5f7;
+  --va-border-color: LightGray;
+  --va-color-primary: RoyalBlue;
+}
+
+[data-theme='dark'] {
+  --va-color-foreground: #b3ccd6;
+  --va-color-background: #2a303c;
+  --va-border-color: LightSlateGray;
+  --va-color-primary: LightSkyBlue;
 }
 
 body {
   background-color: var(--va-color-background);
   color: var(--va-color-foreground);
+}
+
+a {
+  color: var(--va-color-primary);
 }
 
 .va-button:has(.version-badge) {
@@ -162,7 +169,7 @@ footer {
 }
 
 .container {
-  padding: 0 1.5rem;
+  padding: 0 var(--va-space-8);
 }
 
 @media (max-width: 769px) {
@@ -187,9 +194,10 @@ footer {
   .container-main {
     grid-template-areas: 'header content' 'sidebar content';
     grid-auto-rows: auto 1fr;
+    margin: var(--va-space-8) 0;
   }
   .container {
-    padding: 0 2rem;
+    padding: 0 var(--va-space-8);
   }
 }
 
@@ -202,8 +210,8 @@ footer {
   }
   .page-menu,
   .site-menu {
-    top: 2rem;
-    max-height: calc(100vh - 4rem);
+    top: var(--va-space-8);
+    max-height: calc(100vh - calc(var(--va-space-8) * 2));
   }
 }
 

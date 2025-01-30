@@ -46,22 +46,11 @@ export function layout(context: VarvaraThemeContext) {
           rel="stylesheet"
           href={context.relativeURL('assets/highlight.css', true)}
         />
-        {context.options.getValue('customCss') && (
-          <link
-            rel="stylesheet"
-            href={context.relativeURL('assets/custom.css', true)}
-          />
-        )}
         <script
           defer
           src={context.relativeURL('assets/main.js', true)}
         ></script>
-        {context.options.getValue('customJs') && (
-          <script
-            defer
-            src={context.relativeURL('assets/custom.js', true)}
-          ></script>
-        )}
+
         <script
           async
           src={context.relativeURL('assets/icons.js', true)}
@@ -85,6 +74,18 @@ export function layout(context: VarvaraThemeContext) {
           ></script>
         )}
         {context.hook('head.end', context)}
+        {context.options.getValue('customCss') && (
+          <link
+            rel="stylesheet"
+            href={context.relativeURL('assets/custom.css', true)}
+          />
+        )}
+        {context.options.getValue('customJs') && (
+          <script
+            defer
+            src={context.relativeURL('assets/custom.js', true)}
+          ></script>
+        )}
       </head>
       <body>
         {context.hook('body.begin', context)}

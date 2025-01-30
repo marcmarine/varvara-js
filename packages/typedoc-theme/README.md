@@ -4,7 +4,7 @@ _View a_ [_live example here_](https://marcmarine.github.io/western-signs).
 
 Varvara TypeDoc Theme is a custom theme for TypeDoc, designed to provide a seamless documentation experience for TypeScript projects.
 
-![NPM Version](https://img.shields.io/npm/v/varvara-typedoc-theme)
+[![NPM Version](https://img.shields.io/npm/v/varvara-typedoc-theme)](https://www.npmjs.com/package/varvara-typedoc-theme)
 [![GitHub License](https://img.shields.io/github/license/marcmarine/varvara-js)](https://github.com/marcmarine/varvara-js/blob/main/LICENSE)
 
 ## Installation
@@ -55,6 +55,53 @@ export default config
 
 > [!IMPORTANT]
 > The theme must be explicitly specified. If not set, the plugin will not be loaded by default.
+
+### Customization
+
+Add custom styling by specifying an extra CSS file using the [customCss](https://typedoc.org/documents/Options.Output.html#customcss) option:
+
+```bash
+npx typedoc --customCss ./styles/custom.css
+```
+
+Varvara CSS provides variables to customize the theme appearance:
+
+```css
+/* custom.css */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --va-color-foreground: DimGray;
+    --va-color-background: WhiteSmoke;
+    --va-border-color: Gainsboro;
+    --va-space-ratio: 0.5;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --va-color-foreground: Silver;
+    --va-color-background: MidnightBlue;
+    --va-border-color: RoyalBlue;
+    --va-space-ratio: 0.5;
+  }
+}
+
+[data-theme='light'] {
+  --va-color-foreground: DimGray;
+  --va-color-background: WhiteSmoke;
+  --va-border-color: Gainsboro;
+  --va-space-ratio: 0.5;
+}
+
+[data-theme='dark'] {
+  --va-color-foreground: Silver;
+  --va-color-background: MidnightBlue;
+  --va-border-color: RoyalBlue;
+  --va-space-ratio: 0.5;
+}
+```
+
+See the [documentation](https://varvara.js.org/variables) for the complete list of available properties.
 
 ## Contributing
 
