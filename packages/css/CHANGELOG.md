@@ -1,5 +1,11 @@
 # varvara-css
 
+## 0.4.2
+
+### Patch Changes
+
+- ed55f6d: Update default CSS variables for background and foreground
+
 ## 0.4.1
 
 ### Patch Changes
