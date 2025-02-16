@@ -1,14 +1,14 @@
-<p  style="text-align: center;">
-<picture >
-  <source media="(prefers-color-scheme: dark)" srcset="./docs/public/va-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./docs/public/va-light.svg">
-  <img alt="Shows a black logo in light color mode and a white one in dark color mode." src="./docs/public/va-dark.svg" width="240px" >
-</picture>
+<p align="center">
+  <picture >
+    <source media="(prefers-color-scheme: dark)" srcset="./docs/public/va-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./docs/public/va-light.svg">
+    <img alt="Shows a black logo in light color mode and a white one in dark color mode." src="./docs/public/va-dark.svg" width="240px" >
+  </picture>
 </p>
 
-<h1 style="text-align: center;">Varvara SDKs</h1>
+<h1 align="center">Varvara SDKs</h1>
 
-<h3 style="text-align: center;">Build consistently for seamless experiences</h3>
+<h3 align="center">Build consistently for seamless experiences</h3>
 
 This repository contains a library of customizable and comprehensive UI components designed for smooth and simple browsing experiences.
 
