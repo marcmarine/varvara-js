@@ -25,6 +25,7 @@ body {
   font-family: 'Noto Sans', sans-serif;
   color: var(--va-text-normal);
   background-color: var(--va-background-primary);
+  font-size: 18px;
 }
 
 h1,

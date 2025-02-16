@@ -1,0 +1,17 @@
+<svg width="720" height="720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#a)">
+    <path d="M403 521 27 342l157-158 376 180-157 157Z" stroke="#2A303C" stroke-width="18"/>
+    <foreignObject x="310.6" y="47.5" width="423.1" height="628.4">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(16px);clip-path:url(#b);height:100%;width:100%"/>
+    </foreignObject>
+    <path data-figma-bg-blur-radius="32" d="M533 628 353 252 511 95l180 376-158 157Z" stroke="#2A303C" stroke-width="18"/>
+  </g>
+  <defs>
+    <clipPath id="b">
+      <path transform="translate(-311 -47)" d="M533 628 353 252 511 95l180 376-158 157Z"/>
+    </clipPath>
+    <clipPath id="a">
+      <path fill="#fff" d="M0 0h720v720H0z"/>
+    </clipPath>
+  </defs>
+</svg>
