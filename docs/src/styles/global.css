@@ -2,7 +2,7 @@
 @import 'varvara-css/css';
 
 [data-theme='blue'] {
-  --va-background-primary: orange;
+  --va-color-background: orange;
   --va-color-foreground: black;
 }
 
@@ -59,7 +59,7 @@ p {
 }
 
 .page__body {
-  @apply px-4 md:grid grid-cols-[280px_1fr] grid-rows-[auto_auto_1fr] min-h-screen gap-x-4 xl:gap-x-8 max-w-7xl mx-auto;
+  @apply relative px-4 md:grid grid-cols-[280px_1fr] grid-rows-[auto_auto_1fr] min-h-screen gap-x-4 xl:gap-x-8 max-w-7xl mx-auto;
 }
 
 .page {
@@ -84,7 +84,7 @@ p {
 }
 
 .page--homepage main {
-  @apply grid grid-cols-subgrid grid-rows-subgrid col-start-1 col-end-3 row-start-1 row-end-4 gap-y-0;
+  @apply md:grid grid-cols-subgrid grid-rows-subgrid col-start-1 col-end-3 row-start-1 row-end-4 gap-y-0;
 }
 
 :target {

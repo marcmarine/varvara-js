@@ -29,7 +29,7 @@ const data = await response.json();
       <Navigation items={customLinks} />
     </div>
   </header>
-  <main class={`bg-grid-left bg-grid-right ${className ? ` ${className}` : ''} overflow-hidden`} role="main">
+  <main class={`bg-grid-left bg-grid-right ${className ? ` ${className}` : ''}`} role="main">
     <slot />
   </main>
   <footer class="sticky bottom-0 z-10 grid grid-cols-subgrid col-start-1 col-end-3 grid-rows-subgrid bg-grid-top bg-[--va-surface-primary] backdrop-blur-lg">
