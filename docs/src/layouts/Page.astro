@@ -14,15 +14,23 @@ const data = await response.json();
 <Layout page={page}>
   <header class="grid col-start-1 grid-rows-subgrid row-start-1 row-end-4 relative z-10 bg-grid-left bg-grid-right">
     <div class="flex flex-col !sticky top-0 row-start-1 row-end-2">
-      <div class="h-16 px-1 flex items-center">
-        <a href="/" class="flex items-center gap-4">
-          <div class="v-shape">
-            <span></span>
-            <span></span>
-          </div>
-          <div  class="grid grid-flow-row">
-            <span class="font-bold leading-none">varvara-css</span>
-            <span class="leading-none text-xs">v{data.version}</span>
+      <div class="h-16 -ml-2 flex items-center">
+        <a href="/" class="flex items-center gap-2">
+          <svg width="50" height="42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M28.7764 30.081 1.8388 21.5033 9.2236 10.919l26.9377 8.5778-7.3849 10.5842Z" stroke="currentColor" stroke-width="2"/>
+            <foreignObject x="16.4783" y="-5.3214" width="39.0434" height="53.6428">
+              <div style="backdrop-filter:blur(2px);clip-path:url(#a);height:100%;width:100%"/>
+            </foreignObject>
+            <path data-figma-bg-blur-radius="8" d="M36.3448 38.6871 25.6823 12.5046l9.9729-8.1917 10.6625 26.1825-9.9729 8.1917Z" fill="transparent" fill-opacity=".1" stroke="currentColor" stroke-width="2"/>
+            <defs>
+              <clipPath id="a">
+                <path transform="translate(-16.4783 5.3214)" d="M36.3448 38.6871 25.6823 12.5046l9.9729-8.1917 10.6625 26.1825-9.9729 8.1917Z"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <div class="flex items-end gap-2">
+            <span class="font-bold leading-none text-2xl hover:underline active:no-underline">Varvara</span>
+            <span class="text-xs">v{data.version}</span>
           </div>
         </a>
       </div>
