@@ -1,5 +1,11 @@
 # varvara-css
 
+## 0.4.3
+
+### Patch Changes
+
+- 9817c8b: Allow using both light and dark operating system color schemes
+
 ## 0.4.2
 
 ### Patch Changes
