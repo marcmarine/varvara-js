@@ -2,11 +2,13 @@
 @import 'varvara-css/css';
 
 [data-theme='blue'] {
+  color-scheme: light;
   --va-color-background: orange;
   --va-color-foreground: black;
 }
 
 [data-theme='black'] {
+  color-scheme: dark;
   --va-color-primary: #9fe88d;
   --va-color-background: #2a303c;
   --va-color-foreground: #b3ccd6;
@@ -97,7 +99,7 @@ p a {
 }
 
 pre {
-  @apply p-4 overflow-auto;
+  @apply p-4 overflow-auto whitespace-pre-wrap;
 
   &:not(:last-child) {
     @apply mb-4;
