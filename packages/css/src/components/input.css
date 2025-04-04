@@ -7,15 +7,16 @@
 }
 
 .input {
-  @apply leading-none appearance-none;
+  @apply block leading-none appearance-none;
 
-  background-color: transparent;
+  background-color: var(--va-input-background-color);
+  border-color: var(--va-input-border-color);
   border-style: solid;
   border-width: var(--va-input-border-width);
-  border-color: var(--va-input-border-color);
   color: inherit;
-  padding: calc(var(--va-input-padding) - var(--va-input-border-width) * 2);
+  font-size: var(--va-input-font-size);
   outline: none;
+  padding: var(--va-input-padding);
 
   &[disabled] {
     color: var(--va-text-weak);
@@ -36,11 +37,11 @@
     border-color: var(--va-select-border-color);
 
     font-size: var(--va-font-size-0);
-    gap: var(--va-space-1);
+
     padding-left: var(--va-input-padding);
     padding-right: var(--va-input-padding);
-    padding-top: calc(var(--va-input-padding) / 1.5);
-    padding-bottom: calc(var(--va-input-padding) / 1.5);
+    padding-top: calc(var(--va-input-padding) / 2);
+    padding-bottom: calc(var(--va-input-padding) / 2);
     cursor: text;
 
     &:not(:has(.input[readonly])) {
