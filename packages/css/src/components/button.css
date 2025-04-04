@@ -1,10 +1,12 @@
-.button {
+:root {
   --va-button-font-size: var(--va-font-size-1);
   --va-button-padding: var(--va-space-3);
   --va-button-border-width: var(--va-border-width);
   --va-button-border-color: var(--va-border-color);
   --va-button-background-color: var(--va-surface-primary);
+}
 
+.button {
   @apply block leading-none font-medium;
 
   padding: var(--va-button-padding);

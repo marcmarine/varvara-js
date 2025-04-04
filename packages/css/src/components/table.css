@@ -1,11 +1,14 @@
-.table {
+:root {
   --va-table-font-size: var(--va-font-size-1);
   --va-table-padding: var(--va-space-3);
   --va-table-border-width: var(--va-border-width);
   --va-table-border-color: var(--va-border-color);
   --va-table-background-color: var(--va-surface-primary);
+}
 
+.table {
   @apply border-2 divide-y-2 w-full;
+
   font-size: var(--va-table-font-size);
   border-color: var(--va-table-border-color);
   border-width: var(--va-table-border-width);
