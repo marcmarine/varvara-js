@@ -44,8 +44,8 @@ export const Component = () => <Select />
 
 <Example
   component={() => (
-    <div class="va-select-group">
-      <label>Select</label>
+    <label>
+      <span>Select</span>
       <select class="va-select">
         <option disabled selected>
           Pick an option
@@ -54,13 +54,13 @@ export const Component = () => <Select />
         <option value="two">Option two</option>
         <option value="three">Option three</option>
       </select>
-    </div>
+    </label>
   )}
 >
 
 <Code
-  code={` <div class="va-select-group">
-  <label>Select</label>
+  code={`<label>
+  <span>Select</span>
   <select class="va-select">
     <option disabled selected>
       Pick an option
@@ -69,7 +69,7 @@ export const Component = () => <Select />
     <option value="two">Option two</option>
     <option value="three">Option three</option>
   </select>
-</div>`}
+</label>`}
   lang="html"
 />
 
