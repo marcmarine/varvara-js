@@ -1,5 +1,15 @@
 # varvara-css
 
+## 0.4.3
+
+### Patch Changes
+
+- d33ac99: Make custom properties fully overridable
+- 92e4cd6: Align select component with inputs
+- d962b89: Resolve visual inconsistencies in input fields
+- 9817c8b: Allow using both light and dark operating system color schemes
+- c8a252b: Fix button text color inheritance
+
 ## 0.4.2
 
 ### Patch Changes
