@@ -8,52 +8,57 @@
 }
 
 .select {
-  @apply leading-none relative bg-transparent outline-none appearance-none rounded-none hover:bg-white/5 active:bg-white active:text-black cursor-pointer;
+  @apply leading-none appearance-none cursor-pointer;
+
   background-color: var(--va-select-background-color);
-  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
-    linear-gradient(135deg, currentColor 50%, transparent 50%);
-  background-position: calc(
-        100% - var(--va-select-padding) - var(--va-select-caret-width)
-      )
-      calc(1px + 50%),
-    calc(100% - var(--va-select-padding) - 0.28px) calc(1px + 50%);
-  background-size: var(--va-select-caret-width) var(--va-select-caret-width),
-    var(--va-select-caret-width) var(--va-select-caret-width);
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: calc(100% - var(--va-select-padding) - var(--va-select-caret-width)) calc(1px + 50%), calc(100% - var(--va-select-padding) - 0.28px) calc(1px + 50%);
   background-repeat: no-repeat;
+  background-size: var(--va-select-caret-width) var(--va-select-caret-width), var(--va-select-caret-width) var(--va-select-caret-width);
+  border-color: var(--va-select-border-color);
   border-style: solid;
   border-width: var(--va-select-border-width);
-  border-color: var(--va-select-border-color);
   color: inherit;
   font-size: var(--va-select-font-size);
-  padding-top: var(--va-select-padding);
-  padding-right: calc(
-    var(--va-select-caret-width) * 2 + var(--va-select-padding) * 2
-  );
+  outline: none;
   padding-bottom: var(--va-select-padding);
   padding-left: var(--va-select-padding);
+  padding-right: calc(var(--va-select-caret-width) * 2 + var(--va-select-padding) * 2);
+  padding-top: var(--va-select-padding);
   text-align: inherit;
 
   option:disabled {
     color: red;
   }
 
-  .select-group:has(> &) {
+  &:hover {
+    background-color: color-mix(in srgb, var(--va-text-normal) 8%, transparent);
+  }
+
+  &:active {
+    color: var(--va-surface-primary);
+    background-color: var(--va-text-normal);
+  }
+
+  &:focus-visible {
+    box-shadow: inset 0 0 0 var(--va-input-border-width);
+  }
+
+  label:has(> &) {
     position: relative;
 
-    label {
-      @apply absolute top-0 left-0 pointer-events-none;
+    span {
+      @apply absolute top-0 left-0 leading-none pointer-events-none;
+
       font-size: var(--va-font-size-0);
-      padding-left: calc(
-        var(--va-select-padding) + var(--va-select-border-width)
-      );
-      padding-top: calc(var(--va-select-padding) / 1.5);
+      padding-left: calc(var(--va-select-padding) + var(--va-select-border-width));
+      padding-top: calc(var(--va-select-padding) / 2);
     }
 
     .select {
-      padding-top: calc(
-        var(--va-select-padding) + var(--va-font-size-0) * 1.15
-      );
-      padding-bottom: calc(var(--va-select-padding) / 1.5);
+      width: 100%;
+      padding-top: calc(var(--va-select-padding) / 2 + var(--va-font-size-0));
+      padding-bottom: calc(var(--va-select-padding) / 2);
     }
   }
 }
