@@ -1,17 +1,12 @@
 @import 'fonts.css';
 @import 'varvara-css/css';
 
-[data-theme='blue'] {
+[data-theme='light'] {
   color-scheme: light;
-  --va-color-background: orange;
-  --va-color-foreground: black;
 }
 
-[data-theme='black'] {
+[data-theme='dark'] {
   color-scheme: dark;
-  --va-color-primary: #9fe88d;
-  --va-color-background: #2a303c;
-  --va-color-foreground: #b3ccd6;
 }
 
 .va-button {

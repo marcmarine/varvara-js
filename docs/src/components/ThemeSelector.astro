@@ -3,18 +3,18 @@
   type='button'
   class="va-button border-2"
 >
-  <span class='black'>🌞</span>
-  <span class='blue'>🌑</span>
+  <span class='dark'>🌞</span>
+  <span class='light'>🌑</span>
 </button>
 
 <script is:inline>
   const root = document.documentElement
 
   function handleClick() {
-    const isDark = root.dataset.theme === 'black'
+    const isDark = root.dataset.theme === 'dark'
     
-    root.dataset.theme = (isDark ? "blue" : "black")
-    localStorage.setItem('theme', isDark ? 'blue' : 'black')
+    root.dataset.theme = (isDark ? "light" : "dark")
+    localStorage.setItem('theme', isDark ? 'light' : 'dark')
   }
 
   function setButtonHandler() {
@@ -26,8 +26,8 @@
 </script>
 
 <style is:global>
-  [data-theme="blue"] .black,
-  [data-theme="black"] .blue {
+  [data-theme="light"] .dark,
+  [data-theme="dark"] .light {
     display: none;
   }
 </style>
