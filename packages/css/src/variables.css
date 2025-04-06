@@ -1,7 +1,7 @@
 :root {
   color-scheme: light dark;
 
-  --va-border-width: 2px;
+  --va-border-width: 1px;
   --va-border-color: var(--va-text-normal);
 
   --va-font-size-ratio: 1;
@@ -37,31 +37,16 @@
   --va-space-14: calc(15rem * var(--va-space-ratio));
   --va-space-15: calc(20rem * var(--va-space-ratio));
 
-  --va-color-primary: mediumvioletred;
+  --va-color-primary: light-dark(mediumvioletred, #9fe88d);
 
-  --va-color-foreground: #29353d;
-  --va-color-background: #f3f5f7;
+  --va-color-foreground: light-dark(#29353d, #b3ccd6);
+  --va-color-background: light-dark(#f3f5f7, #2a303c);
 
   --va-background-primary: var(--va-color-background);
 
   --va-text-normal: var(--va-color-foreground);
   --va-text-weak: color-mix(in srgb, var(--va-text-normal) 20%, transparent);
 
-  --va-surface-primary: color-mix(
-    in srgb,
-    var(--va-color-background) 80%,
-    transparent
-  );
-  --va-surface-primary-alt: color-mix(
-    in srgb,
-    var(--va-color-background) 80%,
-    var(--va-color-foreground)
-  );
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --va-color-foreground: #b3ccd6;
-    --va-color-background: #2a303c;
-  }
+  --va-surface-primary: color-mix(in srgb, var(--va-color-background) 80%, transparent);
+  --va-surface-primary-alt: color-mix(in srgb, var(--va-color-background) 80%, var(--va-color-foreground));
 }
