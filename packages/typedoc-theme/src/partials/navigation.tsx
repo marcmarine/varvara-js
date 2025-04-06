@@ -1,11 +1,4 @@
-import {
-  DefaultThemeRenderContext,
-  JSX,
-  PageEvent,
-  Reflection,
-  ReflectionFlag,
-  type PageHeading
-} from 'typedoc'
+import { DefaultThemeRenderContext, JSX, PageEvent, Reflection, ReflectionFlag, type PageHeading } from 'typedoc'
 import type { VarvaraThemeContext } from '../themes/VarvaraThemeContext'
 
 export function pageSidebar(context: VarvaraThemeContext) {
@@ -28,9 +21,7 @@ const flagOptionNameToReflectionFlag = {
 
 export function settings(context: DefaultThemeRenderContext) {
   return () => {
-    const defaultFilters = context.options.getValue(
-      'visibilityFilters'
-    ) as Record<string, boolean>
+    const defaultFilters = context.options.getValue('visibilityFilters') as Record<string, boolean>
 
     const visibilityOptions: JSX.Element[] = []
 
@@ -41,31 +32,14 @@ export function settings(context: DefaultThemeRenderContext) {
           .replace(/([a-z])([A-Z])/g, '$1-$2')
           .toLowerCase()
 
-        visibilityOptions.push(
-          buildFilterItem(
-            context,
-            filterName,
-            context.internationalization.translateTagName(key as `@${string}`),
-            defaultFilters[key]
-          )
-        )
+        visibilityOptions.push(buildFilterItem(context, filterName, context.internationalization.translateTagName(key as `@${string}`), defaultFilters[key]))
       } else if (
-        (key === 'protected' &&
-          !context.options.getValue('excludeProtected')) ||
+        (key === 'protected' && !context.options.getValue('excludeProtected')) ||
         (key === 'private' && !context.options.getValue('excludePrivate')) ||
         (key === 'external' && !context.options.getValue('excludeExternals')) ||
         key === 'inherited'
       ) {
-        visibilityOptions.push(
-          buildFilterItem(
-            context,
-            key,
-            context.internationalization.flagString(
-              flagOptionNameToReflectionFlag[key]
-            ),
-            defaultFilters[key]
-          )
-        )
+        visibilityOptions.push(buildFilterItem(context, key, context.internationalization.flagString(flagOptionNameToReflectionFlag[key]), defaultFilters[key]))
       }
     }
 
@@ -74,29 +48,24 @@ export function settings(context: DefaultThemeRenderContext) {
         <summary>{context.i18n.theme_settings()}</summary>
         {visibilityOptions.length && (
           <div class="tsd-filter-visibility">
-            <span class="settings-label">
-              {context.i18n.theme_member_visibility()}
-            </span>
+            <span class="settings-label">{context.i18n.theme_member_visibility()}</span>
             <ul id="tsd-filter-options">{...visibilityOptions}</ul>
           </div>
         )}
-        <div class="va-select-group">
-          <label>{context.i18n.theme_theme()}</label>
+        <label>
+          <span>{context.i18n.theme_theme()}</span>
           <select id="tsd-theme" class="va-select">
             <option value="os">{context.i18n.theme_os()}</option>
             <option value="light">{context.i18n.theme_light()}</option>
             <option value="dark">{context.i18n.theme_dark()}</option>
           </select>
-        </div>
+        </label>
       </details>
     )
   }
 }
 
-function buildSectionNavigation(
-  context: DefaultThemeRenderContext,
-  headings: PageHeading[]
-) {
+function buildSectionNavigation(context: DefaultThemeRenderContext, headings: PageHeading[]) {
   const levels: JSX.Element[][] = [[]]
   const PADDING_PER_LEVEL = 18
 
@@ -118,11 +87,7 @@ function buildSectionNavigation(
   }
 
   for (const heading of headings) {
-    const inferredLevel = heading.level
-      ? heading.level + 2
-      : heading.kind
-      ? 2
-      : 1
+    const inferredLevel = heading.level ? heading.level + 2 : heading.kind ? 2 : 1
 
     while (inferredLevel < levels.length) {
       finalizeLevel(false)
@@ -133,11 +98,7 @@ function buildSectionNavigation(
     }
 
     levels[levels.length - 1].push(
-      <a
-        href={heading.link}
-        class={[heading.classes, 'va-button'].join(' ')}
-        style={`padding-left: ${PADDING_PER_LEVEL * (inferredLevel - 1)}px`}
-      >
+      <a href={heading.link} class={[heading.classes, 'va-button'].join(' ')} style={`padding-left: ${PADDING_PER_LEVEL * (inferredLevel - 1)}px`}>
         {heading.kind && context.icons[heading.kind]()}
         <span>{heading.text}</span>
       </a>
@@ -153,21 +114,11 @@ function buildSectionNavigation(
   return levels[0]
 }
 
-function buildFilterItem(
-  context: DefaultThemeRenderContext,
-  name: string,
-  displayName: string,
-  defaultValue: boolean
-) {
+function buildFilterItem(context: DefaultThemeRenderContext, name: string, displayName: string, defaultValue: boolean) {
   return (
     <li class="tsd-filter-item">
       <label class="tsd-filter-input">
-        <input
-          type="checkbox"
-          id={`tsd-filter-${name}`}
-          name={name}
-          checked={defaultValue}
-        />
+        <input type="checkbox" id={`tsd-filter-${name}`} name={name} checked={defaultValue} />
         {context.icons.checkbox()}
         <span>{displayName}</span>
       </label>
@@ -187,9 +138,7 @@ export function pageNavigation(context: VarvaraThemeContext) {
       if (section.title) {
         sections.push(
           <details open class="va-collapse tsd-accordion">
-            <summary data-key={`section-${section.title}`}>
-              {section.title}
-            </summary>
+            <summary data-key={`section-${section.title}`}>{section.title}</summary>
             {buildSectionNavigation(context, section.headings)}
           </details>
         )

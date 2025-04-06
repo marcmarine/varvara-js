@@ -132,12 +132,12 @@ a {
 
 .settings .va-select {
   width: 100%;
-  border-left: 0;
+  border-left-color: transparent;
   border-right: 0;
   border-bottom: 0;
 }
 
-.settings .va-select-group {
+.settings label:has(.va-select) {
   padding-left: 0 !important;
 }
 
@@ -194,7 +194,7 @@ footer {
   .container-main {
     grid-template-areas: 'header content' 'sidebar content';
     grid-auto-rows: auto 1fr;
-    margin: var(--va-space-8) 0;
+    margin: var(--va-space-8) auto;
   }
   .container {
     padding: 0 var(--va-space-8);
