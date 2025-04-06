@@ -1,25 +1,15 @@
 @font-face {
-  font-family: 'IBM Plex Sans';
+  font-family: 'Plus Jakarta Sans';
   font-style: normal;
   font-display: swap;
-  font-weight: normal;
-  src: url('/fonts/IBMPlexSans-Regular.ttf') format('ttf');
+  src: url('/fonts/PlusJakartaSans-VariableFont_wght.ttf') format('truetype-variations');
 }
 
 @font-face {
-  font-family: 'IBM Plex Sans';
+  font-family: 'Fira Code';
   font-style: normal;
   font-display: swap;
-  font-weight: bold;
-  src: url('/fonts/IBMPlexSans-Bold.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: 'Rubik';
-  src: url('/fonts/Rubik-VariableFont_wght.ttf') format('ttf');
-  font-style: normal;
-  font-style: normal;
-  font-display: swap;
+  src: url('/fonts/FiraCode-VariableFont_wght.ttf') format('truetype-variations');
 }
 
 @font-face {
@@ -27,5 +17,5 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-  src: url('./fonts/NotoSans-VariableFont_wdth,wght.ttf') format('ttf');
+  src: url('./fonts/NotoSans-VariableFont_wdth,wght.ttf') ormat('truetype-variations');
 }

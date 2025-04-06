@@ -15,8 +15,8 @@
 }
 
 .va-button {
-  --va-button-font-size: var(--va-font-size-2);
-  font-family: 'Rubik', sans-serif;
+  font-weight: 700;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 html {
@@ -27,7 +27,6 @@ body {
   font-family: 'Noto Sans', sans-serif;
   color: var(--va-text-normal);
   background-color: var(--va-background-primary);
-  font-size: 18px;
 }
 
 h1,
@@ -37,7 +36,7 @@ h4,
 h5,
 h6 {
   @apply font-bold;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 h1 {
@@ -60,8 +59,13 @@ p {
   }
 }
 
+code {
+  font-family: 'Fira Code', monospace;
+  font-weight: 400;
+}
+
 .page__body {
-  @apply relative px-4 md:grid grid-cols-[280px_1fr] grid-rows-[auto_auto_1fr] min-h-screen gap-x-4 xl:gap-x-8 max-w-7xl mx-auto;
+  @apply relative px-4 md:grid grid-cols-[280px_1fr] grid-rows-[auto_auto_1fr] min-h-screen gap-x-4 xl:gap-x-8 max-w-[1150px] mx-auto;
 }
 
 .page {
@@ -133,13 +137,7 @@ pre {
   top: -200%;
   width: var(--line-width);
   height: 300%;
-  background: linear-gradient(
-    180deg,
-    var(--line-color),
-    var(--line-color) 50%,
-    transparent 0,
-    transparent
-  );
+  background: linear-gradient(180deg, var(--line-color), var(--line-color) 50%, transparent 0, transparent);
   background-size: var(--line-width) var(--line-gap);
   z-index: 20;
 }
@@ -158,12 +156,6 @@ pre {
   left: -100vw;
   width: 200vw;
   height: var(--line-width);
-  background: linear-gradient(
-    to right,
-    var(--line-color),
-    var(--line-color) 50%,
-    transparent 0,
-    transparent
-  );
+  background: linear-gradient(to right, var(--line-color), var(--line-color) 50%, transparent 0, transparent);
   background-size: var(--line-gap) var(--line-width);
 }
