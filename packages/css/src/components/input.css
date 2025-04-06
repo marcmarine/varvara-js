@@ -7,7 +7,7 @@
 }
 
 .input {
-  @apply block leading-none appearance-none;
+  @apply appearance-none;
 
   background-color: var(--va-input-background-color);
   border-color: var(--va-input-border-color);
@@ -15,11 +15,17 @@
   border-width: var(--va-input-border-width);
   color: inherit;
   font-size: var(--va-input-font-size);
+  height: calc(var(--va-input-padding) * 2 + var(--va-input-font-size));
   outline: none;
-  padding: var(--va-input-padding);
+  padding-left: var(--va-input-padding);
+  padding-right: var(--va-input-padding);
 
   &[disabled] {
     color: var(--va-text-weak);
+  }
+
+  &:hover {
+    background-color: color-mix(in srgb, var(--va-text-normal) 8%, transparent);
   }
 
   &:not([readonly]) {
@@ -30,18 +36,8 @@
   }
 
   label:has(&) {
-    @apply leading-none flex flex-col;
+    position: relative;
 
-    border-style: solid;
-    border-width: var(--va-select-border-width);
-    border-color: var(--va-select-border-color);
-
-    font-size: var(--va-font-size-0);
-
-    padding-left: var(--va-input-padding);
-    padding-right: var(--va-input-padding);
-    padding-top: calc(var(--va-input-padding) / 2);
-    padding-bottom: calc(var(--va-input-padding) / 2);
     cursor: text;
 
     &:not(:has(.input[readonly])) {
@@ -51,11 +47,17 @@
       }
     }
 
+    span {
+      @apply absolute top-0 left-0 leading-none pointer-events-none;
+
+      font-size: var(--va-font-size-0);
+      padding-left: calc(var(--va-select-padding) + var(--va-select-border-width));
+      padding-top: calc(var(--va-select-padding) / 2);
+    }
+
     .input {
-      box-shadow: none !important;
-      font-size: initial;
-      border: none;
-      padding: 0;
+      width: 100%;
+      padding-top: var(--va-font-size-0);
     }
   }
 }

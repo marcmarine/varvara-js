@@ -7,16 +7,19 @@
 }
 
 .button {
-  @apply block leading-none font-medium;
+  @apply block font-medium;
 
+  align-content: center;
   background-color: var(--va-button-background-color);
   border-color: var(--va-button-border-color);
   border-style: solid;
   border-width: var(--va-button-border-width);
   color: inherit;
   font-size: var(--va-button-font-size);
+  height: calc(var(--va-button-padding) * 2 + var(--va-button-font-size));
   outline: none;
-  padding: var(--va-button-padding);
+  padding-left: var(--va-button-padding);
+  padding-right: var(--va-button-padding);
   text-align: inherit;
 
   &:hover:not(&:active):not(&--active) {
