@@ -35,10 +35,8 @@
     }
   }
 
-  label:has(&) {
-    position: relative;
-
-    cursor: text;
+  label:has(> &) {
+    @apply block relative cursor-text;
 
     &:not(:has(.input[readonly])) {
       &:focus,

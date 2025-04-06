@@ -44,7 +44,7 @@
   }
 
   label:has(> &) {
-    position: relative;
+    @apply block relative;
 
     span {
       @apply absolute top-0 left-0 leading-none pointer-events-none;
