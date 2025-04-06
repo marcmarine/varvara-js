@@ -1,5 +1,16 @@
 # varvara-css
 
+## 0.5.0
+
+### Minor Changes
+
+- fdab0d0: Make consistent height for input, button, and select components
+- 37c8a9c: Improve compatibility and flexibility of `color-scheme` CSS property handling
+
+### Patch Changes
+
+- e585bd7: Fix label display value for input and select fields
+
 ## 0.4.3
 
 ### Patch Changes

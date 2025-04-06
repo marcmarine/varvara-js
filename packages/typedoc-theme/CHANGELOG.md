@@ -1,5 +1,12 @@
 # varvara-typedoc-theme
 
+## 0.2.1
+
+### Patch Changes
+
+- 99ae4fa: Update package description
+- 7d927da: Adjust Varvara components to v0.5.0 changes
+
 ## 0.2.0
 
 ### Minor Changes
