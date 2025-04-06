@@ -8,7 +8,7 @@
     "directory": "packages/typedoc-theme"
   },
   "type": "module",
-  "description": "Seamless documentation experience for TypeScript projects.",
+  "description": "Varvara theme for TypeDoc.",
   "keywords": [
     "typedoc-theme",
     "varvara-css"
