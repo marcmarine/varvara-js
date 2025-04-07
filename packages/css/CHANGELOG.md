@@ -1,5 +1,12 @@
 # varvara-css
 
+## 0.5.1
+
+### Patch Changes
+
+- 11c0cf2: Remove unused card custom variable
+- 9d1d699: Adjust table styles for consistency
+
 ## 0.5.0
 
 ### Minor Changes
