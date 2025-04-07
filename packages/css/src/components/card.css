@@ -1,5 +1,4 @@
 :root {
-  --va-card-color: var(--va-text-normal);
   --va-card-font-size: var(--va-font-size-1);
   --va-card-padding: var(--va-space-3);
   --va-card-border-width: var(--va-border-width);
@@ -9,6 +8,7 @@
 
 .card {
   @apply -space-y-[--va-card-border-width];
+
   color: var(--va-card-color);
   background-color: var(--va-card-background-color);
 
