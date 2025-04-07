@@ -10,78 +10,59 @@ Varvara CSS is customizable using [CSS Variables](https://developer.mozilla.org/
 
 ## Border
 
-<Code
-  code={`--va-border-width: 2px;
---va-border-color: var(--va-text-normal);`}
-  lang="css"
-/>
+| CSS Variable      | Default Value         |
+| ----------------- | --------------------- |
+| --va-border-width | 1px                   |
+| --va-border-color | var(--va-text-normal) |
 
 ## Colors
 
-<Code
-  code={`--va-color-primary: fuchsia;
-
---va-color-foreground: black;
---va-color-background: white;
-
---va-background-primary: var(--va-color-background);
-
---va-text-normal: var(--va-color-foreground);
---va-text-weak: color-mix(in srgb, var(--va-text-normal) 20%, transparent);
-
---va-surface-primary: color-mix(
-in srgb,
-var(--va-background-primary) 80%,
-transparent
-);
-
---va-surface-primary-alt: color-mix(
-in srgb,
-var(--va-background-primary) 80%,
-var(--va-color-foreground)
-);`}
-lang="css"
-/>
+| CSS Variable             | Default Value                                                                  |
+| ------------------------ | ------------------------------------------------------------------------------ |
+| --va-color-primary       | light-dark(mediumvioletred, #9fe88d)                                           |
+| --va-color-foreground    | light-dark(#29353d, #b3ccd6)                                                   |
+| --va-color-background    | light-dark(#f3f5f7, #2a303c)                                                   |
+| --va-background-primary  | var(--va-color-background)                                                     |
+| --va-text-normal         | var(--va-color-foreground)                                                     |
+| --va-text-weak           | color-mix(in srgb, var(--va-text-normal) 20%, transparent)                     |
+| --va-surface-primary     | color-mix(in srgb, var(--va-color-background) 80%, transparent)                |
+| --va-surface-primary-alt | color-mix(in srgb, var(--va-color-background) 80%, var(--va-color-foreground)) |
 
 ## Font Size
 
-<Code
-  code={`--va-font-size-ratio: 1;
-
---va-font-size-00: calc(0.5rem - var(--va-font-size-ratio));
---va-font-size-0: calc(0.75rem - var(--va-font-size-ratio));
---va-font-size-1: calc(1rem - var(--va-font-size-ratio));
---va-font-size-2: calc(1.1rem - var(--va-font-size-ratio));
---va-font-size-3: calc(1.25rem - var(--va-font-size-ratio));
---va-font-size-4: calc(1.5rem - var(--va-font-size-ratio));
---va-font-size-5: calc(2rem - var(--va-font-size-ratio));
---va-font-size-6: calc(2.5rem - var(--va-font-size-ratio));
---va-font-size-7: calc(3rem - var(--va-font-size-ratio));
---va-font-size-8: calc(3.5rem - var(--va-font-size-ratio));`}
-lang="css"
-/>
+| CSS Variable         | Default Value                              |
+| -------------------- | ------------------------------------------ |
+| --va-font-size-ratio | 1                                          |
+| --va-font-size-00    | calc(0.5rem \* var(--va-font-size-ratio))  |
+| --va-font-size-0     | calc(0.75rem \* var(--va-font-size-ratio)) |
+| --va-font-size-1     | calc(1rem \* var(--va-font-size-ratio))    |
+| --va-font-size-2     | calc(1.1rem \* var(--va-font-size-ratio))  |
+| --va-font-size-3     | calc(1.25rem \* var(--va-font-size-ratio)) |
+| --va-font-size-4     | calc(1.5rem \* var(--va-font-size-ratio))  |
+| --va-font-size-5     | calc(2rem \* var(--va-font-size-ratio))    |
+| --va-font-size-6     | calc(2.5rem \* var(--va-font-size-ratio))  |
+| --va-font-size-7     | calc(3rem \* var(--va-font-size-ratio))    |
+| --va-font-size-8     | calc(3.5rem \* var(--va-font-size-ratio))  |
 
 ## Space
 
-<Code
-  code={`--va-space-ratio: 1;
-
---va-space-000: calc(-0.5rem - var(--va-space-ratio));
---va-space-00: calc(-0.25rem - var(--va-space-ratio));
---va-space-1: calc(0.25rem - var(--va-space-ratio));
---va-space-2: calc(0.5rem - var(--va-space-ratio));
---va-space-3: calc(0.75rem - var(--va-space-ratio));
---va-space-4: calc(1rem - var(--va-space-ratio));
---va-space-5: calc(1.25rem - var(--va-space-ratio));
---va-space-6: calc(1.5rem - var(--va-space-ratio));
---va-space-7: calc(1.75rem - var(--va-space-ratio));
---va-space-8: calc(2rem - var(--va-space-ratio));
---va-space-9: calc(3rem - var(--va-space-ratio));
---va-space-10: calc(4rem - var(--va-space-ratio));
---va-space-11: calc(5rem - var(--va-space-ratio));
---va-space-12: calc(7.5rem - var(--va-space-ratio));
---va-space-13: calc(10rem - var(--va-space-ratio));
---va-space-14: calc(15rem - var(--va-space-ratio));
---va-space-15: calc(20rem - var(--va-space-ratio));`}
-lang="css"
-/>
+| CSS Variable     | Default Value                           |
+| ---------------- | --------------------------------------- |
+| --va-space-ratio | 1                                       |
+| --va-space-000   | calc(-0.5rem \* var(--va-space-ratio))  |
+| --va-space-00    | calc(-0.25rem \* var(--va-space-ratio)) |
+| --va-space-1     | calc(0.25rem \* var(--va-space-ratio))  |
+| --va-space-2     | calc(0.5rem \* var(--va-space-ratio))   |
+| --va-space-3     | calc(0.75rem \* var(--va-space-ratio))  |
+| --va-space-4     | calc(1rem \* var(--va-space-ratio))     |
+| --va-space-5     | calc(1.25rem \* var(--va-space-ratio))  |
+| --va-space-6     | calc(1.5rem \* var(--va-space-ratio))   |
+| --va-space-7     | calc(1.75rem \* var(--va-space-ratio))  |
+| --va-space-8     | calc(2rem \* var(--va-space-ratio))     |
+| --va-space-9     | calc(3rem \* var(--va-space-ratio))     |
+| --va-space-10    | calc(4rem \* var(--va-space-ratio))     |
+| --va-space-11    | calc(5rem \* var(--va-space-ratio))     |
+| --va-space-12    | calc(7.5rem \* var(--va-space-ratio))   |
+| --va-space-13    | calc(10rem \* var(--va-space-ratio))    |
+| --va-space-14    | calc(15rem \* var(--va-space-ratio))    |
+| --va-space-15    | calc(20rem \* var(--va-space-ratio))    |

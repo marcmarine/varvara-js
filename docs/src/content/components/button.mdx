@@ -11,23 +11,18 @@ export const Component = () => <Button />
 
 ## Variables
 
-<Code
-  code={`--va-button-font-size: var(--va-font-size-1);
---va-button-padding: var(--va-space-3);
---va-button-border-width: var(--va-border-width);
---va-button-border-color: var(--va-border-color);
---va-button-background-color: var(--va-surface-primary);`}
-  lang="css"
-  className="mb-4"
-/>
+| CSS Variable                 | Default Value             |
+| ---------------------------- | ------------------------- |
+| --va-button-font-size        | var(--va-font-size-1)     |
+| --va-button-padding          | var(--va-space-3)         |
+| --va-button-border-width     | var(--va-border-width)    |
+| --va-button-border-color     | var(--va-border-color)    |
+| --va-button-background-color | var(--va-surface-primary) |
 
 ## Default
 
 <Example component={Component}>
-  <Code
-    code={`<button class="va-button">Example button</button>`}
-    lang="html"
-  />
+  <Code code={`<button class="va-button">Example button</button>`} lang="html" />
 </Example>
 
 ## Action
@@ -38,10 +33,7 @@ export const Component = () => <Button />
   )}
 >
 
-<Code
-  code={`<button class="va-button va-button--action">Example button</button>`}
-  lang="html"
-/>
+<Code code={`<button class="va-button va-button--action">Example button</button>`} lang="html" />
 
 </Example>
 
@@ -53,10 +45,7 @@ export const Component = () => <Button />
   )}
 >
 
-<Code
-  code={`<button class="va-button va-button--active">Example button</button>`}
-  lang="html"
-/>
+<Code code={`<button class="va-button va-button--active">Example button</button>`} lang="html" />
 
 </Example>
 
@@ -68,9 +57,6 @@ component={() => (
 )}
 >
 
-<Code
-  code={`<button class="va-button va-button--disabled">Example button</button>`}
-  lang="html"
-/>
+<Code code={`<button class="va-button va-button--disabled">Example button</button>`} lang="html" />
 
 </Example>

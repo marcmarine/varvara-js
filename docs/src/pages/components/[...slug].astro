@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Page.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
+import Table from '../../components/CustomTable.astro';
 
 export async function getStaticPaths() {
 	const components = await getCollection('components');
@@ -13,7 +14,7 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<'components'>;
 
 const component = Astro.props;
-const { Content, headings } = await component.render();
+const { Content, headings, components } = await component.render();
 
 const links = headings.filter(heading => heading.depth === 2).map((heading) => ({
 		text: heading.text,
@@ -22,5 +23,5 @@ const links = headings.filter(heading => heading.depth === 2).map((heading) => (
 ---
 
 <Layout items={links} backHref="/components">
-  <Content />
+  <Content components={{ ...components , table: Table}} />
 </Layout>

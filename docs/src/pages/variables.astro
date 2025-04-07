@@ -1,9 +1,10 @@
 ---
 import { getEntry } from 'astro:content';
 import Layout from '../layouts/Page.astro'
+import Table from '../components/CustomTable.astro';
 
 const variables = await getEntry('docs', 'variables');
-const { Content, headings } = await variables.render()
+const { Content, headings, components } = await variables.render()
 
 const links = headings.filter(heading => heading.depth === 2).map((heading) => ({
 		text: heading.text,
@@ -12,7 +13,7 @@ const links = headings.filter(heading => heading.depth === 2).map((heading) => (
 ---
 
 <Layout items={links} backHref="/">
-  <Content />
+  <Content components={{ ...components, table: Table  }} />
 	<div class="py-8 flex justify-between">
 		<a href="/get-started" class="font-semibold text-lg hover:underline">
 			← Get started
