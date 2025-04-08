@@ -1,5 +1,11 @@
 # varvara-css
 
+## 0.5.2
+
+### Patch Changes
+
+- 18c8838: Make collapse appearance consistent with select component
+
 ## 0.5.1
 
 ### Patch Changes
