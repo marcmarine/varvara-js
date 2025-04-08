@@ -4,14 +4,13 @@
   --va-collapse-border-width: var(--va-border-width);
   --va-collapse-border-color: var(--va-border-color);
   --va-collapse-background-color: var(--va-surface-primary);
-  --va-collapse-caret-width: calc(var(--va-collapse-font-size) / 3);
   --va-collapse-tree-indentation: var(--va-space-8);
 }
 
 .collapse {
   --depth: 0;
   --space: calc(var(--depth) * var(--va-collapse-tree-indentation));
-  --offset: calc(var(--va-collapse-caret-width) + var(--va-space-4));
+  --caret-width: calc(var(--va-collapse-font-size) / 3);
 
   font-size: var(--va-collapse-font-size);
   border-style: solid;
@@ -19,35 +18,26 @@
   border-color: var(--va-collapse-border-color);
 
   &[open] > summary::before {
-    transform: rotate(0)
-      translateY(calc(var(--va-collapse-caret-width) / 2 * -1));
+    transform: rotate(0) translateY(calc(var(--caret-width) / 2 * -1));
   }
 
   & > *:not(summary):not(details):not(.button) {
-    padding-left: calc(
-      var(--va-collapse-caret-width) * 2 + var(--va-collapse-padding) * 2 +
-        var(--space) - var(--offset)
-    );
+    padding-left: calc(var(--va-collapse-padding) + var(--space));
   }
 
   summary {
     @apply relative block leading-none font-medium cursor-pointer;
 
-    padding: var(--va-collapse-padding);
-    padding-left: calc(
-      var(--va-collapse-caret-width) * 2 + var(--va-collapse-padding) * 2 +
-        var(--space)
-    );
-    text-align: inherit;
+    align-content: center;
     background-color: var(--va-collapse-background-color);
+    height: calc(var(--va-collapse-padding) * 2 + var(--va-collapse-font-size));
     outline: none;
+    padding-left: calc(var(--va-collapse-padding) + var(--space));
+    padding-right: calc(var(--caret-width) * 2 + var(--va-collapse-padding) * 2);
+    text-align: inherit;
 
     &:hover:not(&:active):not(&--active) {
-      background-color: color-mix(
-        in srgb,
-        var(--va-text-normal) 8%,
-        transparent
-      );
+      background-color: color-mix(in srgb, var(--va-text-normal) 8%, transparent);
     }
 
     &:focus-visible {
@@ -63,39 +53,21 @@
     &::before {
       @apply absolute top-1/2 -translate-y-1/2;
 
-      left: calc(
-        var(--va-collapse-caret-width) * 2 + var(--va-collapse-padding) * 2 +
-          var(--space) - var(--offset)
-      );
-      width: calc(var(--va-collapse-caret-width) * 2);
-      height: var(--va-collapse-caret-width);
+      right: calc(var(--va-collapse-padding));
+      width: calc(var(--caret-width) * 2);
+      height: var(--caret-width);
 
-      transform: rotate(-90deg);
+      transform: rotate(-90deg) translateY(calc(var(--caret-width) / 2 * -1));
       transform-origin: center top;
 
       content: '';
-      background-image: linear-gradient(
-          45deg,
-          transparent 50%,
-          currentColor 50%
-        ),
-        linear-gradient(135deg, currentColor 50%, transparent 50%);
-      background-position: 0 0, calc(var(--va-collapse-caret-width) - 0.1px) 0;
-      background-size: var(--va-collapse-caret-width)
-          var(--va-collapse-caret-width),
-        var(--va-collapse-caret-width) var(--va-collapse-caret-width);
+      background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+      background-position: 0 0, calc(var(--caret-width) - 0.5px) 0;
+      background-size: var(--caret-width) var(--caret-width), var(--caret-width) var(--caret-width);
       background-repeat: no-repeat;
     }
   }
 
-  & .button {
-    padding-left: calc(
-      var(--va-collapse-caret-width) * 2 + var(--va-collapse-padding) * 2 +
-        var(--space) + var(--offset) + 10px
-    );
-  }
-
-  /* Nested */
   & .collapse,
   & .button {
     --depth: 1;
@@ -118,5 +90,9 @@
         }
       }
     }
+  }
+
+  & .button {
+    padding-left: calc(var(--va-collapse-tree-indentation) + var(--va-collapse-padding) + var(--space));
   }
 }
