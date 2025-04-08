@@ -42,66 +42,61 @@ export const Component = () => <Collapse />
 
 <Example
   component={() => (
-    <div class="va-button-group w-full">
+    <details class="va-collapse w-full">
+      <summary>
+        <strong>Thought</strong>
+      </summary>
       <details class="va-collapse">
         <summary>
-          <strong>Thought</strong>
+          <strong>The purpose of thought</strong>
         </summary>
         <details class="va-collapse">
           <summary>
-            <strong>The purpose of thought</strong>
+            <strong>1</strong>
           </summary>
-          <details class="va-collapse">
-            <summary>
-              <strong>1</strong>
-            </summary>
-            <p>It often happens that a thought comes to us that seems both true and strange, and we hesitate to believe it. But then, if you think about it thoroughly, you see that the thought that seemed strange is the simplest truth, such that once you come to know it, you cannot stop believing in it.</p>
-          </details>
-           <details class="va-collapse">
-            <summary>
-              <strong>2</strong>
-            </summary>
-            <p>
-              While living among people, do not forget what you learned in solitude. And in solitude, reflect on what you learned from interacting with people.
-            </p>
-          </details>
-          <button class="va-button"><strong>Buttons can also be nested 🚀</strong></button>
+          <p>It often happens that a thought comes to us that seems both true and strange, and we hesitate to believe it. But then, if you think about it thoroughly, you see that the thought that seemed strange is the simplest truth, such that once you come to know it, you cannot stop believing in it.</p>
         </details>
+          <details class="va-collapse">
+          <summary>
+            <strong>2</strong>
+          </summary>
+          <p>
+            While living among people, do not forget what you learned in solitude. And in solitude, reflect on what you learned from interacting with people.
+          </p>
+        </details>
+        <button class="va-button"><strong>Buttons can also be nested 🚀</strong></button>
       </details>
-    </div>
-
+    </details>
 )}
 
 >
 
 <Code
-  code={`<div class="va-button-group w-full">
+  code={`<details class="va-collapse w-full">
+  <summary>
+    <strong>Thought</strong>
+  </summary>
   <details class="va-collapse">
     <summary>
-      <strong>Thought</strong>
+      <strong>The purpose of thought</strong>
     </summary>
     <details class="va-collapse">
       <summary>
-        <strong>The purpose of thought</strong>
+        <strong>1</strong>
       </summary>
-      <details class="va-collapse">
-        <summary>
-          <strong>1</strong>
-        </summary>
-        <p>It often happens that a thought comes to us that seems both true and strange, and we hesitate to believe it. But then, if you think about it thoroughly, you see that the thought that seemed strange is the simplest truth, such that once you come to know it, you cannot stop believing in it.</p>
-      </details>
-        <details class="va-collapse">
-        <summary>
-          <strong>2</strong>
-        </summary>
-        <p>
-          While living among people, do not forget what you learned in solitude. And in solitude, reflect on what you learned from interacting with people.
-        </p>
-      </details>
-      <button class="va-button"><strong>Buttons can also be nested 🚀</strong></button>
+      <p>It often happens that a thought comes to us that seems both true and strange, and we hesitate to believe it. But then, if you think about it thoroughly, you see that the thought that seemed strange is the simplest truth, such that once you come to know it, you cannot stop believing in it.</p>
     </details>
+      <details class="va-collapse">
+      <summary>
+        <strong>2</strong>
+      </summary>
+      <p>
+        While living among people, do not forget what you learned in solitude. And in solitude, reflect on what you learned from interacting with people.
+      </p>
+    </details>
+    <button class="va-button"><strong>Buttons can also be nested 🚀</strong></button>
   </details>
-</div>`}
+</details>`}
   lang="html"
 />
 </Example>
