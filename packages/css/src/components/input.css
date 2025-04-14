@@ -11,6 +11,7 @@
 
   background-color: var(--va-input-background-color);
   border-color: var(--va-input-border-color);
+  border-radius: 0; // Fix Safari iOS border radius
   border-style: solid;
   border-width: var(--va-input-border-width);
   color: inherit;
