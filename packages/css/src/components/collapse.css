@@ -36,6 +36,10 @@
     padding-right: calc(var(--caret-width) * 2 + var(--va-collapse-padding) * 2);
     text-align: inherit;
 
+    &::-webkit-details-marker {
+      display: none; // Hide marker on Safari iOS
+    }
+
     &:hover:not(&:active):not(&--active) {
       background-color: color-mix(in srgb, var(--va-text-normal) 8%, transparent);
     }
