@@ -37,7 +37,7 @@
     text-align: inherit;
 
     &::-webkit-details-marker {
-      display: none; // Hide marker on Safari iOS
+      display: none; /* Hide marker on Safari iOS */
     }
 
     &:hover:not(&:active):not(&--active) {
