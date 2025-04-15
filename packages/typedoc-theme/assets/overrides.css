@@ -1,33 +1,9 @@
-@media (prefers-color-scheme: light) {
-  :root {
-    --va-color-foreground: #29353d;
-    --va-color-background: #f3f5f7;
-    --va-border-color: LightGray;
-    --va-color-primary: RoyalBlue;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --va-color-foreground: #b3ccd6;
-    --va-color-background: #2a303c;
-    --va-border-color: LightSlateGray;
-    --va-color-primary: LightSkyBlue;
-  }
-}
-
 [data-theme='light'] {
-  --va-color-foreground: #29353d;
-  --va-color-background: #f3f5f7;
-  --va-border-color: LightGray;
-  --va-color-primary: RoyalBlue;
+  color-scheme: light;
 }
 
 [data-theme='dark'] {
-  --va-color-foreground: #b3ccd6;
-  --va-color-background: #2a303c;
-  --va-border-color: LightSlateGray;
-  --va-color-primary: LightSkyBlue;
+  color-scheme: dark;
 }
 
 * {
