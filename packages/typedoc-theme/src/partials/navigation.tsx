@@ -1,4 +1,4 @@
-import { DefaultThemeRenderContext, JSX, PageEvent, Reflection, ReflectionFlag, type PageHeading } from 'typedoc'
+import { DefaultThemeRenderContext, JSX, PageEvent, Reflection, ReflectionFlag, type PageHeading, i18n, translateTagName, ReflectionFlags } from 'typedoc'
 import type { VarvaraThemeContext } from '../themes/VarvaraThemeContext'
 
 export function pageSidebar(context: VarvaraThemeContext) {
@@ -32,32 +32,32 @@ export function settings(context: DefaultThemeRenderContext) {
           .replace(/([a-z])([A-Z])/g, '$1-$2')
           .toLowerCase()
 
-        visibilityOptions.push(buildFilterItem(context, filterName, context.internationalization.translateTagName(key as `@${string}`), defaultFilters[key]))
+        visibilityOptions.push(buildFilterItem(context, filterName, translateTagName(key as `@${string}`), defaultFilters[key]))
       } else if (
         (key === 'protected' && !context.options.getValue('excludeProtected')) ||
         (key === 'private' && !context.options.getValue('excludePrivate')) ||
         (key === 'external' && !context.options.getValue('excludeExternals')) ||
         key === 'inherited'
       ) {
-        visibilityOptions.push(buildFilterItem(context, key, context.internationalization.flagString(flagOptionNameToReflectionFlag[key]), defaultFilters[key]))
+        visibilityOptions.push(buildFilterItem(context, key, ReflectionFlags.flagString(flagOptionNameToReflectionFlag[key]), defaultFilters[key]))
       }
     }
 
     return (
       <details class="va-collapse settings tsd-accordion" open={false}>
-        <summary>{context.i18n.theme_settings()}</summary>
+        <summary>{i18n.theme_settings()}</summary>
         {visibilityOptions.length && (
           <div class="tsd-filter-visibility">
-            <span class="settings-label">{context.i18n.theme_member_visibility()}</span>
+            <span class="settings-label">{i18n.theme_member_visibility()}</span>
             <ul id="tsd-filter-options">{...visibilityOptions}</ul>
           </div>
         )}
         <label>
-          <span>{context.i18n.theme_theme()}</span>
+          <span>{i18n.theme_theme()}</span>
           <select id="tsd-theme" class="va-select">
-            <option value="os">{context.i18n.theme_os()}</option>
-            <option value="light">{context.i18n.theme_light()}</option>
-            <option value="dark">{context.i18n.theme_dark()}</option>
+            <option value="os">{i18n.theme_os()}</option>
+            <option value="light">{i18n.theme_light()}</option>
+            <option value="dark">{i18n.theme_dark()}</option>
           </select>
         </label>
       </details>
@@ -149,7 +149,7 @@ export function pageNavigation(context: VarvaraThemeContext) {
 
     return (
       <details open={false} class="va-collapse page-navigation tsd-accordion">
-        <summary>{context.i18n.theme_on_this_page()}</summary>
+        <summary>{i18n.theme_on_this_page()}</summary>
         {sections}
       </details>
     )

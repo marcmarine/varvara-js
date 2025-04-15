@@ -1,11 +1,11 @@
-import { JSX } from 'typedoc'
+import { i18n, JSX } from 'typedoc'
 import type { VarvaraThemeContext } from '../themes/VarvaraThemeContext'
 
 export function footer(context: VarvaraThemeContext) {
   const hideGenerator = context.options.getValue('hideGenerator')
   let generatorDisplay = <></>
   if (!hideGenerator) {
-    const message = context.i18n.theme_generated_using_typedoc()
+    const message = i18n.theme_generated_using_typedoc()
 
     // Only handles one occurrence, but that's all I expect...
     const index = message.indexOf('TypeDoc')
