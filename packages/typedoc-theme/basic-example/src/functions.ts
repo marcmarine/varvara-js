@@ -5,7 +5,7 @@
  * @returns the square root if `x` is non-negative or `NaN` if `x` is negative.
  */
 export function sqrt(x: number): number {
-    return Math.sqrt(x);
+  return Math.sqrt(x)
 }
 
 /**
@@ -22,7 +22,7 @@ export function sqrt(x: number): number {
  * @param x the number do calculate the root of.
  * @returns the square root if `x` is non-negative or `NaN` if `x` is negative.
  */
-export const sqrtArrowFunction = (x: number): number => Math.sqrt(x);
+export const sqrtArrowFunction = (x: number): number => Math.sqrt(x)
 
 /**
  * A simple generic function that concatenates two arrays.
@@ -37,22 +37,22 @@ export const sqrtArrowFunction = (x: number): number => Math.sqrt(x);
  * @typeParam T the element type of the arrays
  */
 export function concat<T>(array1: T[], array2: T[]): T[] {
-    return array1.concat(array2);
+  return array1.concat(array2)
 }
 
 /**
  * The options type for {@link makeHttpCallA}.
  */
 export interface MakeHttpCallAOptions {
-    url: string;
+  url: string
 
-    /** e.g. GET, POST, PUT, DELETE */
-    method: string;
+  /** e.g. GET, POST, PUT, DELETE */
+  method: string
 
-    /** e.g. `{ 'Authorization': 'Bearer <access token>' }` */
-    headers: Record<string, string>;
-    body: string | Blob | FormData;
-    mode: "cors" | "no-cors" | "same-origin";
+  /** e.g. `{ 'Authorization': 'Bearer <access token>' }` */
+  headers: Record<string, string>
+  body: string | Blob | FormData
+  mode: 'cors' | 'no-cors' | 'same-origin'
 }
 
 /**
@@ -62,12 +62,10 @@ export interface MakeHttpCallAOptions {
  * **Make sure to export the options type when using this pattern.** Otherwise,
  * TypeDoc will not document the options.
  */
-export function makeHttpCallA(
-    options: MakeHttpCallAOptions,
-): Promise<Response> {
-    const { url, method, headers, body, mode } = options;
+export function makeHttpCallA(options: MakeHttpCallAOptions): Promise<Response> {
+  const { url, method, headers, body, mode } = options
 
-    return fetch(url, { method, headers, body, mode });
+  return fetch(url, { method, headers, body, mode })
 }
 
 /**
@@ -76,20 +74,20 @@ export function makeHttpCallA(
  * The options type is written directly in the function definition.
  */
 export function makeHttpCallB(options: {
-    url: string;
+  url: string
 
-    /** e.g. GET, POST, PUT, DELETE */
-    method: string;
+  /** e.g. GET, POST, PUT, DELETE */
+  method: string
 
-    /** e.g. `{ 'Authorization': 'Bearer <access token>' }` */
-    headers: Record<string, string>;
+  /** e.g. `{ 'Authorization': 'Bearer <access token>' }` */
+  headers: Record<string, string>
 
-    body: string | Blob | FormData;
-    mode: "cors" | "no-cors" | "same-origin";
+  body: string | Blob | FormData
+  mode: 'cors' | 'no-cors' | 'same-origin'
 }): Promise<Response> {
-    const { url, method, headers, body, mode } = options;
+  const { url, method, headers, body, mode } = options
 
-    return fetch(url, { method, headers, body, mode });
+  return fetch(url, { method, headers, body, mode })
 }
 
 /**
@@ -99,7 +97,7 @@ export function makeHttpCallB(options: {
  * of a function. The implementation signature of the overloaded function is not
  * included in the documentation.
  */
-export function overloadedFunction(a: number, b: number): string;
+export function overloadedFunction(a: number, b: number): string
 
 /**
  * Concatenates two strings.
@@ -108,11 +106,8 @@ export function overloadedFunction(a: number, b: number): string;
  * of a function. The implementation signature of the overloaded function is not
  * included in the documentation.
  */
-export function overloadedFunction(a: string, b: string): string;
+export function overloadedFunction(a: string, b: string): string
 
 export function overloadedFunction(a: unknown, b: unknown): string {
-    return (
-        (a as { toString(): string }).toString() +
-        (b as { toString(): string }).toString()
-    );
+  return (a as { toString(): string }).toString() + (b as { toString(): string }).toString()
 }

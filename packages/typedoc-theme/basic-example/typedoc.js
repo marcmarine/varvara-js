@@ -1,7 +1,7 @@
 /** @type {Partial<import("typedoc").TypeDocOptions>} */
 const config = {
-  entryPoints: ['./example/src'],
-  plugin: ['./dist/index.js'],
+  entryPoints: ['./src/index.ts'],
+  plugin: ['varvara-typedoc-theme'],
   theme: 'varvara',
   name: 'Varvara Theme Example',
   includeVersion: true,
