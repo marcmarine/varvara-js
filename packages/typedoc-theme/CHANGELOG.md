@@ -1,5 +1,15 @@
 # varvara-typedoc-theme
 
+## 0.3.0
+
+### Minor Changes
+
+- ee6e1d0: Add compatibility for TypeDoc v0.28
+
+### Patch Changes
+
+- 987a250: Simplify theme implementation with Varvara CSS v0.5.2
+
 ## 0.2.1
 
 ### Patch Changes
