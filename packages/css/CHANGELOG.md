@@ -1,5 +1,13 @@
 # varvara-css
 
+## 0.5.3
+
+### Patch Changes
+
+- 2d517cd: Fix input radius rendering on Safari iOS
+- fff1e59: Fix invalid comment syntax causing parsing errors
+- e047008: Remove Safari iOS marker from `<details>` element
+
 ## 0.5.2
 
 ### Patch Changes
