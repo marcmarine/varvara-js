@@ -63,6 +63,10 @@ p {
     @apply pt-0;
   }
 }
+*:not(.shiki) > code {
+  font-size: 85%;
+  background-color: light-dark(rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.05));
+}
 
 code {
   font-family: 'Fira Code', monospace;
@@ -71,6 +75,14 @@ code {
 
 .page__body {
   @apply relative px-4 md:grid grid-cols-[280px_1fr] grid-rows-[auto_auto_1fr] min-h-screen gap-x-4 xl:gap-x-8 max-w-[1150px] mx-auto;
+
+  header {
+    pointer-events: none;
+
+    * {
+      pointer-events: auto;
+    }
+  }
 }
 
 .page {
