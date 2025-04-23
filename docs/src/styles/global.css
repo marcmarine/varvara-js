@@ -9,6 +9,16 @@
   color-scheme: dark;
 }
 
+[data-theme='dark'] .shiki,
+[data-theme='dark'] .shiki span {
+  color: var(--shiki-dark) !important;
+}
+
+.shiki,
+.shiki span {
+  background-color: var(--va-color-background) !important;
+}
+
 .va-button {
   font-weight: 600;
   font-family: 'Plus Jakarta Sans', sans-serif;

@@ -10,7 +10,11 @@ const {
 
 const html = await codeToHtml(code, {
   lang,
-  theme: 'one-dark-pro',
+  themes: {
+    light: 'one-light',
+    dark: 'one-dark-pro'
+  }
+
 })
 
 ---
