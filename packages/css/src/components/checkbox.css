@@ -1,0 +1,83 @@
+:root {
+  --va-checkbox-font-size: var(--va-font-size-1);
+  --va-checkbox-padding: var(--va-space-3);
+  --va-checkbox-border-width: var(--va-border-width);
+  --va-checkbox-border-color: var(--va-border-color);
+  --va-checkbox-background-color: var(--va-surface-primary);
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  appearance: none;
+  border-color: var(--va-checkbox-border-color);
+  border-style: solid;
+  border-width: var(--va-checkbox-border-width);
+  cursor: pointer;
+  font-size: var(--va-input-font-size);
+  height: calc(var(--va-checkbox-padding) * 2 + var(--va-checkbox-font-size));
+  padding-left: var(--va-checkbox-padding);
+  padding-right: var(--va-checkbox-padding);
+  position: relative;
+
+  &:hover {
+    background-color: color-mix(in srgb, var(--va-text-normal) 8%, transparent);
+  }
+
+  &:active {
+    background-color: var(--va-text-normal);
+  }
+
+  &:before {
+    background-color: var(--va-color-background);
+    border-color: var(--va-checkbox-border-color);
+    border-style: solid;
+    border-width: var(--va-checkbox-border-width);
+    content: '';
+    display: block;
+    height: var(--va-space-4);
+    width: var(--va-space-5);
+  }
+
+  &:checked:before {
+    background-color: var(--va-checkbox-border-color);
+  }
+
+  &:active:before,
+  &:checked:active:before {
+    background-color: color-mix(in srgb, var(--va-text-normal) 8%, var(--va-color-background));
+  }
+
+  label:has(> &) {
+    align-items: center;
+    border-color: var(--va-checkbox-border-color);
+    border-style: solid;
+    border-width: var(--va-checkbox-border-width);
+    cursor: pointer;
+    display: flex;
+    gap: var(--va-space-3);
+    padding-left: var(--va-checkbox-padding);
+
+    &:hover {
+      background-color: color-mix(in srgb, var(--va-text-normal) 8%, transparent);
+    }
+
+    &:active {
+      color: var(--va-color-background);
+      background-color: var(--va-text-normal);
+    }
+
+    span {
+      flex: 1;
+    }
+
+    .checkbox {
+      border: 0;
+
+      &:hover,
+      &:active {
+        background-color: transparent;
+      }
+    }
+  }
+}
