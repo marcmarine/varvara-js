@@ -50,8 +50,8 @@
       @apply absolute top-0 left-0 leading-none pointer-events-none;
 
       font-size: var(--va-font-size-0);
-      padding-left: calc(var(--va-select-padding) + var(--va-select-border-width));
-      padding-top: calc(var(--va-select-padding) / 2);
+      padding-left: calc(var(--va-input-padding) + var(--va-input-border-width));
+      padding-top: calc(var(--va-input-padding) / 2);
     }
 
     .input {
