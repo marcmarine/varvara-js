@@ -21,8 +21,9 @@
     transform: rotate(0) translateY(calc(var(--caret-width) / 2 * -1));
   }
 
-  & > *:not(summary):not(details):not(.button) {
-    padding-left: calc(var(--va-collapse-padding) + var(--space));
+  & > div,
+  & > p {
+    padding-left: calc(var(--va-collapse-padding) + var(--space)) !important;
   }
 
   summary {
@@ -73,22 +74,27 @@
   }
 
   & .collapse,
-  & .button {
+  & .button,
+  & label:has(.checkbox) {
     --depth: 1;
 
     @apply w-full border-x-0 border-b-0;
 
     & .collapse,
-    & .button {
+    & .button,
+    & label:has(.checkbox) {
       --depth: 2;
       & .collapse,
-      & .button {
+      & .button,
+      & label:has(.checkbox) {
         --depth: 3;
         & .collapse,
-        & .button {
+        & .button,
+        & label:has(.checkbox) {
           --depth: 4;
           & .collapse,
-          & .button {
+          & .button,
+          & label:has(.checkbox) {
             --depth: 5;
           }
         }
@@ -96,7 +102,8 @@
     }
   }
 
-  & .button {
+  & .button,
+  & label:has(.checkbox) {
     padding-left: calc(var(--va-collapse-tree-indentation) + var(--va-collapse-padding) + var(--space));
   }
 }
