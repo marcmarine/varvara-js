@@ -4,17 +4,18 @@
   --va-select-border-width: var(--va-border-width);
   --va-select-border-color: var(--va-border-color);
   --va-select-background-color: var(--va-button-background-color);
-  --va-select-caret-width: calc(var(--va-select-font-size) / 3);
 }
 
 .select {
+  --caret-width: calc(var(--va-select-font-size) / 3);
+
   @apply appearance-none cursor-pointer;
 
   background-color: var(--va-select-background-color);
   background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
-  background-position: calc(100% - var(--va-select-padding) - var(--va-select-caret-width)) calc(1px + 50%), calc(100% - var(--va-select-padding) - 0.28px) calc(1px + 50%);
+  background-position: calc(100% - var(--va-select-padding) - var(--caret-width)) calc(1px + 50%), calc(100% - var(--va-select-padding) - 0.28px) calc(1px + 50%);
   background-repeat: no-repeat;
-  background-size: var(--va-select-caret-width) var(--va-select-caret-width), var(--va-select-caret-width) var(--va-select-caret-width);
+  background-size: var(--caret-width) var(--caret-width), var(--caret-width) var(--caret-width);
   border-color: var(--va-select-border-color);
   border-style: solid;
   border-width: var(--va-select-border-width);
@@ -23,7 +24,7 @@
   height: calc(var(--va-select-padding) * 2 + var(--va-select-font-size));
   outline: none;
   padding-left: var(--va-select-padding);
-  padding-right: calc(var(--va-select-caret-width) * 2 + var(--va-select-padding) * 2);
+  padding-right: calc(var(--caret-width) * 2 + var(--va-select-padding) * 2);
   text-align: inherit;
 
   option:disabled {
