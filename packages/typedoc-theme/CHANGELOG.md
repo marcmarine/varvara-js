@@ -1,5 +1,11 @@
 # varvara-typedoc-theme
 
+## 0.3.1
+
+### Patch Changes
+
+- 7e4c7d0: Add styles for checkboxes with Varvara CSS v0.6.0
+
 ## 0.3.0
 
 ### Minor Changes
