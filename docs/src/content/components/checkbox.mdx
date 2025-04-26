@@ -1,0 +1,47 @@
+---
+title: Checkbox
+---
+
+import Example from '../../components/Example.astro'
+import Code from '../../components/Code.astro'
+import Checkbox from '../../components/lib/checkbox'
+export const Component = () => <Checkbox />
+
+# Button
+
+## Variables
+
+| CSS Variable                   | Default Value             |
+| ------------------------------ | ------------------------- |
+| --va-checkbox-font-size        | var(--va-font-size-1)     |
+| --va-checkbox-padding          | var(--va-space-3)         |
+| --va-checkbox-border-width     | var(--va-border-width)    |
+| --va-checkbox-border-color     | var(--va-border-color)    |
+| --va-checkbox-background-color | var(--va-surface-primary) |
+
+## Default
+
+<Example component={Component}>
+  <Code code={`<input class="va-checkbox" type="checkbox" />`} lang="html" />
+</Example>
+
+## With Label
+
+<Example
+  component={() => (
+    <label>
+      <span>Checkbox</span>
+      <input class="va-checkbox" type="checkbox" />
+    </label>
+)}
+
+>
+
+  <Code
+    code={`<label>
+    <span>Checkbox</span>
+    <input class="va-checkbox" type="checkbox" />
+</label>`}
+    lang="html"
+  />
+</Example>

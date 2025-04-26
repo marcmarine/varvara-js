@@ -50,6 +50,17 @@ export const Component = () => <Collapse />
         <summary>
           <strong>The purpose of thought</strong>
         </summary>
+        <label>
+          <span>Label</span>
+          <select class="va-select">
+            <option disabled selected>
+              Choose an option 👀
+            </option>
+            <option value="one">🚀</option>
+            <option value="two">🚀</option>
+            <option value="three">🚀</option>
+          </select>
+        </label>
         <details class="va-collapse">
           <summary>
             <strong>1</strong>
@@ -64,7 +75,11 @@ export const Component = () => <Collapse />
             While living among people, do not forget what you learned in solitude. And in solitude, reflect on what you learned from interacting with people.
           </p>
         </details>
-        <button class="va-button"><strong>Buttons can also be nested 🚀</strong></button>
+        <button class="va-button">Buttons can also be nested</button>
+        <label>
+          <span>And checkboxes as well 🚀</span>
+          <input class="va-checkbox" type="checkbox" />
+        </label>
       </details>
     </details>
 )}
@@ -80,6 +95,17 @@ export const Component = () => <Collapse />
     <summary>
       <strong>The purpose of thought</strong>
     </summary>
+    <label>
+      <span>Label</span>
+      <select class="va-select">
+        <option disabled selected>
+          Choose an option 👀
+        </option>
+        <option value="one">🚀</option>
+        <option value="two">🚀</option>
+        <option value="three">🚀</option>
+      </select>
+    </label>
     <details class="va-collapse">
       <summary>
         <strong>1</strong>
@@ -94,7 +120,11 @@ export const Component = () => <Collapse />
         While living among people, do not forget what you learned in solitude. And in solitude, reflect on what you learned from interacting with people.
       </p>
     </details>
-    <button class="va-button"><strong>Buttons can also be nested 🚀</strong></button>
+    <button class="va-button">Buttons can also be nested</button>
+    <label>
+      <span>And checkboxes as well 🚀</span>
+      <input class="va-checkbox" type="checkbox" />
+    </label>
   </details>
 </details>`}
   lang="html"
