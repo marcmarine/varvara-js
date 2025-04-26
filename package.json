@@ -11,7 +11,7 @@
   "packageManager": "bun@1.0.27",
   "workspaces": [
     "docs",
-    "packages/*"
+    "packages/**"
   ],
   "devDependencies": {
     "turbo": "latest"

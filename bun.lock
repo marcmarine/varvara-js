@@ -26,7 +26,7 @@
     },
     "packages/css": {
       "name": "varvara-css",
-      "version": "0.5.2",
+      "version": "0.6.0",
       "devDependencies": {
         "@types/bun": "latest",
         "autoprefixer": "^10.4.19",
@@ -46,7 +46,7 @@
     },
     "packages/typedoc-theme": {
       "name": "varvara-typedoc-theme",
-      "version": "0.2.1",
+      "version": "0.3.0",
       "dependencies": {
         "varvara-css": "latest",
       },
@@ -56,6 +56,17 @@
       "peerDependencies": {
         "typedoc": "^0.28.0",
         "typescript": "^5.0.0",
+      },
+    },
+    "packages/typedoc-theme/basic-example": {
+      "name": "varvara-typedoc-theme-basic-example",
+      "devDependencies": {
+        "@types/bun": "latest",
+        "typedoc": "^0.28.2",
+        "varvara-typedoc-theme": "workspace:*",
+      },
+      "peerDependencies": {
+        "typescript": "^5",
       },
     },
   },
@@ -1338,6 +1349,8 @@
 
     "varvara-typedoc-theme": ["varvara-typedoc-theme@workspace:packages/typedoc-theme"],
 
+    "varvara-typedoc-theme-basic-example": ["varvara-typedoc-theme-basic-example@workspace:packages/typedoc-theme/basic-example"],
+
     "vfile": ["vfile@6.0.3", "", { "dependencies": { "@types/unist": "^3.0.0", "vfile-message": "^4.0.0" } }, "sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q=="],
 
     "vfile-location": ["vfile-location@5.0.3", "", { "dependencies": { "@types/unist": "^3.0.0", "vfile": "^6.0.0" } }, "sha512-5yXvWDEgqeiYiBe1lbxYF7UMAIm/IcopxMHrMQDq3nvKcjPKIhZklUKL+AE7J7uApI4kwe2snsK+eI6UTj9EHg=="],
@@ -1558,7 +1571,11 @@
 
     "tailwindcss/postcss-load-config": ["postcss-load-config@4.0.2", "", { "dependencies": { "lilconfig": "^3.0.0", "yaml": "^2.3.4" }, "peerDependencies": { "postcss": ">=8.0.9", "ts-node": ">=9.0.0" }, "optionalPeers": ["postcss", "ts-node"] }, "sha512-bSVhyJGL00wMVoPUzAVAnbEoWyqRxkjv64tUl427SKnPrENtq6hJwUojroMz2VB+Q1edmi4IfrAPpami5VVgMQ=="],
 
-    "varvara-typedoc-theme/varvara-css": ["varvara-css@0.5.2", "", { "peerDependencies": { "typescript": "^5.0.0" } }, "sha512-bmpw2Ny99Dwe2V40LFHuiYKTJgcAXPJtznA4Dr/wx5ObGmEjOMmh6kBIrf4AQ0Ci6AZq5NPOZZEoVBwzC9T3dA=="],
+    "varvara-typedoc-theme/@types/bun": ["@types/bun@1.2.10", "", { "dependencies": { "bun-types": "1.2.10" } }, "sha512-eilv6WFM3M0c9ztJt7/g80BDusK98z/FrFwseZgT4bXCq2vPhXD4z8R3oddmAn+R/Nmz9vBn4kweJKmGTZj+lg=="],
+
+    "varvara-typedoc-theme/varvara-css": ["varvara-css@0.6.0", "", { "peerDependencies": { "typescript": "^5.0.0" } }, "sha512-xRENyrINkdPp1y2mwM3XqpRG4MEjX+DGRTILrMwfLngSeR4KnESBIeFKbUxVTxhzAmlWjmpyxgyIpHLBcJGKgw=="],
+
+    "varvara-typedoc-theme-basic-example/@types/bun": ["@types/bun@1.2.10", "", { "dependencies": { "bun-types": "1.2.10" } }, "sha512-eilv6WFM3M0c9ztJt7/g80BDusK98z/FrFwseZgT4bXCq2vPhXD4z8R3oddmAn+R/Nmz9vBn4kweJKmGTZj+lg=="],
 
     "vscode-json-languageservice/jsonc-parser": ["jsonc-parser@3.3.1", "", {}, "sha512-HUgH65KyejrUFPvHFPbqOY0rsFip3Bo5wb4ngvdi1EpCYWUQDC5V+Y7mZws+DLkr4M//zQJoanu1SP+87Dv1oQ=="],
 
@@ -1653,6 +1670,10 @@
     "read-yaml-file/js-yaml/argparse": ["argparse@1.0.10", "", { "dependencies": { "sprintf-js": "~1.0.2" } }, "sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg=="],
 
     "string-width/strip-ansi/ansi-regex": ["ansi-regex@4.1.1", "", {}, "sha512-ILlv4k/3f6vfQ4OoP2AGvirOktlQ98ZEL1k9FaQjxa3L1abBgbuTDAdPOpvbGncC0BTVQrl+OM8xZGK6tWXt7g=="],
+
+    "varvara-typedoc-theme-basic-example/@types/bun/bun-types": ["bun-types@1.2.10", "", { "dependencies": { "@types/node": "*" } }, "sha512-b5ITZMnVdf3m1gMvJHG+gIfeJHiQPJak0f7925Hxu6ZN5VKA8AGy4GZ4lM+Xkn6jtWxg5S3ldWvfmXdvnkp3GQ=="],
+
+    "varvara-typedoc-theme/@types/bun/bun-types": ["bun-types@1.2.10", "", { "dependencies": { "@types/node": "*" } }, "sha512-b5ITZMnVdf3m1gMvJHG+gIfeJHiQPJak0f7925Hxu6ZN5VKA8AGy4GZ4lM+Xkn6jtWxg5S3ldWvfmXdvnkp3GQ=="],
 
     "widest-line/string-width/emoji-regex": ["emoji-regex@10.4.0", "", {}, "sha512-EC+0oUMY1Rqm4O6LLrgjtYDvcVYTy7chDnM4Q7030tP4Kwj3u/pR6gP9ygnp2CJMK5Gq+9Q2oqmrFJAz01DXjw=="],
 

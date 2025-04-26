@@ -2,9 +2,6 @@
   "name": "varvara-typedoc-theme-basic-example",
   "type": "module",
   "private": true,
-  "workspaces": [
-    "../../*"
-  ],
   "devDependencies": {
     "@types/bun": "latest",
     "typedoc": "^0.28.2",
