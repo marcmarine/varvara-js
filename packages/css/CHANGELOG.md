@@ -1,5 +1,17 @@
 # varvara-css
 
+## 0.6.0
+
+### Minor Changes
+
+- 4a37578: Introduce checkbox component
+
+### Patch Changes
+
+- 28043fe: Allow select nesting within collapse
+- 96a380a: Enable nested checkboxes inside collapse component
+- d541b85: Remove the option to customize the caret symbol for select
+
 ## 0.5.3
 
 ### Patch Changes
