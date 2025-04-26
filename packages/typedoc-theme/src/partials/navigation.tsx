@@ -47,10 +47,10 @@ export function settings(context: DefaultThemeRenderContext) {
       <details class="va-collapse settings tsd-accordion" open={false}>
         <summary>{i18n.theme_settings()}</summary>
         {visibilityOptions.length && (
-          <div class="tsd-filter-visibility">
-            <span class="settings-label">{i18n.theme_member_visibility()}</span>
-            <ul id="tsd-filter-options">{...visibilityOptions}</ul>
-          </div>
+          <details class="va-collapse">
+            <summary>{i18n.theme_member_visibility()}</summary>
+            {...visibilityOptions}
+          </details>
         )}
         <label>
           <span>{i18n.theme_theme()}</span>
@@ -114,15 +114,12 @@ function buildSectionNavigation(context: DefaultThemeRenderContext, headings: Pa
   return levels[0]
 }
 
-function buildFilterItem(context: DefaultThemeRenderContext, name: string, displayName: string, defaultValue: boolean) {
+function buildFilterItem(_context: DefaultThemeRenderContext, name: string, displayName: string, defaultValue: boolean) {
   return (
-    <li class="tsd-filter-item">
-      <label class="tsd-filter-input">
-        <input type="checkbox" id={`tsd-filter-${name}`} name={name} checked={defaultValue} />
-        {context.icons.checkbox()}
-        <span>{displayName}</span>
-      </label>
-    </li>
+    <label class="tsd-filter-item">
+      <span>{displayName}</span>
+      <input class="tsd-filter-input va-checkbox" type="checkbox" id={`tsd-filter-${name}`} name={name} checked={defaultValue} />
+    </label>
   )
 }
 

@@ -68,30 +68,16 @@ dialog {
   flex: 1;
 }
 
-.settings .settings-label {
-  margin-top: 1em;
-  text-transform: none;
-  font-size: var(--va-font-size-0);
-}
-
-.settings ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.settings .va-select {
-  width: 100%;
-  border-left-color: transparent;
-  border-right: 0;
-  border-bottom: 0;
-}
-
-.settings label:has(.va-select) {
-  padding-left: 0 !important;
-}
-
 .site-menu {
   margin-top: 0;
+}
+
+.tsd-filter-input {
+  margin: 0;
+}
+
+.tsd-filter-item:not(:last-child) {
+  margin-bottom: 0;
 }
 
 .tsd-signature,
