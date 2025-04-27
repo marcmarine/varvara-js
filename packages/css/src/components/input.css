@@ -14,6 +14,7 @@
   border-radius: 0; /* Fix Safari iOS border radius */
   border-style: solid;
   border-width: var(--va-input-border-width);
+  box-sizing: border-box;
   color: inherit;
   font-size: var(--va-input-font-size);
   height: calc(var(--va-input-padding) * 2 + var(--va-input-font-size));
