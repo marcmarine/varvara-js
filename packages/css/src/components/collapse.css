@@ -10,16 +10,11 @@
 .collapse {
   --depth: 0;
   --space: calc(var(--depth) * var(--va-collapse-tree-indentation));
-  --caret-width: calc(var(--va-collapse-font-size) / 3);
 
   font-size: var(--va-collapse-font-size);
   border-style: solid;
   border-width: var(--va-collapse-border-width);
   border-color: var(--va-collapse-border-color);
-
-  &[open] > summary::before {
-    transform: rotate(0) translateY(calc(var(--caret-width) / 2 * -1));
-  }
 
   & > div,
   & > p {
@@ -34,7 +29,7 @@
     height: calc(var(--va-collapse-padding) * 2 + var(--va-collapse-font-size));
     outline: none;
     padding-left: calc(var(--va-collapse-padding) + var(--space));
-    padding-right: calc(var(--caret-width) * 2 + var(--va-collapse-padding) * 2);
+    padding-right: calc(var(--va-space-5) + var(--va-collapse-padding) * 2.5);
     text-align: inherit;
 
     &::-webkit-details-marker {
@@ -53,24 +48,41 @@
     &--active {
       color: var(--va-surface-primary);
       background-color: var(--va-text-normal);
+
+      &::before {
+        --va-collapse-border-color: var(--va-collapse-background-color);
+      }
     }
 
     &::before {
-      @apply absolute top-1/2 -translate-y-1/2;
-
-      right: calc(var(--va-collapse-padding));
-      width: calc(var(--caret-width) * 2);
-      height: var(--caret-width);
-
-      transform: rotate(-90deg) translateY(calc(var(--caret-width) / 2 * -1));
-      transform-origin: center top;
-
       content: '';
-      background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
-      background-position: 0 0, calc(var(--caret-width) - 0.5px) 0;
-      background-size: var(--caret-width) var(--caret-width), var(--caret-width) var(--caret-width);
-      background-repeat: no-repeat;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: var(--va-collapse-padding);
+      height: var(--va-space-3);
+      width: var(--va-space-5);
+
+      background-image: linear-gradient(
+        to bottom,
+        var(--va-collapse-border-color) 0%,
+        var(--va-collapse-border-color) var(--va-collapse-border-width),
+        transparent var(--va-collapse-border-width),
+        transparent calc(100% - var(--va-collapse-border-width)),
+        var(--va-collapse-border-color) calc(100% - var(--va-collapse-border-width)),
+        var(--va-collapse-border-color) var(--va-collapse-border-width)
+      );
     }
+  }
+
+  &[open] > summary::before {
+    background-image: linear-gradient(
+      to bottom,
+      transparent calc(50% - var(--va-collapse-border-width) / 2),
+      var(--va-collapse-border-color) calc(50% - var(--va-collapse-border-width) / 2),
+      var(--va-collapse-border-color) calc(50% - var(--va-collapse-border-width) / 2 + var(--va-collapse-border-width)),
+      transparent calc(50% - var(--va-collapse-border-width) / 2 + var(--va-collapse-border-width))
+    );
   }
 
   & .collapse,

@@ -35,7 +35,7 @@
     border-width: var(--va-checkbox-border-width);
     content: '';
     display: block;
-    height: var(--va-space-4);
+    height: var(--va-space-3);
     width: var(--va-space-5);
   }
 
@@ -63,7 +63,7 @@
     }
 
     &:active {
-      color: var(--va-color-background);
+      color: var(--va-surface-primary);
       background-color: var(--va-text-normal);
     }
 

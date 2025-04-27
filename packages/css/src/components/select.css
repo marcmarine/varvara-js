@@ -3,19 +3,14 @@
   --va-select-padding: var(--va-space-3);
   --va-select-border-width: var(--va-border-width);
   --va-select-border-color: var(--va-border-color);
-  --va-select-background-color: var(--va-button-background-color);
+  --va-select-background-color: var(--va-surface-primary);
 }
 
 .select {
-  --caret-width: calc(var(--va-select-font-size) / 3);
+  --icon-border-color: var(--va-select-border-color);
 
-  @apply appearance-none cursor-pointer;
+  @apply relative appearance-none cursor-pointer;
 
-  background-color: var(--va-select-background-color);
-  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
-  background-position: calc(100% - var(--va-select-padding) - var(--caret-width)) calc(1px + 50%), calc(100% - var(--va-select-padding) - 0.28px) calc(1px + 50%);
-  background-repeat: no-repeat;
-  background-size: var(--caret-width) var(--caret-width), var(--caret-width) var(--caret-width);
   border-color: var(--va-select-border-color);
   border-style: solid;
   border-width: var(--va-select-border-width);
@@ -24,8 +19,22 @@
   height: calc(var(--va-select-padding) * 2 + var(--va-select-font-size));
   outline: none;
   padding-left: var(--va-select-padding);
-  padding-right: calc(var(--caret-width) * 2 + var(--va-select-padding) * 2);
+  padding-right: calc(var(--va-space-5) + var(--va-select-padding) * 2.5);
   text-align: inherit;
+
+  background-color: var(--va-select-background-color);
+  background-repeat: no-repeat;
+  background-position: center right var(--va-select-padding);
+  background-size: var(--va-space-5) var(--va-space-3);
+  background-image: linear-gradient(
+    to bottom,
+    var(--icon-border-color) 0%,
+    var(--icon-border-color) var(--va-select-border-width),
+    transparent var(--va-select-border-width),
+    transparent calc(100% - var(--va-select-border-width)),
+    var(--icon-border-color) calc(100% - var(--va-select-border-width)),
+    var(--icon-border-color) var(--va-select-border-width)
+  );
 
   option:disabled {
     color: red;
@@ -36,8 +45,18 @@
   }
 
   &:active {
+    --icon-border-color: var(--va-select-background-color);
+
     color: var(--va-surface-primary);
     background-color: var(--va-text-normal);
+
+    background-image: linear-gradient(
+      to bottom,
+      transparent calc(50% - var(--va-select-border-width) / 2),
+      var(--icon-border-color) calc(50% - var(--va-select-border-width) / 2),
+      var(--icon-border-color) calc(50% - var(--va-select-border-width) / 2 + var(--va-collapse-border-width)),
+      transparent calc(50% - var(--va-select-border-width) / 2 + var(--va-select-border-width))
+    );
   }
 
   &:focus-visible {
@@ -53,6 +72,7 @@
       font-size: var(--va-font-size-0);
       padding-left: calc(var(--va-select-padding) + var(--va-select-border-width));
       padding-top: calc(var(--va-select-padding) / 2);
+      z-index: 1;
     }
 
     .select {
