@@ -95,7 +95,7 @@ footer {
 }
 
 .container {
-  padding: 0 var(--va-space-8);
+  padding: 0 var(--va-space-4);
 }
 
 @media (max-width: 769px) {
