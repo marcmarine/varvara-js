@@ -19,21 +19,21 @@
   height: calc(var(--va-select-padding) * 2 + var(--va-select-font-size));
   outline: none;
   padding-left: var(--va-select-padding);
-  padding-right: calc(var(--va-space-5) + var(--va-select-padding) * 2.5);
+  padding-right: calc(var(--va-space-5) + var(--va-select-padding) * 2);
   text-align: inherit;
 
   background-color: var(--va-select-background-color);
   background-repeat: no-repeat;
   background-position: center right var(--va-select-padding);
-  background-size: var(--va-space-5) var(--va-space-3);
+  background-size: var(--va-space-4) var(--va-space-2);
   background-image: linear-gradient(
     to bottom,
     var(--icon-border-color) 0%,
-    var(--icon-border-color) var(--va-select-border-width),
-    transparent var(--va-select-border-width),
-    transparent calc(100% - var(--va-select-border-width)),
-    var(--icon-border-color) calc(100% - var(--va-select-border-width)),
-    var(--icon-border-color) var(--va-select-border-width)
+    var(--icon-border-color) var(--va-icon-stroke-width),
+    transparent var(--va-icon-stroke-width),
+    transparent calc(100% - var(--va-icon-stroke-width)),
+    var(--icon-border-color) calc(100% - var(--va-icon-stroke-width)),
+    var(--icon-border-color) var(--va-icon-stroke-width)
   );
 
   option:disabled {
@@ -52,10 +52,10 @@
 
     background-image: linear-gradient(
       to bottom,
-      transparent calc(50% - var(--va-select-border-width) / 2),
-      var(--icon-border-color) calc(50% - var(--va-select-border-width) / 2),
-      var(--icon-border-color) calc(50% - var(--va-select-border-width) / 2 + var(--va-collapse-border-width)),
-      transparent calc(50% - var(--va-select-border-width) / 2 + var(--va-select-border-width))
+      transparent calc(50% - var(--va-icon-stroke-width) / 2),
+      var(--icon-border-color) calc(50% - var(--va-icon-stroke-width) / 2),
+      var(--icon-border-color) calc(50% - var(--va-icon-stroke-width) / 2 + var(--va-collapse-border-width)),
+      transparent calc(50% - var(--va-icon-stroke-width) / 2 + var(--va-icon-stroke-width))
     );
   }
 

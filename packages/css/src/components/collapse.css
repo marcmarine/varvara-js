@@ -29,7 +29,7 @@
     height: calc(var(--va-collapse-padding) * 2 + var(--va-collapse-font-size));
     outline: none;
     padding-left: calc(var(--va-collapse-padding) + var(--space));
-    padding-right: calc(var(--va-space-5) + var(--va-collapse-padding) * 2.5);
+    padding-right: calc(var(--va-space-5) + var(--va-collapse-padding) * 2);
     text-align: inherit;
 
     &::-webkit-details-marker {
@@ -60,17 +60,17 @@
       top: 50%;
       transform: translateY(-50%);
       right: var(--va-collapse-padding);
-      height: var(--va-space-3);
-      width: var(--va-space-5);
+      height: var(--va-space-2);
+      width: var(--va-space-4);
 
       background-image: linear-gradient(
         to bottom,
         var(--va-collapse-border-color) 0%,
-        var(--va-collapse-border-color) var(--va-collapse-border-width),
+        var(--va-collapse-border-color) var(--va-icon-stroke-width),
         transparent var(--va-collapse-border-width),
-        transparent calc(100% - var(--va-collapse-border-width)),
-        var(--va-collapse-border-color) calc(100% - var(--va-collapse-border-width)),
-        var(--va-collapse-border-color) var(--va-collapse-border-width)
+        transparent calc(100% - var(--va-icon-stroke-width)),
+        var(--va-collapse-border-color) calc(100% - var(--va-icon-stroke-width)),
+        var(--va-collapse-border-color) var(--va-icon-stroke-width)
       );
     }
   }
@@ -78,10 +78,10 @@
   &[open] > summary::before {
     background-image: linear-gradient(
       to bottom,
-      transparent calc(50% - var(--va-collapse-border-width) / 2),
-      var(--va-collapse-border-color) calc(50% - var(--va-collapse-border-width) / 2),
-      var(--va-collapse-border-color) calc(50% - var(--va-collapse-border-width) / 2 + var(--va-collapse-border-width)),
-      transparent calc(50% - var(--va-collapse-border-width) / 2 + var(--va-collapse-border-width))
+      transparent calc(50% - var(--va-icon-stroke-width) / 2),
+      var(--va-collapse-border-color) calc(50% - var(--va-icon-stroke-width) / 2),
+      var(--va-collapse-border-color) calc(50% - var(--va-icon-stroke-width) / 2 + var(--va-icon-stroke-width)),
+      transparent calc(50% - var(--va-icon-stroke-width) / 2 + var(--va-icon-stroke-width))
     );
   }
 

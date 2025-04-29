@@ -4,6 +4,8 @@
   --va-border-width: 1px;
   --va-border-color: var(--va-text-normal);
 
+  --va-icon-stroke-width: 1.5px;
+
   --va-font-size-ratio: 1;
 
   --va-font-size-00: calc(0.5rem * var(--va-font-size-ratio));

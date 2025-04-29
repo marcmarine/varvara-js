@@ -32,11 +32,11 @@
     background-color: var(--va-color-background);
     border-color: var(--va-checkbox-border-color);
     border-style: solid;
-    border-width: var(--va-checkbox-border-width);
+    border-width: var(--va-icon-stroke-width);
     content: '';
     display: block;
-    height: var(--va-space-3);
-    width: var(--va-space-5);
+    height: var(--va-space-2);
+    width: var(--va-space-4);
   }
 
   &:checked:before {
