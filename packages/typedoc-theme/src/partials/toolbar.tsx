@@ -15,6 +15,11 @@ export function toolbar(context: VarvaraThemeContext) {
               <path d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
             </svg>
           </button>
+          <a href="#" class="va-button" id="tsd-toolbar-menu-trigger" data-toggle="menu" aria-label={i18n.theme_menu()}>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" width="16" height="16" stroke="currentColor">
+              <path d="M3.75 9h16.5m-16.5 6.75h16.5" />
+            </svg>
+          </a>
         </div>
         <div class="navigation-links va-button-group">
           {Object.entries(context.options.getValue('navigationLinks')).map(([label, url]) => (
