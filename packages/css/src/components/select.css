@@ -48,7 +48,7 @@
     --icon-border-color: var(--va-select-background-color);
 
     color: var(--va-background-color-default);
-    background-color: var(--va-text-normal);
+    background-color: var(--va-foreground-color-default);
 
     background-image: linear-gradient(
       to bottom,

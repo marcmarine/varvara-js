@@ -45,5 +45,5 @@
   --va-background-color-hover: light-dark(#ebedef, #303745);
 
   --va-foreground-color-default: light-dark(#29353d, #b3ccd6);
-  --va-foreground-color-muted: color-mix(in srgb, var(--va-foreground-default) 20%, transparent);
+  --va-foreground-color-muted: color-mix(in srgb, var(--va-foreground-color-default) 20%, transparent);
 }
