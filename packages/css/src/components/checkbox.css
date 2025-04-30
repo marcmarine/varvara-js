@@ -21,7 +21,7 @@
   position: relative;
 
   &:hover {
-    background-color: color-mix(in srgb, var(--va-foreground-color-default) 8%, transparent);
+    background-color: var(--va-background-color-hover);
   }
 
   &:active {
@@ -29,7 +29,7 @@
   }
 
   &:before {
-    background-color: var(--va-background-color-defaul);
+    background-color: var(--va-background-color-default);
     border-color: var(--va-checkbox-border-color);
     border-style: solid;
     border-width: var(--va-icon-stroke-width);
@@ -45,11 +45,12 @@
 
   &:active:before,
   &:checked:active:before {
-    background-color: color-mix(in srgb, var(--va-foreground-color-default) 8%, var(--va-background-color-defaul));
+    background-color: var(--va-background-color-hover);
   }
 
   label:has(> &) {
     align-items: center;
+    background-color: var(--va-checkbox-background-color);
     border-color: var(--va-checkbox-border-color);
     border-style: solid;
     border-width: var(--va-checkbox-border-width);
@@ -59,7 +60,7 @@
     padding-left: var(--va-checkbox-padding);
 
     &:hover {
-      background-color: color-mix(in srgb, var(--va-foreground-color-default) 8%, transparent);
+      background-color: var(--va-background-color-hover);
     }
 
     &:active {

@@ -37,7 +37,7 @@
     }
 
     &:hover:not(&:active):not(&--active) {
-      background-color: color-mix(in srgb, var(--va-foreground-color-default) 8%, transparent);
+      background-color: var(--va-background-color-hover);
     }
 
     &:focus-visible {
