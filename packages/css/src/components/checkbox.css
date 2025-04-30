@@ -37,7 +37,7 @@
     content: '';
     display: block;
     height: var(--va-space-2);
-    width: var(--va-space-4);
+    width: var(--va-space-3);
   }
 
   &:checked:before {

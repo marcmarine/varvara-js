@@ -25,7 +25,7 @@
   background-color: var(--va-select-background-color);
   background-repeat: no-repeat;
   background-position: center right var(--va-select-padding);
-  background-size: var(--va-space-4) var(--va-space-2);
+  background-size: var(--va-space-3) var(--va-space-2);
   background-image: linear-gradient(
     to bottom,
     var(--icon-border-color) 0%,
