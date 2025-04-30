@@ -1,5 +1,24 @@
 # varvara-css
 
+## 0.7.0
+
+### Minor Changes
+
+- 011d0e7: Refine icon styles and allow to customize its width
+- 223ad85: Introduce new `--va-background-color-hover` CSS custom property
+- 5114625: Introduce new link component
+- 07dda52: Introduce new background and foreground CSS custom properties
+
+### Patch Changes
+
+- 342a8b5: Deprecate `--va-surface-primary` CSS custom property
+- d9819d9: Deprecate `--va-background-primary` custom property
+- 4ee04f9: Set `box-sizing` to `border-box` for checkbox component
+- 7110ee2: Unify collapse, select and checkbox icon appearance 🚀
+- 3a97a1f: Deprecate `--va-text-normal` custom property
+- 139fd41: Correct background and foreground CSS custom properties names
+- fea69ca: Set `box-sizing` to `border-box` for button and input components
+
 ## 0.6.0
 
 ### Minor Changes
