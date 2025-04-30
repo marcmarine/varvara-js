@@ -3,7 +3,7 @@
   --va-checkbox-padding: var(--va-space-3);
   --va-checkbox-border-width: var(--va-border-width);
   --va-checkbox-border-color: var(--va-border-color);
-  --va-checkbox-background-color: var(--va-surface-primary);
+  --va-checkbox-background-color: var(--va-background-color-default);
 }
 
 .checkbox {
@@ -21,15 +21,15 @@
   position: relative;
 
   &:hover {
-    background-color: color-mix(in srgb, var(--va-color-foreground) 8%, transparent);
+    background-color: color-mix(in srgb, var(--va-foreground-color-default) 8%, transparent);
   }
 
   &:active {
-    background-color: var(--va-color-foreground);
+    background-color: var(--va-foreground-color-default);
   }
 
   &:before {
-    background-color: var(--va-color-background);
+    background-color: var(--va-background-color-defaul);
     border-color: var(--va-checkbox-border-color);
     border-style: solid;
     border-width: var(--va-icon-stroke-width);
@@ -45,7 +45,7 @@
 
   &:active:before,
   &:checked:active:before {
-    background-color: color-mix(in srgb, var(--va-color-foreground) 8%, var(--va-color-background));
+    background-color: color-mix(in srgb, var(--va-foreground-color-default) 8%, var(--va-background-color-defaul));
   }
 
   label:has(> &) {
@@ -59,12 +59,12 @@
     padding-left: var(--va-checkbox-padding);
 
     &:hover {
-      background-color: color-mix(in srgb, var(--va-color-foreground) 8%, transparent);
+      background-color: color-mix(in srgb, var(--va-foreground-color-default) 8%, transparent);
     }
 
     &:active {
-      color: var(--va-surface-primary);
-      background-color: var(--va-color-foreground);
+      color: var(--va-background-color-default);
+      background-color: var(--va-foreground-color-default);
     }
 
     span {

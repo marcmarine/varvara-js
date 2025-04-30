@@ -3,7 +3,7 @@
   --va-table-padding: var(--va-space-3);
   --va-table-border-width: var(--va-border-width);
   --va-table-border-color: var(--va-border-color);
-  --va-table-background-color: var(--va-surface-primary);
+  --va-table-background-color: var(--va-background-color-default);
 }
 
 .table {

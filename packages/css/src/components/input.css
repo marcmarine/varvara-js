@@ -3,7 +3,7 @@
   --va-input-padding: var(--va-space-3);
   --va-input-border-width: var(--va-border-width);
   --va-input-border-color: var(--va-border-color);
-  --va-input-background-color: var(--va-surface-primary);
+  --va-input-background-color: var(--va-background-color-default);
 }
 
 .input {
@@ -27,7 +27,7 @@
   }
 
   &:hover {
-    background-color: color-mix(in srgb, var(--va-color-foreground) 8%, transparent);
+    background-color: color-mix(in srgb, var(--va-foreground-color-default) 8%, transparent);
   }
 
   &:not([readonly]) {

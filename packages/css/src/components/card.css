@@ -3,7 +3,7 @@
   --va-card-padding: var(--va-space-3);
   --va-card-border-width: var(--va-border-width);
   --va-card-border-color: var(--va-border-color);
-  --va-card-background-color: var(--va-surface-primary);
+  --va-card-background-color: var(--va-background-color-default);
 }
 
 .card {

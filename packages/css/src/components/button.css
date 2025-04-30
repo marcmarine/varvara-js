@@ -3,7 +3,7 @@
   --va-button-padding: var(--va-space-3);
   --va-button-border-width: var(--va-border-width);
   --va-button-border-color: var(--va-border-color);
-  --va-button-background-color: var(--va-surface-primary);
+  --va-button-background-color: var(--va-background-color-default);
 }
 
 .button {
@@ -24,7 +24,7 @@
   text-align: inherit;
 
   &:hover:not(&:active):not(&--active) {
-    background-color: color-mix(in srgb, var(--va-color-foreground) 8%, transparent);
+    background-color: color-mix(in srgb, var(--va-foreground-color-default) 8%, transparent);
   }
 
   &:focus-visible {
@@ -33,8 +33,8 @@
 
   &:active,
   &--active {
-    color: var(--va-surface-primary);
-    background-color: var(--va-color-foreground);
+    color: var(--va-background-color-default);
+    background-color: var(--va-foreground-color-default);
   }
 
   &--disabled,

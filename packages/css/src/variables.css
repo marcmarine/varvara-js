@@ -48,7 +48,4 @@
 
   --va-foreground-color-default: light-dark(#29353d, #b3ccd6);
   --va-foreground-color-muted: color-mix(in srgb, var(--va-foreground-default) 20%, transparent);
-
-  --va-surface-primary: color-mix(in srgb, var(--va-color-background) 80%, transparent);
-  --va-surface-primary-alt: color-mix(in srgb, var(--va-color-background) 80%, var(--va-color-foreground));
 }
