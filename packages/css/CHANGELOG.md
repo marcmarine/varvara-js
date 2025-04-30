@@ -1,5 +1,12 @@
 # varvara-css
 
+## 0.7.1
+
+### Patch Changes
+
+- ecfbda6: Fixed misspelled CSS custom properties
+- 8402380: Update README
+
 ## 0.7.0
 
 ### Minor Changes
