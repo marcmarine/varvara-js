@@ -1,0 +1,23 @@
+---
+title: Link
+---
+
+import Example from '../../components/Example.astro'
+import Code from '../../components/Code.astro'
+import Link from '../../components/lib/link'
+export const Component = () => <Link />
+
+# Link
+
+## Variables
+
+| CSS Variable                       | Default Value                        |
+| ---------------------------------- | ------------------------------------ |
+| `--va-link-color`                  | `var(--va-foreground-color-default`) |
+| `--va-link-background-color-hover` | `var(--va-background-color-hover)`   |
+
+## Default
+
+<Example component={Component}>
+  <Code code={`<a href="#" class="va-link">Link</a>`} lang="html" />
+</Example>

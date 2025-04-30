@@ -11,13 +11,13 @@ export const Component = () => <Input />
 
 ## Variables
 
-| CSS Variable                | Default Value             |
-| --------------------------- | ------------------------- |
-| --va-input-font-size        | var(--va-font-size-1)     |
-| --va-input-padding          | var(--va-space-3)         |
-| --va-input-border-width     | var(--va-border-width)    |
-| --va-input-border-color     | var(--va-border-color)    |
-| --va-input-background-color | var(--va-surface-primary) |
+| CSS Variable                  | Default Value                        |
+| ----------------------------- | ------------------------------------ |
+| `--va-input-font-size`        | `var(--va-font-size-1)`              |
+| `--va-input-padding`          | `var(--va-space-3)`                  |
+| `--va-input-border-width`     | `var(--va-border-width)`             |
+| `--va-input-border-color`     | `var(--va-border-color)`             |
+| `--va-input-background-color` | `var(--va-background-color-default)` |
 
 ## Default
 
@@ -39,9 +39,9 @@ export const Component = () => <Input />
 
   <Code
     code={`<label>
-  Input
-  <input class="va-input" type="text" />
-</label>`}
+    Input
+    <input class="va-input" type="text" />
+  </label>`}
     lang="html"
   />
 </Example>
@@ -60,9 +60,9 @@ export const Component = () => <Input />
 
   <Code
     code={`<label>
-  Name
-  <input class="va-input" value="Apollodorus" type="text" readonly />
-</label>`}
+    Name
+    <input class="va-input" value="Apollodorus" type="text" readonly />
+  </label>`}
     lang="html"
   />
 </Example>
@@ -81,9 +81,9 @@ export const Component = () => <Input />
 
   <Code
     code={`<label>
-  Name
-  <input class="va-input" value="Apollodorus" type="text" disabled />
-</label>`}
+    Name
+    <input class="va-input" value="Apollodorus" type="text" disabled />
+  </label>`}
     lang="html"
   />
 </Example>

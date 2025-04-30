@@ -16,7 +16,7 @@
 
 .shiki,
 .shiki span {
-  background-color: var(--va-color-background) !important;
+  background-color: var(--va-background-color-defaul) !important;
 }
 
 .va-button {
@@ -30,8 +30,6 @@ html {
 
 body {
   font-family: 'Noto Sans', sans-serif;
-  color: var(--va-text-normal);
-  background-color: var(--va-background-primary);
 }
 
 h1,
@@ -65,7 +63,7 @@ p {
 }
 *:not(.shiki) > code {
   font-size: 85%;
-  background-color: light-dark(rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.05));
+  background-color: var(--va-background-color-hover);
 }
 
 code {
@@ -89,7 +87,7 @@ code {
   &:where(:not(.page--homepage)) {
     main {
       @apply row-start-1 row-end-4 z-10;
-      background-color: var(--va-surface-primary);
+      background-color: var(--va-background-color-default);
 
       h1,
       h2,
@@ -99,8 +97,8 @@ code {
       }
 
       h1 {
-        @apply flex items-end pb-2 sticky top-0 border-b border-[--va-text-weak] min-h-[calc(4rem+1px)] border-dashed backdrop-blur-lg z-10;
-        background-color: var(--va-surface-primary);
+        @apply flex items-end pb-2 sticky top-0 border-b border-[--va-foreground-color-muted] min-h-[calc(4rem+1px)] border-dashed backdrop-blur-lg z-10;
+        background-color: var(--va-background-color-default);
       }
     }
   }
@@ -125,7 +123,7 @@ pre {
   &:not(:last-child) {
     @apply mb-4;
   }
-  background-color: var(--va-surface-primary-alt);
+  background-color: var(--va-foreground-color-muted);
 
   &:first-of-type {
     @apply mt-0;
@@ -133,7 +131,7 @@ pre {
 }
 
 [class*='bg-grid'] {
-  --line-color: var(--va-text-weak);
+  --line-color: var(--va-foreground-color-muted);
   --line-gap: 4px;
   --line-width: 1px;
   position: relative;

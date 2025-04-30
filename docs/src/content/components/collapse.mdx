@@ -11,29 +11,28 @@ export const Component = () => <Collapse />
 
 ## Variables
 
-| CSS Variable                   | Default Value                          |
-| ------------------------------ | -------------------------------------- |
-| --va-collapse-font-size        | var(--va-font-size-1)                  |
-| --va-collapse-padding          | var(--va-space-3)                      |
-| --va-collapse-border-width     | var(--va-border-width)                 |
-| --va-collapse-border-color     | var(--va-border-color)                 |
-| --va-collapse-background-color | var(--va-surface-primary)              |
-| --va-collapse-caret-width      | calc(var(--va-collapse-font-size) / 3) |
-| --va-collapse-tree-indentation | var(--va-space-8)                      |
+| CSS Variable                     | Default Value                        |
+| -------------------------------- | ------------------------------------ |
+| `--va-collapse-font-size`        | `var(--va-font-size-1)`              |
+| `--va-collapse-padding`          | `var(--va-space-3)`                  |
+| `--va-collapse-border-width`     | `var(--va-border-width)`             |
+| `--va-collapse-border-color`     | `var(--va-border-color)`             |
+| `--va-collapse-background-color` | `var(--va-background-color-default)` |
+| `--va-collapse-tree-indentation` | `var(--va-space-8)`                  |
 
 ## Default
 
 <Example component={Component}>
   <Code
     code={`<details class="va-collapse w-full">
-  <summary>
-    <strong>The purpose of thought</strong>
-  </summary>
-  <p>
-    We can attain wisdom by three ways: first, by way of experience, this is the most difficult way; second, by way of imitation, this is the easiest way; and third by way of meditation, and this is the noblest way. 
-  </p>
-  <p>Confucius</p>
-</details>`}
+    <summary>
+      <strong>The purpose of thought</strong>
+    </summary>
+    <p>
+      We can attain wisdom by three ways: first, by way of experience, this is the most difficult way; second, by way of imitation, this is the easiest way; and third by way of meditation, and this is the noblest way. 
+    </p>
+    <p>Confucius</p>
+  </details>`}
     lang="html"
   />
 </Example>
@@ -88,45 +87,45 @@ export const Component = () => <Collapse />
 
 <Code
   code={`<details class="va-collapse w-full">
-  <summary>
-    <strong>Thought</strong>
-  </summary>
-  <details class="va-collapse">
     <summary>
-      <strong>The purpose of thought</strong>
+      <strong>Thought</strong>
     </summary>
-    <label>
-      <span>Label</span>
-      <select class="va-select">
-        <option disabled selected>
-          Choose an option 👀
-        </option>
-        <option value="one">🚀</option>
-        <option value="two">🚀</option>
-        <option value="three">🚀</option>
-      </select>
-    </label>
     <details class="va-collapse">
       <summary>
-        <strong>1</strong>
+        <strong>The purpose of thought</strong>
       </summary>
-      <p>It often happens that a thought comes to us that seems both true and strange, and we hesitate to believe it. But then, if you think about it thoroughly, you see that the thought that seemed strange is the simplest truth, such that once you come to know it, you cannot stop believing in it.</p>
-    </details>
+      <label>
+        <span>Label</span>
+        <select class="va-select">
+          <option disabled selected>
+            Choose an option 👀
+          </option>
+          <option value="one">🚀</option>
+          <option value="two">🚀</option>
+          <option value="three">🚀</option>
+        </select>
+      </label>
       <details class="va-collapse">
-      <summary>
-        <strong>2</strong>
-      </summary>
-      <p>
-        While living among people, do not forget what you learned in solitude. And in solitude, reflect on what you learned from interacting with people.
-      </p>
+        <summary>
+          <strong>1</strong>
+        </summary>
+        <p>It often happens that a thought comes to us that seems both true and strange, and we hesitate to believe it. But then, if you think about it thoroughly, you see that the thought that seemed strange is the simplest truth, such that once you come to know it, you cannot stop believing in it.</p>
+      </details>
+        <details class="va-collapse">
+        <summary>
+          <strong>2</strong>
+        </summary>
+        <p>
+          While living among people, do not forget what you learned in solitude. And in solitude, reflect on what you learned from interacting with people.
+        </p>
+      </details>
+      <button class="va-button">Buttons can also be nested</button>
+      <label>
+        <span>And checkboxes as well 🚀</span>
+        <input class="va-checkbox" type="checkbox" />
+      </label>
     </details>
-    <button class="va-button">Buttons can also be nested</button>
-    <label>
-      <span>And checkboxes as well 🚀</span>
-      <input class="va-checkbox" type="checkbox" />
-    </label>
-  </details>
-</details>`}
+  </details>`}
   lang="html"
 />
 </Example>

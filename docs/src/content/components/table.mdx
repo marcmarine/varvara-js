@@ -11,13 +11,13 @@ export const Component = () => <Table />
 
 ## Variables
 
-| CSS Variable                | Default Value             |
-| --------------------------- | ------------------------- |
-| --va-table-font-size        | var(--va-font-size-1)     |
-| --va-table-padding          | var(--va-space-3)         |
-| --va-table-border-width     | var(--va-border-width)    |
-| --va-table-border-color     | var(--va-border-color)    |
-| --va-table-background-color | var(--va-surface-primary) |
+| CSS Variable                  | Default Value                        |
+| ----------------------------- | ------------------------------------ |
+| `--va-table-font-size`        | `var(--va-font-size-1)`              |
+| `--va-table-padding`          | `var(--va-space-3)`                  |
+| `--va-table-border-width`     | `var(--va-border-width)`             |
+| `--va-table-border-color`     | `var(--va-border-color)`             |
+| `--va-table-background-color` | `var(--va-background-color-default)` |
 
 ## Default
 
@@ -28,27 +28,27 @@ export const Component = () => <Table />
 
 <Code
   code={`<table class="va-table">
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Amount</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>First 6 weeks</th>
-      <td>£109.80 per week</td>
-    </tr>
-    <tr>
-      <th>Next 33 weeks</th>
-      <td>£109.80 per week</td>
-    </tr>
-    <tr>
-      <th>Total estimated pay</th>
-      <td>£4,282.20</td>
-    </tr>
-  </tbody>
-</table>`}
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>First 6 weeks</th>
+        <td>£109.80 per week</td>
+      </tr>
+      <tr>
+        <th>Next 33 weeks</th>
+        <td>£109.80 per week</td>
+      </tr>
+      <tr>
+        <th>Total estimated pay</th>
+        <td>£4,282.20</td>
+      </tr>
+    </tbody>
+  </table>`}
   lang="html"
 />
 

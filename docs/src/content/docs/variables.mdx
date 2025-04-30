@@ -10,23 +10,36 @@ Varvara CSS is customizable using [CSS Variables](https://developer.mozilla.org/
 
 ## Border
 
-| CSS Variable        | Default Value           |
-| ------------------- | ----------------------- |
-| `--va-border-width` | `1px`                   |
-| `--va-border-color` | `var(--va-text-normal)` |
+| CSS Variable        | Default Value                        |
+| ------------------- | ------------------------------------ |
+| `--va-border-width` | `1px`                                |
+| `--va-border-color` | `var(--va-foreground-color-default)` |
+
+## Icon
+
+| CSS Variable              | Default Value |
+| ------------------------- | ------------- |
+| `--va-icons-stroke-width` | `1.5px`       |
 
 ## Colors
 
-| CSS Variable               | Default Value                                                                    |
-| -------------------------- | -------------------------------------------------------------------------------- |
-| `--va-color-primary`       | `light-dark(mediumvioletred, #9fe88d)`                                           |
-| `--va-color-foreground`    | `light-dark(#29353d, #b3ccd6)`                                                   |
-| `--va-color-background`    | `light-dark(#f3f5f7, #2a303c)`                                                   |
-| `--va-background-primary`  | `var(--va-color-background)`                                                     |
-| `--va-text-normal`         | `var(--va-color-foreground)`                                                     |
-| `--va-text-weak`           | `color-mix(in srgb, var(--va-text-normal) 20%, transparent)`                     |
-| `--va-surface-primary`     | `color-mix(in srgb, var(--va-color-background) 80%, transparent)`                |
-| `--va-surface-primary-alt` | `color-mix(in srgb, var(--va-color-background) 80%, var(--va-color-foreground))` |
+| CSS Variable         | Default Value                          |
+| -------------------- | -------------------------------------- |
+| `--va-color-primary` | `light-dark(mediumvioletred, #9fe88d)` |
+
+### Foreground
+
+| CSS Variable                    | Default Value                                                       |
+| ------------------------------- | ------------------------------------------------------------------- |
+| `--va-foreground-color-default` | `light-dark(#29353d, #b3ccd6)`                                      |
+| `--va-foreground-color-muted`   | `color-mix(in srgb, var(--va-foreground-default) 20%, transparent)` |
+
+### Background
+
+| CSS Variable                    | Default Value                  |
+| ------------------------------- | ------------------------------ |
+| `--va-background-color-default` | `light-dark(#f3f5f7, #2a303c)` |
+| `--va-background-color-hover`   | `light-dark(#ebedef, #303745)` |
 
 ## Font Size
 
