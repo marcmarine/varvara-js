@@ -44,7 +44,10 @@
   --va-color-background: light-dark(#f3f5f7, #2a303c);
   --va-color-foreground: light-dark(#29353d, #b3ccd6);
 
-  --va-text-weak: color-mix(in srgb, var(--va-color-foreground) 20%, transparent);
+  --va-background-default: light-dark(#f3f5f7, #2a303c);
+
+  --va-foreground-default: light-dark(#29353d, #b3ccd6);
+  --va-foreground-muted: color-mix(in srgb, var(--va-foreground-default) 20%, transparent);
 
   --va-surface-primary: color-mix(in srgb, var(--va-color-background) 80%, transparent);
   --va-surface-primary-alt: color-mix(in srgb, var(--va-color-background) 80%, var(--va-color-foreground));

@@ -23,7 +23,7 @@
   padding-right: var(--va-input-padding);
 
   &[disabled] {
-    color: var(--va-text-weak);
+    color: var(--va-foreground-muted);
   }
 
   &:hover {
