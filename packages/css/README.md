@@ -85,7 +85,7 @@ Each component already has its own CSS variables, with basic properties such as 
 --va-button-padding: var(--va-space-3);
 --va-button-border-width: var(--va-border-width);
 --va-button-border-color: var(--va-border-color);
---va-button-background-color: var(--va-surface-primary);
+--va-button-background-color: var(--va-background-color-default);
 ```
 
 Also you can override the styles if you prefer:
