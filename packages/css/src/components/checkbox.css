@@ -33,6 +33,7 @@
     border-color: var(--va-checkbox-border-color);
     border-style: solid;
     border-width: var(--va-icon-stroke-width);
+    box-sizing: border-box;
     content: '';
     display: block;
     height: var(--va-space-2);
