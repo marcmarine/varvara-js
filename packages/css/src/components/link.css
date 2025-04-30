@@ -1,0 +1,19 @@
+:root {
+  --va-link-color: var(--va-foreground-color-default);
+  --va-link-background-color-hover: var(--va-background-color-hover);
+}
+
+.link {
+  text-decoration: underline;
+  color: var(--va-link-color);
+
+  &:hover {
+    background-color: var(--va-link-background-color-hover);
+  }
+
+  &:active,
+  &--active {
+    color: var(--va-background-color-default);
+    background-color: var(--va-foreground-color-default);
+  }
+}
