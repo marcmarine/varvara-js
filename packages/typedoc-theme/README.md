@@ -71,31 +71,31 @@ Varvara CSS provides variables to customize the theme appearance:
 
 @media (prefers-color-scheme: light) {
   :root {
-    --va-color-foreground: DimGray;
-    --va-color-background: WhiteSmoke;
+    --va-foreground-color-default: DimGray;
+    --va-background-color-default: WhiteSmoke;
     --va-border-color: Gainsboro;
     --va-space-ratio: 0.5;
   }
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --va-color-foreground: Silver;
-    --va-color-background: MidnightBlue;
+    --va-foreground-color-default: Silver;
+    --va-background-color-default: MidnightBlue;
     --va-border-color: RoyalBlue;
     --va-space-ratio: 0.5;
   }
 }
 
 [data-theme='light'] {
-  --va-color-foreground: DimGray;
-  --va-color-background: WhiteSmoke;
+  --va-foreground-color-default: DimGray;
+  --va-background-color-default: WhiteSmoke;
   --va-border-color: Gainsboro;
   --va-space-ratio: 0.5;
 }
 
 [data-theme='dark'] {
-  --va-color-foreground: Silver;
-  --va-color-background: MidnightBlue;
+  --va-foreground-color-default: Silver;
+  --va-background-color-default: MidnightBlue;
   --va-border-color: RoyalBlue;
   --va-space-ratio: 0.5;
 }

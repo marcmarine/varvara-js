@@ -17,11 +17,11 @@ export function footer(context: VarvaraThemeContext) {
       generatorDisplay = (
         <p class="tsd-generator">
           {pre}
-          <a href="https://typedoc.org/" target="_blank">
+          <a href="https://typedoc.org/" class="va-link" target="_blank">
             TypeDoc
           </a>
           {' & '}
-          <a href="https://varvara.js.org/" target="_blank">
+          <a href="https://varvara.js.org/" class="va-link" target="_blank">
             Varvara CSS
           </a>
           {post}

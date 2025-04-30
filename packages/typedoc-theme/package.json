@@ -15,7 +15,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "varvara-css": "^0.6.0"
+    "varvara-css": "workspace:*"
   },
   "devDependencies": {
     "@types/bun": "latest"
