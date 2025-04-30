@@ -24,7 +24,7 @@
   text-align: inherit;
 
   &:hover:not(&:active):not(&--active) {
-    background-color: color-mix(in srgb, var(--va-text-normal) 8%, transparent);
+    background-color: color-mix(in srgb, var(--va-color-foreground) 8%, transparent);
   }
 
   &:focus-visible {
@@ -34,7 +34,7 @@
   &:active,
   &--active {
     color: var(--va-surface-primary);
-    background-color: var(--va-text-normal);
+    background-color: var(--va-color-foreground);
   }
 
   &--disabled,

@@ -3,5 +3,5 @@
 
 body {
   background-color: var(--va-color-background);
-  color: var(--va-text-normal);
+  color: var(--va-color-foreground);
 }

@@ -27,7 +27,7 @@
   }
 
   &:hover {
-    background-color: color-mix(in srgb, var(--va-text-normal) 8%, transparent);
+    background-color: color-mix(in srgb, var(--va-color-foreground) 8%, transparent);
   }
 
   &:not([readonly]) {

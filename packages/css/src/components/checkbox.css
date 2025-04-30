@@ -21,11 +21,11 @@
   position: relative;
 
   &:hover {
-    background-color: color-mix(in srgb, var(--va-text-normal) 8%, transparent);
+    background-color: color-mix(in srgb, var(--va-color-foreground) 8%, transparent);
   }
 
   &:active {
-    background-color: var(--va-text-normal);
+    background-color: var(--va-color-foreground);
   }
 
   &:before {
@@ -45,7 +45,7 @@
 
   &:active:before,
   &:checked:active:before {
-    background-color: color-mix(in srgb, var(--va-text-normal) 8%, var(--va-color-background));
+    background-color: color-mix(in srgb, var(--va-color-foreground) 8%, var(--va-color-background));
   }
 
   label:has(> &) {
@@ -59,12 +59,12 @@
     padding-left: var(--va-checkbox-padding);
 
     &:hover {
-      background-color: color-mix(in srgb, var(--va-text-normal) 8%, transparent);
+      background-color: color-mix(in srgb, var(--va-color-foreground) 8%, transparent);
     }
 
     &:active {
       color: var(--va-surface-primary);
-      background-color: var(--va-text-normal);
+      background-color: var(--va-color-foreground);
     }
 
     span {

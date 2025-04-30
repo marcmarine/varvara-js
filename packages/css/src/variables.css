@@ -2,7 +2,7 @@
   color-scheme: light dark;
 
   --va-border-width: 1px;
-  --va-border-color: var(--va-text-normal);
+  --va-border-color: currentColor;
 
   --va-icon-stroke-width: 1.5px;
 
@@ -41,11 +41,10 @@
 
   --va-color-primary: light-dark(mediumvioletred, #9fe88d);
 
-  --va-color-foreground: light-dark(#29353d, #b3ccd6);
   --va-color-background: light-dark(#f3f5f7, #2a303c);
+  --va-color-foreground: light-dark(#29353d, #b3ccd6);
 
-  --va-text-normal: var(--va-color-foreground);
-  --va-text-weak: color-mix(in srgb, var(--va-text-normal) 20%, transparent);
+  --va-text-weak: color-mix(in srgb, var(--va-color-foreground) 20%, transparent);
 
   --va-surface-primary: color-mix(in srgb, var(--va-color-background) 80%, transparent);
   --va-surface-primary-alt: color-mix(in srgb, var(--va-color-background) 80%, var(--va-color-foreground));
