@@ -2,6 +2,6 @@
 @import 'components.css';
 
 body {
-  background-color: var(--va-background-primary);
+  background-color: var(--va-color-background);
   color: var(--va-text-normal);
 }
