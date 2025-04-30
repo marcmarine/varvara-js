@@ -40,7 +40,7 @@
   &--disabled,
   &[disabled] {
     @apply pointer-events-none;
-    color: var(--va-foreground-muted);
+    color: var(--va-foreground-color-muted);
   }
 
   &--action {
