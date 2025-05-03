@@ -116,10 +116,11 @@ footer {
   .container-main {
     grid-template-areas: 'header content' 'sidebar content';
     grid-auto-rows: auto 1fr;
-    margin: var(--va-space-8) auto;
+    margin: var(--va-space-6) auto;
   }
+
   .container {
-    padding: 0 var(--va-space-8);
+    padding: 0 var(--va-space-6);
   }
 
   #tsd-toolbar-menu-trigger {
@@ -129,21 +130,23 @@ footer {
 
 @media (min-width: 1200px) {
   .container-main {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 2.5fr) minmax(0, 20rem);
+    grid-template-columns: minmax(0, 20rem) minmax(0, 2.5fr) minmax(0, 20rem);
     grid-template-areas:
       'header content toc'
       'sidebar content toc';
   }
   .page-menu,
   .site-menu {
-    top: var(--va-space-8);
-    max-height: calc(100vh - calc(var(--va-space-8) * 2));
+    top: var(--va-space-6);
+    max-height: calc(100vh - calc(var(--va-space-6) * 2));
   }
 }
 
 @media (min-width: 770px) and (max-width: 1399px) {
   .col-sidebar {
+    top: var(--va-space-6);
     padding-top: 0;
+    max-height: calc(100vh - calc(var(--va-space-6) * 2));
   }
   .page-menu {
     margin-bottom: 1rem;
