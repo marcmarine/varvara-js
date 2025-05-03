@@ -1,5 +1,13 @@
 # varvara-typedoc-theme
 
+## 0.3.3
+
+### Patch Changes
+
+- 89e88ba: Update `va-link` component default color
+- 71784ce: Rename theme from `varvara` to `varvara-css`
+- 2bb31c5: Improve appearance on small screens
+
 ## 0.3.2
 
 ### Patch Changes
