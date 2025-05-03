@@ -1,3 +1,7 @@
+:root {
+  --va-link-color: var(--va-color-primary);
+}
+
 [data-theme='light'] {
   color-scheme: light;
 }
