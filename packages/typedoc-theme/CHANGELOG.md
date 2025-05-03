@@ -7,16 +7,6 @@
 - 18cfab7: Improve responsive layout styles
 - a7c39d1: Fixed menu toggle button on mobile screens
 - 033b011: Update styles for Varvara CSS v0.7.0
-- Updated dependencies [342a8b5]
-- Updated dependencies [d9819d9]
-- Updated dependencies [4ee04f9]
-- Updated dependencies [011d0e7]
-- Updated dependencies [7110ee2]
-- Updated dependencies [3a97a1f]
-- Updated dependencies [139fd41]
-- Updated dependencies [223ad85]
-- Updated dependencies [fea69ca]
-- Updated dependencies [5114625]
 - Updated dependencies [07dda52]
   - varvara-css@0.7.0
 

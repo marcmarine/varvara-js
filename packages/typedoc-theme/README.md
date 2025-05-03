@@ -6,6 +6,7 @@ Varvara TypeDoc Theme is a custom theme for TypeDoc, designed to provide a seaml
 
 [![NPM Version](https://img.shields.io/npm/v/varvara-typedoc-theme)](https://www.npmjs.com/package/varvara-typedoc-theme)
 [![GitHub License](https://img.shields.io/github/license/marcmarine/varvara-js)](https://github.com/marcmarine/varvara-js/blob/main/LICENSE)
+[![TypeDoc](https://img.shields.io/badge/view-CHANGELOG.md-blue.svg)](https://github.com/marcmarine/varvara-js/blob/main/packages/typedoc-theme/CHANGELOG.md)
 
 ## Installation
 
