@@ -2,7 +2,7 @@
 const config = {
   entryPoints: ['./src/index.ts'],
   plugin: ['varvara-typedoc-theme'],
-  theme: 'varvara',
+  theme: 'varvara-css',
   name: 'Varvara Theme Example',
   includeVersion: true,
   navigationLinks: {
