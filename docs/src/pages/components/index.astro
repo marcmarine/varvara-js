@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 import Layout from '../../layouts/Page.astro'
+import ContentNavigation from '../../components/ContentNavigation.astro'
 
 const allComponents = await getCollection('components')
 
@@ -31,8 +32,10 @@ const components = await Astro.glob('../../content/components/*.mdx')
       })
     }
   </div>
-  <div class="py-8 flex justify-between">
-    <a href="/variables" class="font-semibold text-lg hover:underline"> ← CSS Variables </a>
-    <a href="https://github.com/marcmarine/varvara" class="font-semibold text-lg hover:underline"> GitHub → </a>
-  </div>
+  <ContentNavigation
+    items={[
+      { href: '/variables', text: 'CSS Variables' },
+      { href: 'https://github.com/marcmarine/varvara', text: 'GitHub' }
+    ]}
+  />
 </Layout>

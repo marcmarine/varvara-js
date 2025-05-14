@@ -113,7 +113,7 @@ code {
 }
 
 p a {
-  @apply hover:underline;
+  @apply hover:underline va-link;
   color: var(--va-color-primary);
 }
 

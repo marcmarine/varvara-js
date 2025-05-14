@@ -1,24 +1,25 @@
 ---
-import { getEntry } from 'astro:content';
+import { getEntry } from 'astro:content'
 import Layout from '../layouts/Page.astro'
+import ContentNavigation from '../components/ContentNavigation.astro'
 
-const variables = await getEntry('docs', 'index');
+const variables = await getEntry('docs', 'index')
 const { Content, headings } = await variables.render()
 
-const links = headings.filter(heading => heading.depth === 2).map((heading) => ({
-		text: heading.text,
-		href: `/get-started#${heading.slug}`
-	}))
+const links = headings
+  .filter(heading => heading.depth === 2)
+  .map(heading => ({
+    text: heading.text,
+    href: `/get-started#${heading.slug}`
+  }))
 ---
 
 <Layout items={links} backHref="/">
   <Content />
-	<div class="py-8 flex justify-between">
-		<a href="/" class="font-semibold text-lg hover:underline">
-			← Home
-		</a>
-		<a href="/variables" class="font-semibold text-lg hover:underline">
-			CSS Variables →
-		</a>
-	</div>
+  <ContentNavigation
+    items={[
+      { href: '/', text: 'Home' },
+      { href: '/variables', text: 'CSS Variables' }
+    ]}
+  />
 </Layout>

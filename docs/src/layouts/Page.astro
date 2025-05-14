@@ -1,14 +1,14 @@
 ---
-import Navigation from '../components/Navigation.astro';
+import Navigation from '../components/Navigation.astro'
 import Layout from '../layouts/Base.astro'
 //@ts-ignore
-const { items, frontmatter, backHref, className, page } = Astro.props;
+const { items, frontmatter, backHref, className, page } = Astro.props
 let customLinks = frontmatter?.links || items
 let customBackHref = backHref || frontmatter?.backHref
 if (customBackHref && customLinks) customLinks = [{ text: '..', href: customBackHref }, ...customLinks]
 
 const response = await fetch('https://unpkg.com/varvara-css/package.json')
-const data = await response.json();
+const data = await response.json()
 ---
 
 <Layout page={page}>
@@ -17,14 +17,20 @@ const data = await response.json();
       <div class="h-16 -ml-2 flex items-center">
         <a href="/" class="flex items-center gap-2">
           <svg width="50" height="42" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M28.7764 30.081 1.8388 21.5033 9.2236 10.919l26.9377 8.5778-7.3849 10.5842Z" stroke="currentColor" stroke-width="var(--va-border-width)"/>
+            <path d="M28.7764 30.081 1.8388 21.5033 9.2236 10.919l26.9377 8.5778-7.3849 10.5842Z" stroke="currentColor" stroke-width="var(--va-border-width)"></path>
             <foreignObject x="16.4783" y="-5.3214" width="39.0434" height="53.6428">
-              <div style="backdrop-filter:blur(2px);clip-path:url(#a);height:100%;width:100%"/>
+              <div style="backdrop-filter:blur(2px);clip-path:url(#a);height:100%;width:100%"></div>
             </foreignObject>
-            <path data-figma-bg-blur-radius="8" d="M36.3448 38.6871 25.6823 12.5046l9.9729-8.1917 10.6625 26.1825-9.9729 8.1917Z" fill="transparent" fill-opacity=".1" stroke="currentColor" stroke-width="var(--va-border-width)"/>
+            <path
+              data-figma-bg-blur-radius="8"
+              d="M36.3448 38.6871 25.6823 12.5046l9.9729-8.1917 10.6625 26.1825-9.9729 8.1917Z"
+              fill="transparent"
+              fill-opacity=".1"
+              stroke="currentColor"
+              stroke-width="var(--va-border-width)"></path>
             <defs>
               <clipPath id="a">
-                <path transform="translate(-16.4783 5.3214)" d="M36.3448 38.6871 25.6823 12.5046l9.9729-8.1917 10.6625 26.1825-9.9729 8.1917Z"/>
+                <path transform="translate(-16.4783 5.3214)" d="M36.3448 38.6871 25.6823 12.5046l9.9729-8.1917 10.6625 26.1825-9.9729 8.1917Z"></path>
               </clipPath>
             </defs>
           </svg>
@@ -42,7 +48,10 @@ const data = await response.json();
   </main>
   <footer class="sticky bottom-0 z-10 grid grid-cols-subgrid col-start-1 col-end-3 grid-rows-subgrid bg-grid-top bg-[--va-background-color-default] backdrop-blur-lg">
     <div class="px-2 py-1 col-start-1 col-end-4 flex flex-col md:flex-row justify-between bg-grid-left bg-grid-right">
-      <p class="m-0 text-xs"><strong>Varvara CSS</strong> v{data.version} by <a href="https://github.com/marcmarine" class="font-bold">Marc</a> licesed under <a href="https://github.com/marcmarine/varvara/blob/main/LICENSE" class="font-bold">MIT</a></p>
+      <p class="m-0 text-xs">
+        <strong>Varvara CSS</strong> v{data.version} by <a href="https://github.com/marcmarine" class="font-bold">Marc</a> licesed under <a href="https://github.com/marcmarine/varvara/blob/main/LICENSE" class="font-bold"
+          >MIT</a>
+      </p>
       <p class="m-0 text-xs"><a href={`https://www.npmjs.com/package/varvara-css/v/${data.version}`}>NPM</a> · <a href="https://github.com/marcmarine/varvara">GitHub</a></p>
     </div>
   </footer>

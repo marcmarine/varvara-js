@@ -1,0 +1,19 @@
+---
+import type { Item } from './Navigation.astro'
+
+interface Props {
+  items: Item[]
+}
+
+const { items } = Astro.props
+---
+
+<nav class="py-8 flex justify-between">
+  {
+    items.map(item => (
+      <a href={item.href} class="va-link">
+        {item.text}
+      </a>
+    ))
+  }
+</nav>

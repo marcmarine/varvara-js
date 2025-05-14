@@ -1,25 +1,26 @@
 ---
-import { getEntry } from 'astro:content';
+import { getEntry } from 'astro:content'
 import Layout from '../layouts/Page.astro'
-import Table from '../components/CustomTable.astro';
+import Table from '../components/CustomTable.astro'
+import ContentNavigation from '../components/ContentNavigation.astro'
 
-const variables = await getEntry('docs', 'variables');
+const variables = await getEntry('docs', 'variables')
 const { Content, headings, components } = await variables.render()
 
-const links = headings.filter(heading => heading.depth === 2).map((heading) => ({
-		text: heading.text,
-		href: `/variables#${heading.slug}`
-	}))
+const links = headings
+  .filter(heading => heading.depth === 2)
+  .map(heading => ({
+    text: heading.text,
+    href: `/variables#${heading.slug}`
+  }))
 ---
 
 <Layout items={links} backHref="/">
-  <Content components={{ ...components, table: Table  }} />
-	<div class="py-8 flex justify-between">
-		<a href="/get-started" class="font-semibold text-lg hover:underline">
-			← Get started
-		</a>
-		<a href="/components" class="font-semibold text-lg hover:underline">
-			Components →
-		</a>
-	</div>
+  <Content components={{ ...components, table: Table }} />
+  <ContentNavigation
+    items={[
+      { href: '/get-started', text: 'Get started' },
+      { href: '/components', text: 'Components' }
+    ]}
+  />
 </Layout>

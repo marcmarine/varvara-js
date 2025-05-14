@@ -1,49 +1,47 @@
 ---
-import '../styles/global.css';
+import '../styles/global.css'
 
 interface Props {
-	title?: string;
-	description?: string;
-	page?: string
+  title?: string
+  description?: string
+  page?: string
 }
 
-const { title = 'Varvara CSS', description = "JavaScript toolkit for building web browsing experiences.", page } = Astro.props;
+const { title = 'Varvara CSS', description = 'JavaScript toolkit for building web browsing experiences.', page } = Astro.props
 const className = 'page'.concat(page ? ' ' + `page--${page}` : '')
 ---
 
 <!doctype html>
 <html lang="en" class={className}>
-	<head>
-		<meta charset="UTF-8" />
-		<title>{title}</title>
-		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<meta property="og:title" content={title} />
-		<meta property="og:type" content="website" />
-		<meta property="og:description" 
-  content={description} />
-		<meta property="og:url" content="https://varvara.js.org" />
-		<meta property="og:image" content="/og-image.png" />
-	</head>
-	<body class="page__body overflow-x-hidden">
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://varvara.js.org" />
+    <meta property="og:image" content="/og-image.png" />
+  </head>
+  <body class="page__body overflow-x-hidden">
+    <slot />
+  </body>
 </html>
 
 <script is:inline>
   const theme = (() => {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme");
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme')
     }
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark'
     }
-    return "light";
-  })();
+    return 'light'
+  })()
 
-
-  document.documentElement.dataset.theme = theme ;
-  localStorage.setItem("theme", theme);
+  document.documentElement.dataset.theme = theme
+  localStorage.setItem('theme', theme)
 </script>
