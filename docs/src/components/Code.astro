@@ -1,12 +1,7 @@
 ---
 import { codeToHtml } from 'shiki'
 
-const {
-  code,
-  lang = 'javascript',
-  className = ''
-} = Astro.props;
-
+const { code, lang = 'javascript', className = '' } = Astro.props
 
 const html = await codeToHtml(code, {
   lang,
@@ -14,46 +9,54 @@ const html = await codeToHtml(code, {
     light: 'one-light',
     dark: 'one-dark-pro'
   }
-
 })
-
 ---
-<va-code data-code={code}>
-  <div class={`va-card ${className} w-full`}>
-    <div class="va-card__body !p-0">
-      <Fragment set:html={html} />
-    </div>
-    <div class="va-card__actions">
-      <button class="va-button va-button--action flex-1" data-action>Copy</button>
-      <button class="va-button va-button--active flex-0 !text-center">{lang}</button>
-    </div>
-  </div>
-</va-code>
 
-<style>
-  .card {
-    --va-card-padding: 0;
-  }
-</style>
+<va-code data-lang={lang} data-code={html} class={className}></va-code>
 
 <script>
-export class VaCode extends HTMLElement {
-  constructor() {
-    super();
-    
-    const code = this.dataset.code;
-    const button = this.querySelector('[data-action]');
-    button?.addEventListener('click', (event: any) => {
-      navigator.clipboard.writeText(code as string)
+  export class VaCode extends HTMLElement {
+    constructor() {
+      super()
+    }
 
-      event.target.innerText = 'COPIED!'
-      setTimeout(() => {
-        event.target.innerText = 'COPY'
-      }, 2000)
-    });
+    async connectedCallback() {
+      const code = this.dataset.code || ''
+      const lang = this.dataset.lang || 'bash'
 
+      this.classList.add('va-card')
+      this.style.display = 'block'
+
+      const codeContainer = document.createElement('div')
+      codeContainer.className = 'va-card__body'
+      codeContainer.style.padding = '0'
+      codeContainer.innerHTML = code
+
+      const actions = document.createElement('div')
+      actions.className = 'va-card__actions'
+
+      const copyButton = document.createElement('button')
+      copyButton.className = 'va-button va-button--action flex-1'
+      copyButton.textContent = 'Copy'
+      copyButton.addEventListener('click', () => {
+        navigator.clipboard.writeText(code)
+        copyButton.textContent = 'Copied!'
+        setTimeout(() => {
+          copyButton.textContent = 'Copy'
+        }, 2000)
+      })
+
+      const langButton = document.createElement('button')
+      langButton.className = 'va-button flex-0 !text-center va-button--active'
+      langButton.textContent = lang
+
+      actions.appendChild(copyButton)
+      actions.appendChild(langButton)
+
+      this.appendChild(codeContainer)
+      this.appendChild(actions)
+    }
   }
-}
 
-  customElements.define('va-code', VaCode);
+  customElements.define('va-code', VaCode)
 </script>
