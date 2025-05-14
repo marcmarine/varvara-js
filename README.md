@@ -32,16 +32,16 @@ After, simply add a component class like this:
 <button class="va-button">Example button</button>
 ```
 
-Visit [docs](packages/css) to view the full documentation.
+Visit [docs](https://varvara.js.org) to view the full documentation.
 
 ## Monorepo
 
 Check out the list of packages inside this repository:
 
-| Package                                 | Description                                                         |
-| --------------------------------------- | ------------------------------------------------------------------- |
-| [css](packages/css)                     | Customizable components with CSS Variables using plain class names. |
-| [typedoc-theme](packages/typedoc-theme) | Varvara theme for TypeDoc.                                          |
+| Package                                                                                      | Readme                                                                                           | Version                                                                                                                              |
+| -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| [**css**](packages/css): Customizable components with CSS Variables using plain class names. | [README.md](https://github.com/marcmarine/varvara-js/blob/main/packages/css/README.md)           | [![NPM Version](https://img.shields.io/npm/v/varvara-css?color=fuchsia)](https://www.npmjs.com/package/varvara-css)                  |
+| [**typedoc-theme**](packages/typedoc-theme): Varvara theme for TypeDoc.                      | [README.md](https://github.com/marcmarine/varvara-js/blob/main/packages/typedoc-theme/README.md) | [![NPM Version](https://img.shields.io/npm/v/varvara-typedoc-theme?color=cyan)](https://www.npmjs.com/package/varvara-typedoc-theme) |
 
 Varvara is probably going to grow 🚀.
 
@@ -55,4 +55,4 @@ Feel free to explore, test, and provide feedback. Your contribution is highly ap
 
 ## License
 
-MIT License © 2024 [Marc Mariné](https://github.com/marcmarine)
+MIT License © 2024 [Marc Mariné](https://github.com/marcmarine).
