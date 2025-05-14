@@ -1,43 +1,38 @@
 ---
-import { getCollection } from 'astro:content';
-import Layout from '../../layouts/Page.astro';
+import { getCollection } from 'astro:content'
+import Layout from '../../layouts/Page.astro'
 
-const allComponents = await getCollection('components');
+const allComponents = await getCollection('components')
 
-const links = allComponents.map(({data, slug}) => ({
-		text: data.title,
-		href: `/components/${slug}`
-	}))
+const links = allComponents.map(({ data, slug }) => ({
+  text: data.title,
+  href: `/components/${slug}`
+}))
 
-const components = await Astro.glob('../../content/components/*.mdx');
+const components = await Astro.glob('../../content/components/*.mdx')
 ---
 
 <Layout items={links} backHref="/">
-	<h1>Components</h1>
-	<p>{allComponents.length} components</p>
-
-	<div class="grid md:grid-cols-2 gap-8">
-		{allComponents.map(({data, slug}) => {
-			const { Component }: any = components.find((item) => item.frontmatter.title === data.title)
-			return (
-			<div class="va-card">
-				<div class="va-card__body aspect-video grid place-content-center bg-black/20">
-					{Component ? <Component /> : <h2>{data.title}</h2>}
-				</div>
-				<div class="va-card__actions">
-					<a href={`/components/${slug}`} class="va-button">More info →</a>
-				</div>
-			</div>
-		)
-		})}
-	</div>
-	<div class="py-8 flex justify-between">
-		<a href="/variables" class="font-semibold text-lg hover:underline">
-			← CSS Variables
-		</a>
-		<a href="https://github.com/marcmarine/varvara" class="font-semibold text-lg hover:underline">
-			GitHub →
-		</a>
-	</div>
+  <h1>Components</h1>
+  <div class="grid md:grid-cols-2 gap-6">
+    {
+      allComponents.map(({ data, slug }) => {
+        const { Component }: any = components.find(item => item.frontmatter.title === data.title)
+        return (
+          <div class="va-card">
+            <div class="va-card__body aspect-video grid place-content-center bg-black/10">{Component ? <Component /> : <h2>{data.title}</h2>}</div>
+            <div class="va-card__actions">
+              <a href={`/components/${slug}`} class="va-button">
+                {data.title}
+              </a>
+            </div>
+          </div>
+        )
+      })
+    }
+  </div>
+  <div class="py-8 flex justify-between">
+    <a href="/variables" class="font-semibold text-lg hover:underline"> ← CSS Variables </a>
+    <a href="https://github.com/marcmarine/varvara" class="font-semibold text-lg hover:underline"> GitHub → </a>
+  </div>
 </Layout>
-
