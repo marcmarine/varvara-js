@@ -4,7 +4,7 @@
   "author": "Marc Mariné <shenobi@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/marcmarine/varvara.git",
+    "url": "https://github.com/marcmarine/varvara-js.git",
     "directory": "packages/css"
   },
   "devDependencies": {
@@ -13,7 +13,6 @@
     "chokidar-cli": "^3.0.0",
     "postcss": "^8.4.38",
     "postcss-cli": "^11.0.0",
-    "postcss-import": "^16.1.0",
     "postcss-nested": "^6.0.1",
     "postcss-prefixer": "^3.0.0",
     "prejss-cli": "^0.3.3",
@@ -26,7 +25,10 @@
   "main": "./dist/tailwind.js",
   "exports": {
     ".": "./dist/tailwind.js",
-    "./css": "./dist/varvara.css"
+    "./css": "./dist/varvara.css",
+    "./variables": "./dist/variables.css",
+    "./card": "./dist/components/card.css",
+    "./button": "./dist/components/button.css"
   },
   "description": "CSS library of customizable UI components based on CSS Variables.",
   "files": [
@@ -43,7 +45,7 @@
     "access": "public"
   },
   "scripts": {
-    "build:css": "postcss src/*.css --dir dist",
+    "build:css": "postcss \"src/**/*.css\" --base src --dir dist",
     "build:js": "prejss-cli dist/components.css --format es6 && bun run build-vars.ts",
     "build:tw": "bun build src/tailwind.ts --outdir dist --external '*'",
     "build": "bun run build:css && bun run build:js && bun run build:tw",
