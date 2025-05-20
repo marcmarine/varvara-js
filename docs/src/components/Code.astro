@@ -36,22 +36,22 @@ const html = await codeToHtml(code, {
       actions.className = 'va-card__actions'
 
       const copyButton = document.createElement('button')
-      copyButton.className = 'va-button va-button--action flex-1'
+      copyButton.className = 'va-button va-button--action !text-right'
       copyButton.textContent = 'Copy'
       copyButton.addEventListener('click', () => {
         navigator.clipboard.writeText(code)
-        copyButton.textContent = 'Copied!'
+        copyButton.textContent = 'Copied'
         setTimeout(() => {
           copyButton.textContent = 'Copy'
         }, 2000)
       })
 
       const langButton = document.createElement('button')
-      langButton.className = 'va-button flex-0 !text-center va-button--active'
+      langButton.className = 'va-button'
       langButton.textContent = lang
 
-      actions.appendChild(copyButton)
       actions.appendChild(langButton)
+      actions.appendChild(copyButton)
 
       this.appendChild(codeContainer)
       this.appendChild(actions)
