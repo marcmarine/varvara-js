@@ -15,7 +15,7 @@
   border-style: solid;
   border-width: var(--va-button-border-width);
   box-sizing: border-box;
-  color: inherit;
+  color: var(--va-foreground-color-default);
   font-size: var(--va-button-font-size);
   height: calc(var(--va-button-padding) * 2 + var(--va-button-font-size));
   outline: none;

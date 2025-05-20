@@ -9,7 +9,7 @@
 .card {
   @apply -space-y-[--va-card-border-width];
 
-  color: var(--va-card-color);
+  color: var(--va-foreground-color-default);
   background-color: var(--va-card-background-color);
 
   &__body {
@@ -21,12 +21,14 @@
   .button {
     border-width: var(--va-card-border-width);
     border-color: var(--va-card-border-color);
+    border-style: solid;
   }
 
   &__actions {
     @apply flex -space-x-[--va-card-border-width];
 
-    .button {
+    .button:not(:first-child),
+    .button:only-child {
       @apply w-full;
     }
   }
