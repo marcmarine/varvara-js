@@ -1,0 +1,48 @@
+{
+  "name": "va-code-block",
+  "version": "0.0.0",
+  "description": "A Web Component for rendering syntax-highlighted code blocks with a copy button.",
+  "author": "Marc Mariné <shenobi@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcmarine/varvara-js.git",
+    "directory": "packages/code-block"
+  },
+  "type": "module",
+  "main": "./dist/va-code-block.umd.cjs",
+  "module": "./dist/va-code-block.js",
+  "exports": {
+    ".": {
+      "import": "./dist/va-code-block.js",
+      "require": "./dist/va-code-block.umd.cjs"
+    }
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/prismjs": "^1.26.5",
+    "varvara-css": "workspace:*",
+    "vite": "^6.3.5"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "scripts": {
+    "dev": "bun run build -- --watch",
+    "dev:example": "bunx vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "prismjs": "^1.30.0"
+  },
+  "homepage": "https://varvara.js.org",
+  "keywords": [
+    "code-blocks",
+    "syntax-highlighting",
+    "code-snippets",
+    "varvara-css"
+  ],
+  "license": "MIT",
+  "files": [
+    "dist"
+  ]
+}

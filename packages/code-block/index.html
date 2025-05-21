@@ -1,0 +1,22 @@
+<head>
+  <script src="./dist/va-code-block.js" type="module"></script>
+  <link href="https://unpkg.com/varvara-css" rel="stylesheet" type="text/css" />
+</head>
+
+<body style="display: flex; flex-direction: column; gap: 2rem; padding: 1rem">
+  <h1>Code Block Example</h1>
+  <h2>One Dark</h2>
+  <va-code-block language="css" text='@import url("https://unpkg.com/varvara-css");'></va-code-block>
+  <h2>Nord</h2>
+  <va-code-block
+    language="html"
+    theme="nord"
+    text='<link
+  href="https://unpkg.com/varvara-css"
+  rel="stylesheet"
+  type="text/css"
+/>'
+  ></va-code-block>
+  <h2>One Light</h2>
+  <va-code-block language="html" theme="one-light" text='<button class="va-button">Example button</button>'></va-code-block>
+</body>
