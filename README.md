@@ -38,10 +38,11 @@ Visit [docs](https://varvara.js.org) to view the full documentation.
 
 Check out the list of packages inside this repository:
 
-| Package                                                                                      | Readme                                                                                           | Version                                                                                                                              |
-| -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
-| [**css**](packages/css): Customizable components with CSS Variables using plain class names. | [README.md](https://github.com/marcmarine/varvara-js/blob/main/packages/css/README.md)           | [![NPM Version](https://img.shields.io/npm/v/varvara-css?color=fuchsia)](https://www.npmjs.com/package/varvara-css)                  |
-| [**typedoc-theme**](packages/typedoc-theme): Varvara theme for TypeDoc.                      | [README.md](https://github.com/marcmarine/varvara-js/blob/main/packages/typedoc-theme/README.md) | [![NPM Version](https://img.shields.io/npm/v/varvara-typedoc-theme?color=cyan)](https://www.npmjs.com/package/varvara-typedoc-theme) |
+| Package                                     | Description                                                                                | Version                                                                                                                              |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| [**css**](packages/css)                     | Customizable components with CSS Variables using plain class names.                        | [![NPM Version](https://img.shields.io/npm/v/varvara-css?color=magenta)](https://www.npmjs.com/package/varvara-css)                  |
+| [**typedoc-theme**](packages/typedoc-theme) | Varvara theme for TypeDoc.                                                                 | [![NPM Version](https://img.shields.io/npm/v/varvara-typedoc-theme?color=cyan)](https://www.npmjs.com/package/varvara-typedoc-theme) |
+| [**code-block**](packages/code-block)       | A custom HTML element that renders code blocks with syntax highlighting and a copy button. | [![NPM Version](https://img.shields.io/npm/v/va-code-block?color=yellow)](https://www.npmjs.com/package/va-code-block)               |
 
 Varvara is probably going to grow 🚀.
 
