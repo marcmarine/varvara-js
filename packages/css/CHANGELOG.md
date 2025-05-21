@@ -1,5 +1,12 @@
 # varvara-css
 
+## 0.7.2
+
+### Patch Changes
+
+- 6b82333: Allow importing styles for individual components
+- 0f7a894: Correct color values for card and button
+
 ## 0.7.1
 
 ### Patch Changes
