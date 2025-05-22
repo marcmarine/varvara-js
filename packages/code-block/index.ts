@@ -34,6 +34,7 @@ class CodeBlock extends HTMLElement {
     sheet.replaceSync(`${scopedVariablesCss}${scopedCardCss}${scopedButtonCss}`)
     sheet.insertRule('.va-button--action { text-align: right !important; }')
     sheet.insertRule('pre { margin: 0 !important; border-radius: 0 !important; }')
+    sheet.insertRule('code { white-space: pre-wrap !important; }')
     this.shadow.adoptedStyleSheets = [sheet]
 
     const theme = this.getAttribute('theme') || CodeBlock.DEFAULT_THEME
@@ -46,6 +47,7 @@ class CodeBlock extends HTMLElement {
   private render(codeContent: string) {
     const wrapper = document.createElement('div')
     wrapper.setAttribute('class', 'va-card')
+    wrapper.setAttribute('part', 'card')
 
     const pre = document.createElement('pre')
     pre.setAttribute('class', 'va-card__body')
