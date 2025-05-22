@@ -7,12 +7,14 @@
     "url": "https://github.com/marcmarine/varvara-js.git",
     "directory": "packages/css"
   },
+  "main": "./dist/tailwind.js",
   "devDependencies": {
     "@types/bun": "latest",
-    "autoprefixer": "^10.4.19",
     "chokidar-cli": "^3.0.0",
     "postcss": "^8.4.38",
-    "postcss-cli": "^11.0.0",
+    "postcss-cli": "^11.0.1",
+    "postcss-import": "^16.1.0",
+    "postcss-lightningcss": "^1.0.1",
     "postcss-nested": "^6.0.1",
     "postcss-prefixer": "^3.0.0",
     "prejss-cli": "^0.3.3",
@@ -22,7 +24,6 @@
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
-  "main": "./dist/tailwind.js",
   "exports": {
     ".": "./dist/tailwind.js",
     "./css": "./dist/varvara.css",
@@ -41,9 +42,6 @@
     "varvara-css"
   ],
   "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "build:css": "postcss \"src/**/*.css\" --base src --dir dist",
     "build:js": "prejss-cli dist/components.css --format es6 && bun run build-vars.ts",
