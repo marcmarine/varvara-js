@@ -21,6 +21,10 @@
     padding-left: calc(var(--va-collapse-padding) + var(--space)) !important;
   }
 
+  & > * {
+    width: 100%;
+  }
+
   summary {
     @apply relative block leading-none font-medium cursor-pointer;
 
@@ -91,7 +95,10 @@
   & .select {
     --depth: 1;
 
-    @apply w-full border-x-0 border-b-0;
+    width: 100%;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
 
     & .collapse,
     & .button,
@@ -103,18 +110,6 @@
       & label:has(.checkbox),
       & .select {
         --depth: 3;
-        & .collapse,
-        & .button,
-        & label:has(.checkbox),
-        & .select {
-          --depth: 4;
-          & .collapse,
-          & .button,
-          & label:has(.checkbox),
-          & .select {
-            --depth: 5;
-          }
-        }
       }
     }
   }
@@ -124,5 +119,9 @@
   & .select,
   & label:has(.select) span {
     padding-left: calc(var(--va-collapse-tree-indentation) + var(--va-collapse-padding) + var(--space));
+  }
+
+  & va-code-block::part(card) {
+    margin: calc(var(--va-card-border-width) * -1);
   }
 }

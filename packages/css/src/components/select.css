@@ -64,7 +64,7 @@
   }
 
   label:has(> &) {
-    @apply block relative;
+    @apply inline-block relative;
 
     span {
       @apply absolute top-0 left-0 leading-none pointer-events-none;
@@ -76,7 +76,6 @@
     }
 
     .select {
-      width: 100%;
       padding-top: var(--va-font-size-0);
     }
   }
