@@ -1,8 +1,11 @@
 # Varvara CSS
 
-![NPM Version (with dist tag)](https://img.shields.io/npm/v/varvara-css?style=for-the-badge&labelColor=cyan&color=fuchsia)
-
 **Varvara CSS** is a library of prebuilt UI components designed for smooth and simple browsing experiences, implemented using simple class names and easily customizable with CSS Variables.
+
+[![NPM Version](https://img.shields.io/npm/v/varvara-css?color=magenta)](https://www.npmjs.com/package/varvara-css)
+[![GitHub License](https://img.shields.io/github/license/marcmarine/varvara-js)](https://github.com/marcmarine/varvara-js/blob/main/LICENSE)
+[![TypeDoc](https://img.shields.io/badge/view-CHANGELOG.md-blue.svg)](https://github.com/marcmarine/varvara-js/blob/main/packages/css/CHANGELOG.md)
+![Bundle Size](https://img.shields.io/npm/unpacked-size/varvara-css?color=cyan)
 
 It can be used alongside Tailwind CSS and with any JavaScript framework.
 
@@ -41,7 +44,7 @@ After, you have to import the package into your stylesheet:
 > [!TIP]
 > An @import rule must be defined at the top of the stylesheet
 
-### Tailwind Plugin
+### Tailwind v3 Plugin
 
 Finally, you can extend Tailwind CSS with Varvara CSS.
 
