@@ -9,12 +9,12 @@
     "directory": "packages/code-block"
   },
   "type": "module",
-  "main": "./dist/va-code-block.umd.cjs",
-  "module": "./dist/va-code-block.js",
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
   "exports": {
     ".": {
-      "import": "./dist/va-code-block.js",
-      "require": "./dist/va-code-block.umd.cjs"
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
     }
   },
   "devDependencies": {
@@ -34,7 +34,7 @@
   "dependencies": {
     "prismjs": "^1.30.0"
   },
-  "homepage": "https://varvara.js.org",
+  "homepage": "https://varvara.js.org/code-block",
   "keywords": [
     "code-blocks",
     "syntax-highlighting",

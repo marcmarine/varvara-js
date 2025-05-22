@@ -4,7 +4,8 @@ export default {
   build: {
     lib: {
       entry: 'index.ts',
-      name: 'va-code-block'
+      name: 'VaCodeBlock',
+      fileName: 'index'
     },
     rollupOptions: {
       external: ['prismjs'],
