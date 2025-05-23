@@ -9,6 +9,7 @@
     "directory": "packages/code-block"
   },
   "type": "module",
+  "types": "./dist/index.d.ts",
   "main": "./dist/index.umd.cjs",
   "module": "./dist/index.js",
   "exports": {
@@ -21,7 +22,8 @@
     "@types/bun": "latest",
     "@types/prismjs": "^1.26.5",
     "varvara-css": "workspace:*",
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^4.5.4"
   },
   "peerDependencies": {
     "typescript": "^5"
@@ -29,7 +31,8 @@
   "scripts": {
     "dev": "bun run build -- --watch",
     "dev:example": "bunx vite",
-    "build": "vite build"
+    "build": "vite build",
+    "build:types": "tsc index.ts --noResolve --declaration --emitDeclarationOnly"
   },
   "dependencies": {
     "prismjs": "^1.30.0"

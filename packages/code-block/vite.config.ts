@@ -1,4 +1,5 @@
 import type { UserConfig } from 'vite'
+import dts from 'vite-plugin-dts'
 
 export default {
   build: {
@@ -15,5 +16,6 @@ export default {
         }
       }
     }
-  }
+  },
+  plugins: [dts()]
 } satisfies UserConfig
