@@ -5,7 +5,7 @@ import buttonCss from 'varvara-css/button?inline'
 
 class CodeBlock extends HTMLElement {
   private shadow: ShadowRoot
-  private static readonly DEFAULT_LANGUAGE = 'js'
+  private static readonly DEFAULT_LANGUAGE = 'text'
   private static readonly DEFAULT_THEME = 'one-dark'
   private static readonly COPY_BUTTON_TEXT = 'Copy'
   private static readonly COPIED_BUTTON_TEXT = 'Copied'
