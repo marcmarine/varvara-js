@@ -54,6 +54,10 @@ h3 {
   @apply mt-6 mb-4 text-xl;
 }
 
+h4 {
+  @apply mb-3;
+}
+
 p {
   @apply mt-2 mb-4;
 
@@ -92,6 +96,7 @@ code {
       h1,
       h2,
       h3,
+      h4,
       p {
         @apply px-2;
       }

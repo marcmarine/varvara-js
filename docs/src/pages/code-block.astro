@@ -1,0 +1,228 @@
+---
+import PackageVersion from '../components/PackageVersion.astro'
+import Layout from '../layouts/Base.astro'
+const prismThemes = {
+  "A11y Dark": "a11y-dark",
+  "Atom Dark": "atom-dark",
+  "Base16 AS Light": "base16-ateliersulphurpool.light",
+  "CB": "cb",
+  "Coldark Cold": "coldark-cold",
+  "Coldark Dark": "coldark-dark",
+  "Coy Without Shadows": "coy-without-shadows",
+  "Darcula": "darcula",
+  "Dracula": "dracula",
+  "Duotone Dark": "duotone-dark",
+  "Duotone Earth": "duotone-earth",
+  "Duotone Forest": "duotone-forest",
+  "Duotone Light": "duotone-light",
+  "Duotone Sea": "duotone-sea",
+  "Duotone Space": "duotone-space",
+  "GitHub Colors": "ghcolors",
+  "Gruvbox Dark": "gruvbox-dark",
+  "Gruvbox Light": "gruvbox-light",
+  "Holi Theme": "holi-theme",
+  "Hopscotch": "hopscotch",
+  "Laserwave": "laserwave",
+  "Lucario": "lucario",
+  "Material Dark": "material-dark",
+  "Material Light": "material-light",
+  "Material Oceanic": "material-oceanic",
+  "Night Owl": "night-owl",
+  "Nord": "nord",
+  "One Dark": "one-dark",
+  "One Light": "one-light",
+  "Pojoaque": "pojoaque",
+  "Shades of Purple": "shades-of-purple",
+  "Solarized Dark Atom": "solarized-dark-atom",
+  "Synthwave 84": "synthwave84",
+  "VS": "vs",
+  "VS Code Dark+": "vsc-dark-plus",
+  "Xonokai": "xonokai",
+  "Z Touch": "z-touch"
+}
+const GITHUB_URL = 'https://github.com/marcmarine/varvara-js/tree/main/packages/code-block'
+---
+
+<Layout>
+  <header class="grid col-start-1 grid-rows-subgrid row-start-1 row-end-4 relative z-10 bg-grid-left bg-grid-right">
+    <div class="pt-8 mb-8 max-w-4xl mx-auto !sticky top-0">
+      <h1 class="mb-0">Code Block <PackageVersion package="va-code-block" /></h1>
+      <p>Styled with <a href="/" class="va-link">Varvara CSS</a> <PackageVersion />
+      </p>
+      <p>A reusable component that renders code blocks with syntax highlighting and a copy button.</p>
+      <label class="mb-4">
+        <span>Technology</span>
+        <select class="va-select">
+          <option value="web" selected>Web Components</option>
+          <option value="react" disabled>React (Coming soon)</option>
+        </select>
+      </label>
+      <div class="flex flex-col items-start gap-1">
+        <a href="#demo" class="va-link">Demo</a>
+        <a href="#attributes" class="va-link">Attributes</a>
+        <a href="#installation" class="va-link">Installation</a>
+        <a href="#usage" class="va-link">Usage</a>
+        <a href="#themes" class="va-link">Themes</a>
+        <a href={GITHUB_URL} class="va-link mt-auto">GitHub</a>
+      </div>
+    </div>
+  </header>
+  <main class="bg-grid-left bg-grid-right overflow-hidden">
+    <div class="pt-8 mb-20">
+      <div class="mb-6 flex justify-start">
+        <label>
+          <span>Theme</span>
+          <select class="va-select" id="syntax-theme-toggle">
+            {Object.keys(prismThemes).map((key) => 
+              <option value={(prismThemes as Record<string, string>)[key]}>{key}</option>
+            )}
+          </select>
+        </label>
+      </div>
+      <div class="mb-3 px-2 p-1 text-yellow-300 bg-yellow-900">🙏 This component is in an early development stage. The API is not yet stable and may change in future releases. Check the <a href="https://github.com/marcmarine/varvara-js/releases?q=va-code-block&expanded=true" class="va-link">CHANGELOG.md</a> to stay up to date with the latest changes.</div>
+      <div id="demo" class="mb-8 va-card">
+        <div class="va-card__body">
+          <h4>Demonstration</h4>
+          <va-code-block class="block m-4" language="html" text=`<details class="va-collapse">
+  <summary>
+    <strong>The purpose of thought</strong>
+  </summary>
+  <p>
+    We can attain wisdom by three ways: first, by way of experience, this is the most difficult way; second, by way of imitation, this is the easiest way; and third by way of meditation, and this is the noblest way. 
+  </p>
+  <p>Confucius</p>
+</details>`></va-code-block>
+        </div>
+        <div class="va-card__actions">
+          <details class="va-collapse w-full">
+            <summary>Code</summary>
+            <va-code-block class="w-full" language="html" text=`<va-code-block language="js" text="<details class='va-collapse'>
+  <summary>
+    <strong>The purpose of thought</strong>
+  </summary>
+  <p>
+    We can attain wisdom by three ways: first, by way of experience, this is the most difficult way; second, by way of imitation, this is the easiest way; and third by way of meditation, and this is the noblest way. 
+  </p>
+  <p>Confucius</p>
+</details>"></va-code-block>`></va-code-block>
+          </details>
+        </div>
+      </div>
+      <p>The syntax highlighting is powered by <a href="https://prismjs.com" target="_blank" class="va-link">Prism.js</a> <span class="text-xs">v1.30.0</span></p>
+      <h2 id="attributes">Attributes</h2>
+      <table class="va-table">
+        <thead>
+          <tr>
+            <th>Attribute</th>
+            <th>Description</th>
+            <th>Default value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><code>text</code></th>
+            <td>The code snippet you want to highlight.</td>
+            <td><code>''</code></td>
+          </tr>
+          <tr>
+            <th><code>language</code></th>
+            <td>Language for syntax highlighting.</td>
+            <td><code>'text'</code></td>
+          </tr>
+          <tr>
+            <th><code>theme</code></th>
+            <td>(Optional) Syntax highlighting theme. <a href="#themes" class="va-link">See available themes below</a>.</td>
+            <td><code>'one-dark'</code></td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 id="installation">Installation</h2>
+      <h3>Using CDN</h3>
+      <p>Include both Prism.js and <code>va-code-block</code> via <code>{'<'}script{'>'}</code> tags:</p>
+      <va-code-block class="block mb-8" language="html" text="<script src='https://unpkg.com/prismjs@1.30.0'></script>\n<script src='https://unpkg.com/va-code-block'></script>"></va-code-block>
+      <h3>Using NPM</h3>
+      <va-code-block class="block mb-8" language="bash" text="npm i va-code-block"></va-code-block>
+      <h2 id="usage">Usage</h2>
+      <h3>In HTML</h3>
+      <p>You can use the component directly in your HTML:</p>
+      <va-code-block class="block mb-6" language="html" text=`<va-code-block
+  language="html"
+  theme="nord"
+  text='<link
+  href="https://unpkg.com/varvara-css"
+  rel="stylesheet"
+  type="text/css"
+/>'
+></va-code-block>`></va-code-block>
+    <p>The <code>text</code> attribute should contain the code snippet as a single string. Escaping is handled internally.</p>
+    <h2 id="themes">Themes</h2>
+    <p>Choose from a variety of <a href="https://github.com/PrismJS/prism-themes" class="va-link" target="_blank">Prism themes</a>. Below are a few supported options:</p>
+    <table class="mb-6 va-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        {Object.keys(prismThemes).map((key) => 
+          <tr>
+            <th>{key}</th>
+            <td><code>{(prismThemes as typeof prismThemes)[key as keyof typeof prismThemes]}</code></td>
+          </tr>
+        )}
+      </tbody>
+    </table>
+    <p>You can customize the theme using the <code>theme</code> attribute.</p>
+    <h2>More information</h2>
+    <ul class="px-2 ">
+      <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components" class="va-link">Web Components (MDN)</a>
+      </li>
+      <li>
+        <a href="https://www.webcomponents.org/" class="va-link">WEBCOMPONENTS.ORG</a>
+      </li>
+      <li>
+        <a href={GITHUB_URL} class="va-link">Varvara Code Block on GitHub</a>
+      </li>
+    </ul>
+    </div>
+  </main>
+</Layout>
+
+<script is:inline>
+  const syntax = (() => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('code-syntax-theme')) {
+      return localStorage.getItem('code-syntax-theme')
+    }
+    return 'one-dark'
+  })()
+
+  localStorage.setItem('code-syntax-theme', syntax)
+
+
+  function handleThemeChange(event) {
+  const selectedTheme = event.target.value
+  
+  localStorage.setItem('syntax-theme', selectedTheme)
+  
+  window.location.reload()
+}
+
+function initThemeSelector() {
+  const themeSelect = document.getElementById('syntax-theme-toggle')
+  themeSelect?.addEventListener('change', handleThemeChange)
+  
+  const savedTheme = localStorage.getItem('syntax-theme')
+  if (savedTheme && themeSelect) {
+    themeSelect.value = savedTheme
+
+    const codeBlocks = document.querySelectorAll('va-code-block')
+    codeBlocks.forEach(codeBlock => {
+      codeBlock.setAttribute('theme', savedTheme)
+    })
+  }
+}
+
+initThemeSelector()
+</script>

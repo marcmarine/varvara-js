@@ -1,14 +1,12 @@
 ---
 import Navigation from '../components/Navigation.astro'
+import PackageVersion from '../components/PackageVersion.astro'
 import Layout from '../layouts/Base.astro'
 //@ts-ignore
 const { items, frontmatter, backHref, className, page } = Astro.props
 let customLinks = frontmatter?.links || items
 let customBackHref = backHref || frontmatter?.backHref
 if (customBackHref && customLinks) customLinks = [{ text: '..', href: customBackHref }, ...customLinks]
-
-const response = await fetch('https://unpkg.com/varvara-css/package.json')
-const data = await response.json()
 ---
 
 <Layout page={page}>
@@ -36,7 +34,7 @@ const data = await response.json()
           </svg>
           <div class="flex items-end gap-2">
             <span class="font-bold leading-none text-2xl hover:underline active:no-underline">Varvara</span>
-            <span class="text-xs">v{data.version}</span>
+            <PackageVersion />
           </div>
         </a>
       </div>
@@ -45,14 +43,5 @@ const data = await response.json()
   </header>
   <main class={`bg-grid-left bg-grid-right ${className ? ` ${className}` : ''}`} role="main">
     <slot />
-  </main>
-  <footer class="sticky bottom-0 z-10 grid grid-cols-subgrid col-start-1 col-end-3 grid-rows-subgrid bg-grid-top bg-[--va-background-color-default] backdrop-blur-lg">
-    <div class="px-2 py-1 col-start-1 col-end-4 flex flex-col md:flex-row justify-between bg-grid-left bg-grid-right">
-      <p class="m-0 text-xs">
-        <strong>Varvara CSS</strong> v{data.version} by <a href="https://github.com/marcmarine" class="font-bold">Marc</a> licesed under <a href="https://github.com/marcmarine/varvara/blob/main/LICENSE" class="font-bold"
-          >MIT</a>
-      </p>
-      <p class="m-0 text-xs"><a href={`https://www.npmjs.com/package/varvara-css/v/${data.version}`}>NPM</a> · <a href="https://github.com/marcmarine/varvara">GitHub</a></p>
-    </div>
-  </footer>
+  </main> 
 </Layout>

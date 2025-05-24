@@ -13,7 +13,7 @@ const links = allComponents.map(({ data, slug }) => ({
 const components = await Astro.glob('../../content/components/*.mdx')
 ---
 
-<Layout items={links} backHref="/">
+<Layout items={[...links, {text: 'Code Block', href: '/code-block'}].sort((a, b) => a.text.localeCompare(b.text))} backHref="/">
   <h1>Components</h1>
   <div class="grid md:grid-cols-2 gap-6">
     {

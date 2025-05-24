@@ -1,20 +1,15 @@
 ---
-import { codeToHtml } from 'shiki'
+
 
 const { code, lang = 'javascript', className = '' } = Astro.props
 
-const html = await codeToHtml(code, {
-  lang,
-  themes: {
-    light: 'one-light',
-    dark: 'one-dark-pro'
-  }
-})
+
 ---
 
-<va-code data-lang={lang} data-code={html} class={className}></va-code>
+<va-code data-lang={lang} data-code={code} class={className}></va-code>
 
 <script>
+  import { codeToHtml } from 'shiki'
   export class VaCode extends HTMLElement {
     constructor() {
       super()
@@ -24,13 +19,21 @@ const html = await codeToHtml(code, {
       const code = this.dataset.code || ''
       const lang = this.dataset.lang || 'bash'
 
+      const html = await codeToHtml(code, {
+        lang,
+        themes: {
+          light: 'one-light',
+          dark: 'one-dark-pro'
+        }
+      })
+
       this.classList.add('va-card')
       this.style.display = 'block'
 
       const codeContainer = document.createElement('div')
       codeContainer.className = 'va-card__body'
       codeContainer.style.padding = '0'
-      codeContainer.innerHTML = code
+      codeContainer.innerHTML = html
 
       const actions = document.createElement('div')
       actions.className = 'va-card__actions'
@@ -48,7 +51,7 @@ const html = await codeToHtml(code, {
 
       const langButton = document.createElement('button')
       langButton.className = 'va-button'
-      langButton.textContent = lang
+      langButton.textContent = lang.toUpperCase()
 
       actions.appendChild(langButton)
       actions.appendChild(copyButton)
