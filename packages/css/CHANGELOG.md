@@ -1,5 +1,13 @@
 # varvara-css
 
+## 0.7.3
+
+### Patch Changes
+
+- e1bac65: Improved the implementation of indentation in the collapse component
+- 47c7aa7: Fixed missing CSS imports and added minification
+- 1670a82: Refined indentation of collapse component for reducing output size
+
 ## 0.7.2
 
 ### Patch Changes
