@@ -71,7 +71,7 @@ class CodeBlock extends HTMLElement {
     languageButton.setAttribute('class', 'va-button')
     languageButton.setAttribute('tabindex', '-1')
 
-    languageButton.textContent = language
+    languageButton.textContent = language.toUpperCase()
 
     actions.appendChild(languageButton)
 
