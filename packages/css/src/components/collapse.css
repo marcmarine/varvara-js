@@ -89,10 +89,7 @@
     );
   }
 
-  & .collapse,
-  & .button,
-  & label:has(.checkbox),
-  & .select {
+  & *:not(.checkbox) {
     --depth: 1;
 
     width: 100%;
@@ -100,16 +97,15 @@
     border-right: 0;
     border-bottom: 0;
 
-    & .collapse,
-    & .button,
-    & label:has(.checkbox),
-    & .select {
+    & *:not(.checkbox) {
       --depth: 2;
-      & .collapse,
-      & .button,
-      & label:has(.checkbox),
-      & .select {
+
+      & *:not(.checkbox) {
         --depth: 3;
+
+        & *:not(.checkbox) {
+          --depth: 4;
+        }
       }
     }
   }
