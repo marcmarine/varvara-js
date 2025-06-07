@@ -1,5 +1,11 @@
 # varvara-css
 
+## 0.7.4
+
+### Patch Changes
+
+- e2c4147: Ensures SVG elements are excluded from depth rules in collapse component and refines depth assignment to improve structure and maintainability.
+
 ## 0.7.3
 
 ### Patch Changes
