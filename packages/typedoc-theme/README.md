@@ -25,7 +25,7 @@ npm install varvara-typedoc-theme --save-dev
 Use the following command to generate documentation with the Varvara theme:
 
 ```bash
-npx typedoc --plugin varvara-typedoc-theme --theme varvara-css
+npx typedoc --plugin varvara-typedoc-theme --theme varvara-css src/index.ts
 ```
 
 ### Method 2: Configuration File
