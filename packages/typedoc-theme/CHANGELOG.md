@@ -1,5 +1,12 @@
 # varvara-typedoc-theme
 
+## 0.3.4
+
+### Patch Changes
+
+- e5c5a19: Specified the source file in the Typedoc command to improve documentation.
+- d238c46: Updated the `varvara-css` dependency to version 0.7.4 to fix navigation display issues.
+
 ## 0.3.3
 
 ### Patch Changes
