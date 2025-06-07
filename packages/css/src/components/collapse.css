@@ -89,21 +89,20 @@
     );
   }
 
-  & *:not(.checkbox) {
-    --depth: 1;
-
+  & *:not(.checkbox):not(svg) {
     width: 100%;
     border-left: 0;
     border-right: 0;
     border-bottom: 0;
+  }
 
-    & *:not(.checkbox) {
+  & > * {
+    --depth: 1;
+    & > * {
       --depth: 2;
-
-      & *:not(.checkbox) {
+      & > * {
         --depth: 3;
-
-        & *:not(.checkbox) {
+        & > * {
           --depth: 4;
         }
       }
