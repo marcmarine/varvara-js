@@ -1,5 +1,12 @@
 # varvara-typedoc-theme
 
+## 0.3.5
+
+### Patch Changes
+
+- ff891b2: Updated navigation logic to include grouped items and added CSS variables for tree indentation and spacing.
+- b3a9f17: Added dark and light theme screenshots to the README.
+
 ## 0.3.4
 
 ### Patch Changes
