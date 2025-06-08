@@ -1,4 +1,4 @@
-# Varvara TypeDoc Theme
+# Varvara 🤦‍♀️ TypeDoc Theme
 
 _View a_ [_live example here_](https://marcmarine.github.io/western-signs).
 
@@ -7,6 +7,18 @@ Varvara TypeDoc Theme is a custom theme for TypeDoc, designed to provide a seaml
 [![NPM Version](https://img.shields.io/npm/v/varvara-typedoc-theme)](https://www.npmjs.com/package/varvara-typedoc-theme)
 [![GitHub License](https://img.shields.io/github/license/marcmarine/varvara-js)](https://github.com/marcmarine/varvara-js/blob/main/LICENSE)
 [![TypeDoc](https://img.shields.io/badge/view-CHANGELOG.md-blue.svg)](https://github.com/marcmarine/varvara-js/blob/main/packages/typedoc-theme/CHANGELOG.md)
+
+<details close>
+<summary>🖼️ <strong>Screenshots</strong></summary>
+
+![Dark example](https://github.com/marcmarine/varvara-js/raw/main/packages/typedoc-theme/basic-example/example-dark.png)
+
+![Light example](https://github.com/marcmarine/western-signs/raw/main/packages/typedoc-theme/basic-example/example-light.png)
+
+> [!TIP]
+> The theme is [fully customizable](#customization) 🚀.
+
+</details>
 
 ## Installation
 
