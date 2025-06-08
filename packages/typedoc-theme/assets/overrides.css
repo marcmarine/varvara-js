@@ -1,5 +1,7 @@
 :root {
   --va-link-color: var(--va-color-primary);
+  --va-collapse-tree-indentation: var(--va-space-4);
+  --va-space-ratio: 0.78;
 }
 
 [data-theme='light'] {
@@ -12,10 +14,6 @@
 
 * {
   box-sizing: border-box;
-}
-
-.va-collapse {
-  overflow: hidden;
 }
 
 .va-button {

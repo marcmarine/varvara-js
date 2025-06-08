@@ -7,6 +7,9 @@ const config = {
   includeVersion: true,
   navigationLinks: {
     GitHub: 'https://github.com/marcmarine/varvara-js'
+  },
+  navigation: {
+    includeGroups: true
   }
 }
 

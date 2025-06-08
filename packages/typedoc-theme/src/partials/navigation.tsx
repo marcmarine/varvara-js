@@ -1,5 +1,6 @@
-import { DefaultThemeRenderContext, JSX, PageEvent, Reflection, ReflectionFlag, type PageHeading, i18n, translateTagName, ReflectionFlags } from 'typedoc'
+import { DefaultThemeRenderContext, JSX, PageEvent, Reflection, ReflectionFlag, type PageHeading, i18n, translateTagName, ReflectionFlags, type NavigationElement } from 'typedoc'
 import type { VarvaraThemeContext } from '../themes/VarvaraThemeContext'
+import { getDisplayName } from '../utils'
 
 export function pageSidebar(context: VarvaraThemeContext) {
   return (props: PageEvent<Reflection>) => {
@@ -98,9 +99,9 @@ function buildSectionNavigation(context: DefaultThemeRenderContext, headings: Pa
     }
 
     levels[levels.length - 1].push(
-      <a href={heading.link} class={[heading.classes, 'va-button'].join(' ')} style={`padding-left: ${PADDING_PER_LEVEL * (inferredLevel - 1)}px`}>
+      <a href={heading.link} class={[heading.classes, 'va-button'].join(' ')}>
         {heading.kind && context.icons[heading.kind]()}
-        <span>{heading.text}</span>
+        {heading.text}
       </a>
     )
   }
@@ -151,4 +152,52 @@ export function pageNavigation(context: VarvaraThemeContext) {
       </details>
     )
   }
+}
+
+export const navigation =
+  (context: VarvaraThemeContext) =>
+  (props: PageEvent<Reflection>): JSX.Element => {
+    const navigationData = context.getNavigation()
+
+    return (
+      <nav class="va-button-group">
+        <details class="va-collapse tsd-accordion">
+          <summary>
+            <a href={context.urlTo(props.project)}>{getDisplayName(props.project)}</a>
+          </summary>
+          <Navigation data={navigationData} context={context} />
+        </details>
+      </nav>
+    )
+  }
+
+export const Navigation = ({ data, context }: { data: NavigationElement[]; context: DefaultThemeRenderContext }): JSX.Element => (
+  <>
+    {data.map(item =>
+      item.children && item.children.length > 0 ? (
+        <details class="va-collapse tsd-accordion">
+          <summary class="tsd-accordion-summary">{item.text}</summary>
+          <Navigation data={item.children} context={context} />
+        </details>
+      ) : (
+        <Item item={item} context={context} />
+      )
+    )}
+  </>
+)
+
+const Item = ({ item, context }: { item: NavigationElement; context: DefaultThemeRenderContext }): JSX.Element => {
+  const icon = item.kind && context.icons[item.kind]()
+
+  return item.path ? (
+    <a href={context.relativeURL(item.path)} class="va-button">
+      {icon}
+      {item.text}
+    </a>
+  ) : (
+    <span class="va-button">
+      {icon}
+      {item.text}
+    </span>
+  )
 }
