@@ -13,7 +13,7 @@ Varvara TypeDoc Theme is a custom theme for TypeDoc, designed to provide a seaml
 
 ![Dark example](https://github.com/marcmarine/varvara-js/raw/main/packages/typedoc-theme/basic-example/example-dark.png)
 
-![Light example](https://github.com/marcmarine/western-signs/raw/main/packages/typedoc-theme/basic-example/example-light.png)
+![Light example](https://github.com/marcmarine/varvara-js/raw/main/packages/typedoc-theme/basic-example/example-light.png)
 
 > [!TIP]
 > The theme is [fully customizable](#customization) 🚀.
