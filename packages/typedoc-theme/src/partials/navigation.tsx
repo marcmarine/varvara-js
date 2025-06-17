@@ -163,12 +163,7 @@ export const navigation =
 
     return (
       <nav class="va-button-group">
-        <details class="va-collapse tsd-accordion">
-          <summary>
-            <a href={context.urlTo(props.project)}>{getDisplayName(props.project)}</a>
-          </summary>
-          <Navigation data={navigationData} context={context} />
-        </details>
+        <Navigation data={navigationData} context={context} />
       </nav>
     )
   }
