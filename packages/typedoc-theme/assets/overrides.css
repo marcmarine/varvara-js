@@ -16,9 +16,24 @@
   box-sizing: border-box;
 }
 
+.va-collapse {
+  overflow: hidden;
+}
+
 .va-button {
   display: flex;
   align-items: center;
+}
+
+.va-button span {
+  color: inherit;
+}
+
+.va-button span,
+.va-collapse summary {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .title {

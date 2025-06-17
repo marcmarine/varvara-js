@@ -101,7 +101,7 @@ function buildSectionNavigation(context: DefaultThemeRenderContext, headings: Pa
     levels[levels.length - 1].push(
       <a href={heading.link} class={[heading.classes, 'va-button'].join(' ')}>
         {heading.kind && context.icons[heading.kind]()}
-        {heading.text}
+        <span>{heading.text}</span>
       </a>
     )
   }
@@ -176,7 +176,10 @@ export const Navigation = ({ data, context }: { data: NavigationElement[]; conte
     {data.map(item =>
       item.children && item.children.length > 0 ? (
         <details class="va-collapse tsd-accordion">
-          <summary class="tsd-accordion-summary">{item.text}</summary>
+          <summary class="tsd-accordion-summary">
+            {item.kind && context.icons[item.kind]()}
+            {item.text}
+          </summary>
           <Navigation data={item.children} context={context} />
         </details>
       ) : (
@@ -192,12 +195,12 @@ const Item = ({ item, context }: { item: NavigationElement; context: DefaultThem
   return item.path ? (
     <a href={context.relativeURL(item.path)} class="va-button">
       {icon}
-      {item.text}
+      <span>{item.text}</span>
     </a>
   ) : (
     <span class="va-button">
       {icon}
-      {item.text}
+      <span>{item.text}</span>
     </span>
   )
 }
