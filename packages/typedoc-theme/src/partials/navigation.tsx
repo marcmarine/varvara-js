@@ -68,7 +68,7 @@ export function settings(context: DefaultThemeRenderContext) {
 
 function buildSectionNavigation(context: DefaultThemeRenderContext, headings: PageHeading[]) {
   const levels: JSX.Element[][] = [[]]
-  const PADDING_PER_LEVEL = 18
+  const PADDING_PER_LEVEL = 12
 
   function finalizeLevel(finishedHandlingHeadings: boolean) {
     const level = levels.pop()!
@@ -98,9 +98,11 @@ function buildSectionNavigation(context: DefaultThemeRenderContext, headings: Pa
       levels.push([])
     }
 
+    const icon = heading.kind && context.icons[heading.kind]()
+
     levels[levels.length - 1].push(
-      <a href={heading.link} class={[heading.classes, 'va-button'].join(' ')}>
-        {heading.kind && context.icons[heading.kind]()}
+      <a href={heading.link} class={[heading.classes, 'va-button'].join(' ')} style={!icon ? `padding-left: ${PADDING_PER_LEVEL * (inferredLevel - 1)}px` : ''}>
+        {icon}
         <span>{heading.text}</span>
       </a>
     )
