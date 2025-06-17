@@ -1,5 +1,13 @@
 # varvara-typedoc-theme
 
+## 0.3.6
+
+### Patch Changes
+
+- 233d462: Make the main navigation structure always visible.
+- b576fe8: Corrected page navigation indentation and padding.
+- 54e6b40: Added ellipsis truncation to text navigation.
+
 ## 0.3.5
 
 ### Patch Changes
