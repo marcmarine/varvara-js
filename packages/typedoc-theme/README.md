@@ -1,6 +1,6 @@
 # Varvara 🤦‍♀️ TypeDoc Theme
 
-_View a_ [_live example here_](https://marcmarine.github.io/western-signs).
+_View a_ [_live example here_](https://docs.label.energy).
 
 Varvara TypeDoc Theme is a custom theme for TypeDoc, designed to provide a seamless documentation experience for TypeScript projects.
 
@@ -42,7 +42,7 @@ npx typedoc --plugin varvara-typedoc-theme --theme varvara-css src/index.ts
 
 ### Method 2: Configuration File
 
-Create a `typedoc.js` configuration file in your project's root directory:
+Create a `typedoc.mjs` configuration file in your project's root directory:
 
 > [!NOTE]
 > You can use various TypeDoc [configuration files](https://typedoc.org/documents/Options.Configuration.html) to customize your documentation generation.
@@ -57,7 +57,12 @@ const config = {
   theme: 'varvara-css',
 
   // Optional: Include version information
-  includeVersion: true
+  includeVersion: true,
+
+  // Optional: Include groups
+  navigation: {
+    includeGroups: true
+  }
 
   // Additional TypeDoc configuration options
   // ... other options as needed
