@@ -173,7 +173,7 @@ export const Navigation = ({ data, context }: { data: NavigationElement[]; conte
     {data.map(item =>
       item.children && item.children.length > 0 ? (
         <details class="va-collapse tsd-accordion">
-          <summary class="tsd-accordion-summary">
+          <summary class="tsd-accordion-summary" data-key={`section-${item.text}`}>
             {item.kind && context.icons[item.kind]()}
             {item.text}
           </summary>
