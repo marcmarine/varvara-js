@@ -1,7 +1,8 @@
 @import 'variables.css';
 @import 'components.css';
 
-body {
+:root {
   background-color: var(--va-background-color-default);
   color: var(--va-foreground-color-default);
+  font-family: var(--va-font-family);
 }

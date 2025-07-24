@@ -1,6 +1,8 @@
 :root {
   color-scheme: light dark;
 
+  --va-font-family: 'Trebuchet MS', Calibri, Verdana, Arial, sans-serif;
+
   --va-border-width: 1px;
   --va-border-color: var(--va-foreground-color-default);
 
