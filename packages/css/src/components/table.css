@@ -11,12 +11,14 @@
 
   background-color: var(--va-table-background-color);
   font-size: var(--va-table-font-size);
+  border-collapse: collapse;
 
   &,
   th,
   td {
     border-color: var(--va-table-border-color);
     border-width: var(--va-table-border-width);
+    border-style: solid;
   }
 
   th,
