@@ -5,6 +5,7 @@
   --va-collapse-border-color: var(--va-border-color);
   --va-collapse-background-color: var(--va-background-color-default);
   --va-collapse-tree-indentation: var(--va-space-8);
+  --va-collapse-icon-color: var(--va-foreground-color-default);
 }
 
 .collapse {
@@ -69,12 +70,12 @@
 
       background-image: linear-gradient(
         to bottom,
-        var(--va-collapse-border-color) 0%,
-        var(--va-collapse-border-color) var(--va-icon-stroke-width),
-        transparent var(--va-collapse-border-width),
+        var(--va-collapse-icon-color) 0%,
+        var(--va-collapse-icon-color) var(--va-icon-stroke-width),
+        transparent var(--va-icon-stroke-width),
         transparent calc(100% - var(--va-icon-stroke-width)),
-        var(--va-collapse-border-color) calc(100% - var(--va-icon-stroke-width)),
-        var(--va-collapse-border-color) var(--va-icon-stroke-width)
+        var(--va-collapse-icon-color) calc(100% - var(--va-icon-stroke-width)),
+        var(--va-collapse-icon-color) var(--va-icon-stroke-width)
       );
     }
   }
@@ -83,8 +84,8 @@
     background-image: linear-gradient(
       to bottom,
       transparent calc(50% - var(--va-icon-stroke-width) / 2),
-      var(--va-collapse-border-color) calc(50% - var(--va-icon-stroke-width) / 2),
-      var(--va-collapse-border-color) calc(50% - var(--va-icon-stroke-width) / 2 + var(--va-icon-stroke-width)),
+      var(--va-collapse-icon-color) calc(50% - var(--va-icon-stroke-width) / 2),
+      var(--va-collapse-icon-color) calc(50% - var(--va-icon-stroke-width) / 2 + var(--va-icon-stroke-width)),
       transparent calc(50% - var(--va-icon-stroke-width) / 2 + var(--va-icon-stroke-width))
     );
   }

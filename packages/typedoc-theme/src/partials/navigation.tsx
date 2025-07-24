@@ -1,6 +1,5 @@
 import { DefaultThemeRenderContext, JSX, PageEvent, Reflection, ReflectionFlag, type PageHeading, i18n, translateTagName, ReflectionFlags, type NavigationElement } from 'typedoc'
 import type { VarvaraThemeContext } from '../themes/VarvaraThemeContext'
-import { getDisplayName } from '../utils'
 
 export function pageSidebar(context: VarvaraThemeContext) {
   return (props: PageEvent<Reflection>) => {

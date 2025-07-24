@@ -2,8 +2,9 @@
   --va-checkbox-font-size: var(--va-font-size-1);
   --va-checkbox-padding: var(--va-space-3);
   --va-checkbox-border-width: var(--va-border-width);
-  --va-checkbox-border-color: var(--va-border-color);
+  --va-checkbox-border-color: var(--va-icon-color);
   --va-checkbox-background-color: var(--va-background-color-default);
+  --va-checkbox-icon-color: var(--va-foreground-color-default);
 }
 
 .checkbox {
@@ -30,7 +31,7 @@
 
   &:before {
     background-color: var(--va-background-color-default);
-    border-color: var(--va-checkbox-border-color);
+    border-color: var(--va-checkbox-icon-color);
     border-style: solid;
     border-width: var(--va-icon-stroke-width);
     box-sizing: border-box;
@@ -41,7 +42,7 @@
   }
 
   &:checked:before {
-    background-color: var(--va-checkbox-border-color);
+    background-color: var(--va-checkbox-icon-color);
   }
 
   &:active:before,
