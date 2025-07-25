@@ -34,7 +34,7 @@
     height: calc(var(--va-collapse-padding) * 2 + var(--va-collapse-font-size));
     outline: none;
     padding-left: calc(var(--va-collapse-padding) + var(--space));
-    padding-right: calc(var(--va-space-5) + var(--va-collapse-padding) * 2);
+    padding-right: calc(var(--va-icon-width) + var(--va-collapse-padding) * 2);
     text-align: inherit;
 
     &::-webkit-details-marker {
@@ -65,8 +65,8 @@
       top: 50%;
       transform: translateY(-50%);
       right: var(--va-collapse-padding);
-      height: var(--va-space-2);
-      width: var(--va-space-3);
+      height: var(--va-icon-height);
+      width: var(--va-icon-width);
 
       background-image: linear-gradient(
         to bottom,

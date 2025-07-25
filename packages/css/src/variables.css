@@ -8,6 +8,8 @@
 
   --va-icon-stroke-width: 1.5px;
   --va-icon-color: var(--va-foreground-color-default);
+  --va-icon-width: 0.75rem;
+  --va-icon-height: 0.5rem;
 
   --va-font-size-ratio: 1;
 

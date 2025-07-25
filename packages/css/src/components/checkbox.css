@@ -37,8 +37,8 @@
     box-sizing: border-box;
     content: '';
     display: block;
-    height: var(--va-space-2);
-    width: var(--va-space-3);
+    height: var(--va-icon-height);
+    width: var(--va-icon-width);
   }
 
   &:checked:before {

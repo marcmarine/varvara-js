@@ -18,13 +18,13 @@
   height: calc(var(--va-select-padding) * 2 + var(--va-select-font-size));
   outline: none;
   padding-left: var(--va-select-padding);
-  padding-right: calc(var(--va-space-5) + var(--va-select-padding) * 2);
+  padding-right: calc(var(--va-icon-width) + var(--va-select-padding) * 2);
   text-align: inherit;
 
   background-color: var(--va-select-background-color);
   background-repeat: no-repeat;
   background-position: center right var(--va-select-padding);
-  background-size: var(--va-space-3) var(--va-space-2);
+  background-size: var(--va-icon-width) var(--va-icon-height);
   background-image: linear-gradient(
     to bottom,
     var(--va-select-icon-color) 0%,
