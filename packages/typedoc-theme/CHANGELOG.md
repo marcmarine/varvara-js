@@ -1,5 +1,13 @@
 # varvara-typedoc-theme
 
+## 0.3.7
+
+### Patch Changes
+
+- c30a7ee: Updated navigation link icons by replacing inline SVG with a new icon component.
+- Updated dependencies [07c8e0a]
+  - varvara-css@0.8.0
+
 ## 0.3.6
 
 ### Patch Changes

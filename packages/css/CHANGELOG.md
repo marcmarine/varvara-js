@@ -1,5 +1,19 @@
 # varvara-css
 
+## 0.8.0
+
+### Minor Changes
+
+- 07c8e0a: Introduced new icon component with "external" icon variant.
+
+### Patch Changes
+
+- a21018d: Added `border-collapse` property and solid border style for table elements.
+- 5f6a816: Updated icon CSS styling across checkbox, collapse, and select components.
+- d8e4c56: Added CSS variables for icon width and height.
+- 8956d2d: Introduced a CSS variable for the default font family.
+- c4bbf0d: Updated CSS variables to use a consistent icon color across checkbox, collapse, and select components.
+
 ## 0.7.4
 
 ### Patch Changes
