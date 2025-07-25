@@ -1,0 +1,25 @@
+---
+title: Icon
+---
+
+import Example from '../../components/Example.astro'
+import Code from '../../components/Code.astro'
+import Icon from '../../components/lib/icon'
+export const Component = () => <Icon />
+
+# Icon
+
+## Variables
+
+| CSS Variable             | Default Value                        |
+| ------------------------ | ------------------------------------ |
+| `--va-icon-color`        | `var(--va-foreground-color-default)` |
+| `--va-icon-height`       | `calc(var(--va-icon-width) * 0.6)`   |
+| `--va-icon-stroke-width` | `1.5px`                              |
+| `--va-icon-width`        | `0.75rem`                            |
+
+## Default
+
+<Example component={Component}>
+  <Code code={`<i class="va-icon va-icon--external"></i>`} lang="html" />
+</Example>
