@@ -25,9 +25,7 @@ export function toolbar(context: VarvaraThemeContext) {
           {Object.entries(context.options.getValue('navigationLinks')).map(([label, url]) => (
             <a href={url} class="va-button">
               <span>{label}</span>
-              <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.52346 0.380859H15.6187V14.4761H13.333V4.28282L2.33158 15.2842L0.715332 13.668L11.7167 2.66657H1.52346V0.380859Z" fill="currentColor"></path>
-              </svg>
+              <i class="va-icon va-icon--external"></i>
             </a>
           ))}
         </div>
