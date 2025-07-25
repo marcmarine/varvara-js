@@ -16,6 +16,11 @@
   box-sizing: border-box;
 }
 
+body {
+  background: inherit;
+  color: inherit;
+}
+
 .va-collapse {
   overflow: hidden;
 }
