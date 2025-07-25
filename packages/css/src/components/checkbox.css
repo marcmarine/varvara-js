@@ -4,14 +4,14 @@
   --va-checkbox-border-width: var(--va-border-width);
   --va-checkbox-border-color: var(--va-icon-color);
   --va-checkbox-background-color: var(--va-background-color-default);
-  --va-checkbox-icon-color: var(--va-foreground-color-default);
+  --va-checkbox-icon-color: var(--va-icon-color);
 }
 
 .checkbox {
   display: flex;
   align-items: center;
   appearance: none;
-  border-color: var(--va-checkbox-border-color);
+  border-color: var(--va-border-color);
   border-style: solid;
   border-width: var(--va-checkbox-border-width);
   cursor: pointer;

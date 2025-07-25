@@ -7,6 +7,7 @@
   --va-border-color: var(--va-foreground-color-default);
 
   --va-icon-stroke-width: 1.5px;
+  --va-icon-color: var(--va-foreground-color-default);
 
   --va-font-size-ratio: 1;
 
