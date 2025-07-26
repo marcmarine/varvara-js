@@ -76,6 +76,8 @@ export default config
 
 ### Customization
 
+_View a_ [_live customised example here_](https://marcmarine.github.io/western-signs).
+
 Add custom styling by specifying an extra CSS file using the [customCss](https://typedoc.org/documents/Options.Output.html#customcss) option:
 
 ```bash
