@@ -1,5 +1,12 @@
 # varvara-typedoc-theme
 
+## 0.3.8
+
+### Patch Changes
+
+- d7de24f: Applied inheritance for background and text color to the body element.
+- 146b634: Replaced the SVG icon with localized text for the search button.
+
 ## 0.3.7
 
 ### Patch Changes
