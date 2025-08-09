@@ -1,5 +1,12 @@
 # varvara-css
 
+## 0.9.0
+
+### Minor Changes
+
+- 9fe1423: Use heading font family for buttons.
+- 85dc4f9: Define separate CSS variables for default and heading fonts.
+
 ## 0.8.0
 
 ### Minor Changes
