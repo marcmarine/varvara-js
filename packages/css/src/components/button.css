@@ -4,6 +4,7 @@
   --va-button-border-width: var(--va-border-width);
   --va-button-border-color: var(--va-border-color);
   --va-button-background-color: var(--va-background-color-default);
+  --va-font-family: var(--va-font-family-headings);
 }
 
 .button {
@@ -16,6 +17,7 @@
   border-width: var(--va-button-border-width);
   box-sizing: border-box;
   color: var(--va-foreground-color-default);
+  font-family: var(--va-font-family);
   font-size: var(--va-button-font-size);
   height: calc(var(--va-button-padding) * 2 + var(--va-button-font-size));
   outline: none;
