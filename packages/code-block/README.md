@@ -6,6 +6,7 @@ A Custom HTML Element that renders code blocks with syntax highlighting and a co
 [![GitHub License](https://img.shields.io/github/license/marcmarine/varvara-js)](https://github.com/marcmarine/varvara-js/blob/main/LICENSE)
 [![TypeDoc](https://img.shields.io/badge/view-CHANGELOG.md-blue.svg)](https://github.com/marcmarine/varvara-js/blob/main/packages/code-block/CHANGELOG.md)
 ![Bundle Size](https://img.shields.io/npm/unpacked-size/va-code-block?color=white)
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/va-code-block)
 
 > [!IMPORTANT]
 > This component is in an early development stage. The API is not yet stable and may change in future releases.
