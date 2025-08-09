@@ -4,5 +4,14 @@
 :root {
   background-color: var(--va-background-color-default);
   color: var(--va-foreground-color-default);
-  font-family: var(--va-font-family);
+  font-family: var(--va-font-family-default);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--va-font-family-headings)
 }

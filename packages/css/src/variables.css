@@ -1,7 +1,8 @@
 :root {
   color-scheme: light dark;
 
-  --va-font-family: 'Trebuchet MS', Calibri, Verdana, Arial, sans-serif;
+  --va-font-family-default: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  --va-font-family-headings: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
   --va-border-width: 1px;
   --va-border-color: var(--va-foreground-color-default);
