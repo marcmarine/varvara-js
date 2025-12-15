@@ -3,6 +3,10 @@
   position: relative;
   width: var(--va-icon-width);
   height: var(--va-icon-height);
+
+  *:active:has(.icon) > & {
+    --va-icon-color: var(--va-background-color-default);
+  }
 }
 
 .icon--external {
@@ -30,11 +34,10 @@
 
 .icon--external:after {
   top: calc(var(--va-icon-stroke-width) / 2);
-  right: calc((var(--va-icon-stroke-width) / 2));
+  right: 0;
   width: var(--va-icon-stroke-width);
   height: var(--va-icon-width);
-  background-color: black;
   transform: rotate(45deg);
-  transform-origin: top center;
+  transform-origin: top;
   background-color: var(--va-icon-color);
 }
