@@ -21,8 +21,8 @@ Varvara CSS is customizable using [CSS Variables](https://developer.mozilla.org/
 | ------------------------- | ------------------------------------ |
 | `--va-icon-color`         | `var(--va-foreground-color-default)` |
 | `--va-icon-height`        | `calc(var(--va-icon-width) * 0.6)`   |
-| `--va-icons-stroke-width` | `1.5px`                              |
-| `--va-icon-width`         | `0.75rem`                            |
+| `--va-icons-stroke-width` | `var(--va-border-width)`                              |
+| `--va-icon-width`         | `var(--va-space-3)`                            |
 
 ## Colors
 
@@ -35,7 +35,7 @@ Varvara CSS is customizable using [CSS Variables](https://developer.mozilla.org/
 | CSS Variable                    | Default Value                                                       |
 | ------------------------------- | ------------------------------------------------------------------- |
 | `--va-foreground-color-default` | `light-dark(#29353d, #b3ccd6)`                                      |
-| `--va-foreground-color-muted`   | `color-mix(in srgb, var(--va-foreground-default) 20%, transparent)` |
+| `--va-foreground-color-muted`   | `color-mix(in srgb, var(--va-foreground-color-default) 20%, transparent)` |
 
 ### Background
 
@@ -44,7 +44,16 @@ Varvara CSS is customizable using [CSS Variables](https://developer.mozilla.org/
 | `--va-background-color-default` | `light-dark(#f3f5f7, #2a303c)` |
 | `--va-background-color-hover`   | `light-dark(#ebedef, #303745)` |
 
-## Font Size
+## Typography
+
+### Font family
+
+| CSS Variable           | Default Value                               |
+| ---------------------- | ------------------------------------------- |
+| `--va-font-family-default` | `'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif`                                         |
+| `--va-font-family-headings`    | `'Segoe UI', Tahoma, Geneva, Verdana, sans-serif`  |
+
+### Font size
 
 | CSS Variable           | Default Value                               |
 | ---------------------- | ------------------------------------------- |

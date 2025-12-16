@@ -33,7 +33,7 @@ if (customBackHref && customLinks) customLinks = [{ text: '..', href: customBack
             </defs>
           </svg>
           <div class="flex items-end gap-2">
-            <span class="font-bold leading-none text-2xl hover:underline active:no-underline">Varvara</span>
+            <h2 class="m-0 font-bold leading-none text-2xl hover:underline active:no-underline">Varvara</h2>
             <PackageVersion />
           </div>
         </a>
@@ -43,5 +43,5 @@ if (customBackHref && customLinks) customLinks = [{ text: '..', href: customBack
   </header>
   <main class={`bg-grid-left bg-grid-right ${className ? ` ${className}` : ''}`} role="main">
     <slot />
-  </main> 
+  </main>
 </Layout>

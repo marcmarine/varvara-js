@@ -21,16 +21,12 @@
 
 .va-button {
   font-weight: 600;
-  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: 'Noto Sans', sans-serif;
-}
 
 h1,
 h2,
@@ -39,7 +35,7 @@ h4,
 h5,
 h6 {
   @apply font-bold;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+
 }
 
 h1 {
