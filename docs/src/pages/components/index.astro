@@ -10,7 +10,7 @@ const links = allComponents.map(({ data, slug }) => ({
   href: `/components/${slug}`
 }))
 
-const components = await Astro.glob('../../content/components/*.mdx')
+const components = Object.values(import.meta.glob('../../content/components/*.mdx', { eager: true }));
 ---
 
 <Layout items={[...links, {text: 'Code Block', href: '/code-block'}].sort((a, b) => a.text.localeCompare(b.text))} backHref="/">
