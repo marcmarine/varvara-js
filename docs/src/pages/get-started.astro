@@ -1,10 +1,14 @@
 ---
-import { getEntry } from 'astro:content'
+import { getEntry, render } from 'astro:content'
 import Layout from '../layouts/Page.astro'
 import ContentNavigation from '../components/ContentNavigation.astro'
 
-const variables = await getEntry('docs', 'index')
-const { Content, headings } = await variables.render()
+const entry = await getEntry('docs', 'index')
+if (entry === undefined) {
+  return Astro.redirect("/404");
+}
+
+const { Content, headings } = await render(entry)
 
 const links = headings
   .filter(heading => heading.depth === 2)

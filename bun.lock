@@ -20,6 +20,7 @@
         "@astrojs/react": "4.4.2",
         "@astrojs/tailwind": "6.0.2",
         "astro": "5.16.6",
+        "omuso": "^1.2.1",
         "tailwindcss": "^3.4.16",
         "typescript": "^5.7.2",
         "va-code-block": "workspace:*",
@@ -1122,6 +1123,8 @@
     "ofetch": ["ofetch@1.5.1", "", { "dependencies": { "destr": "^2.0.5", "node-fetch-native": "^1.6.7", "ufo": "^1.6.1" } }, "sha512-2W4oUZlVaqAPAil6FUg/difl6YhqhUR7x2eZY4bQCko22UXg3hptq9KLQdqFClV+Wu85UX7hNtdGTngi/1BxcA=="],
 
     "ohash": ["ohash@2.0.11", "", {}, "sha512-RdR9FQrFwNBNXAr4GixM8YaRZRJ5PUWbKYbE5eOsrwAjJW0q2REGcf79oYPsLyskQCZG1PLN+S/K1V00joZAoQ=="],
+
+    "omuso": ["omuso@1.2.1", "", { "peerDependencies": { "typescript": "^5" } }, "sha512-0AFpNHTUhO1gfpu7f3/WoFjbc6k7N8DOcEAWwvjOKupPrbAuhIZ4wDHIjmXyJJl4CO/Y0XxfCz0Z6aXEhi7b/w=="],
 
     "once": ["once@1.4.0", "", { "dependencies": { "wrappy": "1" } }, "sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w=="],
 

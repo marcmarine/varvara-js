@@ -2,7 +2,7 @@
 import Navigation from '../components/Navigation.astro'
 import PackageVersion from '../components/PackageVersion.astro'
 import Layout from '../layouts/Base.astro'
-//@ts-ignore
+
 const { items, frontmatter, backHref, className, page } = Astro.props
 let customLinks = frontmatter?.links || items
 let customBackHref = backHref || frontmatter?.backHref
@@ -12,8 +12,8 @@ if (customBackHref && customLinks) customLinks = [{ text: '..', href: customBack
 <Layout page={page}>
   <header class="grid col-start-1 grid-rows-subgrid row-start-1 row-end-4 relative z-10 bg-grid-left bg-grid-right">
     <div class="flex flex-col !sticky top-0 row-start-1 row-end-2">
-      <div class="h-16 -ml-2 flex items-center">
-        <a href="/" class="flex items-center gap-2">
+      <div class="h-16 -ml-2 flex items-center gap-2">
+        <a href="/" class="flex items-center">
           <svg width="50" height="42" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M28.7764 30.081 1.8388 21.5033 9.2236 10.919l26.9377 8.5778-7.3849 10.5842Z" stroke="currentColor" stroke-width="var(--va-border-width)"></path>
             <foreignObject x="16.4783" y="-5.3214" width="39.0434" height="53.6428">
@@ -34,11 +34,16 @@ if (customBackHref && customLinks) customLinks = [{ text: '..', href: customBack
           </svg>
           <div class="flex items-end gap-2">
             <h2 class="m-0 font-bold leading-none text-2xl hover:underline active:no-underline">Varvara</h2>
-            <PackageVersion />
+            <a href="/changelog" class="text-xs hover:underline leading-none">
+              <PackageVersion />
+            </a>
           </div>
         </a>
       </div>
-      <Navigation items={customLinks} />
+      <div class="va-button-group">
+        <Navigation items={customLinks} />
+        <slot name="navigation" />
+      </div>
     </div>
   </header>
   <main class={`bg-grid-left bg-grid-right ${className ? ` ${className}` : ''}`} role="main">

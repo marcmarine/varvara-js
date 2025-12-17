@@ -4,4 +4,4 @@ const response = await fetch(`https://unpkg.com/${props.package || 'varvara-css'
 const data = await response.json()
 ---
 
-<span class="text-xs">v{data.version}</span>
+<span>v{data.version}</span>

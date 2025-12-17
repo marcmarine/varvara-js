@@ -19,6 +19,7 @@
     "@astrojs/react": "4.4.2",
     "@astrojs/tailwind": "6.0.2",
     "astro": "5.16.6",
+    "omuso": "^1.2.1",
     "tailwindcss": "^3.4.16",
     "typescript": "^5.7.2",
     "va-code-block": "workspace:*",

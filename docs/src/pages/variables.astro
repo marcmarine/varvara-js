@@ -1,11 +1,15 @@
 ---
-import { getEntry } from 'astro:content'
+import { getEntry, render } from 'astro:content'
 import Layout from '../layouts/Page.astro'
 import Table from '../components/CustomTable.astro'
 import ContentNavigation from '../components/ContentNavigation.astro'
 
-const variables = await getEntry('docs', 'variables')
-const { Content, headings, components } = await variables.render()
+const entry = await getEntry('docs', 'variables')
+if (entry === undefined) {
+  return Astro.redirect("/404");
+}
+
+const { Content, headings } = await render(entry)
 
 const links = headings
   .filter(heading => heading.depth === 2)
@@ -16,7 +20,7 @@ const links = headings
 ---
 
 <Layout items={links} backHref="/">
-  <Content components={{ ...components, table: Table }} />
+  <Content components={{ table: Table }} />
   <ContentNavigation
     items={[
       { href: '/get-started', text: 'Get started' },

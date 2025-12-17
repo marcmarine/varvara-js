@@ -1,0 +1,66 @@
+---
+import * as omuso from 'omuso'
+import Layout from '../layouts/Page.astro'
+
+const response = await fetch('https://raw.githubusercontent.com/marcmarine/varvara-js/refs/heads/main/packages/css/CHANGELOG.md')
+const markdown = await response.text()
+const doc = omuso.parse(markdown)
+
+const content = (doc.content[0] as omuso.Section).content
+
+const links = (content as omuso.Section[]).map(section => ({
+  text: section.title,
+  href: `/changelog#${section.title}`
+}))
+
+
+---
+
+<Layout items={[]} backHref="/">
+  <h1>Changelog</h1>
+  <Fragment slot="navigation">
+    <select
+      onchange="if (this.value) window.location.href = this.value"
+      class="va-select w-full font-bold text-[var(--va-font-family-headings)]"
+    >
+      <option value="">Jump to release</option>
+      {links.map(link => (
+        <option value={link.href}>{link.text}</option>
+      ))}
+    </select>
+    <a href="https://github.com/marcmarine/varvara-js" class="va-button !flex items-center justify-between">GitHub  <i class="va-icon va-icon--external"></i></a>
+  </Fragment>
+  {(content as omuso.Section[]).map((item, index) => {
+    const releaseUrl = `https://github.com/marcmarine/varvara-js/releases/tag/varvara-css@${item.title}`
+    return (
+    <section class="mb-6 bg-grid-bottom">
+      <div class="flex justify-between items-center">
+        <a href={`#${item.title}`}>
+          <h2 id={item.title} class="m-0">v{item.title}{index === 0 && ' (latest)'}</h2>
+        </a>
+        <a href={releaseUrl} class="mr-6 p-2 va-link" target="_blank">
+          <i class="va-icon va-icon--external"></i>
+        </a>
+      </div>
+      {(item.content  as omuso.Section[]).map(section => (
+        <div class="mb-4">
+          <h3>{section.title}</h3>
+          <ul>
+            {(section.content as omuso.Paragraph[]).map(paragraph => {
+              const commitId = paragraph.value.split(':')[0].substring(2)
+              return (
+              <li class="ml-3 mb-1 font-mono text-sm">
+                - {paragraph.value.split(':')[1]} (<a href={`https://github.com/marcmarine/varvara-js/commit/${commitId}`} target="_blank" class="va-link">{commitId}</a>)
+              </li>
+            )})}
+          </ul>
+        </div>
+      ))}
+      <div class="p-4">
+        <a href={releaseUrl} class="va-link text-sm" target="_blank">
+          View on GitHub
+        </a>
+      </div>
+    </section>
+  )})}
+</Layout>
