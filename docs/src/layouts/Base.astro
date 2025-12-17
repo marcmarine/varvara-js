@@ -19,7 +19,8 @@ const className = 'page'.concat(page ? ' ' + `page--${page}` : '')
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/va-light.svg" type="image/svg+xml">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/va-dark.svg" type="image/svg+xml">
     <meta name="generator" content={Astro.generator} />
     <meta property="og:title" content={title} />
     <meta property="og:type" content="website" />
