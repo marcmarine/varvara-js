@@ -1,5 +1,11 @@
 # varvara-css
 
+## 0.9.1
+
+### Patch Changes
+
+- 5302723: Updated icon width to use space variable
+
 ## 0.9.0
 
 ### Minor Changes
