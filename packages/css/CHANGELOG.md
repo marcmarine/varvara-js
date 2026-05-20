@@ -1,5 +1,13 @@
 # varvara-css
 
+## 0.9.1
+
+### Patch Changes
+
+- c2675ba: Updated CSS variables to use dynamic color mixing
+- 5302723: Updated icon width to use space variable
+- 23dbcbf: Updated components to use scoped variables
+
 ## 0.9.0
 
 ### Minor Changes
