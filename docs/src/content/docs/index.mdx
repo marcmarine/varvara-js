@@ -86,11 +86,13 @@ Simply add a component class like this:
 Each component already has its own CSS variables, with basic properties such as padding, background color, border, etc... You can modify to customize it.
 
 <Code
-  code={`--va-button-font-size: var(--va-font-size-2);
---va-button-padding: var(--va-space-3);
---va-button-border-width: var(--va-border-width);
---va-button-border-color: var(--va-border-color);
---va-button-background-color: var(--va-background-color-default);`}
+  code={`.va-button {
+    --va-button-font-size: var(--va-font-size-2);
+    --va-button-padding: var(--va-space-3);
+    --va-button-border-width: var(--va-border-width);
+    --va-button-border-color: var(--va-border-color);
+    --va-button-background-color: var(--va-background-color-default);
+}`}
   lang="css"
   className="mb-4"
 />
