@@ -1,16 +1,16 @@
-:root {
+.loading-dots{
   --va-loading-dots-animation-duration: 1s;
-}
 
-.loading-dots::after {
-  @apply inline-block;
+  &::after {
+    @apply inline-block;
 
-  content: '.';
-  width: var(--va-space-4);
-  animation-name: dots;
-  animation-duration: var(--va-loading-dots-animation-duration);
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+    content: '.';
+    width: var(--va-space-4);
+    animation-name: dots;
+    animation-duration: var(--va-loading-dots-animation-duration);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
 }
 
 @keyframes dots {

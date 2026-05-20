@@ -1,12 +1,10 @@
-:root {
+.input {
   --va-input-font-size: var(--va-font-size-1);
   --va-input-padding: var(--va-space-3);
   --va-input-border-width: var(--va-border-width);
   --va-input-border-color: var(--va-border-color);
   --va-input-background-color: var(--va-background-color-default);
-}
 
-.input {
   @apply appearance-none;
 
   background-color: var(--va-input-background-color);

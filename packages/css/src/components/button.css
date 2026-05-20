@@ -1,13 +1,11 @@
-:root {
+.button {
   --va-button-font-size: var(--va-font-size-1);
   --va-button-padding: var(--va-space-3);
   --va-button-border-width: var(--va-border-width);
   --va-button-border-color: var(--va-border-color);
   --va-button-background-color: var(--va-background-color-default);
   --va-font-family: var(--va-font-family-headings);
-}
 
-.button {
   @apply block font-medium;
 
   align-content: center;

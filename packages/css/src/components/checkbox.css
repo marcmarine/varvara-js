@@ -1,13 +1,11 @@
-:root {
+.checkbox {
   --va-checkbox-font-size: var(--va-font-size-1);
   --va-checkbox-padding: var(--va-space-3);
   --va-checkbox-border-width: var(--va-border-width);
   --va-checkbox-border-color: var(--va-icon-color);
   --va-checkbox-background-color: var(--va-background-color-default);
   --va-checkbox-icon-color: var(--va-icon-color);
-}
 
-.checkbox {
   display: flex;
   align-items: center;
   appearance: none;

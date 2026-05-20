@@ -1,9 +1,7 @@
-:root {
+.link {
   --va-link-color: var(--va-foreground-color-default);
   --va-link-background-color-hover: var(--va-background-color-hover);
-}
 
-.link {
   text-decoration: underline;
   color: var(--va-link-color);
 

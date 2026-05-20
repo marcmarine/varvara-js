@@ -1,4 +1,4 @@
-:root {
+.collapse {
   --va-collapse-font-size: var(--va-font-size-1);
   --va-collapse-padding: var(--va-space-3);
   --va-collapse-border-width: var(--va-border-width);
@@ -6,9 +6,7 @@
   --va-collapse-background-color: var(--va-background-color-default);
   --va-collapse-tree-indentation: var(--va-space-8);
   --va-collapse-icon-color: var(--va-icon-color);
-}
 
-.collapse {
   --depth: 0;
   --space: calc(var(--depth) * var(--va-collapse-tree-indentation));
 
