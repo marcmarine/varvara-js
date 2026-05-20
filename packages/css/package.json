@@ -1,54 +1,53 @@
 {
-  "name": "varvara-css",
-  "version": "0.9.0",
-  "author": "Marc Mariné <shenobi@gmail.com>",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/marcmarine/varvara-js.git",
-    "directory": "packages/css"
-  },
-  "main": "./dist/tailwind.js",
-  "devDependencies": {
-    "@types/bun": "latest",
-    "chokidar-cli": "^3.0.0",
-    "postcss": "^8.4.38",
-    "postcss-cli": "^11.0.1",
-    "postcss-import": "^16.1.0",
-    "postcss-lightningcss": "^1.0.1",
-    "postcss-nested": "^6.0.1",
-    "postcss-prefixer": "^3.0.0",
-    "prejss-cli": "^0.3.3",
-    "style-to-js": "^1.1.12",
-    "tailwindcss": "3.4.17"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  },
-  "exports": {
-    ".": "./dist/tailwind.js",
-    "./css": "./dist/varvara.css",
-    "./variables": "./dist/variables.css",
-    "./card": "./dist/components/card.css",
-    "./button": "./dist/components/button.css"
-  },
-  "description": "CSS library of customizable UI components based on CSS Variables.",
-  "files": [
-    "dist"
-  ],
-  "homepage": "https://varvara.js.org",
-  "keywords": [
-    "css",
-    "css-variables",
-    "varvara-css"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build:css": "postcss \"src/**/*.css\" --base src --dir dist",
-    "build:js": "prejss-cli dist/components.css --format es6 && bun run build-vars.ts",
-    "build:tw": "bun build src/tailwind.ts --outdir dist --external '*'",
-    "build": "bun run build:css && bun run build:js && bun run build:tw",
-    "dev": "chokidar src -c 'bun run build'"
-  },
-  "type": "module",
-  "unpkg": "dist/varvara.css"
+	"name": "varvara-css",
+	"version": "0.9.0",
+	"author": "Marc Mariné <shenobi@gmail.com>",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/marcmarine/varvara-js.git",
+		"directory": "packages/css"
+	},
+	"main": "./dist/tailwind.js",
+	"devDependencies": {
+		"@types/bun": "latest",
+		"chokidar-cli": "^3.0.0",
+		"postcss": "^8.4.38",
+		"postcss-cli": "^11.0.1",
+		"postcss-import": "^16.1.0",
+		"postcss-js": "^5.1.0",
+		"postcss-lightningcss": "^1.0.1",
+		"postcss-nested": "^6.0.1",
+		"postcss-prefixer": "^3.0.0",
+		"tailwindcss": "3.4.17"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	},
+	"exports": {
+		".": "./dist/tailwind.js",
+		"./css": "./dist/varvara.css",
+		"./variables": "./dist/variables.css",
+		"./card": "./dist/components/card.css",
+		"./button": "./dist/components/button.css"
+	},
+	"description": "CSS library of customizable UI components based on CSS Variables.",
+	"files": [
+		"dist"
+	],
+	"homepage": "https://varvara.js.org",
+	"keywords": [
+		"css",
+		"css-variables",
+		"varvara-css"
+	],
+	"license": "MIT",
+	"scripts": {
+		"build:css": "postcss \"src/**/*.css\" --base src --dir dist",
+		"build:js": "bun run build-js.ts",
+		"build:tw": "bun build src/tailwind.ts --outdir dist --external '*'",
+		"build": "bun run build:css && bun run build:js && bun run build:tw",
+		"dev": "chokidar src -c 'bun run build'"
+	},
+	"type": "module",
+	"unpkg": "dist/varvara.css"
 }
