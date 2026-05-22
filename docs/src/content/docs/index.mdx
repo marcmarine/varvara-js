@@ -2,12 +2,13 @@
 title: Get started
 ---
 
-export const components = {
-  blockquote: Blockquote
-}
-
 import Blockquote from '../../components/Blockquote.astro'
 import Code from '../../components/Code.astro'
+
+export const components = {
+  pre: Code,
+  blockquote: Blockquote
+}
 
 # Get started
 
@@ -17,61 +18,73 @@ You can use it alongside Tailwind CSS and with any JavaScript framework.
 
 ## Install
 
-### CDN
+### Tailwind CSS
 
-The easiest way to use Varvara CSS is through a CDN:
+To use Varvara CSS with Tailwind CSS, first install the package:
 
-<Code code={`@import url('https://unpkg.com/varvara-css');`} lang="css" className="mb-4" />
+```bash
+npm i varvara-css
+```
 
-Alternatively, add this line to the `head` tag of your HTML:
+Make sure [Tailwind CSS](https://tailwindcss.com/docs/installation) is already configured in your project.
 
-<Code
-  code={`<link
-    href="https://unpkg.com/varvara-css"
-    rel="stylesheet"
-    type="text/css"
-  />`}
-  lang="html"
-  className="mb-4"
-/>
+#### Tailwind CSS v4
 
-You'll have access to both [variables](/variables) and [components](/components) from the same import.
+Register the plugin in your main stylesheet:
+
+```css
+@import 'tailwindcss';
+@plugin 'varvara-css';
+```
+
+#### Tailwind CSS v3 
+
+Add the plugin to your `
+tailwind.config.js`:
+
+```js
+import varvara from 'varvara-css'
+
+module.exports = {
+  plugins: [varvara]
+  // ...
+}
+```
 
 ### NPM
 
-Another option is to add Varvara CSS to your own build process:
+You can also integrate Varvara CSS into your own CSS build process.
 
-<Code code={`npm i varvara-css`} lang="bash" className="mb-4" />
+Install the package:
 
-After, you have to import the package into your stylesheet:
+```bash
+npm i varvara-css
+```
 
-<Code code={`@import 'varvara-css/css';`} lang="css" className="mb-4" />
+Then import it into your stylesheet:
 
-> An `@import` rule must be defined at the top of the stylesheet
+```css
+@import 'varvara-css/css';
+```
 
-With both options, you have the ability to customize the components using [CSS variables](/variables).
+> [!TIP]
+> An @import rule must be defined at the top of the stylesheet
 
-### Tailwind Plugin
+### CDN
 
-Finally, you can extend Tailwind CSS with Varvara CSS.
+For quick setups, you can load Varvara CSS directly from a CDN:
 
-Install Varvara CSS via NPM:
+```css
+@import url('https://unpkg.com/varvara-css');
+```
 
-<Code code={`npm i varvara-css`} lang="bash" className="mb-4" />
+Or include it in your HTML:
 
-Make sure [Tailwind CSS](https://tailwindcss.com/docs/installation) is also installed.
+```html
+<link href="https://unpkg.com/varvara-css" rel="stylesheet" type="text/css" />
+```
 
-Next, modify your tailwind.config.js file to include the Varvara CSS plugin:
-
-<Code code={`import varvara from 'varvara-css'
-
-  module.exports = {
-    plugins: [varvara],
-    // ...
-  }`} 
-lang="ts" className="mb-4" />
-
-Your Tailwind setup is now extended with Varvara CSS, ready to use its variables and components in your project.
+Both methods include all CSS variables and components.
 
 ## Use
 
@@ -79,23 +92,23 @@ Once installed Varvara CSS, copy and paste [components](/components) classes to 
 
 Simply add a component class like this:
 
-<Code code={`<button class="va-button">Example button</button>`} lang="html" className="mb-4" />
+```html
+<button class="va-button">Example button</button>
+```
 
 ## Customize
 
 Each component already has its own CSS variables, with basic properties such as padding, background color, border, etc... You can modify to customize it.
 
-<Code
-  code={`.va-button {
-    --va-button-font-size: var(--va-font-size-2);
-    --va-button-padding: var(--va-space-3);
-    --va-button-border-width: var(--va-border-width);
-    --va-button-border-color: var(--va-border-color);
-    --va-button-background-color: var(--va-background-color-default);
-}`}
-  lang="css"
-  className="mb-4"
-/>
+```css
+.va-button {
+  --va-button-font-size: var(--va-font-size-2);
+  --va-button-padding: var(--va-space-3);
+  --va-button-border-width: var(--va-border-width);
+  --va-button-border-color: var(--va-border-color);
+  --va-button-background-color: var(--va-background-color-default);
+}
+```
 
 Also you can override the styles if you prefer:
 
