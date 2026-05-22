@@ -11,52 +11,29 @@ It can be used alongside Tailwind CSS and with any JavaScript framework.
 
 ## Install
 
-### CDN
+### Tailwind CSS
 
-The easiest way to use Varvara CSS is through a CDN:
-
-```css
-@import url('https://unpkg.com/varvara-css');
-```
-
-Alternatively, add this line to the `head` tag of your HTML:
-
-```html
-<link href="https://unpkg.com/varvara-css" rel="stylesheet" type="text/css" />
-```
-
-You'll have access to both variables and components from the same import.
-
-### NPM
-
-Another option is to add Varvara CSS to your own build process:
+To use Varvara CSS with Tailwind CSS, first install the package:
 
 ```bash
 npm i varvara-css
 ```
 
-After, you have to import the package into your stylesheet:
+Make sure [Tailwind CSS](https://tailwindcss.com/docs/installation) is already configured in your project.
+
+#### Tailwind CSS v4
+
+Register the plugin in your main stylesheet:
 
 ```css
-@import 'varvara-css/css';
+@import 'tailwindcss';
+@plugin 'varvara-css';
 ```
 
-> [!TIP]
-> An @import rule must be defined at the top of the stylesheet
+#### Tailwind CSS v3 
 
-### Tailwind v3 Plugin
-
-Finally, you can extend Tailwind CSS with Varvara CSS.
-
-Install Varvara CSS via NPM:
-
-```bash
-npm i varvara-css
-```
-
-Make sure [Tailwind CSS](https://tailwindcss.com/docs/installation) is also installed.
-
-Next, modify your tailwind.config.js file to include the Varvara CSS plugin:
+Add the plugin to your `
+tailwind.config.js`:
 
 ```js
 import varvara from 'varvara-css'
@@ -67,7 +44,40 @@ module.exports = {
 }
 ```
 
-Your Tailwind setup is now extended with Varvara CSS, ready to use its variables and components in your project.
+### NPM
+
+You can also integrate Varvara CSS into your own CSS build process.
+
+Install the package:
+
+```bash
+npm i varvara-css
+```
+
+Then import it into your stylesheet:
+
+```css
+@import 'varvara-css/css';
+```
+
+> [!TIP]
+> An @import rule must be defined at the top of the stylesheet
+
+### CDN
+
+For quick setups, you can load Varvara CSS directly from a CDN:
+
+```css
+@import url('https://unpkg.com/varvara-css');
+```
+
+Or include it in your HTML:
+
+```html
+<link href="https://unpkg.com/varvara-css" rel="stylesheet" type="text/css" />
+```
+
+Both methods include all CSS variables and components.
 
 ## Usage
 
@@ -84,11 +94,13 @@ Simply add a component class like this:
 Each component already has its own CSS variables, with basic properties such as padding, background color, border, etc... You can modify to customize it.
 
 ```css
---va-button-font-size: var(--va-font-size-2);
---va-button-padding: var(--va-space-3);
---va-button-border-width: var(--va-border-width);
---va-button-border-color: var(--va-border-color);
---va-button-background-color: var(--va-background-color-default);
+.va-button {
+  --va-button-font-size: var(--va-font-size-2);
+  --va-button-padding: var(--va-space-3);
+  --va-button-border-width: var(--va-border-width);
+  --va-button-border-color: var(--va-border-color);
+  --va-button-background-color: var(--va-background-color-default);
+}
 ```
 
 Also you can override the styles if you prefer:
