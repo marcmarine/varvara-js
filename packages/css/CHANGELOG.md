@@ -1,5 +1,11 @@
 # varvara-css
 
+## 0.9.2
+
+### Patch Changes
+
+- 741fd6d: Fixed input and select label styles
+
 ## 0.9.1
 
 ### Patch Changes
