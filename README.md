@@ -10,20 +10,26 @@
 
 <h3 align="center">Build consistently for seamless experiences</h3>
 
-This repository contains a library of customizable and comprehensive UI components designed for smooth and simple browsing experiences.
+Designed to work standalone or alongside [Tailwind CSS](https://varvara.js.org/get-started/#tailwind-css)
+
+---
 
 ## Motivation
 
-Varvara decides to be consistent, but what does being consistent really mean? It's more than just an abstract concept: it involves maintaining a uniform line of conduct that conveys security and confidence. Being consistent is like being a person who always keeps their promises, a friend you can trust without hesitation, or a professional who predictably delivers quality results.
+Consistency creates predictable interfaces, scalable systems, and better user experiences. Varvara is designed around that idea.
 
-It's not about being rigid or inflexible, but about building a legacy for reliability. It's like a river that, although it can adapt to changes in the terrain, maintains its essence and direction. Consistency speaks of integrity, of aligning your actions with your values, and of generating a sense of stability that inspires confidence in others.
+## Get started
 
-## Get started with Varvara CSS
+Install Varvara CSS using your preferred package manager:
 
-The easiest way to use Varvara CSS is through a CDN:
+```bash
+pnpm add varvara-css
+```
+
+Import the styles in your application:
 
 ```css
-@import url('https://unpkg.com/varvara-css');
+@import "varvara-css/css";
 ```
 
 After, simply add a component class like this:
@@ -32,7 +38,7 @@ After, simply add a component class like this:
 <button class="va-button">Example button</button>
 ```
 
-Visit [docs](https://varvara.js.org) to view the full documentation.
+Visit the [documentation](https://varvara.js.org) to explore all available components and customization options.
 
 ## Monorepo
 
