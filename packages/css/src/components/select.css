@@ -1,77 +1,95 @@
 .select {
-  --va-select-font-size: var(--va-font-size-1);
-  --va-select-padding: var(--va-space-3);
-  --va-select-border-width: var(--va-border-width);
-  --va-select-border-color: var(--va-border-color);
-  --va-select-background-color: var(--va-background-color-default);
-  --va-select-icon-color: var(--va-icon-color);
+	&,
+	label:has(&) {
+		--va-select-font-size: var(--va-font-size-1);
+		--va-select-padding: var(--va-space-3);
+		--va-select-border-width: var(--va-border-width);
+		--va-select-border-color: var(--va-border-color);
+		--va-select-background-color: var(--va-background-color-default);
+		--va-select-icon-color: var(--va-icon-color);
+	}
 
-  @apply relative appearance-none cursor-pointer;
+	@apply relative appearance-none cursor-pointer;
 
-  border-color: var(--va-select-border-color);
-  border-style: solid;
-  border-width: var(--va-select-border-width);
-  color: inherit;
-  font-size: var(--va-select-font-size);
-  height: calc(var(--va-select-padding) * 2 + var(--va-select-font-size));
-  outline: none;
-  padding-left: var(--va-select-padding);
-  padding-right: calc(var(--va-icon-width) + var(--va-select-padding) * 2);
-  text-align: inherit;
+	border-color: var(--va-select-border-color);
+	border-style: solid;
+	border-width: var(--va-select-border-width);
+	color: inherit;
+	font-size: var(--va-select-font-size);
+	height: calc(var(--va-select-padding) * 2 + var(--va-select-font-size));
+	outline: none;
+	padding-left: var(--va-select-padding);
+	padding-right: calc(var(--va-icon-width) + var(--va-select-padding) * 2);
+	text-align: inherit;
 
-  background-color: var(--va-select-background-color);
-  background-repeat: no-repeat;
-  background-position: center right var(--va-select-padding);
-  background-size: var(--va-icon-width) var(--va-icon-height);
-  background-image: linear-gradient(
-    to bottom,
-    var(--va-select-icon-color) 0%,
-    var(--va-select-icon-color) var(--va-icon-stroke-width),
-    transparent var(--va-icon-stroke-width),
-    transparent calc(100% - var(--va-icon-stroke-width)),
-    var(--va-select-icon-color) calc(100% - var(--va-icon-stroke-width)),
-    var(--va-select-icon-color) var(--va-icon-stroke-width)
-  );
+	background-color: var(--va-select-background-color);
+	background-repeat: no-repeat;
+	background-position: center right var(--va-select-padding);
+	background-size: var(--va-icon-width) var(--va-icon-height);
+	background-image: linear-gradient(
+		to bottom,
+		var(--va-select-icon-color) 0%,
+		var(--va-select-icon-color) var(--va-icon-stroke-width),
+		transparent var(--va-icon-stroke-width),
+		transparent calc(100% - var(--va-icon-stroke-width)),
+		var(--va-select-icon-color) calc(100% - var(--va-icon-stroke-width)),
+		var(--va-select-icon-color) var(--va-icon-stroke-width)
+	);
 
-  option:disabled {
-    color: red;
-  }
+	option:disabled {
+		color: red;
+	}
 
-  &:hover {
-    background-color: var(--va-background-color-hover);
-  }
+	&:hover {
+		background-color: var(--va-background-color-hover);
+	}
 
-  &:active {
-    color: var(--va-background-color-default);
-    background-color: var(--va-foreground-color-default);
+	&:active {
+		color: var(--va-background-color-default);
+		background-color: var(--va-foreground-color-default);
 
-    background-image: linear-gradient(
-      to bottom,
-      transparent calc(50% - var(--va-icon-stroke-width) / 2),
-      var(--va-select-icon-color) calc(50% - var(--va-icon-stroke-width) / 2),
-      var(--va-select-icon-color) calc(50% - var(--va-icon-stroke-width) / 2 + var(--va-icon-stroke-width)),
-      transparent calc(50% - var(--va-icon-stroke-width) / 2 + var(--va-icon-stroke-width))
-    );
-  }
+		background-image: linear-gradient(
+			to bottom,
+			transparent calc(50% - var(--va-icon-stroke-width) / 2),
+			var(--va-select-icon-color) calc(50% - var(--va-icon-stroke-width) / 2),
+			var(--va-select-icon-color)
+				calc(
+					50% -
+					var(--va-icon-stroke-width) /
+					2 +
+					var(--va-icon-stroke-width)
+				),
+			transparent
+				calc(
+					50% -
+					var(--va-icon-stroke-width) /
+					2 +
+					var(--va-icon-stroke-width)
+				)
+		);
+	}
 
-  &:focus-visible {
-    box-shadow: inset 0 0 0 var(--va-input-border-width);
-  }
+	&:focus-visible {
+		box-shadow: inset 0 0 0 var(--va-input-border-width);
+	}
 
-  label:has(> &) {
-    @apply inline-block relative;
+	label:has(> &) {
+		@apply inline-block relative;
 
-    span {
-      @apply absolute top-0 left-0 leading-none pointer-events-none;
+		span {
+			@apply absolute top-0 left-0 leading-none pointer-events-none;
 
-      font-size: var(--va-font-size-0);
-      padding-left: calc(var(--va-select-padding) + var(--va-select-border-width));
-      padding-top: calc(var(--va-select-padding) / 2);
-      z-index: 1;
-    }
+			font-size: var(--va-font-size-0);
+			padding-left: calc(
+				var(--va-select-padding) +
+				var(--va-select-border-width)
+			);
+			padding-top: calc(var(--va-select-padding) / 2);
+			z-index: 1;
+		}
 
-    .select {
-      padding-top: var(--va-font-size-0);
-    }
-  }
+		.select {
+			padding-top: var(--va-font-size-0);
+		}
+	}
 }
