@@ -12,8 +12,8 @@
  * `IterableIterator<string>`.
  */
 export class StringArray extends Array<string> {
-    /** A method that extends the functionality of a basic JavaScript array. */
-    customMethod(): void {
-        // do something awesome
-    }
+  /** A method that extends the functionality of a basic JavaScript array. */
+  customMethod(): void {
+    // do something awesome
+  }
 }

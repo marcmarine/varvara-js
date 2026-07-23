@@ -1,13 +1,13 @@
 /** Describes the status of a delivery order. */
 export enum SimpleEnum {
-    /** This order has just been placed and is yet to be processed. */
-    Pending,
+  /** This order has just been placed and is yet to be processed. */
+  Pending,
 
-    /** A courier is en route delivering this order. */
-    InProgress,
+  /** A courier is en route delivering this order. */
+  InProgress,
 
-    /** The order has been delivered. */
-    Complete = "COMPLETE",
+  /** The order has been delivered. */
+  Complete = 'COMPLETE',
 }
 
 /**
@@ -19,13 +19,13 @@ export enum SimpleEnum {
  * only available at runtime.
  */
 export enum CrazyEnum {
-    // constant members
-    None,
-    Read = 1 << 1,
-    Write = 1 << 2,
-    ReadWrite = Read | Write,
-    // computed member
-    ComputedMember = "123".length,
+  // constant members
+  None,
+  Read = 1 << 1,
+  Write = 1 << 2,
+  ReadWrite = Read | Write,
+  // computed member
+  ComputedMember = '123'.length,
 }
 
 /**
@@ -44,13 +44,13 @@ export enum CrazyEnum {
  * @enum
  */
 export const EnumLikeObject = {
-    Pending: "pending",
+  Pending: 'pending',
 
-    /** Indicates that a courier is en route delivering this order. */
-    InProgress: "inProgress",
+  /** Indicates that a courier is en route delivering this order. */
+  InProgress: 'inProgress',
 
-    Completed: "completed",
-} as const;
+  Completed: 'completed',
+} as const
 
 /**
  * Since TypeScript's `enum` can be inconvenient to work with, some packages define their own enum-like objects:
@@ -68,10 +68,10 @@ export const EnumLikeObject = {
  * @enum
  */
 export const EnumLikeObjectNumValues = {
-    Pending: 1,
+  Pending: 1,
 
-    /** Indicates that a courier is en route delivering this order. */
-    InProgress: 2,
+  /** Indicates that a courier is en route delivering this order. */
+  InProgress: 2,
 
-    Completed: 3,
-} as const;
+  Completed: 3,
+} as const

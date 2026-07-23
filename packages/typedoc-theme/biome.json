@@ -1,0 +1,10 @@
+{
+  "root": false,
+  "extends": "//",
+  "javascript": {
+    "jsxRuntime": "reactClassic"
+  },
+  "files": {
+    "includes": ["**", "!**/dist", "!**/basic-example", "!**/assets/overrides.css"]
+  }
+}

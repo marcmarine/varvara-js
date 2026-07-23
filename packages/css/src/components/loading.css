@@ -1,10 +1,10 @@
-.loading-dots{
+.loading-dots {
   --va-loading-dots-animation-duration: 1s;
 
   &::after {
     @apply inline-block;
 
-    content: '.';
+    content: ".";
     width: var(--va-space-4);
     animation-name: dots;
     animation-duration: var(--va-loading-dots-animation-duration);
@@ -15,9 +15,9 @@
 
 @keyframes dots {
   50% {
-    content: '..';
+    content: "..";
   }
   100% {
-    content: '...';
+    content: "...";
   }
 }

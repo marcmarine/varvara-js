@@ -3,10 +3,7 @@ export default function Card() {
     <div class="va-card w-full">
       <div class="va-card__body">
         <h2 class="va-card__title">Timeless Literature</h2>
-        <p>
-          Our platform leverages a powerful API to bring you an extensive
-          collection...
-        </p>
+        <p>Our platform leverages a powerful API to bring you an extensive collection...</p>
       </div>
       <div class="va-card__actions text-right">
         <button class="va-button">Start</button>

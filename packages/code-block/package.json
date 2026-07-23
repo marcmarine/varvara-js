@@ -32,7 +32,8 @@
     "dev": "bun run build -- --watch",
     "dev:example": "bunx vite",
     "build": "vite build",
-    "build:types": "tsc index.ts --noResolve --declaration --emitDeclarationOnly"
+    "build:types": "tsc index.ts --noResolve --declaration --emitDeclarationOnly",
+    "lint": "biome lint ."
   },
   "dependencies": {
     "prismjs": "^1.30.0"

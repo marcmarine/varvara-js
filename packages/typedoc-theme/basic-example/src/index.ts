@@ -8,9 +8,10 @@
  * @document documents/markdown.md
  * @document documents/syntax-highlighting.md
  */
-export * from './functions'
-export * from './variables'
-export * from './types'
+
 export * from './classes'
 export * from './enums'
+export * from './functions'
 export * from './internals'
+export * from './types'
+export * from './variables'

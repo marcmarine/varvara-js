@@ -1,7 +1,7 @@
 import Prism from 'prismjs'
-import variablesCss from 'varvara-css/variables?inline'
-import cardCss from 'varvara-css/card?inline'
 import buttonCss from 'varvara-css/button?inline'
+import cardCss from 'varvara-css/card?inline'
+import variablesCss from 'varvara-css/variables?inline'
 
 class CodeBlock extends HTMLElement {
   private shadow: ShadowRoot

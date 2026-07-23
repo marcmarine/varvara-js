@@ -1,15 +1,9 @@
-import {
-  DeclarationReflection,
-  ProjectReflection,
-  ReflectionKind,
-  type Reflection
-} from 'typedoc'
+import { DeclarationReflection, ProjectReflection, type Reflection, ReflectionKind } from 'typedoc'
 
 export function getDisplayName(refl: Reflection): string {
   let version = ''
   if (
-    (refl instanceof DeclarationReflection ||
-      refl instanceof ProjectReflection) &&
+    (refl instanceof DeclarationReflection || refl instanceof ProjectReflection) &&
     refl.packageVersion
   ) {
     version = ` - v${refl.packageVersion}`
@@ -19,17 +13,15 @@ export function getDisplayName(refl: Reflection): string {
 }
 
 const rootsCache = new WeakMap<ProjectReflection, DeclarationReflection[]>()
-export function getHierarchyRoots(
-  project: ProjectReflection
-): DeclarationReflection[] {
+export function getHierarchyRoots(project: ProjectReflection): DeclarationReflection[] {
   const cached = rootsCache.get(project)
   if (cached) return cached
 
   const allClasses = project.getReflectionsByKind(
-    ReflectionKind.ClassOrInterface
+    ReflectionKind.ClassOrInterface,
   ) as DeclarationReflection[]
 
-  const roots = allClasses.filter(refl => {
+  const roots = allClasses.filter((refl) => {
     if (!refl.implementedBy && !refl.extendedBy) {
       return false
     }
@@ -38,18 +30,15 @@ export function getHierarchyRoots(
       return true
     }
 
-    const types = [
-      ...(refl.implementedTypes || []),
-      ...(refl.extendedTypes || [])
-    ]
+    const types = [...(refl.implementedTypes || []), ...(refl.extendedTypes || [])]
 
     return types.every(
-      type =>
+      (type) =>
         !type.visit({
           reference(ref) {
             return ref.reflection !== undefined
-          }
-        })
+          },
+        }),
     )
   })
 

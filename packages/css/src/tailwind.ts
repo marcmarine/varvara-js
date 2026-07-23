@@ -1,8 +1,8 @@
 import plugin from 'tailwindcss/plugin'
-import variables from '../dist/variables'
 import components from '../dist/components'
+import variables from '../dist/variables'
 
-const tailwindPlugin = plugin(function ({ addBase, addComponents }) {
+const tailwindPlugin = plugin(({ addBase, addComponents }) => {
   addBase(variables)
   addComponents(components)
 })

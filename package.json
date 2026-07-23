@@ -5,6 +5,8 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
+    "format": "biome format --write .",
+    "check": "biome check .",
     "version-packages": "changeset version",
     "release": "turbo build --filter='./packages/*' && changeset publish"
   },
@@ -14,6 +16,7 @@
     "packages/*"
   ],
   "devDependencies": {
+    "@biomejs/biome": "^2.5.5",
     "turbo": "latest"
   },
   "dependencies": {

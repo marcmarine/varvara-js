@@ -1,8 +1,8 @@
-import nested from 'postcss-nested'
-import tailwindcss from 'tailwindcss'
 import atImport from 'postcss-import'
-import prefixer from 'postcss-prefixer'
 import postcssLightningcss from 'postcss-lightningcss'
+import nested from 'postcss-nested'
+import prefixer from 'postcss-prefixer'
+import tailwindcss from 'tailwindcss'
 
 /** @type {import('postcss-load-config').Config} */
 const config = {
@@ -11,14 +11,14 @@ const config = {
     nested,
     tailwindcss,
     prefixer({
-      prefix: 'va-'
+      prefix: 'va-',
     }),
     postcssLightningcss({
       lightningcssOptions: {
-        browsers: '>= .25%'
-      }
-    })
-  ]
+        browsers: '>= .25%',
+      },
+    }),
+  ],
 }
 
 export default config

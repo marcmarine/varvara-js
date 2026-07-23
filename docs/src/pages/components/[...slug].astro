@@ -1,25 +1,27 @@
 ---
-import Layout from '../../layouts/Page.astro';
-import { getCollection, type CollectionEntry } from 'astro:content';
-import Table from '../../components/CustomTable.astro';
+import { type CollectionEntry, getCollection } from 'astro:content'
+import Table from '../../components/CustomTable.astro'
+import Layout from '../../layouts/Page.astro'
 
 export async function getStaticPaths() {
-	const components = await getCollection('components');
-	return components.map((component) => ({
-		params: { slug: component.slug },
-		props: component,
-	}));
+  const components = await getCollection('components')
+  return components.map((component) => ({
+    params: { slug: component.slug },
+    props: component,
+  }))
 }
 
-type Props = CollectionEntry<'components'>;
+type Props = CollectionEntry<'components'>
 
-const component = Astro.props;
-const { Content, headings } = await component.render();
+const component = Astro.props
+const { Content, headings } = await component.render()
 
-const links = headings.filter(heading => heading.depth === 2).map((heading) => ({
-		text: heading.text,
-		href: `/components/${component.slug}#${heading.slug}`
-	}))
+const links = headings
+  .filter((heading) => heading.depth === 2)
+  .map((heading) => ({
+    text: heading.text,
+    href: `/components/${component.slug}#${heading.slug}`,
+  }))
 ---
 
 <Layout items={links} backHref="/components">

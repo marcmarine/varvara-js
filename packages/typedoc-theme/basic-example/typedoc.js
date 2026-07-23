@@ -6,11 +6,11 @@ const config = {
   name: 'Varvara Theme Example',
   includeVersion: true,
   navigationLinks: {
-    GitHub: 'https://github.com/marcmarine/varvara-js'
+    GitHub: 'https://github.com/marcmarine/varvara-js',
   },
   navigation: {
-    includeGroups: true
-  }
+    includeGroups: true,
+  },
 }
 
 export default config

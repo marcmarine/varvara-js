@@ -8,8 +8,12 @@ interface Props {
   page?: string
 }
 
-const { title = 'Varvara CSS', description = 'JavaScript toolkit for building web browsing experiences.', page } = Astro.props
-const className = 'page'.concat(page ? ' ' + `page--${page}` : '')
+const {
+  title = 'Varvara CSS',
+  description = 'JavaScript toolkit for building web browsing experiences.',
+  page,
+} = Astro.props
+const className = 'page'.concat(page ? ` page--${page}` : '')
 ---
 
 <!doctype html>

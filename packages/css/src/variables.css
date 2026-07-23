@@ -1,8 +1,10 @@
 :root {
   color-scheme: light dark;
 
-  --va-font-family-default: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  --va-font-family-headings: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --va-font-family-default:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
+    sans-serif;
+  --va-font-family-headings: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
   --va-border-width: 1px;
   --va-border-color: var(--va-foreground-color-default);
@@ -48,8 +50,16 @@
   --va-color-primary: light-dark(mediumvioletred, #9fe88d);
 
   --va-background-color-default: light-dark(#f3f5f7, #2a303c);
-  --va-background-color-hover: color-mix(in srgb, var(--va-foreground-color-default) 5%, var(--va-background-color-default));
+  --va-background-color-hover: color-mix(
+    in srgb,
+    var(--va-foreground-color-default) 5%,
+    var(--va-background-color-default)
+  );
 
   --va-foreground-color-default: light-dark(#29353d, #b3ccd6);
-  --va-foreground-color-muted: color-mix(in srgb, var(--va-foreground-color-default) 20%, var(--va-background-color-default));
+  --va-foreground-color-muted: color-mix(
+    in srgb,
+    var(--va-foreground-color-default) 20%,
+    var(--va-background-color-default)
+  );
 }

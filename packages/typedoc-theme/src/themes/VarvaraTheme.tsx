@@ -1,7 +1,14 @@
-import { DefaultTheme, PageEvent, JSX, Reflection, Renderer, RendererEvent } from 'typedoc'
-import * as path from 'path'
-import * as fs from 'fs'
-import { fileURLToPath } from 'url'
+import * as fs from 'node:fs'
+import * as path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import {
+  DefaultTheme,
+  JSX,
+  type PageEvent,
+  type Reflection,
+  type Renderer,
+  RendererEvent,
+} from 'typedoc'
 import { VarvaraThemeContext } from './VarvaraThemeContext'
 
 export class VarvaraTheme extends DefaultTheme {
@@ -15,10 +22,14 @@ export class VarvaraTheme extends DefaultTheme {
       fs.mkdirSync(path.dirname(destPath), { recursive: true })
       fs.copyFileSync(varvaraCssPath, destPath)
 
-      fs.cpSync(path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../assets/'), path.resolve(this.application.options.getValue('out'), 'assets/'), { recursive: true })
+      fs.cpSync(
+        path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../assets/'),
+        path.resolve(this.application.options.getValue('out'), 'assets/'),
+        { recursive: true },
+      )
     })
 
-    renderer.hooks.on('head.end', event => (
+    renderer.hooks.on('head.end', (event) => (
       <>
         <link rel="stylesheet" href={event.relativeURL('assets/varvara.css')} />
         <link rel="stylesheet" href={event.relativeURL('assets/overrides.css')} />

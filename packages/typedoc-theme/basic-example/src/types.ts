@@ -1,13 +1,13 @@
 /** A simple type alias defined using the `type` keyword. */
-export type SimpleTypeAlias = string | number | boolean;
+export type SimpleTypeAlias = string | number | boolean
 
 /** A complex generic type. */
 export type ComplexGenericTypeAlias<T> =
-    | T
-    | T[]
-    | Promise<T>
-    | Promise<T[]>
-    | Record<string, Promise<T>>;
+  | T
+  | T[]
+  | Promise<T>
+  | Promise<T[]>
+  | Record<string, Promise<T>>
 
 /**
  * A simple interface. Each property has its own doc comment.
@@ -15,20 +15,20 @@ export type ComplexGenericTypeAlias<T> =
  * TypeDoc even supports doc comments on nested type definitions, as shown by the `name` property.
  */
 export interface User {
-    /** The user's ID. */
-    id: number;
+  /** The user's ID. */
+  id: number
 
-    /** The user's email address. */
-    email: string;
+  /** The user's email address. */
+  email: string
 
-    /** The user's name. */
-    name: {
-        /** The person's given name. */
-        first: string;
+  /** The user's name. */
+  name: {
+    /** The person's given name. */
+    first: string
 
-        /** The person's family name. */
-        last: string;
-    };
+    /** The person's family name. */
+    last: string
+  }
 }
 
 /**
@@ -38,6 +38,6 @@ export interface User {
  * each property was originally defined.
  */
 export interface AdminUser extends User {
-    administrativeArea: "sales" | "delivery" | "billing";
-    jobTitle: string;
+  administrativeArea: 'sales' | 'delivery' | 'billing'
+  jobTitle: string
 }

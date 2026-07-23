@@ -59,7 +59,7 @@
     }
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -84,7 +84,8 @@
       to bottom,
       transparent calc(50% - var(--va-icon-stroke-width) / 2),
       var(--va-collapse-icon-color) calc(50% - var(--va-icon-stroke-width) / 2),
-      var(--va-collapse-icon-color) calc(50% - var(--va-icon-stroke-width) / 2 + var(--va-icon-stroke-width)),
+      var(--va-collapse-icon-color)
+        calc(50% - var(--va-icon-stroke-width) / 2 + var(--va-icon-stroke-width)),
       transparent calc(50% - var(--va-icon-stroke-width) / 2 + var(--va-icon-stroke-width))
     );
   }
@@ -113,7 +114,11 @@
   & label:has(.checkbox),
   & .select,
   & label:has(.select) span {
-    padding-left: calc(var(--va-collapse-tree-indentation) + var(--va-collapse-padding) + var(--space));
+    padding-left: calc(
+      var(--va-collapse-tree-indentation) +
+      var(--va-collapse-padding) +
+      var(--space)
+    );
   }
 
   & va-code-block::part(card) {

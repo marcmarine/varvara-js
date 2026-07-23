@@ -1,11 +1,23 @@
-import { DefaultTheme, DefaultThemeRenderContext, Options, PageEvent, Reflection, type Router } from 'typedoc'
+import {
+  type DefaultTheme,
+  DefaultThemeRenderContext,
+  type Options,
+  type PageEvent,
+  type Reflection,
+  type Router,
+} from 'typedoc'
 import { footer } from '../partials/footer'
+import { layout } from '../partials/layout'
 import { navigation, pageNavigation, pageSidebar, settings } from '../partials/navigation'
 import { toolbar } from '../partials/toolbar'
-import { layout } from '../partials/layout'
 
 export class VarvaraThemeContext extends DefaultThemeRenderContext {
-  public constructor(router: Router, theme: DefaultTheme, page: PageEvent<Reflection>, options: Options) {
+  public constructor(
+    router: Router,
+    theme: DefaultTheme,
+    page: PageEvent<Reflection>,
+    options: Options,
+  ) {
     super(router, theme, page, options)
 
     this.pageSidebar = pageSidebar(this)

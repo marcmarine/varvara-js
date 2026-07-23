@@ -6,16 +6,16 @@ export default {
     lib: {
       entry: 'index.ts',
       name: 'VaCodeBlock',
-      fileName: 'index'
+      fileName: 'index',
     },
     rollupOptions: {
       external: ['prismjs'],
       output: {
         globals: {
-          prismjs: 'Prism'
-        }
-      }
-    }
+          prismjs: 'Prism',
+        },
+      },
+    },
   },
-  plugins: [dts()]
+  plugins: [dts()],
 } satisfies UserConfig

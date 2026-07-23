@@ -1,16 +1,18 @@
 ---
 import { getCollection } from 'astro:content'
-import Layout from '../../layouts/Page.astro'
 import ContentNavigation from '../../components/ContentNavigation.astro'
+import Layout from '../../layouts/Page.astro'
 
 const allComponents = await getCollection('components')
 
 const links = allComponents.map(({ data, slug }) => ({
   text: data.title,
-  href: `/components/${slug}`
+  href: `/components/${slug}`,
 }))
 
-const components: any[] = Object.values(import.meta.glob('../../content/components/*.mdx', { eager: true }));
+const components: any[] = Object.values(
+  import.meta.glob('../../content/components/*.mdx', { eager: true }),
+)
 ---
 
 <Layout items={[...links, {text: 'Code Block', href: '/code-block'}].sort((a, b) => a.text.localeCompare(b.text))} backHref="/">

@@ -1,4 +1,11 @@
-import { i18n, DeclarationReflection, JSX, PageEvent, ProjectReflection, Reflection } from 'typedoc'
+import {
+  DeclarationReflection,
+  i18n,
+  JSX,
+  type PageEvent,
+  ProjectReflection,
+  type Reflection,
+} from 'typedoc'
 import type { VarvaraThemeContext } from '../themes/VarvaraThemeContext'
 
 export function toolbar(context: VarvaraThemeContext) {
@@ -6,15 +13,36 @@ export function toolbar(context: VarvaraThemeContext) {
     <header class="page-toolbar">
       <div class="va-button-group">
         <div class="va-button-group va-button-group--horizontal">
-          <a href={context.options.getValue('titleLink') || context.relativeURL('index.html')} class="title va-button">
+          <a
+            href={context.options.getValue('titleLink') || context.relativeURL('index.html')}
+            class="title va-button"
+          >
             <b>{props.project.name}</b>
-            {(props.project instanceof DeclarationReflection || props.project instanceof ProjectReflection) && props.project.packageVersion && <span class="version-badge">v{props.project.packageVersion}</span>}
+            {(props.project instanceof DeclarationReflection ||
+              props.project instanceof ProjectReflection) &&
+              props.project.packageVersion && (
+                <span class="version-badge">v{props.project.packageVersion}</span>
+              )}
           </a>
           <button id="tsd-search-trigger" class="va-button" aria-label={i18n.theme_search()}>
             {i18n.theme_search()}
           </button>
-          <a href="#" class="va-button" id="tsd-toolbar-menu-trigger" data-toggle="menu" aria-label={i18n.theme_menu()}>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" width="16" height="16" stroke="currentColor">
+          <a
+            href="#"
+            class="va-button"
+            id="tsd-toolbar-menu-trigger"
+            data-toggle="menu"
+            aria-label={i18n.theme_menu()}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2.5"
+              width="16"
+              height="16"
+              stroke="currentColor"
+            >
               <path d="M3.75 9h16.5m-16.5 6.75h16.5" />
             </svg>
           </a>

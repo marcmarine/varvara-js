@@ -33,7 +33,7 @@
     border-style: solid;
     border-width: var(--va-icon-stroke-width);
     box-sizing: border-box;
-    content: '';
+    content: "";
     display: block;
     height: var(--va-icon-height);
     width: var(--va-icon-width);

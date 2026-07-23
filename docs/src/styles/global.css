@@ -1,16 +1,16 @@
-@import 'fonts.css';
-@import 'varvara-css/css';
+@import "fonts.css";
+@import "varvara-css/css";
 
-[data-theme='light'] {
+[data-theme="light"] {
   color-scheme: light;
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   color-scheme: dark;
 }
 
-[data-theme='dark'] .shiki,
-[data-theme='dark'] .shiki span {
+[data-theme="dark"] .shiki,
+[data-theme="dark"] .shiki span {
   color: var(--shiki-dark) !important;
 }
 
@@ -27,7 +27,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
 h1,
 h2,
 h3,
@@ -35,7 +34,6 @@ h4,
 h5,
 h6 {
   @apply font-bold;
-
 }
 
 h1 {
@@ -67,7 +65,7 @@ p {
 }
 
 code {
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
   font-weight: 400;
 }
 
@@ -131,7 +129,7 @@ pre {
   }
 }
 
-[class*='bg-grid'] {
+[class*="bg-grid"] {
   --line-color: color-mix(in srgb, var(--va-foreground-color-default) 20%, transparent);
   --line-gap: 4px;
   --line-width: 1px;
@@ -148,12 +146,18 @@ pre {
 
 .bg-grid-left:before,
 .bg-grid-right::after {
-  content: '';
+  content: "";
   position: absolute;
   top: -200%;
   width: var(--line-width);
   height: 300%;
-  background: linear-gradient(180deg, var(--line-color), var(--line-color) 50%, transparent 0, transparent);
+  background: linear-gradient(
+    180deg,
+    var(--line-color),
+    var(--line-color) 50%,
+    transparent 0,
+    transparent
+  );
   background-size: var(--line-width) var(--line-gap);
   z-index: 20;
 }
@@ -167,12 +171,18 @@ pre {
 
 .bg-grid-top::before,
 .bg-grid-bottom::after {
-  content: '';
+  content: "";
   position: absolute;
   left: -100vw;
   width: 200vw;
   height: var(--line-width);
-  background: linear-gradient(to right, var(--line-color), var(--line-color) 50%, transparent 0, transparent);
+  background: linear-gradient(
+    to right,
+    var(--line-color),
+    var(--line-color) 50%,
+    transparent 0,
+    transparent
+  );
   background-size: var(--line-gap) var(--line-width);
   z-index: 20;
 }

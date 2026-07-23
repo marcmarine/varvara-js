@@ -6,7 +6,8 @@ import Layout from '../layouts/Base.astro'
 const { items, frontmatter, backHref, className, page } = Astro.props
 let customLinks = frontmatter?.links || items
 let customBackHref = backHref || frontmatter?.backHref
-if (customBackHref && customLinks) customLinks = [{ text: '..', href: customBackHref }, ...customLinks]
+if (customBackHref && customLinks)
+  customLinks = [{ text: '..', href: customBackHref }, ...customLinks]
 ---
 
 <Layout page={page}>

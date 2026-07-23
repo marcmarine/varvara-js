@@ -9,7 +9,7 @@ export function footer(context: VarvaraThemeContext) {
 
     // Only handles one occurrence, but that's all I expect...
     const index = message.indexOf('TypeDoc')
-    if (index == -1) {
+    if (index === -1) {
       generatorDisplay = <p class="tsd-generator">{message}</p>
     } else {
       const pre = message.substring(0, index)
@@ -17,11 +17,11 @@ export function footer(context: VarvaraThemeContext) {
       generatorDisplay = (
         <p class="tsd-generator">
           {pre}
-          <a href="https://typedoc.org/" class="va-link" target="_blank">
+          <a href="https://typedoc.org/" class="va-link" target="_blank" rel="noopener">
             TypeDoc
           </a>
           {' & '}
-          <a href="https://varvara.js.org/" class="va-link" target="_blank">
+          <a href="https://varvara.js.org/" class="va-link" target="_blank" rel="noopener">
             Varvara CSS
           </a>
           {post}

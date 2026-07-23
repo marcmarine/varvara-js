@@ -6,7 +6,7 @@
  * code.
  */
 export function anInternalFunction(): void {
-    // does nothing
+  // does nothing
 }
 
 /**
@@ -15,5 +15,5 @@ export function anInternalFunction(): void {
  * `@hidden` and `@ignore` keep the subsequent code from being documented.
  */
 export function willNotBeDocumented(target: any, value: number): number {
-    return 0;
+  return 0
 }

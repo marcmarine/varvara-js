@@ -26,7 +26,8 @@
   },
   "scripts": {
     "build": "bun build.ts",
-    "build:docs": "bun run build && bunx typedoc"
+    "build:docs": "bun run build && bunx typedoc",
+    "lint": "biome lint ."
   },
   "exports": {
     ".": "./dist/index.js"
