@@ -4,10 +4,19 @@ import variablesCss from 'varvara-css/variables?inline'
 
 class CodeBlock extends HTMLElement {
   private shadow: ShadowRoot
+  private codeElement!: HTMLElement
+  private languageButton!: HTMLButtonElement
+  private copyButton!: HTMLButtonElement
+  private copyTimeoutId: ReturnType<typeof setTimeout> | null = null
+  private initialized = false
+
   private static readonly DEFAULT_LANGUAGE = 'text'
   private static readonly COPY_BUTTON_TEXT = 'Copy'
   private static readonly COPIED_BUTTON_TEXT = 'Copied'
-  private copyTimeoutId: ReturnType<typeof setTimeout> | null = null
+
+  static get observedAttributes() {
+    return ['text', 'language', 'lang']
+  }
 
   constructor() {
     super()
@@ -15,11 +24,19 @@ class CodeBlock extends HTMLElement {
   }
 
   connectedCallback() {
-    const code = this.getAttribute('text')?.trim() || ''
-    this.removeAttribute('text')
-
     this.setupStyles()
-    this.render(code)
+
+    if (!this.initialized) {
+      this.render()
+      this.initialized = true
+    }
+
+    this.update()
+  }
+
+  attributeChangedCallback(_name: string, oldValue: string, newValue: string) {
+    if (oldValue === newValue || !this.initialized) return
+    this.update()
   }
 
   private setupStyles() {
@@ -37,7 +54,7 @@ class CodeBlock extends HTMLElement {
     this.shadow.adoptedStyleSheets = [sheet]
   }
 
-  private render(codeContent: string) {
+  private render() {
     const wrapper = document.createElement('div')
     wrapper.setAttribute('class', 'va-card')
     wrapper.setAttribute('part', 'card')
@@ -46,36 +63,35 @@ class CodeBlock extends HTMLElement {
     pre.setAttribute('class', 'va-card__body')
     pre.setAttribute('tabindex', '-1')
 
-    const codeElement = document.createElement('code')
-    const language = this.getLanguage()
-    codeElement.setAttribute('class', `language-${language}`)
-    codeElement.textContent = codeContent
-
-    pre.appendChild(codeElement)
-
+    this.codeElement = document.createElement('code')
+    pre.appendChild(this.codeElement)
     wrapper.appendChild(pre)
 
     const actions = document.createElement('div')
     actions.setAttribute('class', 'va-card__actions')
 
-    const languageButton = document.createElement('button')
-    languageButton.setAttribute('class', 'va-button')
-    languageButton.setAttribute('tabindex', '-1')
+    this.languageButton = document.createElement('button')
+    this.languageButton.setAttribute('class', 'va-button')
+    this.languageButton.setAttribute('tabindex', '-1')
+    actions.appendChild(this.languageButton)
 
-    languageButton.textContent = language.toUpperCase()
-
-    actions.appendChild(languageButton)
-
-    const copyButton = document.createElement('button')
-    copyButton.setAttribute('class', 'va-button va-button--action')
-    copyButton.textContent = 'Copy'
-    copyButton.addEventListener('click', () => this.handleCopyClick(copyButton, codeContent))
-
-    actions.appendChild(copyButton)
+    this.copyButton = document.createElement('button')
+    this.copyButton.setAttribute('class', 'va-button va-button--action')
+    this.copyButton.textContent = CodeBlock.COPY_BUTTON_TEXT
+    actions.appendChild(this.copyButton)
 
     wrapper.appendChild(actions)
-
     this.shadow.appendChild(wrapper)
+  }
+
+  private update() {
+    const codeContent = this.getAttribute('text')?.trim() || ''
+    const language = this.getLanguage()
+
+    this.codeElement.textContent = codeContent
+    this.codeElement.className = `language-${language}`
+    this.languageButton.textContent = language.toUpperCase()
+    this.copyButton.onclick = () => this.handleCopyClick(this.copyButton, codeContent)
   }
 
   private handleCopyClick(button: HTMLButtonElement, content: string): void {
