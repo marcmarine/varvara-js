@@ -1,4 +1,3 @@
-import Prism from 'prismjs'
 import buttonCss from 'varvara-css/button?inline'
 import cardCss from 'varvara-css/card?inline'
 import variablesCss from 'varvara-css/variables?inline'
@@ -6,7 +5,6 @@ import variablesCss from 'varvara-css/variables?inline'
 class CodeBlock extends HTMLElement {
   private shadow: ShadowRoot
   private static readonly DEFAULT_LANGUAGE = 'text'
-  private static readonly DEFAULT_THEME = 'one-dark'
   private static readonly COPY_BUTTON_TEXT = 'Copy'
   private static readonly COPIED_BUTTON_TEXT = 'Copied'
 
@@ -36,12 +34,6 @@ class CodeBlock extends HTMLElement {
     sheet.insertRule('pre { margin: 0 !important; border-radius: 0 !important; }')
     sheet.insertRule('code { white-space: pre-wrap !important; }')
     this.shadow.adoptedStyleSheets = [sheet]
-
-    const theme = this.getAttribute('theme') || CodeBlock.DEFAULT_THEME
-    const themeLink = document.createElement('link')
-    themeLink.rel = 'stylesheet'
-    themeLink.href = `https://unpkg.com/prism-themes@latest/themes/prism-${theme}.css`
-    this.shadow.appendChild(themeLink)
   }
 
   private render(codeContent: string) {
@@ -59,8 +51,6 @@ class CodeBlock extends HTMLElement {
     codeElement.textContent = codeContent
 
     pre.appendChild(codeElement)
-
-    Prism.highlightElement(codeElement)
 
     wrapper.appendChild(pre)
 

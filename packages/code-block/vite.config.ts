@@ -8,14 +8,6 @@ export default {
       name: 'VaCodeBlock',
       fileName: 'index',
     },
-    rollupOptions: {
-      external: ['prismjs'],
-      output: {
-        globals: {
-          prismjs: 'Prism',
-        },
-      },
-    },
   },
   plugins: [dts()],
 } satisfies UserConfig

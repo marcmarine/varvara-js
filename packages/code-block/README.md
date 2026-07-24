@@ -1,6 +1,6 @@
 # Varvara 🤦‍♀️ Code Block
 
-A Custom HTML Element that renders code blocks with syntax highlighting and a copy button. See the [full documentation](https://varvara.js.org/code-block) for usage details and a live demo.
+A Custom HTML Element that renders code blocks with a copy button. See the [full documentation](https://varvara.js.org/code-block) for usage details and a live demo.
 
 [![NPM Version](https://img.shields.io/npm/v/va-code-block?color=cyan)](https://www.npmjs.com/package/va-code-block)
 [![GitHub License](https://img.shields.io/github/license/marcmarine/varvara-js)](https://github.com/marcmarine/varvara-js/blob/main/LICENSE)
@@ -11,18 +11,7 @@ A Custom HTML Element that renders code blocks with syntax highlighting and a co
 > [!IMPORTANT]
 > This component is in an early development stage. The API is not yet stable and may change in future releases.
 
-The syntax highlighting is powered by [Prism.js](https://www.npmjs.com/package/prismjs).
-
 ## Installation
-
-### Using CDN
-
-Include both Prism.js and `va-code-block` via `<script>` tags:
-
-```html
-<script src="https://unpkg.com/prismjs@1.30.0"></script>
-<script src="https://unpkg.com/va-code-block"></script>
-```
 
 ### Using NPM
 
@@ -39,7 +28,6 @@ You can use the component directly in your HTML:
 ```html
 <va-code-block
   language="html"
-  theme="nord"
   text='<link
   href="https://unpkg.com/varvara-css"
   rel="stylesheet"
@@ -52,11 +40,10 @@ The `text` attribute should contain the code snippet as a single string. Escapin
 
 ### Attributes
 
-| Attribute  | Description                                                                                             | Default value |
-| ---------- | ------------------------------------------------------------------------------------------------------- | ------------- |
-| `text`     | The code snippet you want to highlight.                                                                 | `''`          |
-| `language` | Language for syntax highlighting.                                                                       | `'text'`      |
-| `theme`    | (Optional) Syntax highlighting theme. [See available themes](https://varvara.js.org/code-block#themes). | `'one-dark'`  |
+| Attribute  | Description                                    | Default value |
+| ---------- | ---------------------------------------------- | ------------- |
+| `text`     | The code snippet you want to display.          | `''`          |
+| `language` | Language of the code.                          | `'text'`      |
 
 ## Changelog
 
