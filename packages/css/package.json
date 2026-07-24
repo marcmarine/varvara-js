@@ -21,7 +21,7 @@
     "tailwindcss": "3.4.17"
   },
   "peerDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5 || ^6"
   },
   "exports": {
     ".": "./dist/tailwind.js",
