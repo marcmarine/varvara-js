@@ -91,6 +91,8 @@ class CodeBlock extends HTMLElement {
   }
 }
 
-customElements.define('va-code-block', CodeBlock)
+if (!customElements.get('va-code-block')) {
+  customElements.define('va-code-block', CodeBlock)
+}
 
 export { CodeBlock as VaCodeBlock }
