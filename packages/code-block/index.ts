@@ -7,6 +7,7 @@ class CodeBlock extends HTMLElement {
   private static readonly DEFAULT_LANGUAGE = 'text'
   private static readonly COPY_BUTTON_TEXT = 'Copy'
   private static readonly COPIED_BUTTON_TEXT = 'Copied'
+  private copyTimeoutId: ReturnType<typeof setTimeout> | null = null
 
   constructor() {
     super()
@@ -81,8 +82,10 @@ class CodeBlock extends HTMLElement {
     navigator.clipboard.writeText(content)
     button.textContent = CodeBlock.COPIED_BUTTON_TEXT
 
-    setTimeout(() => {
+    if (this.copyTimeoutId !== null) clearTimeout(this.copyTimeoutId)
+    this.copyTimeoutId = setTimeout(() => {
       button.textContent = CodeBlock.COPY_BUTTON_TEXT
+      this.copyTimeoutId = null
     }, 2000)
   }
 
