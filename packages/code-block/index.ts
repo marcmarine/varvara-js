@@ -64,6 +64,7 @@ class CodeBlock extends HTMLElement {
     const pre = document.createElement('pre')
     pre.setAttribute('class', 'va-card__body')
     pre.setAttribute('tabindex', '-1')
+    pre.setAttribute('part', 'pre-content')
 
     this.codeElement = document.createElement('code')
     pre.appendChild(this.codeElement)
