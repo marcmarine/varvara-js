@@ -1,0 +1,60 @@
+/* Theme inspired by Atom One Dark / Atom One Light */
+
+:host {
+  --va-token-comment: light-dark(#6a737d, #7c8591);
+  --va-token-string: light-dark(#50a14f, #98c379);
+  --va-token-keyword: light-dark(#a626a4, #c678dd);
+  --va-token-number: light-dark(#986801, #d19a66);
+  --va-token-function: light-dark(#4078f2, #61afef);
+  --va-token-boolean: light-dark(#986801, #d19a66);
+  --va-token-tag: light-dark(#e45649, #e06c75);
+  --va-token-attr-name: light-dark(#986801, #d19a66);
+  --va-token-attr-value: light-dark(#50a14f, #98c379);
+  --va-token-selector: light-dark(#e45649, #e06c75);
+  --va-token-property: light-dark(#4078f2, #61afef);
+  --va-token-value: light-dark(#50a14f, #98c379);
+  --va-token-punctuation: light-dark(#383a42, #abb2bf);
+  --va-token-plain: light-dark(#383a42, #abb2bf);
+}
+
+.token-comment {
+  color: var(--va-token-comment);
+  font-style: italic;
+}
+.token-string {
+  color: var(--va-token-string);
+}
+.token-keyword {
+  color: var(--va-token-keyword);
+  font-weight: 600;
+}
+.token-number {
+  color: var(--va-token-number);
+}
+.token-function {
+  color: var(--va-token-function);
+}
+.token-boolean {
+  color: var(--va-token-boolean);
+}
+.token-tag {
+  color: var(--va-token-tag);
+}
+.token-attr-name {
+  color: var(--va-token-attr-name);
+}
+.token-attr-value {
+  color: var(--va-token-attr-value);
+}
+.token-selector {
+  color: var(--va-token-selector);
+}
+.token-property {
+  color: var(--va-token-property);
+}
+.token-value {
+  color: var(--va-token-value);
+}
+.token-punctuation {
+  color: var(--va-token-punctuation);
+}

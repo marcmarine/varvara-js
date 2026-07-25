@@ -1,6 +1,8 @@
 import buttonCss from 'varvara-css/button?inline'
 import cardCss from 'varvara-css/card?inline'
 import variablesCss from 'varvara-css/variables?inline'
+import { highlight } from './highlight'
+import tokensCss from './tokens.css?inline'
 
 class CodeBlock extends HTMLElement {
   private shadow: ShadowRoot
@@ -47,7 +49,7 @@ class CodeBlock extends HTMLElement {
     const scopedCardCss = scopeToHost(cardCss)
     const scopedButtonCss = scopeToHost(buttonCss)
 
-    sheet.replaceSync(`${scopedVariablesCss}${scopedCardCss}${scopedButtonCss}`)
+    sheet.replaceSync(`${scopedVariablesCss}${scopedCardCss}${scopedButtonCss}${tokensCss}`)
     sheet.insertRule('.va-button--action { text-align: right !important; }')
     sheet.insertRule('pre { margin: 0 !important; border-radius: 0 !important; }')
     sheet.insertRule('code { white-space: pre-wrap !important; }')
@@ -88,7 +90,8 @@ class CodeBlock extends HTMLElement {
     const codeContent = this.getAttribute('text')?.trim() || ''
     const language = this.getLanguage()
 
-    this.codeElement.textContent = codeContent
+    this.codeElement.innerHTML = highlight(codeContent, language)
+
     this.codeElement.className = `language-${language}`
     this.languageButton.textContent = language.toUpperCase()
     this.copyButton.onclick = () => this.handleCopyClick(this.copyButton, codeContent)
