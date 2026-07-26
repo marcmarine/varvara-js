@@ -1,5 +1,11 @@
 # varvara-typedoc-theme
 
+## 0.3.10
+
+### Patch Changes
+
+- 7f77afc: Updated peer dependency to support TypeScript 6
+
 ## 0.3.9
 
 ### Patch Changes
