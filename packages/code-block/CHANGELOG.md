@@ -1,5 +1,20 @@
 # va-code-block
 
+## 0.2.0
+
+### Minor Changes
+
+- e7feb81: Added minimal built-in syntax highlighting for JavaScript/TypeScript, CSS and HTML.
+- ca67056: Removed syntax highlighting dependency
+- a22c350: Added `part` attribute to pre element for external styling via `::part()` selector.
+
+### Patch Changes
+
+- 497502a: Improved copy button state handling for consecutive copy actions
+- 0c267c7: Added attribute observation and dynamic updates
+- 3718d93: Added check before defining custom element
+- 21839d1: Updated peer dependency to support TypeScript 6
+
 ## 0.1.1
 
 ### Patch Changes

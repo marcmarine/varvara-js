@@ -1,5 +1,12 @@
 # varvara-css
 
+## 0.9.3
+
+### Patch Changes
+
+- 0a23c82: Updated peer dependency to support TypeScript 6
+- 88e05b6: Removed forced `color-scheme` from `variables.css` so theming inherits from the consumer's page.
+
 ## 0.9.2
 
 ### Patch Changes
