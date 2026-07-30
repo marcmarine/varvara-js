@@ -3,7 +3,6 @@ title: Icon
 ---
 
 import Example from '../../components/Example.astro'
-import Code from '../../components/Code.astro'
 import Icon from '../../components/lib/icon'
 export const Component = () => <Icon />
 
@@ -21,5 +20,5 @@ export const Component = () => <Icon />
 ## External
 
 <Example component={Component}>
-  <Code code={`<i class="va-icon va-icon--external"></i>`} lang="html" />
+  <va-code-block text={`<i class="va-icon va-icon--external"></i>`} language="html"></va-code-block>
 </Example>

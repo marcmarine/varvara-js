@@ -3,7 +3,6 @@ title: Input
 ---
 
 import Example from '../../components/Example.astro'
-import Code from '../../components/Code.astro'
 import Input from '../../components/lib/input'
 export const Component = () => <Input />
 
@@ -22,7 +21,7 @@ export const Component = () => <Input />
 ## Default
 
 <Example component={Component}>
-  <Code code={`<input class="va-input" type="text" />`} lang="html" />
+  <va-code-block text={`<input class="va-input" type="text" />`} language="html"></va-code-block>
 </Example>
 
 ## With Label
@@ -37,13 +36,13 @@ export const Component = () => <Input />
 
 >
 
-  <Code
-    code={`<label>
+  <va-code-block
+    text={`<label>
     Input
     <input class="va-input" type="text" />
   </label>`}
-    lang="html"
-  />
+    language="html"
+  ></va-code-block>
 </Example>
 
 ## Read Only
@@ -58,13 +57,13 @@ export const Component = () => <Input />
 
 >
 
-  <Code
-    code={`<label>
+  <va-code-block
+    text={`<label>
     Name
     <input class="va-input" value="Apollodorus" type="text" readonly />
   </label>`}
-    lang="html"
-  />
+    language="html"
+  ></va-code-block>
 </Example>
 
 ## Disabled
@@ -79,11 +78,11 @@ export const Component = () => <Input />
 
 >
 
-  <Code
-    code={`<label>
+  <va-code-block
+    text={`<label>
     Name
     <input class="va-input" value="Apollodorus" type="text" disabled />
   </label>`}
-    lang="html"
-  />
+    language="html"
+  ></va-code-block>
 </Example>

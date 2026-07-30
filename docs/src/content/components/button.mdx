@@ -3,7 +3,6 @@ title: Button
 ---
 
 import Example from '../../components/Example.astro'
-import Code from '../../components/Code.astro'
 import Button from '../../components/lib/button'
 export const Component = () => <Button />
 
@@ -22,7 +21,7 @@ export const Component = () => <Button />
 ## Default
 
 <Example component={Component}>
-  <Code code={`<button class="va-button">Example button</button>`} lang="html" />
+  <va-code-block text={`<button class="va-button">Example button</button>`} language="html"></va-code-block>
 </Example>
 
 ## Action
@@ -33,7 +32,7 @@ export const Component = () => <Button />
   )}
 >
 
-<Code code={`<button class="va-button va-button--action">Example button</button>`} lang="html" />
+<va-code-block text={`<button class="va-button va-button--action">Example button</button>`} language="html"></va-code-block>
 
 </Example>
 
@@ -45,7 +44,7 @@ export const Component = () => <Button />
   )}
 >
 
-<Code code={`<button class="va-button va-button--active">Example button</button>`} lang="html" />
+<va-code-block text={`<button class="va-button va-button--active">Example button</button>`} language="html"></va-code-block>
 
 </Example>
 
@@ -57,6 +56,6 @@ component={() => (
 )}
 >
 
-<Code code={`<button class="va-button va-button--disabled">Example button</button>`} lang="html" />
+<va-code-block text={`<button class="va-button va-button--disabled">Example button</button>`} language="html"></va-code-block>
 
 </Example>

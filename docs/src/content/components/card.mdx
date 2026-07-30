@@ -3,7 +3,6 @@ title: Card
 ---
 
 import Example from '../../components/Example.astro'
-import Code from '../../components/Code.astro'
 import Card from '../../components/lib/card'
 export const Component = () => <Card />
 
@@ -25,8 +24,8 @@ export const Component = () => <Card />
   component={Component}
 >
 
-<Code
-  code={`<div class="va-card w-full">
+<va-code-block
+  text={`<div class="va-card w-full">
     <div class="va-card__body">
       <h2 class="va-card__title">Your Gateway to Timeless Literature</h2>
       <p>
@@ -41,7 +40,7 @@ export const Component = () => <Card />
       <button class="va-button">Start →</button>
     </div>
   </div>`}
-  lang="html"
-/>
+  language="html"
+></va-code-block>
 
 </Example>

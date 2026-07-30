@@ -3,7 +3,6 @@ title: Collapse
 ---
 
 import Example from '../../components/Example.astro'
-import Code from '../../components/Code.astro'
 import Collapse from '../../components/lib/collapse'
 export const Component = () => <Collapse />
 
@@ -24,8 +23,8 @@ export const Component = () => <Collapse />
 ## Default
 
 <Example component={Component}>
-  <Code
-    code={`<details class="va-collapse w-full">
+  <va-code-block
+    text={`<details class="va-collapse w-full">
     <summary>
       <strong>The purpose of thought</strong>
     </summary>
@@ -34,8 +33,8 @@ export const Component = () => <Collapse />
     </p>
     <p>Confucius</p>
   </details>`}
-    lang="html"
-  />
+    language="html"
+  ></va-code-block>
 </Example>
 
 ## Nested
@@ -86,8 +85,8 @@ export const Component = () => <Collapse />
 
 >
 
-<Code
-  code={`<details class="va-collapse w-full">
+<va-code-block
+  text={`<details class="va-collapse w-full">
     <summary>
       <strong>Thought</strong>
     </summary>
@@ -127,6 +126,6 @@ export const Component = () => <Collapse />
       </label>
     </details>
   </details>`}
-  lang="html"
-/>
+  language="html"
+></va-code-block>
 </Example>

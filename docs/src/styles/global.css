@@ -9,16 +9,6 @@
   color-scheme: dark;
 }
 
-[data-theme="dark"] .shiki,
-[data-theme="dark"] .shiki span {
-  color: var(--shiki-dark) !important;
-}
-
-.shiki,
-.shiki span {
-  background-color: var(--va-background-color-defaul) !important;
-}
-
 .va-button {
   font-weight: 600;
 }
@@ -185,4 +175,13 @@ pre {
   );
   background-size: var(--line-gap) var(--line-width);
   z-index: 20;
+}
+
+va-code-block::part(card) {
+  margin-bottom: var(--va-space-4);
+}
+
+va-code-block::part(pre-content) {
+  font-size: large;
+  padding: var(--va-space-4);
 }

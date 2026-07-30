@@ -3,7 +3,6 @@ title: Link
 ---
 
 import Example from '../../components/Example.astro'
-import Code from '../../components/Code.astro'
 import Link from '../../components/lib/link'
 export const Component = () => <Link />
 
@@ -19,5 +18,5 @@ export const Component = () => <Link />
 ## Default
 
 <Example component={Component}>
-  <Code code={`<a href="#" class="va-link">Link</a>`} lang="html" />
+  <va-code-block text={`<a href="#" class="va-link">Link</a>`} language="html"></va-code-block>
 </Example>

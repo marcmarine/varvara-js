@@ -3,7 +3,6 @@ title: Checkbox
 ---
 
 import Example from '../../components/Example.astro'
-import Code from '../../components/Code.astro'
 import Checkbox from '../../components/lib/checkbox'
 export const Component = () => <Checkbox />
 
@@ -23,7 +22,7 @@ export const Component = () => <Checkbox />
 ## Default
 
 <Example component={Component}>
-  <Code code={`<input class="va-checkbox" type="checkbox" />`} lang="html" />
+  <va-code-block text={`<input class="va-checkbox" type="checkbox" />`} language="html"></va-code-block>
 </Example>
 
 ## With Label
@@ -38,11 +37,11 @@ export const Component = () => <Checkbox />
 
 >
 
-  <Code
-    code={`<label>
+  <va-code-block
+    text={`<label>
     <span>Checkbox</span>
     <input class="va-checkbox" type="checkbox" />
   </label>`}
-    lang="html"
-  />
+    language="html"
+  ></va-code-block>
 </Example>

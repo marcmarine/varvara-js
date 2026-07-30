@@ -3,7 +3,6 @@ title: Table
 ---
 
 import Example from '../../components/Example.astro'
-import Code from '../../components/Code.astro'
 import Table from '../../components/lib/table'
 export const Component = () => <Table />
 
@@ -26,8 +25,8 @@ export const Component = () => <Table />
 
 >
 
-<Code
-  code={`<table class="va-table">
+<va-code-block
+  text={`<table class="va-table">
     <thead>
       <tr>
         <th>Date</th>
@@ -49,7 +48,7 @@ export const Component = () => <Table />
       </tr>
     </tbody>
   </table>`}
-  lang="html"
-/>
+  language="html"
+></va-code-block>
 
 </Example>
