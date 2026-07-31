@@ -1,12 +1,12 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content'
+import { type CollectionEntry, getCollection, render } from 'astro:content'
 import Table from '../../components/CustomTable.astro'
 import Layout from '../../layouts/Page.astro'
 
 export async function getStaticPaths() {
   const components = await getCollection('components')
   return components.map((component) => ({
-    params: { slug: component.slug },
+    params: { slug: component.id },
     props: component,
   }))
 }
@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<'components'>
 
 const component = Astro.props
-const { Content, headings } = await component.render()
+const { Content, headings } = await render(component)
 
 const links = headings
   .filter((heading) => heading.depth === 2)

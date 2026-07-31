@@ -1,7 +1,7 @@
 ---
 import Footer from '../components/Footer.astro'
-import { ClientRouter } from 'astro:transitions'
 import '../styles/global.css'
+import { ClientRouter } from 'astro:transitions'
 
 interface Props {
   title?: string
@@ -57,7 +57,6 @@ const className = 'page'.concat(page ? ` page--${page}` : '')
     localStorage.setItem('theme', theme)
   }
 
-  // Client-side navigation swaps the <html> attributes and would drop data-theme.
   document.addEventListener('astro:after-swap', applyTheme)
   applyTheme()
 </script>
