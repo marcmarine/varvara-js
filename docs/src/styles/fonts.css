@@ -17,5 +17,5 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-  src: url("./fonts/NotoSans-VariableFont_wdth,wght.ttf") format("truetype-variations");
+  src: url("/fonts/NotoSans-VariableFont_wdth,wght.ttf") format("truetype-variations");
 }
