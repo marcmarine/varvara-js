@@ -2,27 +2,27 @@
   id='theme-toggle'
   type='button'
   class="va-link"
->Switch to 
+>Switch to
   <span class='dark'>light</span>
   <span class='light'>dark</span>  mode
 </button>
 
-<script is:inline>
-  const root = document.documentElement
+<script is:inline data-astro-rerun>
+  (() => {
+    const root = document.documentElement
 
-  function handleClick() {
-    const isDark = root.dataset.theme === 'dark'
-    
-    root.dataset.theme = (isDark ? "light" : "dark")
-    localStorage.setItem('theme', isDark ? 'light' : 'dark')
-  }
+    function handleClick() {
+      const isDark = root.dataset.theme === 'dark'
 
-  function setButtonHandler() {
+      root.dataset.theme = isDark ? 'light' : 'dark'
+      localStorage.setItem('theme', isDark ? 'light' : 'dark')
+    }
+
     const button = document.getElementById('theme-toggle')
-    button?.addEventListener('click', handleClick)
-  }
-
-  setButtonHandler()
+    if (button) {
+      button.onclick = handleClick
+    }
+  })()
 </script>
 
 <style is:global>

@@ -1,5 +1,6 @@
 ---
 import Footer from '../components/Footer.astro'
+import { ClientRouter } from 'astro:transitions'
 import '../styles/global.css'
 
 interface Props {
@@ -31,6 +32,7 @@ const className = 'page'.concat(page ? ` page--${page}` : '')
     <meta property="og:description" content={description} />
     <meta property="og:url" content="https://varvara.js.org" />
     <meta property="og:image" content="/og-image.png" />
+    <ClientRouter />
   </head>
   <body class="page__body overflow-x-hidden">
     <slot />
@@ -40,16 +42,22 @@ const className = 'page'.concat(page ? ` page--${page}` : '')
 </html>
 
 <script is:inline>
-  const theme = (() => {
-    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-      return localStorage.getItem('theme')
-    }
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark'
-    }
-    return 'light'
-  })()
+  const applyTheme = () => {
+    const theme = (() => {
+      if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+        return localStorage.getItem('theme')
+      }
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark'
+      }
+      return 'light'
+    })()
 
-  document.documentElement.dataset.theme = theme
-  localStorage.setItem('theme', theme)
+    document.documentElement.dataset.theme = theme
+    localStorage.setItem('theme', theme)
+  }
+
+  // Client-side navigation swaps the <html> attributes and would drop data-theme.
+  document.addEventListener('astro:after-swap', applyTheme)
+  applyTheme()
 </script>
