@@ -20,7 +20,7 @@ const links = headings
   .filter((heading) => heading.depth === 2)
   .map((heading) => ({
     text: heading.text,
-    href: `/components/${component.slug}#${heading.slug}`,
+    href: `/components/${component.id}#${heading.slug}`,
   }))
 ---
 
