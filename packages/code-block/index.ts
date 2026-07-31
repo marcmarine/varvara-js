@@ -4,6 +4,19 @@ import variablesCss from 'varvara-css/variables?inline'
 import { highlight } from './highlight'
 import tokensCss from './tokens.css?inline'
 
+const scopeToHost = (css: string): string => css.replace(/:root/g, ':host')
+
+const codeBlockStylesheet = (() => {
+  const sheet = new CSSStyleSheet()
+  sheet.replaceSync(
+    `${scopeToHost(variablesCss)}${scopeToHost(cardCss)}${scopeToHost(buttonCss)}${tokensCss}`,
+  )
+  sheet.insertRule('.va-button--action { text-align: right !important; }')
+  sheet.insertRule('pre { margin: 0 !important; border-radius: 0 !important; }')
+  sheet.insertRule('code { white-space: pre-wrap !important; }')
+  return sheet
+})()
+
 class CodeBlock extends HTMLElement {
   private shadow: ShadowRoot
   private codeElement!: HTMLElement
@@ -23,11 +36,10 @@ class CodeBlock extends HTMLElement {
   constructor() {
     super()
     this.shadow = this.attachShadow({ mode: 'open' })
+    this.shadow.adoptedStyleSheets = [codeBlockStylesheet]
   }
 
   connectedCallback() {
-    this.setupStyles()
-
     if (!this.initialized) {
       this.render()
       this.initialized = true
@@ -39,21 +51,6 @@ class CodeBlock extends HTMLElement {
   attributeChangedCallback(_name: string, oldValue: string, newValue: string) {
     if (oldValue === newValue || !this.initialized) return
     this.update()
-  }
-
-  private setupStyles() {
-    const sheet = new CSSStyleSheet()
-    const scopeToHost = (css: string): string => css.replace(/:root/g, ':host')
-
-    const scopedVariablesCss = scopeToHost(variablesCss)
-    const scopedCardCss = scopeToHost(cardCss)
-    const scopedButtonCss = scopeToHost(buttonCss)
-
-    sheet.replaceSync(`${scopedVariablesCss}${scopedCardCss}${scopedButtonCss}${tokensCss}`)
-    sheet.insertRule('.va-button--action { text-align: right !important; }')
-    sheet.insertRule('pre { margin: 0 !important; border-radius: 0 !important; }')
-    sheet.insertRule('code { white-space: pre-wrap !important; }')
-    this.shadow.adoptedStyleSheets = [sheet]
   }
 
   private render() {
