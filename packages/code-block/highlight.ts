@@ -7,6 +7,7 @@ export type TokenType =
   | 'function'
   | 'identifier'
   | 'punctuation'
+  | 'paren'
   | 'tag'
   | 'attr-name'
   | 'attr-value'
@@ -76,6 +77,15 @@ const isIdentPart = (c: string) => /[a-zA-Z0-9_$]/.test(c)
 const isDigit = (c: string) => /[0-9]/.test(c)
 const isSpace = (c: string) => /\s/.test(c)
 
+const isAfterObjectOpen = (tokens: Token[]): boolean => {
+  for (let i = tokens.length - 1; i >= 0; i--) {
+    const token = tokens[i]!
+    if (token.type === 'plain') continue
+    return token.type === 'punctuation' && (token.value === '{' || token.value === ',')
+  }
+  return false
+}
+
 function scanJs(code: string): Token[] {
   const tokens: Token[] = []
   const push = (type: TokenType, value: string) => value.length > 0 && tokens.push({ type, value })
@@ -129,10 +139,12 @@ function scanJs(code: string): Token[] {
       let j = i
       while (j < n && isSpace(code[j]!)) j++
       const isCall = code[j] === '('
+      const isKey = code[j] === ':' && isAfterObjectOpen(tokens)
 
       if (JS_KEYWORDS.has(word)) push('keyword', word)
       else if (JS_BOOLEANS.has(word)) push('boolean', word)
       else if (isCall) push('function', word)
+      else if (isKey) push('property', word)
       else push('identifier', word)
       continue
     }
@@ -161,6 +173,7 @@ function scanCss(code: string): Token[] {
   const n = code.length
   let depth = 0
   let buffer = ''
+  let inAtRule = false
 
   const flushSelectorOrProperty = (type: TokenType) => {
     const trimmed = buffer.trim()
@@ -198,13 +211,64 @@ function scanCss(code: string): Token[] {
         i++
       }
       i = Math.min(i + 1, n)
-      buffer += code.slice(start, i)
+      if (inAtRule) {
+        flushSelectorOrProperty('selector')
+        push('string', code.slice(start, i))
+      } else {
+        buffer += code.slice(start, i)
+      }
       continue
+    }
+
+    if (c === '@' && depth === 0) {
+      flushSelectorOrProperty('selector')
+      const start = i
+      i++
+      while (i < n && /[a-zA-Z-]/.test(code[i]!)) i++
+      push('keyword', code.slice(start, i))
+      inAtRule = true
+      continue
+    }
+
+    if (c === '(' && depth === 0) {
+      const trimmed = buffer.trim()
+      if (/^[a-zA-Z-][a-zA-Z0-9-]*$/.test(trimmed)) {
+        const index = buffer.indexOf(trimmed)
+        if (index > 0) push('plain', buffer.slice(0, index))
+        push('function', trimmed)
+        buffer = ''
+        push('paren', '(')
+        i++
+        while (i < n && code[i] !== ')') {
+          if (code[i] === '"' || code[i] === "'") {
+            const quote = code[i]!
+            const start = i
+            i++
+            while (i < n && code[i] !== quote) {
+              if (code[i] === '\\') i++
+              i++
+            }
+            i = Math.min(i + 1, n)
+            push('string', code.slice(start, i))
+            continue
+          }
+          const start = i
+          i++
+          while (i < n && code[i] !== ')' && code[i] !== '"' && code[i] !== "'") i++
+          push('plain', code.slice(start, i))
+        }
+        if (code[i] === ')') {
+          push('paren', ')')
+          i++
+        }
+        continue
+      }
     }
 
     if (c === '{') {
       flushSelectorOrProperty('selector')
       push('punctuation', '{')
+      inAtRule = false
       depth++
       i++
       continue
@@ -213,6 +277,7 @@ function scanCss(code: string): Token[] {
     if (c === '}') {
       flushSelectorOrProperty('value')
       push('punctuation', '}')
+      inAtRule = false
       depth = Math.max(0, depth - 1)
       i++
       continue
@@ -228,6 +293,7 @@ function scanCss(code: string): Token[] {
     if (c === ';') {
       flushSelectorOrProperty('value')
       push('punctuation', ';')
+      inAtRule = false
       i++
       continue
     }

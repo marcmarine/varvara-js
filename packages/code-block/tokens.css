@@ -5,7 +5,7 @@
   --va-token-string: light-dark(#50a14f, #98c379);
   --va-token-keyword: light-dark(#a626a4, #c678dd);
   --va-token-number: light-dark(#986801, #d19a66);
-  --va-token-function: light-dark(#4078f2, #61afef);
+  --va-token-function: light-dark(#0184bc, #56b6c2);
   --va-token-boolean: light-dark(#986801, #d19a66);
   --va-token-tag: light-dark(#e45649, #e06c75);
   --va-token-attr-name: light-dark(#986801, #d19a66);
@@ -13,20 +13,19 @@
   --va-token-selector: light-dark(#e45649, #e06c75);
   --va-token-property: light-dark(#4078f2, #61afef);
   --va-token-value: light-dark(#50a14f, #98c379);
+  --va-token-paren: light-dark(#383a42, #abb2bf);
   --va-token-punctuation: light-dark(#383a42, #abb2bf);
   --va-token-plain: light-dark(#383a42, #abb2bf);
 }
 
 .token-comment {
   color: var(--va-token-comment);
-  font-style: italic;
 }
 .token-string {
   color: var(--va-token-string);
 }
 .token-keyword {
   color: var(--va-token-keyword);
-  font-weight: 600;
 }
 .token-number {
   color: var(--va-token-number);
@@ -54,6 +53,9 @@
 }
 .token-value {
   color: var(--va-token-value);
+}
+.token-paren {
+  color: var(--va-token-paren);
 }
 .token-punctuation {
   color: var(--va-token-punctuation);
