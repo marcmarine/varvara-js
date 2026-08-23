@@ -1,5 +1,12 @@
 # va-code-block
 
+## 0.2.1
+
+### Patch Changes
+
+- f92af94: Fixed CSS at-rule and function tokenization.
+- c0f74ea: Created a single shared stylesheet constant instead of recreating it per instance.
+
 ## 0.2.0
 
 ### Minor Changes

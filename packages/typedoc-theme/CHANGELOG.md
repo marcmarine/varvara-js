@@ -1,5 +1,11 @@
 # varvara-typedoc-theme
 
+## 0.3.11
+
+### Patch Changes
+
+- 20d48da: Added `sidebarLinks` partial to the Varvara TypeDoc theme, styling sidebar navigation links with `va-button-group`, `va-button`, and the external link icon.
+
 ## 0.3.10
 
 ### Patch Changes
