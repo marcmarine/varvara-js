@@ -1,7 +1,9 @@
+import { fileURLToPath } from 'node:url'
+
 /** @type {Partial<import("typedoc").TypeDocOptions>} */
 const config = {
   entryPoints: ['./src/index.ts'],
-  plugin: ['varvara-typedoc-theme'],
+  plugin: [fileURLToPath(new URL('../dist/index.js', import.meta.url))],
   theme: 'varvara-css',
   name: 'Varvara Theme Example',
   includeVersion: true,
