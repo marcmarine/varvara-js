@@ -1,7 +1,7 @@
 import {
   type DefaultThemeRenderContext,
   i18n,
-  type JSX,
+  JSX,
   type NavigationElement,
   type PageEvent,
   type PageHeading,

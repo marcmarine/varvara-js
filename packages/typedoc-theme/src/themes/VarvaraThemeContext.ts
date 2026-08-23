@@ -9,6 +9,7 @@ import {
 import { footer } from '../partials/footer'
 import { layout } from '../partials/layout'
 import { navigation, pageNavigation, pageSidebar, settings } from '../partials/navigation'
+import { sidebarLinks } from '../partials/sidebar-links'
 import { toolbar } from '../partials/toolbar'
 
 export class VarvaraThemeContext extends DefaultThemeRenderContext {
@@ -25,6 +26,7 @@ export class VarvaraThemeContext extends DefaultThemeRenderContext {
     this.defaultLayout = layout(this)
     this.settings = settings(this)
     this.pageNavigation = pageNavigation(this)
+    this.sidebarLinks = () => sidebarLinks(this)
   }
 
   override footer = () => footer(this)

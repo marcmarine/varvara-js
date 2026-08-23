@@ -81,8 +81,17 @@ dialog {
   background-color: var(--va-background-color-default);
 }
 
-.navigation-links a span {
+.navigation-links a span,
+.tsd-navigation a span {
   flex: 1;
+}
+
+.tsd-navigation {
+  margin-bottom: var(--va-space-4);
+
+  a {
+    width: 100%;
+  }
 }
 
 .site-menu {
