@@ -11,13 +11,13 @@ export function sidebarLinks(context: DefaultThemeRenderContext) {
   return (
     <nav id="tsd-sidebar-links" class="tsd-navigation va-button-group">
       {links.map(([label, url]) => (
-        <a href={url} class="va-button">
+        <a href={url} class="va-button tsd-nav-link">
           <span>{label}</span>
           <i class="va-icon va-icon--external"></i>
         </a>
       ))}
       {navLinks.map(([label, url]) => (
-        <a href={url} class="va-button">
+        <a href={url} class="va-button tsd-nav-link">
           <span>{label}</span>
           <i class="va-icon va-icon--external"></i>
         </a>

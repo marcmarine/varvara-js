@@ -86,11 +86,21 @@ dialog {
   flex: 1;
 }
 
+#tsd-sidebar-links a {
+  margin-bottom: 0;
+}
+
 .tsd-navigation {
   margin-bottom: var(--va-space-4);
 
   a {
     width: 100%;
+  }
+}
+
+@media (min-width: 769px) {
+  .tsd-navigation .tsd-nav-link {
+      display: none;
   }
 }
 
