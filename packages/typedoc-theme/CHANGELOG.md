@@ -1,5 +1,11 @@
 # varvara-typedoc-theme
 
+## 0.3.12
+
+### Patch Changes
+
+- 6ac1e87: Fixed duplicate navigation links appearing in the sidebar on desktop viewports.
+
 ## 0.3.11
 
 ### Patch Changes
