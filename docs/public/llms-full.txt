@@ -1,0 +1,211 @@
+# Varvara CSS — full reference
+
+Varvara CSS is a tiny (~3KB gzip) library of prebuilt UI components: plain class names, zero JS, customized entirely through CSS variables. It is intentionally brutalist — square corners everywhere (no border-radius variable exists), 1px solid borders, no box-shadows, monochrome by default. Reference version below: **0.9.3**. Homepage: https://varvara.js.org. GitHub: https://github.com/marcmarine/varvara-js.
+
+Component pages on the docs site render code samples through a custom `<va-code-block>` element that requires JavaScript execution, so a plain crawl of the HTML loses the example markup. This file exists to give LLMs/agents the real class names and markup patterns directly, extracted from the compiled stylesheet rather than the rendered page.
+
+## Install
+
+CDN (simplest, no build step):
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/varvara-css@0.9.3" />
+```
+
+npm (needs a bundler that resolves CSS imports from `node_modules`):
+
+```bash
+npm i varvara-css
+```
+
+```css
+@import "varvara-css/css";
+```
+
+## Theming: CSS variables
+
+Set these on `:root` (or any ancestor) to reskin every component at once. There is no dark-mode toggle component — colors use the native CSS `light-dark()` function, so `color-scheme` must be set explicitly to force one mode instead of following the OS preference:
+
+```css
+:root {
+  color-scheme: dark; /* or "light", or omit to follow the OS */
+
+  --va-background-color-default: #0b1420;
+  --va-background-color-hover: #16233a;
+  --va-foreground-color-default: #e7ecf2;
+  --va-foreground-color-muted: #5d6c80; /* auto color-mix, can override directly */
+  --va-border-color: #1f2e42;
+  --va-border-width: 1px;
+  --va-color-primary: #e8a33d; /* see "Known gaps" — not consumed anywhere by default */
+
+  --va-font-family-default: "Inter", sans-serif;   /* body text */
+  --va-font-family-headings: "Space Grotesk", sans-serif; /* h1-h6 AND buttons/collapse summaries */
+
+  --va-font-size-ratio: 1; /* scales the whole --va-font-size-N scale */
+  --va-space-ratio: 1;     /* scales the whole --va-space-N scale */
+}
+```
+
+Full space scale (for consumer layout CSS — Varvara has no grid/container utilities, see "Known gaps"): `--va-space-000` (-0.5rem) through `--va-space-1` (0.25rem) up to `--va-space-15` (20rem). Full type scale: `--va-font-size-00` (0.5rem) through `--va-font-size-8` (3.5rem).
+
+Every component also exposes its **own** locally-scoped variables (e.g. `--va-button-background-color`, `--va-input-padding`) that fall back to the globals above. Override a component-scoped variable directly on an element, or on a wrapper class, to restyle just that instance — see the button example below.
+
+## Components
+
+Class names are exact. Reproduce the markup shape as shown, don't improvise it.
+
+### Button — `.va-button`
+
+```html
+<button class="va-button">Default</button>
+<button class="va-button va-button--action">Emphasized (uppercase)</button>
+<button class="va-button" disabled>Disabled</button>
+```
+
+- `:hover` lightens background; `:active` (or class `.va-button--active` to force it) inverts foreground/background — this is the only built-in "state" styling. There is no primary/danger/success variant.
+- To make one button visually the accent color, override its scoped vars:
+  ```css
+  .btn-accent {
+    --va-button-background-color: var(--va-color-primary);
+    --va-button-border-color: var(--va-color-primary);
+    color: #1a1206; /* text color is NOT a scoped var, must set the property */
+  }
+  ```
+- Height is computed from `--va-button-padding` and `--va-button-font-size`; resize by changing those two, not by adding extra padding.
+
+### Button group — `.va-button-group`
+
+```html
+<div class="va-button-group va-button-group--horizontal">
+  <button class="va-button">One</button>
+  <button class="va-button">Two</button>
+</div>
+```
+
+Without `--horizontal` it stacks vertically. Buttons share a collapsed 1px border between them (negative margins), giving one continuous bordered strip.
+
+### Card — `.va-card`
+
+```html
+<div class="va-card">
+  <div class="va-card__body">
+    <h3>Title</h3>
+    <p>Body content.</p>
+  </div>
+  <div class="va-card__actions">
+    <button class="va-button">Cancel</button>
+    <button class="va-button va-button--action">Confirm</button>
+  </div>
+</div>
+```
+
+`va-card__actions` lays its buttons out as an even-width flex row with a shared collapsed border — a card footer. Don't also wrap those buttons in `.va-button-group`.
+
+### Input — `.va-input`
+
+The label text is a `<span>` **sibling** of the input, both inside `<label>` — not a `<label for>` pointing at an `id`. There is no floating/animated label; the span sits statically at the top of the bordered box and the input gets extra top padding automatically:
+
+```html
+<label>
+  <input class="va-input" type="email" required />
+  <span>Email</span>
+</label>
+```
+
+Disabled: native `disabled` attribute. `border-radius` is force-set to `0` on this component even if a global radius is set elsewhere.
+
+### Select — `.va-select`
+
+Same label pattern as Input:
+
+```html
+<label>
+  <select class="va-select">
+    <option>Option one</option>
+    <option>Option two</option>
+  </select>
+  <span>Choose an option</span>
+</label>
+```
+
+The dropdown arrow is drawn with a CSS gradient background — don't add a custom `appearance` override or a double arrow will render.
+
+### Checkbox — `.va-checkbox`
+
+```html
+<label>
+  <input class="va-checkbox" type="checkbox" />
+  <span>Accept terms</span>
+</label>
+```
+
+Renders as a bordered box (not the native checkbox look); `:checked` fills it solid using `--va-checkbox-icon-color`.
+
+### Collapse — `.va-collapse`
+
+A styled native `<details>`/`<summary>` — no JS/state required for basic open/close, though it can still be controlled from a framework by binding the `open` prop/attribute and listening to the native `toggle` event:
+
+```html
+<details class="va-collapse">
+  <summary>Click to expand</summary>
+  <div>Hidden content goes here.</div>
+</details>
+```
+
+Nesting `.va-collapse` inside `.va-collapse` auto-indents up to 4 levels deep via a `--depth` custom property — no extra class needed for nested trees.
+
+### Table — `.va-table`
+
+```html
+<table class="va-table">
+  <thead>
+    <tr><th>Date</th><th>Amount</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Jan</td><td>€100</td></tr>
+  </tbody>
+</table>
+```
+
+Plain `<table>`/`<th>`/`<td>` — no wrapper divs needed, borders and padding are handled by the component.
+
+### Link — `.va-link`
+```html
+<a class="va-link" href="/page">Go here</a>
+<a class="va-link va-link--active" href="/page">Current page</a>
+```
+
+### Icon — `.va-icon`
+
+Pure CSS, no SVG/font asset. Only one built-in variant:
+
+```html
+<span class="va-icon va-icon--external"></span>
+```
+
+Select, checkbox, and collapse draw their own chevron/check icons internally — `.va-icon` is not added to those manually.
+
+### Loading — `.va-loading-dots`
+
+Animates an ellipsis (`.` → `..` → `...`) after whatever text precedes it:
+
+```html
+<p>Loading<span class="va-loading-dots"></span></p>
+```
+
+## Known gaps
+
+- `--va-color-primary` is defined but not consumed by any shipped component. No button/card/input reads it by default — it must be wired manually into a component's own scoped variable (see the `.btn-accent` example above). There is no `va-button--primary` class.
+- No semantic color variants at all (no danger/success/warning). No per-component text-color variable either — recoloring text (e.g. a "delete" button) means overriding the raw `color` property, not a `--va-*` var.
+- No layout/grid utilities and no spacing helper classes. Only the raw `--va-space-N` variables exist; flex/grid CSS is written by the consumer.
+- No border-radius variable — every corner is square, unconfigurable.
+- Missing components: modal/dialog, tabs, tooltip, badge/chip/tag, alert/toast/notification, avatar, progress bar, breadcrumb, pagination, navbar/header, radio buttons, textarea, switch/toggle.
+- No documented dark-mode toggle mechanism — only the native CSS `light-dark()` + `color-scheme` pattern shown above.
+
+## Verifying against a newer release
+
+If a project pins a version other than 0.9.3, or a class/variable's existence is uncertain, fetch the compiled CSS directly rather than relying on this file — it is the ground truth and is plain text:
+
+```
+https://unpkg.com/varvara-css@<version>
+```

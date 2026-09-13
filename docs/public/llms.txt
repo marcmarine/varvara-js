@@ -1,0 +1,32 @@
+# Varvara CSS
+
+> Brutalist CSS component library: square corners, 1px solid borders, no shadows, plain class names (`va-button`, `va-card`, `va-input`...), fully customizable through CSS variables. Zero JavaScript, ~3KB gzipped.
+
+Varvara CSS ships prebuilt UI components as plain CSS classes. It can be used standalone or alongside Tailwind CSS, with any JavaScript framework. Install via CDN (`@import url('https://unpkg.com/varvara-css');`) or npm (`npm i varvara-css`).
+
+Note: component pages on this site render code samples through a custom `<va-code-block>` element that requires JavaScript, so a plain crawl of the HTML will not surface the example markup. See `llms-full.txt` for the actual class names, markup shapes, and variable reference in plain text.
+
+## Docs
+
+- [Get started](https://varvara.js.org/get-started): Installation via CDN or npm, basic usage.
+- [CSS Variables](https://varvara.js.org/variables): Full reference of border, icon, color, typography, and spacing variables.
+- [Components](https://varvara.js.org/components): Index of every component with live examples.
+- [Button](https://varvara.js.org/components/button)
+- [Button Group](https://varvara.js.org/components/button-group)
+- [Card](https://varvara.js.org/components/card)
+- [Checkbox](https://varvara.js.org/components/checkbox)
+- [Collapse](https://varvara.js.org/components/collapse)
+- [Icon](https://varvara.js.org/components/icon)
+- [Input](https://varvara.js.org/components/input)
+- [Link](https://varvara.js.org/components/link)
+- [Loading](https://varvara.js.org/components/loading)
+- [Select](https://varvara.js.org/components/select)
+- [Table](https://varvara.js.org/components/table)
+- [Code Block](https://varvara.js.org/code-block): Separate package, `<va-code-block>` custom element for syntax-highlighted snippets.
+- [Changelog](https://varvara.js.org/changelog)
+
+## Optional
+
+- [GitHub repository](https://github.com/marcmarine/varvara-js): Monorepo source (css, typedoc-theme, code-block packages).
+- [npm package](https://www.npmjs.com/package/varvara-css)
+- [Full component & variable reference](https://varvara.js.org/llms-full.txt): Complete plain-text reference with exact markup patterns and known limitations, written for LLM/agent consumption.
