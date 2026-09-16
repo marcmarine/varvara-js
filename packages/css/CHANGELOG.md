@@ -1,5 +1,12 @@
 # varvara-css
 
+## 0.9.4
+
+### Patch Changes
+
+- 5a52a48: Applied CSS variable definitions to both the checkbox and its parent label when using :has() selector.
+- 407daec: Added child combinator to collapse selectors.
+
 ## 0.9.3
 
 ### Patch Changes
