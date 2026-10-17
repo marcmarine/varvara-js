@@ -38,12 +38,24 @@ You can use the component directly in your HTML:
 
 The `text` attribute should contain the code snippet as a single string. Escaping is handled internally.
 
+### With a no-JavaScript fallback
+
+Alternatively, place the code inside the element as a regular `<pre><code>` block. It stays readable for crawlers, AI agents and browsers without JavaScript, and is replaced by the highlighted version once the component loads:
+
+```html
+<va-code-block>
+  <pre><code class="language-html">&lt;button class="va-button"&gt;Example button&lt;/button&gt;</code></pre>
+</va-code-block>
+```
+
+The language is taken from the `language-*` class when no `language` attribute is set. If both `text` and child content are present, `text` takes precedence.
+
 ### Attributes
 
-| Attribute  | Description                                    | Default value |
-| ---------- | ---------------------------------------------- | ------------- |
-| `text`     | The code snippet you want to display.          | `''`          |
-| `language` | Language of the code.                          | `'text'`      |
+| Attribute  | Description                                                     | Default value |
+| ---------- | --------------------------------------------------------------- | ------------- |
+| `text`     | The code snippet you want to display. Falls back to child text. | `''`          |
+| `language` | Language of the code. Falls back to the `language-*` class.     | `'text'`      |
 
 ## Changelog
 

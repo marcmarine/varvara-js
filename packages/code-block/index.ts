@@ -24,6 +24,7 @@ class CodeBlock extends HTMLElement {
   private copyButton!: HTMLButtonElement
   private copyTimeoutId: ReturnType<typeof setTimeout> | null = null
   private initialized = false
+  private observer = new MutationObserver(() => this.update())
 
   private static readonly DEFAULT_LANGUAGE = 'text'
   private static readonly COPY_BUTTON_TEXT = 'Copy'
@@ -46,6 +47,18 @@ class CodeBlock extends HTMLElement {
     }
 
     this.update()
+    // Light DOM content may still be parsing or change later
+    this.observer.observe(this, {
+      childList: true,
+      subtree: true,
+      characterData: true,
+      attributes: true,
+      attributeFilter: ['class'],
+    })
+  }
+
+  disconnectedCallback() {
+    this.observer.disconnect()
   }
 
   attributeChangedCallback(_name: string, oldValue: string, newValue: string) {
@@ -85,7 +98,7 @@ class CodeBlock extends HTMLElement {
   }
 
   private update() {
-    const codeContent = this.getAttribute('text')?.trim() || ''
+    const codeContent = this.getCode()
     const language = this.getLanguage()
 
     this.codeElement.innerHTML = highlight(codeContent, language)
@@ -106,8 +119,19 @@ class CodeBlock extends HTMLElement {
     }, 2000)
   }
 
+  // The `text` attribute takes precedence over light DOM content
+  // (e.g. a `<pre><code>` fallback readable without JavaScript)
+  private getCode(): string {
+    return (this.getAttribute('text') ?? this.textContent ?? '').trim()
+  }
+
   private getLanguage(): string {
-    return this.getAttribute('language') || this.getAttribute('lang') || CodeBlock.DEFAULT_LANGUAGE
+    return (
+      this.getAttribute('language') ||
+      this.getAttribute('lang') ||
+      this.querySelector('code')?.className.match(/(?:^|\s)language-(\S+)/)?.[1] ||
+      CodeBlock.DEFAULT_LANGUAGE
+    )
   }
 }
 
