@@ -28,7 +28,8 @@
     "./css": "./dist/varvara.css",
     "./variables": "./dist/variables.css",
     "./card": "./dist/components/card.css",
-    "./button": "./dist/components/button.css"
+    "./button": "./dist/components/button.css",
+    "./select": "./dist/components/select.css"
   },
   "description": "CSS library of customizable UI components based on CSS Variables.",
   "files": [
