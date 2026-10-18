@@ -1,0 +1,212 @@
+import CodeBlock from '../components/CodeBlock.astro'
+import CustomTable from '../components/CustomTable.astro'
+import Example from '../components/Example.astro'
+import PackageVersion from '../components/PackageVersion.astro'
+import Layout from '../layouts/Base.astro'
+
+export const components = { table: CustomTable }
+
+export const GITHUB_URL = 'https://github.com/marcmarine/varvara-js/tree/main/packages/code-block'
+
+export const escapeHtml = (code) =>
+  code.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+
+export const DEMO_CODE = `<details class="va-collapse">
+  <summary>
+    <strong>The purpose of thought</strong>
+  </summary>
+  <p>
+    We can attain wisdom by three ways: first, by way of experience,
+    this is the most difficult way; second, by way of imitation,
+    this is the easiest way; and third by way of meditation,
+    and this is the noblest way.
+  </p>
+  <p>Confucius</p>
+</details>`
+
+export const MULTIPLE_LANGUAGES_CODE = `<va-code-block>
+  <pre><code class="language-html">&lt;button class="va-button"&gt;Example button&lt;/button&gt;</code></pre>
+  <pre data-label="JSX"><code class="language-jsx">const Button = () =&gt; &lt;button className="va-button"&gt;Example button&lt;/button&gt;</code></pre>
+  <pre><code class="language-css">.va-button {
+  --va-button-padding: var(--va-space-4);
+}</code></pre>
+</va-code-block>`
+
+export const SELECTED_CODE = `<va-code-block selected="bun">
+  <pre data-label="npm"><code class="language-bash">npm i va-code-block</code></pre>
+  <pre data-label="pnpm"><code class="language-bash">pnpm add va-code-block</code></pre>
+  <pre data-label="bun"><code class="language-bash">bun add va-code-block</code></pre>
+</va-code-block>`
+
+export const DEMO_FALLBACK_CODE = `<va-code-block>
+  <pre><code class="language-html">${escapeHtml(DEMO_CODE)}</code></pre>
+</va-code-block>`
+
+export const FALLBACK_CODE = `<va-code-block>
+  <pre><code class="language-html">&lt;button class="va-button"&gt;Example button&lt;/button&gt;</code></pre>
+</va-code-block>`
+
+export const TEXT_ATTRIBUTE_CODE = `<va-code-block
+  language="html"
+  text='<button class="va-button">Example button</button>'
+></va-code-block>`
+
+export const DYNAMIC_UPDATES_CODE = `const el = document.querySelector('va-code-block')
+el.setAttribute('text', 'console.log("hello")')
+el.setAttribute('language', 'js')`
+
+export const EVENT_CODE = `el.addEventListener('change', (event) => {
+  console.log(event.detail.value)
+})`
+
+export const PART_CODE = `va-code-block::part(pre-content) {
+  max-height: 20rem;
+  overflow: auto;
+}`
+
+<Layout>
+  <header class="grid col-start-1 grid-rows-subgrid row-start-1 row-end-4 relative z-10 bg-grid-left bg-grid-right">
+    <div class="pt-8 mb-8 max-w-4xl mx-auto !sticky top-0">
+      <h1 class="mb-0">Code Block <PackageVersion package="va-code-block" /></h1>
+      <p>Styled with <a href="/" class="va-link">Varvara CSS</a> <PackageVersion /></p>
+      <p>A reusable Web Component that renders code blocks with syntax highlighting and a copy button.</p>
+      <label class="mb-4">
+        <span>Technology</span>
+        <select class="va-select">
+          <option value="web" selected>Web Components</option>
+          <option value="react" disabled>React (Coming soon)</option>
+        </select>
+      </label>
+      <div class="flex flex-col items-start gap-1">
+        <a href="#demo" class="va-link">Demo</a>
+        <a href="#installation" class="va-link">Installation</a>
+        <a href="#usage" class="va-link">Usage</a>
+        <a href="#multiple-languages" class="va-link">Multiple languages</a>
+        <a href="#attributes" class="va-link">Attributes</a>
+        <a href="#events" class="va-link">Events</a>
+        <a href="#styling" class="va-link">Styling</a>
+        <a href="#supported-languages" class="va-link">Supported languages</a>
+        <a href={GITHUB_URL} class="va-link mt-auto">GitHub</a>
+      </div>
+    </div>
+  </header>
+  <main class="bg-grid-left bg-grid-right overflow-hidden">
+    <div class="pt-8 mb-20">
+      <div id="demo">
+        <Example>
+          <CodeBlock slot="preview" class="block w-full" language="html" code={DEMO_CODE} />
+          <CodeBlock language="html" code={DEMO_FALLBACK_CODE} />
+        </Example>
+      </div>
+      <div class="mb-3 px-2 p-1 text-yellow-300 bg-yellow-900">This component is in an early development stage. Check the <a href="https://github.com/marcmarine/varvara-js/releases?q=va-code-block&expanded=true" class="va-link">CHANGELOG.md</a> to stay up to date with the latest changes.</div>
+
+## Installation
+
+### Using a CDN
+
+Add the script to your page and the `<va-code-block>` element is ready to use:
+
+<CodeBlock class="block mb-6" language="html" code={`<script src="https://unpkg.com/va-code-block"></script>`} />
+
+### Using NPM
+
+<CodeBlock class="block mb-6" language="bash" code="npm i va-code-block" />
+
+Then import the package once in your JavaScript. Importing it registers the element:
+
+<CodeBlock class="block mb-6" language="js" code={`import 'va-code-block'`} />
+
+Styles are bundled inside the component, so you don't need to include Varvara CSS to use it.
+
+## Usage
+
+### With a code fallback
+
+Place the code inside the element as a regular `<pre><code>` block, with the language as a `language-*` class. It stays readable for crawlers, AI agents and browsers without JavaScript, and is replaced by the highlighted version once the component loads:
+
+<CodeBlock class="block mb-6" language="html" code={FALLBACK_CODE} />
+
+As in any HTML, write `<` and `&` inside the code as `&lt;` and `&amp;`.
+
+### With the `text` attribute
+
+Alternatively, pass the code as a string in the `text` attribute:
+
+<CodeBlock class="block mb-6" language="html" code={TEXT_ATTRIBUTE_CODE} />
+
+The code can't contain the quote character that wraps the attribute: use single quotes around code with double quotes, or the other way round. If both `text` and child content are present, `text` takes precedence.
+
+### Multiple languages
+
+Place several `<pre><code>` blocks inside the element and a select appears to switch between them. Each block takes its language from its `language-*` class, and its label from `data-label` on the `<pre>` (or the uppercased language):
+
+<Example>
+  <div slot="preview" class="w-full [&>va-code-block]:block" set:html={MULTIPLE_LANGUAGES_CODE} />
+  <CodeBlock language="html" code={MULTIPLE_LANGUAGES_CODE} />
+</Example>
+
+Labels are useful when several blocks share a language. Use `selected` to choose the initial block:
+
+<Example>
+  <div slot="preview" class="w-full [&>va-code-block]:block" set:html={SELECTED_CODE} />
+  <CodeBlock language="html" code={SELECTED_CODE} />
+</Example>
+
+The copy button copies the active block. Without JavaScript, all blocks remain readable one after another.
+
+### Dynamic updates
+
+The component reacts to changes in its attributes and in its child content, so you can update it after the initial render:
+
+<CodeBlock class="block mb-6" language="js" code={DYNAMIC_UPDATES_CODE} />
+
+## Attributes
+
+| Attribute  | Description                                                                                                                  | Default value |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `text`     | The code snippet to display. Falls back to the child content.                                                                | `''`          |
+| `language` | Language for syntax highlighting. A block's `language-*` class takes precedence. Also available as `lang`.                   | `'text'`      |
+| `selected` | Active block when there are several, matched by `data-label` or language. Updated when the user picks another block.         | First block   |
+
+## Events
+
+| Event    | Description                                                                                         |
+| -------- | --------------------------------------------------------------------------------------------------- |
+| `change` | Fired when the user selects another block. `event.detail` contains `label`, `language` and `value`. |
+
+<CodeBlock class="block my-6" language="js" code={EVENT_CODE} />
+
+## Styling
+
+The component renders inside a shadow root. Its internal elements are exposed as parts that you can style with `::part()`:
+
+| Part          | Element                                                    |
+| ------------- | ---------------------------------------------------------- |
+| `card`        | The outer container.                                       |
+| `pre-content` | The `<pre>` that holds the highlighted code.               |
+| `select`      | The language select, shown when there are several blocks. |
+
+<CodeBlock class="block my-6" language="css" code={PART_CODE} />
+
+## Supported languages
+
+Syntax highlighting is built-in with a lightweight tokenizer. No external dependencies required.
+
+| Language   | Values                    |
+| ---------- | ------------------------- |
+| JavaScript | `javascript`, `js`, `jsx` |
+| TypeScript | `typescript`, `ts`, `tsx` |
+| CSS        | `css`                     |
+| HTML       | `html`, `markup`, `xml`   |
+
+Other languages, such as `bash`, render as plain text without errors and still show their label.
+
+## More information
+
+- <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components" class="va-link">Web Components (MDN)</a>
+- <a href="https://www.webcomponents.org/" class="va-link">WEBCOMPONENTS.ORG</a>
+- <a href={GITHUB_URL} class="va-link">Varvara Code Block on GitHub</a>
+
+</div>
+</main>
+</Layout>
