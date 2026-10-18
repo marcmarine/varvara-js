@@ -2,6 +2,7 @@
 title: Button Group
 ---
 
+import CodeBlock from '../../components/CodeBlock.astro'
 import Example from '../../components/Example.astro'
 import ButtonGroup from '../../components/lib/button-group'
 export const Component = () => <ButtonGroup />
@@ -12,14 +13,14 @@ export const Component = () => <ButtonGroup />
 
 <Example component={Component}>
 
-<va-code-block
-  text={`<div class="va-button-group">
+<CodeBlock
+  code={`<div class="va-button-group">
     <button class="va-button">add</button>
     <button class="va-button">random</button>
     <button class="va-button">notes</button>
   </div>`}
   language="html"
-></va-code-block>
+/>
 
 </Example>
 
@@ -35,14 +36,14 @@ export const Component = () => <ButtonGroup />
   )}
 >
 
-<va-code-block
-  text={`<div class="va-button-group w-full">
+<CodeBlock
+  code={`<div class="va-button-group w-full">
     <button class="va-button w-full">add</button>
     <button class="va-button w-full">random</button>
     <button class="va-button w-full">notes</button>
   </div>`}
   language="html"
-></va-code-block>
+/>
 
 </Example>
 
@@ -58,14 +59,14 @@ export const Component = () => <ButtonGroup />
   )}
 >
 
-<va-code-block
-  text={`<div class="va-button-group w-full text-center">
+<CodeBlock
+  code={`<div class="va-button-group w-full text-center">
     <button class="va-button w-full">add</button>
     <button class="va-button w-full">random</button>
     <button class="va-button w-full">notes</button>
   </div>`}
   language="html"
-></va-code-block>
+/>
 
 </Example>
 
@@ -80,13 +81,13 @@ export const Component = () => <ButtonGroup />
   )}
 >
 
-<va-code-block
-  text={`<div class="va-button-group va-button-group--horizontal">
+<CodeBlock
+  code={`<div class="va-button-group va-button-group--horizontal">
     <button class="va-button">back</button>
     <button class="va-button">add</button>
   </div>`}
   language="html"
-></va-code-block>
+/>
 
 </Example>
 
@@ -103,8 +104,8 @@ export const Component = () => <ButtonGroup />
     </div>
   )}
 >
-<va-code-block
-  text={`<div class="va-button-group text-center">
+<CodeBlock
+  code={`<div class="va-button-group text-center">
     <button class="va-button w-full">translation</button>
     <div class="va-button-group va-button-group--horizontal">
       <button class="va-button">back</button>
@@ -112,6 +113,6 @@ export const Component = () => <ButtonGroup />
     </div>
   </div>`}
   language="html"
-></va-code-block>
+/>
 
 </Example>

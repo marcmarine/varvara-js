@@ -2,6 +2,7 @@
 title: Checkbox
 ---
 
+import CodeBlock from '../../components/CodeBlock.astro'
 import Example from '../../components/Example.astro'
 import Checkbox from '../../components/lib/checkbox'
 export const Component = () => <Checkbox />
@@ -22,7 +23,7 @@ export const Component = () => <Checkbox />
 ## Default
 
 <Example component={Component}>
-  <va-code-block text={`<input class="va-checkbox" type="checkbox" />`} language="html"></va-code-block>
+  <CodeBlock code={`<input class="va-checkbox" type="checkbox" />`} language="html" />
 </Example>
 
 ## With Label
@@ -37,11 +38,11 @@ export const Component = () => <Checkbox />
 
 >
 
-  <va-code-block
-    text={`<label>
+  <CodeBlock
+    code={`<label>
     <span>Checkbox</span>
     <input class="va-checkbox" type="checkbox" />
   </label>`}
     language="html"
-  ></va-code-block>
+  />
 </Example>

@@ -2,6 +2,7 @@
 title: Select
 ---
 
+import CodeBlock from '../../components/CodeBlock.astro'
 import Example from '../../components/Example.astro'
 import Select from '../../components/lib/select'
 export const Component = () => <Select />
@@ -23,8 +24,8 @@ export const Component = () => <Select />
 
 <Example component={Component}>
 
-<va-code-block
-  text={`<select class="va-select">
+<CodeBlock
+  code={`<select class="va-select">
     <option disabled selected>
       Choose an option
     </option>
@@ -33,7 +34,7 @@ export const Component = () => <Select />
     <option value="three">Option three</option>
   </select>`}
   language="html"
-></va-code-block>
+/>
 
 </Example>
 
@@ -55,8 +56,8 @@ export const Component = () => <Select />
   )}
 >
 
-<va-code-block
-  text={`<label>
+<CodeBlock
+  code={`<label>
   <span>Select</span>
   <select class="va-select">
     <option disabled selected>
@@ -68,6 +69,6 @@ export const Component = () => <Select />
   </select>
 </label>`}
   language="html"
-></va-code-block>
+/>
 
 </Example>

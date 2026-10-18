@@ -2,6 +2,7 @@
 title: Loading
 ---
 
+import CodeBlock from '../../components/CodeBlock.astro'
 import Example from '../../components/Example.astro'
 import Loading from '../../components/lib/loading'
 export const Component = () => <Loading />
@@ -17,5 +18,5 @@ export const Component = () => <Loading />
 ## Default
 
 <Example component={Component}>
-  <va-code-block text={`<h2 class="va-loading-dots">Loading</h2>`} language="html"></va-code-block>
+  <CodeBlock code={`<h2 class="va-loading-dots">Loading</h2>`} language="html" />
 </Example>

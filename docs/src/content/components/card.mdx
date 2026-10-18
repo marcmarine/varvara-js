@@ -2,6 +2,7 @@
 title: Card
 ---
 
+import CodeBlock from '../../components/CodeBlock.astro'
 import Example from '../../components/Example.astro'
 import Card from '../../components/lib/card'
 export const Component = () => <Card />
@@ -24,8 +25,8 @@ export const Component = () => <Card />
   component={Component}
 >
 
-<va-code-block
-  text={`<div class="va-card w-full">
+<CodeBlock
+  code={`<div class="va-card w-full">
     <div class="va-card__body">
       <h2 class="va-card__title">Your Gateway to Timeless Literature</h2>
       <p>
@@ -41,6 +42,6 @@ export const Component = () => <Card />
     </div>
   </div>`}
   language="html"
-></va-code-block>
+/>
 
 </Example>

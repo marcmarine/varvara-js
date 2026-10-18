@@ -2,6 +2,7 @@
 title: Icon
 ---
 
+import CodeBlock from '../../components/CodeBlock.astro'
 import Example from '../../components/Example.astro'
 import Icon from '../../components/lib/icon'
 export const Component = () => <Icon />
@@ -20,5 +21,5 @@ export const Component = () => <Icon />
 ## External
 
 <Example component={Component}>
-  <va-code-block text={`<i class="va-icon va-icon--external"></i>`} language="html"></va-code-block>
+  <CodeBlock code={`<i class="va-icon va-icon--external"></i>`} language="html" />
 </Example>

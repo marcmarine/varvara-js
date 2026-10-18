@@ -2,6 +2,7 @@
 title: Collapse
 ---
 
+import CodeBlock from '../../components/CodeBlock.astro'
 import Example from '../../components/Example.astro'
 import Collapse from '../../components/lib/collapse'
 export const Component = () => <Collapse />
@@ -23,8 +24,8 @@ export const Component = () => <Collapse />
 ## Default
 
 <Example component={Component}>
-  <va-code-block
-    text={`<details class="va-collapse w-full">
+  <CodeBlock
+    code={`<details class="va-collapse w-full">
     <summary>
       <strong>The purpose of thought</strong>
     </summary>
@@ -34,7 +35,7 @@ export const Component = () => <Collapse />
     <p>Confucius</p>
   </details>`}
     language="html"
-  ></va-code-block>
+  />
 </Example>
 
 ## Nested
@@ -85,8 +86,8 @@ export const Component = () => <Collapse />
 
 >
 
-<va-code-block
-  text={`<details class="va-collapse w-full">
+<CodeBlock
+  code={`<details class="va-collapse w-full">
     <summary>
       <strong>Thought</strong>
     </summary>
@@ -127,5 +128,41 @@ export const Component = () => <Collapse />
     </details>
   </details>`}
   language="html"
-></va-code-block>
+/>
+</Example>
+
+## With other content
+
+<Example
+  component={() => (
+  <details class="va-collapse w-full">
+    <summary>
+      <strong>The purpose of thought</strong>
+    </summary>
+      <div class="va-card w-full">
+        <div class="va-card__body">
+          <h2 class="va-card__title">Timeless Literature</h2>
+          <p>Our platform leverages a powerful API to bring you an extensive collection...</p>
+        </div>
+        <div class="va-card__actions text-right">
+          <button class="va-button">Start</button>
+        </div>
+      </div>
+  </details>
+)}
+
+>
+<CodeBlock code={`
+<details class="va-collapse w-full">
+    <summary>
+      <strong>The purpose of thought</strong>
+    </summary>
+    <p>
+      We can attain wisdom by three ways: first, by way of experience, this is the most difficult
+      way; second, by way of imitation, this is the easiest way; and third by way of meditation,
+      and this is the noblest way.
+    </p>
+    <p>Confucius</p>
+  </details>
+`} language="html" />
 </Example>
