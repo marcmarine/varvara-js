@@ -1,6 +1,8 @@
 ---
 import Footer from '../components/Footer.astro'
 import '../styles/global.css'
+// UMD build, inlined as a classic script so the element is defined before the body renders
+import codeBlockScript from '../../node_modules/va-code-block/dist/index.umd.cjs?raw'
 import { ClientRouter } from 'astro:transitions'
 
 interface Props {
@@ -33,11 +35,11 @@ const className = 'page'.concat(page ? ` page--${page}` : '')
     <meta property="og:url" content="https://varvara.js.org" />
     <meta property="og:image" content="/og-image.png" />
     <ClientRouter />
+    <script is:inline set:html={codeBlockScript} />
   </head>
   <body class="page__body overflow-x-hidden">
     <slot />
     <Footer />
-    <script src="va-code-block"></script>
   </body>
 </html>
 
