@@ -31,6 +31,8 @@ jobs:
           version: bun run version-packages
           commit: 'ci(repo): Version packages'
           title: 'ci(repo): Version packages'
+          commitMode: github-api
+          github-token: ${{ secrets.RELEASE_TOKEN }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
