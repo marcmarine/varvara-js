@@ -1,5 +1,11 @@
 # varvara-css
 
+## 0.9.5
+
+### Patch Changes
+
+- e486b2a: Exported the select component stylesheet as `varvara-css/select`.
+
 ## 0.9.4
 
 ### Patch Changes
