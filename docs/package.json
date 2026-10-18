@@ -27,5 +27,7 @@
     "va-code-block": "workspace:*",
     "varvara-css": "workspace:*"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/node": "^24"
+  }
 }
