@@ -1,5 +1,12 @@
 # va-code-block
 
+## 0.3.0
+
+### Minor Changes
+
+- 2b62070: Added support for multiple code blocks with a select to switch between languages, a `selected` attribute and a `change` event.
+- c472643: Added support for reading code from light DOM content (e.g. a `<pre><code>` fallback readable without JavaScript) and the language from its `language-*` class.
+
 ## 0.2.1
 
 ### Patch Changes
