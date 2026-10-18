@@ -1,0 +1,6 @@
+---
+// Renders the code in the light DOM so it stays readable without JavaScript
+const { code, language = 'text', class: className } = Astro.props
+---
+
+<va-code-block class={className} language={language}><pre><code class={`language-${language}`}>{code.trim()}</code></pre></va-code-block>
