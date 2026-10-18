@@ -48,14 +48,29 @@ Alternatively, place the code inside the element as a regular `<pre><code>` bloc
 </va-code-block>
 ```
 
-The language is taken from the `language-*` class when no `language` attribute is set. If both `text` and child content are present, `text` takes precedence.
+The language is taken from the `language-*` class, falling back to the `language` attribute. If both `text` and child content are present, `text` takes precedence.
+
+### Multiple languages
+
+Place several `<pre><code>` blocks inside the element and a select appears to switch between them. Each block's label comes from `data-label`, or its uppercased language:
+
+```html
+<va-code-block selected="bun">
+  <pre data-label="npm"><code class="language-bash">npm i va-code-block</code></pre>
+  <pre data-label="pnpm"><code class="language-bash">pnpm add va-code-block</code></pre>
+  <pre data-label="bun"><code class="language-bash">bun add va-code-block</code></pre>
+</va-code-block>
+```
+
+The copy button copies the active block. When the selection changes, the element reflects it in `selected` and emits a `change` event with `{ label, language, value }` in `detail`.
 
 ### Attributes
 
-| Attribute  | Description                                                     | Default value |
-| ---------- | --------------------------------------------------------------- | ------------- |
-| `text`     | The code snippet you want to display. Falls back to child text. | `''`          |
-| `language` | Language of the code. Falls back to the `language-*` class.     | `'text'`      |
+| Attribute  | Description                                                                  | Default value |
+| ---------- | ---------------------------------------------------------------------------- | ------------- |
+| `text`     | The code snippet you want to display. Falls back to child text.              | `''`          |
+| `language` | Language of the code. Falls back to the `language-*` class.                  | `'text'`      |
+| `selected` | Active block when there are several, matched by `data-label` or language.    | First block   |
 
 ## Changelog
 
