@@ -1,6 +1,25 @@
 import ThemeSelector from '../components/ThemeSelector.astro'
 import Layout from '../layouts/Page.astro'
 
+export const CDN_CODE = `/* Quick start with Varvara CSS via CDN */
+@import url('https://unpkg.com/varvara-css');`
+
+export const CDN_HTML_CODE = `<link href="https://unpkg.com/varvara-css" rel="stylesheet" type="text/css" />`
+
+export const NPM_CODE = `/* npm i varvara-css */
+@import 'varvara-css/css';`
+
+export const TAILWIND_V4_CODE = `/* npm i varvara-css */
+@import 'tailwindcss';
+@plugin 'varvara-css';`
+
+export const TAILWIND_V3_CODE = `// npm i varvara-css
+import varvara from 'varvara-css'
+
+export default {
+  plugins: [varvara],
+}`
+
 <Layout page="homepage">
   <div class="px-2 md:px-4 py-4 flex flex-col justify-center row-start-2 col-start-1 col-end-3 bg-grid-bottom max-w-full">
     
@@ -15,11 +34,12 @@ import Layout from '../layouts/Page.astro'
 
   </div>
   <div class="md:col-start-2 col-span-2 row-start-3 bg-grid-left">
-    <va-code-block
-      text={`/* Quick start with Varvara CSS via CDN */
-@import url('https://unpkg.com/varvara-css');`}
-      language="css"
-      class="mb-4 bg-grid-bottom"
-    ></va-code-block>
+    <va-code-block class="mb-4 bg-grid-bottom">
+      <pre data-label="CDN"><code class="language-css">{CDN_CODE}</code></pre>
+      <pre data-label="CDN (HTML)"><code class="language-html">{CDN_HTML_CODE}</code></pre>
+      <pre data-label="NPM"><code class="language-css">{NPM_CODE}</code></pre>
+      <pre data-label="Tailwind v4"><code class="language-css">{TAILWIND_V4_CODE}</code></pre>
+      <pre data-label="Tailwind v3"><code class="language-js">{TAILWIND_V3_CODE}</code></pre>
+    </va-code-block>
   </div>
 </Layout>
