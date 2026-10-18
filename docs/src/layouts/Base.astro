@@ -1,9 +1,12 @@
 ---
 import Footer from '../components/Footer.astro'
 import '../styles/global.css'
-// UMD build, inlined as a classic script so the element is defined before the body renders
-import codeBlockScript from '../../node_modules/va-code-block/dist/index.umd.cjs?raw'
 import { ClientRouter } from 'astro:transitions'
+import { readFileSync } from 'node:fs'
+import { createRequire } from 'node:module'
+
+// UMD build (the package's `require` export), inlined as a classic script so the element is defined before the body renders
+const codeBlockScript = readFileSync(createRequire(import.meta.url).resolve('va-code-block'), 'utf8')
 
 interface Props {
   title?: string
