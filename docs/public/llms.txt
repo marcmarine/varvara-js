@@ -4,7 +4,7 @@
 
 Varvara CSS ships prebuilt UI components as plain CSS classes. It can be used standalone or alongside Tailwind CSS, with any JavaScript framework. Install via CDN (`@import url('https://unpkg.com/varvara-css');`) or npm (`npm i varvara-css`).
 
-Note: component pages on this site render code samples through a custom `<va-code-block>` element that requires JavaScript, so a plain crawl of the HTML will not surface the example markup. See `llms-full.txt` for the actual class names, markup shapes, and variable reference in plain text.
+Code samples on component pages are rendered as static `<pre><code>` inside a `<va-code-block>` element, so the example markup is readable without JavaScript. See `llms-full.txt` for the full class names, markup shapes, and variable reference in a single plain-text file.
 
 ## Docs
 

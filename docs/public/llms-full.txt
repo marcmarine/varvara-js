@@ -1,15 +1,15 @@
 # Varvara CSS — full reference
 
-Varvara CSS is a tiny (~3KB gzip) library of prebuilt UI components: plain class names, zero JS, customized entirely through CSS variables. It is intentionally brutalist — square corners everywhere (no border-radius variable exists), 1px solid borders, no box-shadows, monochrome by default. Reference version below: **0.9.3**. Homepage: https://varvara.js.org. GitHub: https://github.com/marcmarine/varvara-js.
+Varvara CSS is a tiny (~3KB gzip) library of prebuilt UI components: plain class names, zero JS, customized entirely through CSS variables. It is intentionally brutalist — square corners everywhere (no border-radius variable exists), 1px solid borders, no box-shadows, monochrome by default. Reference version below: **0.9.5**. Homepage: https://varvara.js.org. GitHub: https://github.com/marcmarine/varvara-js.
 
-Component pages on the docs site render code samples through a custom `<va-code-block>` element that requires JavaScript execution, so a plain crawl of the HTML loses the example markup. This file exists to give LLMs/agents the real class names and markup patterns directly, extracted from the compiled stylesheet rather than the rendered page.
+This file gathers the class names, markup patterns, and variable reference from the docs site into a single plain-text file for LLMs/agents. The component pages themselves also serve their code samples as static HTML (`<pre><code>` inside `<va-code-block>`), readable without JavaScript.
 
 ## Install
 
 CDN (simplest, no build step):
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/varvara-css@0.9.3" />
+<link rel="stylesheet" href="https://unpkg.com/varvara-css@0.9.5" />
 ```
 
 npm (needs a bundler that resolves CSS imports from `node_modules`):
@@ -20,6 +20,34 @@ npm i varvara-css
 
 ```css
 @import "varvara-css/css";
+```
+
+To load only some components, import the variables plus the per-component stylesheets. Component files reference the global `--va-*` variables but do not define them, so `variables` is required:
+
+```css
+@import "varvara-css/variables";
+@import "varvara-css/button";
+@import "varvara-css/card";
+@import "varvara-css/select";
+```
+
+Only `button`, `card`, and `select` are exported individually; everything else comes from `varvara-css/css`.
+
+Tailwind CSS plugin (registers the same `va-*` classes through Tailwind):
+
+```css
+/* Tailwind v4 */
+@import "tailwindcss";
+@plugin "varvara-css";
+```
+
+```js
+// Tailwind v3 — tailwind.config.js
+import varvara from 'varvara-css'
+
+module.exports = {
+  plugins: [varvara]
+}
 ```
 
 ## Theming: CSS variables
@@ -204,7 +232,7 @@ Animates an ellipsis (`.` → `..` → `...`) after whatever text precedes it:
 
 ## Verifying against a newer release
 
-If a project pins a version other than 0.9.3, or a class/variable's existence is uncertain, fetch the compiled CSS directly rather than relying on this file — it is the ground truth and is plain text:
+If a project pins a version other than 0.9.5, or a class/variable's existence is uncertain, fetch the compiled CSS directly rather than relying on this file — it is the ground truth and is plain text:
 
 ```
 https://unpkg.com/varvara-css@<version>
