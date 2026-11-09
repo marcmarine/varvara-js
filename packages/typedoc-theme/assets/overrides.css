@@ -147,6 +147,12 @@ footer {
   html .col-sidebar {
     background-color: var(--va-background-color-default);
   }
+  .tsd-panel > h1,
+  .tsd-panel > h2,
+  .tsd-panel > h3 {
+    margin-inline: 0;
+    padding-inline: 0;
+  }
 }
 
 @media (min-width: 770px) {
