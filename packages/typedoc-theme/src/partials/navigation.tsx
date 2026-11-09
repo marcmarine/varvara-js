@@ -71,7 +71,7 @@ export function settings(context: DefaultThemeRenderContext) {
     return (
       <details class="va-collapse settings tsd-accordion" open={false}>
         <summary>{i18n.theme_settings()}</summary>
-        {visibilityOptions.length && (
+        {!!visibilityOptions.length && (
           <details class="va-collapse">
             <summary>{i18n.theme_member_visibility()}</summary>
             {...visibilityOptions}
