@@ -31,8 +31,8 @@ export class VarvaraTheme extends DefaultTheme {
 
     renderer.hooks.on('head.end', (event) => (
       <>
-        <link rel="stylesheet" href={event.relativeURL('assets/varvara.css')} />
-        <link rel="stylesheet" href={event.relativeURL('assets/overrides.css')} />
+        <link rel="stylesheet" href={event.relativeURL('assets/varvara.css', true)} />
+        <link rel="stylesheet" href={event.relativeURL('assets/overrides.css', true)} />
       </>
     ))
   }
