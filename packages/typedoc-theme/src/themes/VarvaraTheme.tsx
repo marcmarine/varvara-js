@@ -15,16 +15,16 @@ export class VarvaraTheme extends DefaultTheme {
   constructor(renderer: Renderer) {
     super(renderer)
 
-    renderer.on(RendererEvent.END, () => {
+    renderer.on(RendererEvent.END, (event) => {
       const varvaraCssPath = require.resolve('varvara-css/css')
-      const destPath = path.resolve(this.application.options.getValue('out'), 'assets/varvara.css')
+      const assetsPath = path.resolve(event.outputDirectory, 'assets')
 
-      fs.mkdirSync(path.dirname(destPath), { recursive: true })
-      fs.copyFileSync(varvaraCssPath, destPath)
+      fs.mkdirSync(assetsPath, { recursive: true })
+      fs.copyFileSync(varvaraCssPath, path.join(assetsPath, 'varvara.css'))
 
       fs.cpSync(
         path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../assets/'),
-        path.resolve(this.application.options.getValue('out'), 'assets/'),
+        assetsPath,
         { recursive: true },
       )
     })
