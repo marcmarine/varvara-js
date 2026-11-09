@@ -11,7 +11,7 @@ export function sidebarLinks(context: DefaultThemeRenderContext) {
   return (
     <nav id="tsd-sidebar-links" class="tsd-navigation va-button-group">
       {links.map(([label, url]) => (
-        <a href={url} class="va-button tsd-nav-link">
+        <a href={url} class="va-button">
           <span>{label}</span>
           <i class="va-icon va-icon--external"></i>
         </a>
