@@ -1,5 +1,17 @@
 # varvara-typedoc-theme
 
+## 0.3.13
+
+### Patch Changes
+
+- c8ae77f: Fixed the `cacheBust` option not applying to the theme stylesheets.
+- 0e2cdb8: Fixed navigation items with children, such as modules, not linking to their own page.
+- 82e144f: Fixed a stray `0` appearing in the settings menu when no visibility filters are available.
+- ddf8883: Fixed horizontal overflow caused by heading negative margins on small viewports.
+- 8eb9b8c: Fixed theme stylesheets being copied to the `out` directory instead of the actual output path when using the `outputs` option.
+- 136e82b: Fixed links from the `sidebarLinks` option being hidden on desktop viewports.
+- 92e56f6: Fixed remote `favicon` URLs generating a broken link to a local asset.
+
 ## 0.3.12
 
 ### Patch Changes
