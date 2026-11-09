@@ -220,7 +220,7 @@ export const Navigation = ({
         <details class="va-collapse tsd-accordion">
           <summary class="tsd-accordion-summary" data-key={`section-${item.text}`}>
             {item.kind && context.icons[item.kind]()}
-            {item.text}
+            {item.path ? <a href={context.relativeURL(item.path)}>{item.text}</a> : item.text}
           </summary>
           <Navigation data={item.children} context={context} />
         </details>

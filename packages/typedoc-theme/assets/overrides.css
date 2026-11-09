@@ -41,6 +41,10 @@ body {
   text-overflow: ellipsis;
 }
 
+.tsd-accordion-summary a {
+  color: inherit;
+}
+
 .title {
   flex: 1;
 }
