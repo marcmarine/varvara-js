@@ -88,9 +88,10 @@ Class names are exact. Reproduce the markup shape as shown, don't improvise it.
 <button class="va-button">Default</button>
 <button class="va-button va-button--action">Emphasized (uppercase)</button>
 <button class="va-button" disabled>Disabled</button>
+<a class="va-button" aria-disabled="true">Disabled link</a>
 ```
 
-- `:hover` lightens background; `:active` (or class `.va-button--active` to force it) inverts foreground/background — this is the only built-in "state" styling. There is no primary/danger/success variant.
+- `:hover` lightens background; `:active` (or `aria-pressed="true"` for toggle buttons; the `.va-button--active` class is deprecated) inverts foreground/background — this is the only built-in "state" styling. There is no primary/danger/success variant.
 - To make one button visually the accent color, override its scoped vars:
   ```css
   .btn-accent {
@@ -180,7 +181,7 @@ A styled native `<details>`/`<summary>` — no JS/state required for basic open/
 </details>
 ```
 
-Nesting `.va-collapse` inside `.va-collapse` auto-indents up to 4 levels deep via an internal `--va-_depth` custom property — no extra class needed for nested trees.
+Nesting `.va-collapse` inside `.va-collapse` auto-indents up to 4 levels deep via an internal `--va-_depth` custom property — no extra class needed for nested trees. Add `aria-current` to a `<summary>` to highlight the current section.
 
 ### Table — `.va-table`
 
@@ -200,7 +201,7 @@ Plain `<table>`/`<th>`/`<td>` — no wrapper divs needed, borders and padding ar
 ### Link — `.va-link`
 ```html
 <a class="va-link" href="/page">Go here</a>
-<a class="va-link va-link--active" href="/page">Current page</a>
+<a class="va-link" href="/page" aria-current="page">Current page</a>
 ```
 
 ### Icon — `.va-icon`

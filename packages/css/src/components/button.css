@@ -23,7 +23,7 @@
   padding-right: var(--va-button-padding);
   text-align: inherit;
 
-  &:hover:not(&:active):not(.va-button--active) {
+  &:hover:not(&:active):not(.va-button--active):not([aria-pressed="true"]) {
     background-color: var(--va-background-color-hover);
   }
 
@@ -33,13 +33,17 @@
 }
 
 .va-button:active,
+.va-button[aria-pressed="true"],
+/* Deprecated: use aria-pressed="true" instead. Will be removed in 1.0. */
 .va-button--active {
   color: var(--va-background-color-default);
   background-color: var(--va-foreground-color-default);
 }
 
-.va-button--disabled,
-.va-button[disabled] {
+.va-button[disabled],
+.va-button[aria-disabled="true"],
+/* Deprecated: use the disabled attribute or aria-disabled="true" instead. Will be removed in 1.0. */
+.va-button--disabled {
   color: var(--va-foreground-color-muted);
   pointer-events: none;
 }

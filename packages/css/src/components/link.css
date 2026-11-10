@@ -11,6 +11,8 @@
 }
 
 .va-link:active,
+.va-link[aria-current]:not([aria-current="false"]),
+/* Deprecated: use aria-current instead. Will be removed in 1.0. */
 .va-link--active {
   color: var(--va-background-color-default);
   background-color: var(--va-foreground-color-default);

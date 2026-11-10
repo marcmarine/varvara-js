@@ -37,26 +37,35 @@ export const Component = () => <Button />
 
 </Example>
 
-## Active
+## Pressed
+
+Use `aria-pressed="true"` for toggle buttons that are currently on.
 
 <Example
   component={() => (
-    <button class="va-button va-button--active">Example button</button>
+    <button class="va-button" aria-pressed="true">Example button</button>
   )}
 >
 
-<CodeBlock code={`<button class="va-button va-button--active">Example button</button>`} language="html" />
+<CodeBlock code={`<button class="va-button" aria-pressed="true">Example button</button>`} language="html" />
 
 </Example>
+
+> **Deprecated:** `va-button--active` will be removed in 1.0. Use `aria-pressed="true"` instead.
 
 ## Disabled
 
+Use the `disabled` attribute. For elements that don't support it, such as links styled as buttons, use `aria-disabled="true"`. Also remove the link's `href`: the styles only block mouse clicks, not keyboard activation.
+
 <Example
-component={() => (
-  <button class="va-button va-button--disabled">Example button</button>
-)}
+  component={() => (
+    <button class="va-button" disabled>Example button</button>
+  )}
 >
 
-<CodeBlock code={`<button class="va-button va-button--disabled">Example button</button>`} language="html" />
+<CodeBlock code={`<button class="va-button" disabled>Example button</button>
+<a class="va-button" aria-disabled="true">Example link</a>`} language="html" />
 
 </Example>
+
+> **Deprecated:** `va-button--disabled` will be removed in 1.0. Use the `disabled` attribute or `aria-disabled="true"` instead.

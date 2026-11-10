@@ -38,6 +38,27 @@ export const Component = () => <Collapse />
   />
 </Example>
 
+## Current
+
+Use `aria-current` on the `summary` to highlight the current section, for example in a navigation tree.
+
+<Example
+  component={() => (
+    <details class="va-collapse w-full">
+      <summary aria-current="true">Current section</summary>
+      <p>Content of the current section.</p>
+    </details>
+  )}
+>
+  <CodeBlock
+    code={`<details class="va-collapse w-full">
+    <summary aria-current="true">Current section</summary>
+    <p>Content of the current section.</p>
+  </details>`}
+    language="html"
+  />
+</Example>
+
 ## Nested
 
 <Example

@@ -21,3 +21,19 @@ export const Component = () => <Link />
 <Example component={Component}>
   <CodeBlock code={`<a href="#" class="va-link">Link</a>`} language="html" />
 </Example>
+
+## Current
+
+Use `aria-current` to mark the link that points to the current page.
+
+<Example
+  component={() => (
+    <a href="#" class="va-link" aria-current="page">
+      Link
+    </a>
+  )}
+>
+  <CodeBlock code={`<a href="#" class="va-link" aria-current="page">Link</a>`} language="html" />
+</Example>
+
+> **Deprecated:** `va-link--active` will be removed in 1.0. Use `aria-current` instead.
