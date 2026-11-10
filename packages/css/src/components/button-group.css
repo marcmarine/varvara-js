@@ -1,5 +1,5 @@
-.button-group {
-  &:not(.button-group--horizontal) {
+.va-button-group {
+  &:not(.va-button-group--horizontal) {
     @apply -space-y-[--va-border-width];
   }
 

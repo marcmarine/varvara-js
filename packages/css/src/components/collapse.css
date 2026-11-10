@@ -1,4 +1,4 @@
-.collapse {
+.va-collapse {
   --va-collapse-font-size: var(--va-font-size-1);
   --va-collapse-padding: var(--va-space-3);
   --va-collapse-border-width: var(--va-border-width);
@@ -89,7 +89,7 @@
     );
   }
 
-  & *:not(.checkbox):not(svg) {
+  & *:not(.va-checkbox):not(svg) {
     width: 100%;
     border-left: 0;
     border-right: 0;
@@ -109,10 +109,10 @@
     }
   }
 
-  & > .button,
-  & > label:has(.checkbox),
-  & > .select,
-  & > label:has(.select) span {
+  & > .va-button,
+  & > label:has(.va-checkbox),
+  & > .va-select,
+  & > label:has(.va-select) span {
     padding-left: calc(
       var(--va-collapse-tree-indentation) +
       var(--va-collapse-padding) +

@@ -1,4 +1,4 @@
-.card {
+.va-card {
   --va-card-font-size: var(--va-font-size-1);
   --va-card-padding: var(--va-space-3);
   --va-card-border-width: var(--va-border-width);
@@ -16,7 +16,7 @@
   }
 
   &__body,
-  .button {
+  .va-button {
     border-width: var(--va-card-border-width);
     border-color: var(--va-card-border-color);
     border-style: solid;
@@ -25,8 +25,8 @@
   &__actions {
     @apply flex -space-x-[--va-card-border-width];
 
-    .button:not(:first-child),
-    .button:only-child {
+    .va-button:not(:first-child),
+    .va-button:only-child {
       @apply w-full;
     }
   }

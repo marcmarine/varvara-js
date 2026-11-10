@@ -1,4 +1,4 @@
-.loading-dots {
+.va-loading-dots {
   --va-loading-dots-animation-duration: 1s;
 
   &::after {

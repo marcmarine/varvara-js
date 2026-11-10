@@ -1,4 +1,4 @@
-.select {
+.va-select {
   &,
   label:has(&) {
     --va-select-font-size: var(--va-font-size-1);
@@ -74,7 +74,7 @@
       z-index: 1;
     }
 
-    .select {
+    .va-select {
       padding-top: var(--va-font-size-0);
     }
   }

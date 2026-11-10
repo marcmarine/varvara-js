@@ -1,25 +1,25 @@
-.icon {
+.va-icon {
   display: block;
   position: relative;
   width: var(--va-icon-width);
   height: var(--va-icon-height);
 
-  *:active:has(.icon) > & {
+  *:active:has(.va-icon) > & {
     --va-icon-color: var(--va-background-color-default);
   }
 }
 
-.icon--external {
+.va-icon--external {
   transform: translateY(-25%);
 }
 
-.icon--external:before,
-.icon--external:after {
+.va-icon--external:before,
+.va-icon--external:after {
   content: "";
   position: absolute;
 }
 
-.icon--external:before {
+.va-icon--external:before {
   border-bottom-style: none;
   border-color: var(--va-icon-color);
   border-left-style: none;
@@ -32,7 +32,7 @@
   width: calc(var(--va-icon-width) / 2);
 }
 
-.icon--external:after {
+.va-icon--external:after {
   top: calc(var(--va-icon-stroke-width) / 2);
   right: 0;
   width: var(--va-icon-stroke-width);

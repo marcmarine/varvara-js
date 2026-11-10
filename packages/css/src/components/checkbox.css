@@ -1,4 +1,4 @@
-.checkbox {
+.va-checkbox {
   &,
   label:has(&) {
   --va-checkbox-font-size: var(--va-font-size-1);
@@ -76,7 +76,7 @@
       flex: 1;
     }
 
-    .checkbox {
+    .va-checkbox {
       border: 0;
 
       &:hover,

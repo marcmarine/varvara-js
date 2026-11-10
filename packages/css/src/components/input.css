@@ -1,4 +1,4 @@
-.input {
+.va-input {
   &,
   label:has(&) {
     --va-input-font-size: var(--va-font-size-1);
@@ -41,7 +41,7 @@
   label:has(> &) {
     @apply block relative cursor-text;
 
-    &:not(:has(.input[readonly])) {
+    &:not(:has(.va-input[readonly])) {
       &:focus,
       &:focus-within {
         box-shadow: inset 0 0 0 var(--va-input-border-width);
@@ -56,7 +56,7 @@
       padding-top: calc(var(--va-input-padding) / 2);
     }
 
-    .input {
+    .va-input {
       width: 100%;
       padding-top: var(--va-font-size-0);
     }
