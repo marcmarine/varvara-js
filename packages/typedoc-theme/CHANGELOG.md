@@ -1,5 +1,17 @@
 # varvara-typedoc-theme
 
+## 0.3.14
+
+### Patch Changes
+
+- Updated dependencies [c92c5f9]
+- Updated dependencies [ad937ae]
+- Updated dependencies [bbd36c0]
+- Updated dependencies [a8db3f0]
+- Updated dependencies [179b4b3]
+- Updated dependencies [a1c5d45]
+  - varvara-css@0.10.0
+
 ## 0.3.13
 
 ### Patch Changes
