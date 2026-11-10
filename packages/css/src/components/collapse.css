@@ -25,14 +25,17 @@
   }
 
   summary {
-    @apply relative block leading-none font-medium cursor-pointer;
-
     align-content: center;
     background-color: var(--va-collapse-background-color);
+    cursor: pointer;
+    display: block;
+    font-weight: 500;
     height: calc(var(--va-collapse-padding) * 2 + var(--va-collapse-font-size));
+    line-height: 1;
     outline: none;
     padding-left: calc(var(--va-collapse-padding) + var(--va-_space));
     padding-right: calc(var(--va-icon-width) + var(--va-collapse-padding) * 2);
+    position: relative;
     text-align: inherit;
 
     &::-webkit-details-marker {

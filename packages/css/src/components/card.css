@@ -5,29 +5,36 @@
   --va-card-border-color: var(--va-border-color);
   --va-card-background-color: var(--va-background-color-default);
 
-  @apply -space-y-[--va-card-border-width];
-
   color: var(--va-foreground-color-default);
   background-color: var(--va-card-background-color);
 
-  &__body {
-    @apply border-2;
-    padding: var(--va-card-padding);
+  & > :not([hidden]) ~ :not([hidden]) {
+    margin-top: calc(var(--va-card-border-width) * -1);
+    margin-bottom: 0;
+  }
+}
+
+.va-card__body {
+  padding: var(--va-card-padding);
+}
+
+.va-card__body,
+.va-card .va-button {
+  border-width: var(--va-card-border-width);
+  border-color: var(--va-card-border-color);
+  border-style: solid;
+}
+
+.va-card__actions {
+  display: flex;
+
+  & > :not([hidden]) ~ :not([hidden]) {
+    margin-left: calc(var(--va-card-border-width) * -1);
+    margin-right: 0;
   }
 
-  &__body,
-  .va-button {
-    border-width: var(--va-card-border-width);
-    border-color: var(--va-card-border-color);
-    border-style: solid;
-  }
-
-  &__actions {
-    @apply flex -space-x-[--va-card-border-width];
-
-    .va-button:not(:first-child),
-    .va-button:only-child {
-      @apply w-full;
-    }
+  .va-button:not(:first-child),
+  .va-button:only-child {
+    width: 100%;
   }
 }

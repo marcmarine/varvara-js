@@ -8,10 +8,10 @@
   &:hover {
     background-color: var(--va-link-background-color-hover);
   }
+}
 
-  &:active,
-  &--active {
-    color: var(--va-background-color-default);
-    background-color: var(--va-foreground-color-default);
-  }
+.va-link:active,
+.va-link--active {
+  color: var(--va-background-color-default);
+  background-color: var(--va-foreground-color-default);
 }

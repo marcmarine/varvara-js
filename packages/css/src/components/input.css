@@ -8,8 +8,7 @@
     --va-input-background-color: var(--va-background-color-default);
   }
 
-  @apply appearance-none;
-
+  appearance: none;
   background-color: var(--va-input-background-color);
   border-color: var(--va-input-border-color);
   border-radius: 0; /* Fix Safari iOS border radius */
@@ -39,7 +38,9 @@
   }
 
   label:has(> &) {
-    @apply block relative cursor-text;
+    cursor: text;
+    display: block;
+    position: relative;
 
     &:not(:has(.va-input[readonly])) {
       &:focus,
@@ -49,11 +50,14 @@
     }
 
     span {
-      @apply absolute top-0 left-0 leading-none pointer-events-none;
-
       font-size: var(--va-font-size-0);
       padding-left: calc(var(--va-input-padding) + var(--va-input-border-width));
       padding-top: calc(var(--va-input-padding) / 2);
+      left: 0;
+      line-height: 1;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
     }
 
     .va-input {

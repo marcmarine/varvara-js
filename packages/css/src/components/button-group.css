@@ -1,9 +1,13 @@
-.va-button-group {
-  &:not(.va-button-group--horizontal) {
-    @apply -space-y-[--va-border-width];
-  }
+.va-button-group:not(.va-button-group--horizontal) > :not([hidden]) ~ :not([hidden]) {
+  margin-top: calc(var(--va-border-width) * -1);
+  margin-bottom: 0;
+}
 
-  &--horizontal {
-    @apply flex -space-x-[--va-border-width];
+.va-button-group--horizontal {
+  display: flex;
+
+  & > :not([hidden]) ~ :not([hidden]) {
+    margin-left: calc(var(--va-border-width) * -1);
+    margin-right: 0;
   }
 }

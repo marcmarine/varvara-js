@@ -2,9 +2,8 @@
   --va-loading-dots-animation-duration: 1s;
 
   &::after {
-    @apply inline-block;
-
     content: ".";
+    display: inline-block;
     width: var(--va-space-4);
     animation-name: va-dots;
     animation-duration: var(--va-loading-dots-animation-duration);
