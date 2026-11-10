@@ -6,14 +6,14 @@
 
     content: ".";
     width: var(--va-space-4);
-    animation-name: dots;
+    animation-name: va-dots;
     animation-duration: var(--va-loading-dots-animation-duration);
     animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
 }
 
-@keyframes dots {
+@keyframes va-dots {
   50% {
     content: "..";
   }
