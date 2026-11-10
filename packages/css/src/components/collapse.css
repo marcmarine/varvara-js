@@ -25,6 +25,7 @@
   border-color: var(--va-collapse-border-color);
 
   & > * {
+    box-sizing: border-box;
     width: 100%;
   }
 
@@ -99,6 +100,7 @@
   }
 
   & *:not(.va-checkbox):not(svg) {
+    box-sizing: border-box;
     width: 100%;
     border-left: 0;
     border-right: 0;
