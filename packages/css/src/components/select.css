@@ -18,7 +18,7 @@
   font-size: var(--va-select-font-size);
   height: calc(var(--va-select-padding) * 2 + var(--va-select-font-size));
   outline: none;
-  padding-left: var(--va-select-padding);
+  padding-left: var(--va-inset-start, var(--va-select-padding));
   padding-right: calc(var(--va-icon-width) + var(--va-select-padding) * 2);
   position: relative;
   text-align: inherit;
@@ -67,9 +67,16 @@
     display: inline-block;
     position: relative;
 
+    & > * {
+      --va-inset-start: inherit;
+    }
+
     span {
       font-size: var(--va-font-size-0);
-      padding-left: calc(var(--va-select-padding) + var(--va-select-border-width));
+      padding-left: var(
+        --va-inset-start,
+        calc(var(--va-select-padding) + var(--va-select-border-width))
+      );
       padding-top: calc(var(--va-select-padding) / 2);
       left: 0;
       line-height: 1;

@@ -60,7 +60,7 @@
     cursor: pointer;
     display: flex;
     gap: var(--va-space-3);
-    padding-left: var(--va-checkbox-padding);
+    padding-left: var(--va-inset-start, var(--va-checkbox-padding));
 
     &:hover {
       background-color: var(--va-background-color-hover);

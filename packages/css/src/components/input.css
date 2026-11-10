@@ -19,7 +19,7 @@
   font-size: var(--va-input-font-size);
   height: calc(var(--va-input-padding) * 2 + var(--va-input-font-size));
   outline: none;
-  padding-left: var(--va-input-padding);
+  padding-left: var(--va-inset-start, var(--va-input-padding));
   padding-right: var(--va-input-padding);
 
   &[disabled] {
@@ -49,9 +49,16 @@
       }
     }
 
+    & > * {
+      --va-inset-start: inherit;
+    }
+
     span {
       font-size: var(--va-font-size-0);
-      padding-left: calc(var(--va-input-padding) + var(--va-input-border-width));
+      padding-left: var(
+        --va-inset-start,
+        calc(var(--va-input-padding) + var(--va-input-border-width))
+      );
       padding-top: calc(var(--va-input-padding) / 2);
       left: 0;
       line-height: 1;

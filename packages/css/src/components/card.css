@@ -5,6 +5,9 @@
   --va-card-border-color: var(--va-border-color);
   --va-card-background-color: var(--va-background-color-default);
 
+  /* Captured here so it reaches the card parts at any depth */
+  --va-_card-inset: var(--va-inset-start, var(--va-card-padding));
+
   color: var(--va-foreground-color-default);
   background-color: var(--va-card-background-color);
 
@@ -16,6 +19,7 @@
 
 .va-card__body {
   padding: var(--va-card-padding);
+  padding-left: var(--va-_card-inset);
 }
 
 .va-card__body,

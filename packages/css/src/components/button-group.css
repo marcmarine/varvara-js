@@ -1,3 +1,7 @@
+.va-button-group:not(.va-button-group--horizontal) > * {
+  --va-inset-start: inherit;
+}
+
 .va-button-group:not(.va-button-group--horizontal) > :not([hidden]) ~ :not([hidden]) {
   margin-top: calc(var(--va-border-width) * -1);
   margin-bottom: 0;
@@ -5,6 +9,10 @@
 
 .va-button-group--horizontal {
   display: flex;
+
+  & > :first-child {
+    --va-inset-start: inherit;
+  }
 
   & > :not([hidden]) ~ :not([hidden]) {
     margin-left: calc(var(--va-border-width) * -1);

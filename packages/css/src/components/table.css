@@ -5,6 +5,9 @@
   --va-table-border-color: var(--va-border-color);
   --va-table-background-color: var(--va-background-color-default);
 
+  /* Captured here so it reaches the cells at any depth */
+  --va-_table-inset: var(--va-inset-start, var(--va-table-padding));
+
   background-color: var(--va-table-background-color);
   width: 100%;
   font-size: var(--va-table-font-size);
@@ -24,6 +27,11 @@
     height: calc(var(--va-table-padding) * 2 + var(--va-table-font-size));
     padding-left: var(--va-table-padding);
     padding-right: var(--va-table-padding);
+  }
+
+  th:first-child,
+  td:first-child {
+    padding-left: var(--va-_table-inset);
   }
 
   th {

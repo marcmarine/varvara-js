@@ -152,6 +152,14 @@ Use `aria-current` on the `summary` to highlight the current section, for exampl
 />
 </Example>
 
+## Indentation
+
+Nested collapses are indented by the number of collapses they are inside, up to 6 levels. Wrapper elements in between don't add indentation.
+
+Components placed directly inside a collapse are indented to match its nesting level while keeping their borders full width: buttons, checkboxes, inputs and selects indent their own content, and cards, tables and button groups indent their inner parts. Your own components can do the same by reading the `--va-inset-start` custom property:
+
+<CodeBlock code={".my-item {\n  padding-left: var(--va-inset-start, 1rem);\n}"} language="css" />
+
 ## With other content
 
 <Example
@@ -173,17 +181,18 @@ Use `aria-current` on the `summary` to highlight the current section, for exampl
 )}
 
 >
-<CodeBlock code={`
-<details class="va-collapse w-full">
+<CodeBlock code={`<details class="va-collapse w-full">
     <summary>
       <strong>The purpose of thought</strong>
     </summary>
-    <p>
-      We can attain wisdom by three ways: first, by way of experience, this is the most difficult
-      way; second, by way of imitation, this is the easiest way; and third by way of meditation,
-      and this is the noblest way.
-    </p>
-    <p>Confucius</p>
-  </details>
-`} language="html" />
+    <div class="va-card w-full">
+      <div class="va-card__body">
+        <h2 class="va-card__title">Timeless Literature</h2>
+        <p>Our platform leverages a powerful API to bring you an extensive collection...</p>
+      </div>
+      <div class="va-card__actions text-right">
+        <button class="va-button">Start</button>
+      </div>
+    </div>
+  </details>`} language="html" />
 </Example>

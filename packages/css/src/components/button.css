@@ -19,7 +19,7 @@
   font-weight: 500;
   height: calc(var(--va-button-padding) * 2 + var(--va-button-font-size));
   outline: none;
-  padding-left: var(--va-button-padding);
+  padding-left: var(--va-inset-start, var(--va-button-padding));
   padding-right: var(--va-button-padding);
   text-align: inherit;
 

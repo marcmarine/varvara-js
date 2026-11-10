@@ -181,7 +181,7 @@ A styled native `<details>`/`<summary>` — no JS/state required for basic open/
 </details>
 ```
 
-Nesting `.va-collapse` inside `.va-collapse` auto-indents up to 4 levels deep via an internal `--va-_depth` custom property — no extra class needed for nested trees. Add `aria-current` to a `<summary>` to highlight the current section.
+Nesting `.va-collapse` inside `.va-collapse` auto-indents up to 6 levels deep, counting collapse ancestors (wrapper elements in between don't add indentation) — no extra class needed for nested trees. Components placed directly inside a collapse (buttons, checkboxes, inputs, selects, cards, tables, button groups) are indented through the `--va-inset-start` custom property while keeping their borders full width; plain `div` and `p` elements are aligned with the summary text; read it in your own components with `padding-left: var(--va-inset-start, <default>)`. Add `aria-current` to a `<summary>` to highlight the current section.
 
 ### Table — `.va-table`
 
