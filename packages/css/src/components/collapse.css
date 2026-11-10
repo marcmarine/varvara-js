@@ -1,13 +1,3 @@
-/*
- * Start padding for components placed directly inside a collapse, read by
- * button, checkbox, input and select. Not inherited, so it only reaches direct
- * children (labels pass it on to their own children explicitly).
- */
-@property --va-inset-start {
-  syntax: "*";
-  inherits: false;
-}
-
 .va-collapse {
   --va-collapse-font-size: var(--va-font-size-1);
   --va-collapse-padding: var(--va-space-3);
@@ -147,4 +137,14 @@
  */
 :where(.va-collapse > :is(div, p):not([class^="va-"], [class*=" va-"])) {
   padding-left: calc(var(--va-collapse-padding) + var(--va-_space));
+}
+
+/*
+ * --va-inset-start is the start padding for components placed directly inside
+ * a collapse. It is reset below them so it only reaches direct children;
+ * components that need it deeper (labels, button groups) pass it on with
+ * `inherit`, which wins over this zero-specificity reset.
+ */
+:where(.va-collapse > :not(summary) > *) {
+  --va-inset-start: initial;
 }
