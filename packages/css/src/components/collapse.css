@@ -54,11 +54,12 @@
     &[aria-current]:not([aria-current="false"]) {
       color: var(--va-background-color-default);
       background-color: var(--va-foreground-color-default);
+    }
 
-      &::before {
-        --va-collapse-border-color: var(--va-collapse-background-color);
-        --va-collapse-icon-color: var(--va-collapse-background-color);
-      }
+    &:active::before,
+    &[aria-current]:not([aria-current="false"])::before {
+      --va-collapse-border-color: var(--va-collapse-background-color);
+      --va-collapse-icon-color: var(--va-collapse-background-color);
     }
 
     &::before {
