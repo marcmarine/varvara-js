@@ -24,6 +24,7 @@
     ".": "./dist/tailwind.js",
     "./css": "./dist/varvara.css",
     "./variables": "./dist/variables.css",
+    "./components": "./dist/components.css",
     "./card": "./dist/components/card.css",
     "./button": "./dist/components/button.css",
     "./select": "./dist/components/select.css"

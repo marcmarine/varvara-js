@@ -31,18 +31,20 @@ To load only some components, import the variables plus the per-component styles
 @import "varvara-css/select";
 ```
 
-Only `button`, `card`, and `select` are exported individually; everything else comes from `varvara-css/css`.
+Only `button`, `card`, and `select` are exported individually; `varvara-css/components` has every component without the global page styles, and everything else comes from `varvara-css/css`.
 
-Tailwind CSS plugin (registers the same `va-*` classes through Tailwind):
+With Tailwind CSS v4, import into Tailwind's layers so utilities override component styles:
 
 ```css
-/* Tailwind v4 */
 @import "tailwindcss";
-@plugin "varvara-css";
+@import "varvara-css/variables" layer(base);
+@import "varvara-css/components" layer(components);
 ```
 
+The plugin (`@plugin "varvara-css";` in v4) registers the same classes. Tailwind CSS v3 support is deprecated and will be removed in 1.0:
+
 ```js
-// Tailwind v3 — tailwind.config.js
+// Tailwind v3 (deprecated) — tailwind.config.js
 import varvara from 'varvara-css'
 
 module.exports = {

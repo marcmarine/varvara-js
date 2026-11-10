@@ -26,12 +26,17 @@ Make sure [Tailwind CSS](https://tailwindcss.com/docs/installation) is already c
 
 #### Tailwind CSS v4
 
-Register the plugin in your main stylesheet:
+Import the variables and components into Tailwind's layers in your main stylesheet, so utilities can override component styles:
 
 <va-code-block language="css" text={`@import 'tailwindcss';
-@plugin 'varvara-css';`}></va-code-block>
+@import 'varvara-css/variables' layer(base);
+@import 'varvara-css/components' layer(components);`}></va-code-block>
 
-#### Tailwind CSS v3 
+You can also register it as a plugin with `@plugin 'varvara-css';`.
+
+#### Tailwind CSS v3
+
+> **Deprecated:** Tailwind CSS v3 support will be removed in 1.0.
 
 Add the plugin to your `tailwind.config.js`:
 
