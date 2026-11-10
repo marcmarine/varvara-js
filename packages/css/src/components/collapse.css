@@ -7,8 +7,8 @@
   --va-collapse-tree-indentation: var(--va-space-8);
   --va-collapse-icon-color: var(--va-icon-color);
 
-  --depth: 0;
-  --space: calc(var(--depth) * var(--va-collapse-tree-indentation));
+  --va-_depth: 0;
+  --va-_space: calc(var(--va-_depth) * var(--va-collapse-tree-indentation));
 
   font-size: var(--va-collapse-font-size);
   border-style: solid;
@@ -17,7 +17,7 @@
 
   & > div,
   & > p {
-    padding-left: calc(var(--va-collapse-padding) + var(--space)) !important;
+    padding-left: calc(var(--va-collapse-padding) + var(--va-_space)) !important;
   }
 
   & > * {
@@ -31,7 +31,7 @@
     background-color: var(--va-collapse-background-color);
     height: calc(var(--va-collapse-padding) * 2 + var(--va-collapse-font-size));
     outline: none;
-    padding-left: calc(var(--va-collapse-padding) + var(--space));
+    padding-left: calc(var(--va-collapse-padding) + var(--va-_space));
     padding-right: calc(var(--va-icon-width) + var(--va-collapse-padding) * 2);
     text-align: inherit;
 
@@ -39,7 +39,7 @@
       display: none; /* Hide marker on Safari iOS */
     }
 
-    &:hover:not(&:active):not(&--active) {
+    &:hover:not(&:active) {
       background-color: var(--va-background-color-hover);
     }
 
@@ -47,8 +47,7 @@
       box-shadow: inset 0 0 0 var(--va-collapse-border-width);
     }
 
-    &:active,
-    &--active {
+    &:active {
       color: var(--va-background-color-default);
       background-color: var(--va-foreground-color-default);
 
@@ -98,13 +97,13 @@
   }
 
   & > * {
-    --depth: 1;
+    --va-_depth: 1;
     & > * {
-      --depth: 2;
+      --va-_depth: 2;
       & > * {
-        --depth: 3;
+        --va-_depth: 3;
         & > * {
-          --depth: 4;
+          --va-_depth: 4;
         }
       }
     }
@@ -117,7 +116,7 @@
     padding-left: calc(
       var(--va-collapse-tree-indentation) +
       var(--va-collapse-padding) +
-      var(--space)
+      var(--va-_space)
     );
   }
 

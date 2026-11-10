@@ -180,7 +180,7 @@ A styled native `<details>`/`<summary>` — no JS/state required for basic open/
 </details>
 ```
 
-Nesting `.va-collapse` inside `.va-collapse` auto-indents up to 4 levels deep via a `--depth` custom property — no extra class needed for nested trees.
+Nesting `.va-collapse` inside `.va-collapse` auto-indents up to 4 levels deep via an internal `--va-_depth` custom property — no extra class needed for nested trees.
 
 ### Table — `.va-table`
 
