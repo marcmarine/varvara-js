@@ -41,10 +41,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build:css": "bun run build.ts",
-    "build:js": "bun run build-js.ts",
-    "build:tw": "bun build src/tailwind.ts --outdir dist --external '*'",
-    "build": "bun run build:css && bun run build:js && bun run build:tw",
+    "build": "bun run build.ts",
     "dev": "chokidar src -c 'bun run build'",
     "lint": "biome lint ."
   },
