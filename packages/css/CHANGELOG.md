@@ -1,5 +1,19 @@
 # varvara-css
 
+## 0.10.0
+
+### Minor Changes
+
+- ad937ae: Added the `varvara-css/components` export, which includes every component without the global page styles. With Tailwind CSS v4, import `varvara-css/variables` and `varvara-css/components` into the `base` and `components` layers so utilities can override component styles; the plugin still works. Tailwind CSS v3 support is deprecated and will be removed in 1.0.
+- bbd36c0: Improved collapse indentation: nesting depth now counts collapse ancestors, so wrapper elements no longer add extra indentation, and supports up to 6 levels. Cards, tables, button groups, inputs and selects inside labels are now indented while keeping their borders full width, and your own components can read the new `--va-inset-start` custom property.
+- 179b4b3: Added ARIA attribute support for button, link and collapse states: `aria-pressed="true"` and `aria-disabled="true"` on buttons, and `aria-current` on links and collapse summaries. The `va-button--active`, `va-button--disabled` and `va-link--active` classes are deprecated and will be removed in 1.0.
+
+### Patch Changes
+
+- c92c5f9: Renamed the loading dots keyframes to `va-dots` to avoid collisions with consumer stylesheets.
+- a8db3f0: Prefixed the collapse internal custom properties as `--va-_depth` and `--va-_space` to avoid collisions with consumer stylesheets.
+- a1c5d45: Fixed collapse content overflowing its container when the page doesn't set `box-sizing: border-box` globally.
+
 ## 0.9.5
 
 ### Patch Changes
