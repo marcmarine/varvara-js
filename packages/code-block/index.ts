@@ -35,6 +35,8 @@ const codeBlockStylesheet = (() => {
       .va-select { font-family: var(--va-font-family-headings); font-weight: 500; }
       [hidden] { display: none !important; }
       pre { margin: 0 !important; border-radius: 0 !important; }
+      /* Without a value, the browser's default monospace size applies */
+      pre { font-size: var(--va-code-block-font-size); }
       code { white-space: pre-wrap !important; }`,
     ),
   )

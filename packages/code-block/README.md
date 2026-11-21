@@ -129,6 +129,14 @@ The component also inherits Varvara CSS variables and the syntax highlighting co
 }
 ```
 
+The code font size has its own variable, `--va-code-block-font-size`. When it is not set, the browser's default monospace size applies:
+
+```css
+va-code-block {
+  --va-code-block-font-size: 0.875rem;
+}
+```
+
 ### Supported languages
 
 | Language   | Values                           |

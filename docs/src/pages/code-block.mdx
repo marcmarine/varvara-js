@@ -70,6 +70,10 @@ export const VARIABLES_CODE = `:root {
   --va-token-keyword: crimson;
 }`
 
+export const FONT_SIZE_CODE = `va-code-block {
+  --va-code-block-font-size: 0.875rem;
+}`
+
 <Layout>
   <header class="grid col-start-1 grid-rows-subgrid row-start-1 row-end-4 relative z-10 bg-grid-left bg-grid-right">
     <div class="pt-8 mb-8 max-w-4xl mx-auto !sticky top-0">
@@ -197,6 +201,10 @@ The component renders inside a shadow root. Its internal elements are exposed as
 The component also inherits Varvara CSS variables and the syntax highlighting colors (`--va-token-*`) from the page, so you can set them on `:root`, on any ancestor or on the element itself:
 
 <CodeBlock class="block my-6" language="css" code={VARIABLES_CODE} />
+
+The code font size has its own variable, `--va-code-block-font-size`. When it is not set, the browser's default monospace size applies:
+
+<CodeBlock class="block my-6" language="css" code={FONT_SIZE_CODE} />
 
 ## Supported languages
 
