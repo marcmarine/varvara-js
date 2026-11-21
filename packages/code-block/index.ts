@@ -7,16 +7,37 @@ import tokensCss from './tokens.css?inline'
 
 const scopeToHost = (css: string): string => css.replace(/:root/g, ':host')
 
+const DECLARATION = /--va-([\w-]+)(?=\s*:)/g
+
+/**
+ * Lets the global and token variables be inherited from the page.
+ *
+ * Declaring them on `:host` would override any inherited value, so their
+ * defaults are renamed to `--va-_default-*` and every `var(--va-*)` falls back
+ * to them: `var(--va-x)` becomes `var(--va-x, var(--va-_default-x))`.
+ */
+const inheritable = (defaultsCss: string, css: string): string => {
+  const names = new Set(Array.from(defaultsCss.matchAll(DECLARATION), ([, name]) => name))
+  return (defaultsCss.replace(DECLARATION, '--va-_default-$1') + css).replace(
+    /var\(--va-([\w-]+)\)/g,
+    (usage, name: string) =>
+      names.has(name) ? `var(--va-${name}, var(--va-_default-${name}))` : usage,
+  )
+}
+
 const codeBlockStylesheet = (() => {
   const sheet = new CSSStyleSheet()
   sheet.replaceSync(
-    `${scopeToHost(variablesCss)}${scopeToHost(cardCss)}${scopeToHost(buttonCss)}${selectCss}${tokensCss}`,
+    inheritable(
+      `${scopeToHost(variablesCss)}${tokensCss}`,
+      `${scopeToHost(cardCss)}${scopeToHost(buttonCss)}${selectCss}
+      .va-button--action { text-align: right !important; }
+      .va-select { font-family: var(--va-font-family-headings); font-weight: 500; }
+      [hidden] { display: none !important; }
+      pre { margin: 0 !important; border-radius: 0 !important; }
+      code { white-space: pre-wrap !important; }`,
+    ),
   )
-  sheet.insertRule('.va-button--action { text-align: right !important; }')
-  sheet.insertRule('.va-select { font-family: var(--va-font-family-headings); font-weight: 500; }')
-  sheet.insertRule('[hidden] { display: none !important; }')
-  sheet.insertRule('pre { margin: 0 !important; border-radius: 0 !important; }')
-  sheet.insertRule('code { white-space: pre-wrap !important; }')
   return sheet
 })()
 

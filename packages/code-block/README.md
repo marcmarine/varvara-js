@@ -119,6 +119,16 @@ va-code-block::part(pre-content) {
 }
 ```
 
+The component also inherits Varvara CSS variables and the syntax highlighting colors (`--va-token-*`) from the page, so you can set them on `:root`, on any ancestor or on the element itself:
+
+```css
+:root {
+  --va-font-size-ratio: 1.125;
+  --va-border-color: gray;
+  --va-token-keyword: crimson;
+}
+```
+
 ### Supported languages
 
 | Language   | Values                           |

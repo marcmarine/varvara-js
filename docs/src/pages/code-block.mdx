@@ -64,6 +64,12 @@ export const PART_CODE = `va-code-block::part(pre-content) {
   overflow: auto;
 }`
 
+export const VARIABLES_CODE = `:root {
+  --va-font-size-ratio: 1.125;
+  --va-border-color: gray;
+  --va-token-keyword: crimson;
+}`
+
 <Layout>
   <header class="grid col-start-1 grid-rows-subgrid row-start-1 row-end-4 relative z-10 bg-grid-left bg-grid-right">
     <div class="pt-8 mb-8 max-w-4xl mx-auto !sticky top-0">
@@ -187,6 +193,10 @@ The component renders inside a shadow root. Its internal elements are exposed as
 | `select`      | The language select, shown when there are several blocks. |
 
 <CodeBlock class="block my-6" language="css" code={PART_CODE} />
+
+The component also inherits Varvara CSS variables and the syntax highlighting colors (`--va-token-*`) from the page, so you can set them on `:root`, on any ancestor or on the element itself:
+
+<CodeBlock class="block my-6" language="css" code={VARIABLES_CODE} />
 
 ## Supported languages
 
