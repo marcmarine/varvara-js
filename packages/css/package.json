@@ -17,9 +17,6 @@
     "postcss-js": "^5.1.0",
     "tailwindcss": "3.4.17"
   },
-  "peerDependencies": {
-    "typescript": "^5 || ^6"
-  },
   "exports": {
     ".": "./dist/tailwind.js",
     "./css": "./dist/varvara.css",
