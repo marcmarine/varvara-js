@@ -1,5 +1,11 @@
 # varvara-typedoc-theme
 
+## 0.3.15
+
+### Patch Changes
+
+- 023d839: Removed the unneeded `typescript` peer dependency, which caused install conflicts with TypeScript 7.
+
 ## 0.3.14
 
 ### Patch Changes

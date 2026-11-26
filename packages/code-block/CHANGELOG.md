@@ -1,5 +1,16 @@
 # va-code-block
 
+## 0.4.0
+
+### Minor Changes
+
+- 7dd019e: Added the `--va-code-block-font-size` variable to set the code font size.
+- 8e4edc4: Varvara CSS variables and `--va-token-*` colors are now inherited from the page, so they can be set on `:root` or any ancestor instead of only on the element.
+
+### Patch Changes
+
+- 023d839: Removed the unneeded `typescript` peer dependency, which caused install conflicts with TypeScript 7.
+
 ## 0.3.0
 
 ### Minor Changes
